@@ -1,89 +1,106 @@
 <!-- Use this page as the index for your project -->
-
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
-<!-- 
-  In /views/layout.html you can:
-    - change the header and footer 
-    - add custom CSS and JavaScript
--->
+<!DOCTYPE html>
+<html>
 
-<!-- Set the page title -->
-{% block pageTitle %}
-  NHS.UK prototype kit
-{% endblock %}
+<head>
+   <title></title>
+</head>
 
-<!-- For adding a breadcrumb -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
-{% block beforeContent %}
-{% endblock %}
+<body>
+   {% extends 'layout.html' %}
+   <!-- 
+         In /views/layout.html you can:
+           - change the header and footer 
+           - add custom CSS and JavaScript
+         -->
+   <!-- Set the page title inside the pageTitle block -->
+   {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+   <!-- Breadcrumb goes inside the beforeContent block -->
+   {% block beforeContent %} {% endblock %}
+   <!-- Your page content goes inside the content block -->
+   <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+   {% block content %}
+   <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+         <!-- Change the page title here -->
+         <h1>Direct Payments to Contractors <span class="nhsuk-caption-xl nhsuk-caption--bottom">'Apply' Service</span>
+         </h1>
+         <!-- Add your content here -->
+         <!-- Styles and components can be found at https://beta.nhs.uk/service-manual/styles-components-patterns -->
+         <p class="nhsuk-body-l">DPC (Direct Payments to Contractors) is a financial service which is used to issue payments to over 11,000 contractors across England and the Isle of Man e.g. Pharmacists, Appliance Contractors etc...</p>
 
-<!-- For adding a back link -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
-{% block outerContent %}
-{% endblock %}
+         <details class="nhsuk-details nhsuk-expander">
+            <summary class="nhsuk-details__summary">
+               <span class="nhsuk-details__summary-text">Alpha</span>
+            </summary>
+            <div class="nhsuk-details__text">
+               <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-bottom-0">
+                  <summary class="nhsuk-details__summary">
+                     <span class="nhsuk-details__summary-text"><small>Payment Runs</small></span>
+                  </summary>
+                  <div class="nhsuk-details__text">
+                     <h2 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--top">Pharmacy</span> Payment Run
+                        
+                     </h2>
+                     <h3 class="nhsuk-heading-m">Hypothesis A</h3>
+                     <p style="background: #DEE0E2; padding: 20px;"><strong>We believe</strong> that having the ability to preview data before starting each payment run step <strong>will be a useful feature for</strong>
+                        the Customer Payments Team <strong>as it will</strong> give them the confidence that the data being used is up to date. <strong>This will</strong> reduce the amount of manual checking that the team feels like they need to perform.</p>
+                     <hr>
+                     <h3 class="nhsuk-heading-m">What we created:</h3>
+                     <ul class="nhsuk-list nhsuk-list--bullet">
+                        <li>Login</li>
+                        <li>Dashboard</li>
+                        <li>Payment Run</li>
+                        <li>Payment Run (Monthly Breakdown)</li>
+                        <li>Payment Run Steps</li>
+                        <li>Payment Run Data Preview</li>
+                     </ul>
+                     <h3 class="nhsuk-heading-m">What we plan to test:</h3>
+                     <ul class="nhsuk-list nhsuk-list--bullet">
+                        <li>...</li>
+                     </ul>
+                     <h3 class="nhsuk-heading-m">What we found:</h3>
+                     <ul class="nhsuk-list nhsuk-list--bullet">
+                        <li>...</li>
+                     </ul>
+                     <h3 class="nhsuk-heading-m">Any known issues?</h3>
+                     <ul class="nhsuk-list nhsuk-list--bullet">
+                        <li>...</li>
+                     </ul>
+                     <hr>
+                     <p class="nhsuk-u-margin-bottom-0"><a href="v1/start"><button class="nhsuk-button" type="submit">View Prototype (v1)</button></a></p>
+                  </div>
+               </details>
+            </div>
+         </details>
 
-<!-- For adding page content -->
-<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
-{% block content %}
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+         <hr>
 
-      <!-- Change the page title here -->
-      <h1>
-        NHS.UK prototype kit
-        <span class="nhsuk-caption-xl nhsuk-caption--bottom">Version {{version}}</span>
-      </h1>
+         <details class="nhsuk-details nhsuk-expander">
+            <summary class="nhsuk-details__summary">
+               <span class="nhsuk-details__summary-text">Discovery</span>
+            </summary>
+            <div class="nhsuk-details__text">
 
-      <!-- Add your content here -->
-      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+                     <h2 class="nhsuk-heading-l">Discovery</h2>
+<ol>
+  <li><a href="https://miro.com/app/board/o9J_l5b1N2Q=/" target="_blank">Discovery Kick-Off</a></li>
+  <li><a href="https://nhsbsauk.sharepoint.com/teams/TechnologyApplications289-DPCUROps/_layouts/15/Doc.aspx?OR=teams&action=edit&sourcedoc={D3526270-8658-415B-ABB5-2463565CF013}" target="_blank">Discovery Questions &amp; Assumptions</a></li>
+  <li><a href="https://miro.com/app/board/o9J_l5WQfs4=/" target="_blank">'As Is' Journeys and Pain Points</a></li>
+  <li><a href="https://nhsbsauk.sharepoint.com/teams/TechnologyApplications289-DPC/_layouts/15/Doc.aspx?OR=teams&action=edit&sourcedoc={2242CEDE-2FBC-46A2-AAFE-A07F0866FBC9}" target="_blank">Personas</a></li>
+  <li><a href="https://miro.com/app/board/o9J_ly9pDaM=/" target="_blank">Prototype Sketches / User Flows</a></li>
+  <li><a href="https://teams.microsoft.com/l/file/3E5DFF25-26CA-4B0C-ABFF-9539F4BEC417?tenantId=cf6d0482-86b1-4f88-8c0c-3b4de4cb402c&fileType=pptx&objectUrl=https%3A%2F%2Fnhsbsauk.sharepoint.com%2Fteams%2FTechnologyApplications289-DPC%2FShared%20Documents%2FDPC%2FOur%20work%20on%20DPC%2F1.%20Discovery%2F2.%20Discovery%20outputs%2Fv2.0%20Discovery%20report%20-%20TEAM%20version.pptx&baseUrl=https%3A%2F%2Fnhsbsauk.sharepoint.com%2Fteams%2FTechnologyApplications289-DPC&serviceName=teams&threadId=19:bd7ed2f818d64a23b80e4dd3f4471efb@thread.tacv2&groupId=196d8f4e-94f8-48b7-ae94-a45a7fa6dabb" target="_blank">Discovery Report (11/10/2021)</a></li>
 
-      <p class="nhsuk-lede-text">
-        This kit lets you rapidly create HTML prototypes of NHS services.
-      </p>
+</ol> 
 
-      <hr>
+            </div>
+         </details>
+         <!-- End of content -->
+      </div>
+   </div>
+   {% endblock %}
+</body>
 
-      <h2>
-        About this page
-      </h2>
-
-      <p>
-        Use this page as the index for your project.
-      </p>
-      
-      <p>
-        You'll find the code for this page at <strong>/app/views/index.html</strong>.
-      </p>
-
-      <p>
-        There is also an <a href="/page-example">example page</a>, which contains a selection of NHS.UK frontend styles and components.
-      </p>
-
-      <hr>
-
-      <h2>
-        Get started
-      </h2>
-
-      <p>Get started by using the:</p>
-
-      <ul>
-        <li>
-          <a href="/docs/how-tos">how to guides</a>
-        </li>
-        <li>
-          <a href="/docs/page-templates">page templates</a>
-        </li>
-        <li>
-          code snippets for styles and components from the <a href="https://service-manual.nhs.uk/design-system">NHS digital service manual</a>
-        </li>
-      </ul>
-
-      <!-- End of content -->
-
-    </div>
-  </div>
-{% endblock %}
+</html>
