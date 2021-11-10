@@ -4,6 +4,9 @@
 // Components that are not in the NHS.UK frontend library
 @import 'components/related-nav';
 
+// Patterns that are not in the NHS.UK frontend library
+@import "patterns/task-list";
+
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below...
 ///////////////////////////////////////////
@@ -70,7 +73,11 @@
     fill: #005eb8
 }
 
-// HEADER - SIGNED IN
+// HEADER
+
+.nhsBSA-breadcrumb {
+    border-bottom: #ccc 1px solid;
+}
 
 .nhsuk-header__signedin-link {
     @include nhsuk-font(16);

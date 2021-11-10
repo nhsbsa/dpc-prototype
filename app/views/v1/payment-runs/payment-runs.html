@@ -22,19 +22,42 @@
   <!-- Your page content goes inside the content block -->
   <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
   {% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Home</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="payment-runs">Payment Runs</a></li>
+
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back">Home</p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
       <h1><span role="text"><span class="nhsuk-caption-xl nhsuk-caption--top">Direct Payments to Contractors (DPC) <span
-              class="nhsuk-u-visually-hidden">-</span></span></span> Dashboard</h1>
+              class="nhsuk-u-visually-hidden">-</span></span></span> Payment Runs</h1>
     </div>
   </div>
   <ul class="nhsuk-grid-row nhsuk-card-group">
     <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
       <div class="nhsuk-card nhsuk-card--clickable">
         <div class="nhsuk-card__content beta-card__content">
-          <h2 class="nhsuk-card__heading nhsuk-heading-m"><a class="nhsuk-card__link" href="#">Payment runs</a></h2>
+          <h2 class="nhsuk-card__heading nhsuk-heading-m"><a class="nhsuk-card__link" href="PH-payment-runs">Pharmacy (PH)</a></h2>
           <div class="nhsuk-card__description">
-            <p data-block-key="gjjvr">Complete monthly payment runs for diffent contractor types</p>
+            <p data-block-key="gjjvr">Complete monthly payment run for pharmacy contractors</p>
           </div>
           <div class="beta-hub-arrow">
             <svg aria-hidden="true" class="nhsuk-icon beta-icon__chevron-right-circle" height="27" width="27"
@@ -50,7 +73,11 @@
         </div>
       </div>
     </li>
-  </ul>{% endblock %}
+  </ul>
+  
+ </main>
+ </div> 
+  {% endblock %}
 </body>
 
 </html>
