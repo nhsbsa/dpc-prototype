@@ -25,6 +25,13 @@
 
   <script>
           setTimeout("location.href = '/v1/payment-runs/november-error';", 15000);
+
+      var sec = 0;
+    function pad ( val ) { return val > 9 ? val : + val; }
+    setInterval( function(){
+        document.getElementById("seconds").innerHTML=pad(++sec%60);
+        document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
+    }, 1000);
   </script>
 
   <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
@@ -104,7 +111,7 @@
                     </a>
                     <!-- <p class="nhsuk-body-s nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-1">Average time taken: 7 minutes 12 seconds</p> -->
                   </span>
-                  <strong class="nhsuk-tag nhsuk-tag--blue app-task-list__tag" id="contact-details-status">10% complete...</strong>
+                  <strong class="nhsuk-tag nhsuk-tag--blue app-task-list__tag" id="contact-details-status"><span id="seconds">0</span>% complete...</strong>
                 </li>
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
