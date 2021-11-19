@@ -30,7 +30,7 @@ router.post('/v1/step-4', function (req, res) {
     var step4Continue = req.session.data['step4']
   
     if (step4Continue === "yes") {
-      res.redirect('/v1/payment-runs/november-in-progress')
+      res.redirect('/v1/payment-runs/november-in-progress-success')
     }
     else if (step4Continue === "no") {
       res.redirect('/v1/payment-runs/november')
