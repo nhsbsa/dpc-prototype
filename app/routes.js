@@ -208,3 +208,27 @@ router.post('/v1/step-10', function (req, res) {
     }
   
   })
+
+// Payment Run - Complete Run 1 - Pay Date
+
+router.post('/v1/complete-run-1', function (req, res) {
+
+  res.redirect('/v1/payment-runs/complete-run-2')
+
+})
+
+// Payment Run - Complete Run 2 - Pay Date
+
+router.post('/v1/complete-run-2', function (req, res) {
+
+  res.redirect('/v1/payment-runs/complete-run-3')
+
+})
+
+// Payment Run - Complete Run 3 - Pay Date
+
+router.post('/v1/complete-run-3', function (req, res) {
+
+  res.redirect('/v1/payment-runs/complete-run-4')
+
+})
