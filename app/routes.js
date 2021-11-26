@@ -93,7 +93,7 @@ router.post('/v1/step-4', function (req, res) {
       res.redirect('/v1/payment-runs/november-4-in-progress-success')
     }
     else if (step4Continue === "no") {
-      res.redirect('/v1/payment-runs/november-4')
+      res.redirect('/v1/payment-runs/november-4-error')
     }
     else {
       res.redirect('/v1/payment-runs/step-4-error')
