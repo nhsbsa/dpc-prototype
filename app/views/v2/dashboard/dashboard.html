@@ -1,0 +1,85 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!-- 
+         In /views/layout.html you can:
+           - change the header and footer 
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="dashboard">Home</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="dashboard">Home</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <h1><span role="text"><span class="nhsuk-caption-xl nhsuk-caption--top">Direct Payments to Contractors (DPC) <span
+              class="nhsuk-u-visually-hidden">-</span></span></span> Dashboard</h1>
+    </div>
+  </div>
+  <ul class="nhsuk-grid-row nhsuk-card-group">
+    <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
+      <div class="nhsuk-card nhsuk-card--clickable">
+        <div class="nhsuk-card__content beta-card__content">
+          <h2 class="nhsuk-card__heading nhsuk-heading-m"><a class="nhsuk-card__link" href="../payment-runs/payment-runs">Payment runs</a></h2>
+          <div class="nhsuk-card__description">
+            <p data-block-key="gjjvr">Complete monthly payment runs for diffent contractor types</p>
+          </div>
+          <div class="beta-hub-arrow">
+            <svg aria-hidden="true" class="nhsuk-icon beta-icon__chevron-right-circle" height="27" width="27"
+              xmlns="http://www.w3.org/2000/svg">
+              <circle cx="13.333" cy="13.333" fill r="13.333"></circle>
+              <g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"
+                stroke-width="2.667">
+                <path d="M15.438 13l-3.771 3.771"></path>
+                <path d="M11.667 9.229L15.438 13" data-name="Path"></path>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+</main>
+</div>
+  
+  
+  {% endblock %}
+</body>
+
+</html>

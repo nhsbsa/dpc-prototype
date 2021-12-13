@@ -135,3 +135,11 @@
     }
   
   }
+
+  // FLOAT RIGHT (REMOVE FLOAT ON MOBILE)
+
+  .nhsuk-u-float-right {  
+    @include mq($until: desktop) {
+      float: none !important;
+    }
+  }
