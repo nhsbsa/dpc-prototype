@@ -61,22 +61,20 @@
 
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
-                  Key Data #1
+                  Advances not used
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  123,456
+                  2
                 </dd>
-
               </div>
-
+              
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
-                  Key Data #2
+                  DPC totals
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  &pound;12,345
+                  774,191,006.31
                 </dd>
-
               </div>
 
             </dl>
@@ -95,9 +93,12 @@
               var mm = monthNames[today.getMonth()];
               var yyyy = today.getFullYear();
 
-              var time = today.getHours() + "." + (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
               var hours = today.getHours();
               var ampm = hours >= 12 ? 'pm' : 'am';
+              hours = hours % 12;
+              hours = hours ? hours : 12; // the hour '0' should be '12'
+
+              var time = hours + "." + (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
 
               today = dd + ' ' + mm + ' ' + yyyy + ' (' + time + ampm + ')';
               document.write(today);

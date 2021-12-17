@@ -52,6 +52,7 @@
           <h1><span role="text"><span class="nhsuk-caption-xl nhsuk-caption--top">Pharmacy (PH) <span
                   class="nhsuk-u-visually-hidden">-</span></span></span> Create contractor schedules</h1>
 
+<!--
 
           <div class="nhsuk-do-dont-list nhsuk-u-margin-top-8">
             <h3 class="nhsuk-do-dont-list__label">Data preview</h3>
@@ -95,9 +96,12 @@
               var mm = monthNames[today.getMonth()];
               var yyyy = today.getFullYear();
 
-              var time = today.getHours() + "." + (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
               var hours = today.getHours();
               var ampm = hours >= 12 ? 'pm' : 'am';
+              hours = hours % 12;
+              hours = hours ? hours : 12; // the hour '0' should be '12'
+
+              var time = hours + "." + (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
 
               today = dd + ' ' + mm + ' ' + yyyy + ' (' + time + ampm + ')';
               document.write(today);
@@ -107,6 +111,8 @@
 
 
           </div>
+
+-->
 
           <form action="/v2/step-7" method="post">
 
