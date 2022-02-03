@@ -10,9 +10,9 @@
 
 <body>
    {% extends 'layout.html' %}
-   <!-- 
+   <!--
          In /views/layout.html you can:
-           - change the header and footer 
+           - change the header and footer
            - add custom CSS and JavaScript
          -->
    <!-- Set the page title inside the pageTitle block -->
@@ -33,6 +33,81 @@
 
          <details class="nhsuk-details nhsuk-expander">
             <summary class="nhsuk-details__summary">
+               <span class="nhsuk-details__summary-text">Private Beta</span>
+            </summary>
+            <div class="nhsuk-details__text">
+
+               <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-bottom-0">
+                  <summary class="nhsuk-details__summary">
+                     <span class="nhsuk-details__summary-text"><small>Manage contractors</small></span>
+                  </summary>
+                  <div class="nhsuk-details__text">
+                     <h2 class="nhsuk-heading-l"><!--<span class="nhsuk-caption-l nhsuk-caption--top">Pharmacy</span>--> Manage contractors
+
+                     </h2>
+
+                     <details class="nhsuk-details nhsuk-expander">
+                     <summary class="nhsuk-details__summary">
+                        <span class="nhsuk-details__summary-text">
+                           <small>Version 1</small>
+                        </span>
+                     </summary>
+                     <div class="nhsuk-details__text">
+
+                        <h3 class="nhsuk-heading-m">What we created:</h3>
+                        <ul class="nhsuk-list nhsuk-list--bullet">
+                           <li>Find a contractor search</li>
+                           <li>Find a contractor search results</li>
+                           <li>Manage contractor</li>
+                           <li>Manage contractor tabs excluding schedule and manual payment</li>
+                           <li>Page width of site increased to better display lots of content</li>
+                           <li>PENDING - start and sign in content changes</li>
+                        </ul>
+                        <h3 class="nhsuk-heading-m">What we plan to test:</h3>
+                        <ul class="nhsuk-list nhsuk-list--bullet">
+                           <li>What details do users search using and can the advanced search in the old service be reduced?</li>
+                           <li>What details are needed to identify the correct contractor from search results?</li>
+                           <li>A/B testing of all of the manage contractor details in tabs and primary details always displayed with tabs for extra details</li>
+                           <li>Whether tick and cross icons is the best way to display contractor details</li>
+                           <li>Changing contractor details on a new page</li>
+                        </ul>
+                        <h3 class="nhsuk-heading-m">What we found:</h3>
+                        <ul class="nhsuk-list nhsuk-list--bullet">
+                           <li>OCS code is by far the most common method of searching but the majority of advanced search fields have been used with vague details given to search by e.g. sort-code</li>
+                        </ul>
+                        <h3 class="nhsuk-heading-m">Any known issues?</h3>
+                        <ul class="nhsuk-list nhsuk-list--bullet">
+                           <li>Footer links don't go anywhere</li>
+                           <li>Manual payments and schedule to be designed separately due to size of content.</li>
+                        </ul>
+                        <hr>
+                        <p class="nhsuk-u-margin-bottom-0"><a href="v3/start"><button class="nhsuk-button" type="submit">View Prototype (v1)</button></a></p>
+
+                        <!--<div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
+                           <a class="nhsuk-action-link__link" href="v1/user-journey">
+                              <svg aria-hidden="true" class="nhsuk-icon nhsuk-icon__arrow-right-circle" viewbox="0 0 24 24"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M0 0h24v24H0z" fill="none"></path>
+                                 <path
+                                    d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+                                 </path>
+                              </svg>
+                              <span class="nhsuk-action-link__text">View user journey (v1)</span>
+                           </a>
+                        </div>
+                        -->
+                     </div>
+                     </details>
+
+                  </div>
+               </details>
+            </div>
+         </details>
+
+         <hr>
+
+         <details class="nhsuk-details nhsuk-expander">
+            <summary class="nhsuk-details__summary">
                <span class="nhsuk-details__summary-text">Alpha</span>
             </summary>
             <div class="nhsuk-details__text">
@@ -43,7 +118,7 @@
                   </summary>
                   <div class="nhsuk-details__text">
                      <h2 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--top">Pharmacy</span> Payment Run
-                        
+
                      </h2>
                      <h3 class="nhsuk-heading-m">Hypothesis A</h3>
                      <p style="background: #DEE0E2; padding: 20px;"><strong>We believe</strong> that having the ability to preview data before starting each step of a payment run <strong>will be a useful feature for</strong>
@@ -175,7 +250,7 @@
   <li><a href="https://miro.com/app/board/o9J_ly9pDaM=/" target="_blank">Prototype Sketches / User Flows</a></li>
   <li><a href="https://teams.microsoft.com/l/file/3E5DFF25-26CA-4B0C-ABFF-9539F4BEC417?tenantId=cf6d0482-86b1-4f88-8c0c-3b4de4cb402c&fileType=pptx&objectUrl=https%3A%2F%2Fnhsbsauk.sharepoint.com%2Fteams%2FTechnologyApplications289-DPC%2FShared%20Documents%2FDPC%2FOur%20work%20on%20DPC%2F1.%20Discovery%2F2.%20Discovery%20outputs%2Fv2.0%20Discovery%20report%20-%20TEAM%20version.pptx&baseUrl=https%3A%2F%2Fnhsbsauk.sharepoint.com%2Fteams%2FTechnologyApplications289-DPC&serviceName=teams&threadId=19:bd7ed2f818d64a23b80e4dd3f4471efb@thread.tacv2&groupId=196d8f4e-94f8-48b7-ae94-a45a7fa6dabb" target="_blank">Discovery Report (11/10/2021)</a></li>
 
-</ol> 
+</ol>
 
             </div>
          </details>

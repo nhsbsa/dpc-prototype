@@ -1,0 +1,462 @@
+Group<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Home</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="search">Find a contractor</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="dashboard">Home</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC) <span
+              class="nhsuk-u-visually-hidden">-</span></span></span> Find a contractor</h1>
+    </div>
+  </div>
+
+  <!--<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <p class="">Search using a OCS code, YP code or contractor's name.</p>
+    </div>
+  </div>-->
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-form-group"  style="float: left; margin: 0 15px 0 0;">
+        <label class="nhsuk-label" for="OCS">
+          OCS code
+        </label>
+        <input value="FF9" class="nhsuk-input nhsuk-input--width-5" id="OCS" name="OCS" type="text">
+      </div>
+      <div class="nhsuk-form-group"  style="float: left; margin: 0 15px 0 0;">
+        <label class="nhsuk-label" for="YP">
+          Group
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-5" id="YP" name="YP" type="text">
+      </div>
+      <div class="nhsuk-form-group" style="float: left; width: 50%">
+        <label class="nhsuk-label" for="name">
+          Contractor name
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="name" name="name" type="text">
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-column-full">
+      <button class="nhsuk-button" type="submit">
+        Search
+      </button>
+    </div>
+
+  </div>
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <table role="table" class="nhsuk-table-responsive">
+          <caption class="nhsuk-table__caption">Search results</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                Contractor name
+              </th>
+              <th role="columnheader" class="" scope="col">
+                OCS Code
+              </th>
+              <th role="columnheader" class="" scope="col">
+              Group
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Area (STP)
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Status
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Lloyds Pharmacy Ltd</a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF934
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Group </span>YP02685
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Area (STP) </span>Healthier Lancashire & South Cumbria
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Status </span>Active
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Superdrug Stores Plc</a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF990
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Group </span>YP02685
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Area (STP) </span>Suffolk & North East Essex
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Status </span>Active
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Lloyds Pharmacy Ltd</a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF939
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Group </span>YP02685
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Area (STP) </span>Devon
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Status </span>Active
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Kalhan Limited</a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF99
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Group </span>FFF99
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Area (STP) </span>East London Health & Care P/Ship
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Status </span>Active
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractor-1">Milton Chemist LTD</a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF910
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Group </span>YP02685
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Area (STP) </span>Staffordshire & Stoke On Trent
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Status </span>Active
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractor-1">Greencross Pharmacy</a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF999
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Group </span>YP02685
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Area (STP) </span>Greater Manchester Hsc Partnership
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Status </span>Active
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Superdrug Stores Plc</a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF990
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Group </span>YP02685
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Area (STP) </span>Suffolk & North East Essex
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Status </span>Active
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Lloyds Pharmacy Ltd</a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF939
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Group </span>YP02685
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Area (STP) </span>Devon
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Status </span>Active
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Kalhan Limited</a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF99
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Group </span>YP02685
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Area (STP) </span>East London Health & Care P/Ship
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Status </span>Active
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractor-1">Milton Chemist LTD</a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF910
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Group </span>YP02685
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Area (STP) </span>Staffordshire & Stoke On Trent
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Status </span>Active
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractor-1">Greencross Pharmacy</a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF999
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Group </span>YP02685
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Area (STP) </span>Greater Manchester Hsc Partnership
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Status </span>Active
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Superdrug Stores Plc</a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF990
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Group </span>YP02685
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Area (STP) </span>Suffolk & North East Essex
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Status </span>Active
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Lloyds Pharmacy Ltd</a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF939
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Group </span>YP02685
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Area (STP) </span>Devon
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Status </span>Active
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Kalhan Limited</a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF99
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Group </span>YP02685
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Area (STP) </span>East London Health & Care P/Ship
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Status </span>Active
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractor-1">Milton Chemist LTD</a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF910
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Group (YP code) </span>YP02685
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Area (STP) </span>Staffordshire & Stoke On Trent
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Status </span>Retired
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br>
+    <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <nav class="nav" role="navigation" aria-label="Pagination">
+
+            <ul class="pagination">
+              <li class="pagination__item"><a class="pagination__link current" href="#0" aria-current="true" aria-label="Page 1, current page">1</a></li>
+              <li class="pagination__item"><a class="pagination__link" href="#" aria-label="Page 2">2</a></li>
+              <li class="pagination__item"><a class="pagination__link" href="#" aria-label="Page 3">3</a></li>
+            </ul>
+
+           <a class="pagination__link" href="#" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;&raquo;</span></a>
+
+            <div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 1 - 15 of 34 documents</div>
+        </nav>
+      </div>
+      </div>
+
+      <style>
+          li {
+        display: inline-block;
+          color: #005EA5;
+          display: inline-block;
+          padding: 0px 5px 0px 5px;
+          margin-right: 15px;
+          text-decoration: none;
+          margin-bottom: 0px;
+      }
+      .padding {
+      padding-left: 15px;
+      }
+      .pagination {
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 0px;
+      }
+      .pagination__item {
+      display: inline-block;
+      list-style: none;
+      margin-bottom: 0px;
+      }
+      .pagination__link {
+      display: block;
+      padding: 5px 10px;
+      text-decoration: none;
+      font-size: 19px;
+      }
+      .current {
+        color:  #4c6272  !important;
+        font-weight: 700;
+        border: none;
+        pointer-events: none;
+        cursor: default;
+      }
+      .pagination__summary {
+      margin-left: auto;
+      -webkit-font-smoothing: antialiased;
+      padding: 8px 0;
+      font-size: 19px;
+      }
+      .nav
+      {
+        display: flex;
+      flex-direction: row;
+      align-items:center;
+      margin-top: 20px;
+      }
+      @media (max-width: 640px) {
+        .pagination__summary {
+        margin-left: 0;
+        }
+        .nav{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        }
+
+      </style>
+
+</main>
+</div>
+
+
+  {% endblock %}
+</body>
+
+</html>
