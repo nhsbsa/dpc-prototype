@@ -32,7 +32,7 @@
           <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Home</a></li>
           <li class="nhsuk-breadcrumb__item"><a href="search">Find a contractor</a></li>
           <li class="nhsuk-breadcrumb__item"><a href="contractorv2-1">Milton Chemist LTD</a></li>
-          <li class="nhsuk-breadcrumb__item"><a href="change-details">Change details</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="change-contact-details">Change contact details</a></li>
         </ol>
 
       </div>
@@ -45,80 +45,29 @@
 
 <div class="nhsuk-width-container {{ containerClasses }}">
   <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
-    <form action="cya-details" method="post">
+    <form action="cya-contact-details" method="post">
 
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-two-thirds">
           <h1 class="nhsuk-heading-l">
             <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Manage contractor<span class="nhsuk-u-visually-hidden">-</span></span></span>
-                  Change Milton Chemist LTD details
+                  Change Milton Chemist LTD contact details
           </h1>
 
           <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="contractor-name">
-              Contractor name
+              Conrrespondence name
             </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="contractor-name" name="contractor-name" type="text" value="Milton Chemist LTD">
+            <input class="nhsuk-input nhsuk-input--width-20" id="contractor-name" name="contractor-name" type="text" value="">
           </div>
 
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="OCS">
-              OCS code
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-5" id="example" name="OCS" type="text" value="FF910">
-          </div>
-
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="LPP">
-              LPP
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="example" name="LPP" type="text" value="QNC - Staffordshire & Stoke On Trent STP">
-          </div>
-
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="supplier-type">
-              Supplier type
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-10" id="example" name="supplier-type" type="text" value="P - Pharmacy">
-          </div>
-
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="LPC">
-              LPC
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="example" name="LPC" type="text" value="QNC - Staffordshire & Stoke On Trent STP">
-          </div>
-
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="group">
-              Group (YP code)
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-10" id="example" name="group" type="text" value="YP02685">
-          </div>
-
-          <h2 class="nhsuk-heading-m">Primary details</h3>
-
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="trading-name">
-              Trading name
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="example" name="trading-name" type="text" value="Miltons (chemists) Ltd">
-          </div>
-
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="contact-number">
-              Contact number
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-10" id="example" name="contact-number" type="text" value="01782 848377">
-          </div>
-
-          <h3 class="nhsuk-heading-s">Premises address</h3>
+          <h2 class="nhsuk-heading-s">Correspondence address</h2>
 
           <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="premises-address">
               Address line 1
             </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="premises-address" name="premises-address" type="text" value="15-19 Campbell Place">
+            <input class="nhsuk-input nhsuk-input--width-20" id="premises-address" name="premises-address" type="text" value="">
           </div>
 
           <div class="nhsuk-form-group">
@@ -132,7 +81,7 @@
             <label class="nhsuk-label" for="example">
               Address line 3
             </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text" value="Stoke-On-Trent">
+            <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text" value="">
           </div>
 
           <div class="nhsuk-form-group">
@@ -146,10 +95,31 @@
             <label class="nhsuk-label" for="example">
               Postcode
             </label>
-            <input class="nhsuk-input nhsuk-input--width-10" id="example" name="example" type="text" value="ST4 1NH">
+            <input class="nhsuk-input nhsuk-input--width-10" id="example" name="example" type="text" value="">
           </div>
 
+          <h2 class="nhsuk-heading-s">Contact details</h2>
 
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="LPP">
+              Email
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="example" name="LPP" type="text" value="">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="supplier-type">
+              Branch email
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="example" name="supplier-type" type="text" value="">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="LPC">
+              Alternative contact number
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="example" name="LPC" type="text" value="01782 848377">
+          </div>
         <br>
         <button class="nhsuk-button" type="submit">
           Save and continue

@@ -44,7 +44,6 @@
 <div class="nhsuk-width-container {{ containerClasses }}">
   <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
 
-<form action="search-results-pagination" method="post">
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
@@ -69,7 +68,7 @@
       </div>
       <div class="nhsuk-form-group"  style="float: left; margin: 0 15px 0 0;">
         <label class="nhsuk-label" for="YP">
-          YP code
+          Group
         </label>
         <input class="nhsuk-input nhsuk-input--width-5" id="YP" name="YP" type="text">
       </div>
@@ -77,18 +76,24 @@
         <label class="nhsuk-label" for="name">
           Contractor name
         </label>
-        <input value="Milton" class="nhsuk-input nhsuk-input--width-20" id="name" name="name" type="text">
+        <input value="Milton Chemist" class="nhsuk-input nhsuk-input--width-20" id="name" name="name" type="text">
       </div>
     </div>
 
     <div class="nhsuk-grid-column-full">
+      <form style="display: contents;" action="search-results-pagination" method="post">
       <button class="nhsuk-button" type="submit">
         Search
       </button>
+      </form>
+      <form style="display: contents;" action="#advanced-search" method="post">
+      <button style="margin-left: 15px;" class="nhsuk-button nhsuk-button--secondary" type="submit">
+        Advanced search
+      </button>
+      </form>
     </div>
 
   </div>
-</form>
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
         <table role="table" class="nhsuk-table-responsive">
@@ -102,6 +107,9 @@
                 OCS Code
               </th>
               <th role="columnheader" class="" scope="col">
+              Group
+              </th>
+              <th role="columnheader" class="" scope="col">
                 Area (STP)
               </th>
               <th role="columnheader" class="" scope="col">
@@ -112,10 +120,13 @@
           <tbody class="nhsuk-table__body">
             <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractor-1">Milton Chemist LTD</a>
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Milton Chemist LTD</a>
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">OCS code </span>FF910
+              </td>
+              <td>
+                <span class="nhsuk-table-responsive__heading">Group </span>FF910
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Area (STP) </span>Staffordshire & Stoke On Trent

@@ -44,8 +44,6 @@
 <div class="nhsuk-width-container {{ containerClasses }}">
   <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
 
-<form action="search-results" method="post">
-
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
       <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC) <span
@@ -82,14 +80,21 @@
     </div>
 
     <div class="nhsuk-grid-column-full">
+      <form style="display: contents;" action="search-results" method="post">
       <button class="nhsuk-button" type="submit">
         Search
       </button>
+      </form>
+      <form style="display: contents;" action="#advanced-search" method="post">
+      <button style="margin-left: 15px;" class="nhsuk-button nhsuk-button--secondary" type="submit">
+        Advanced search
+      </button>
+      </form>
     </div>
 
   </div>
 
-</form>
+
 </main>
 </div>
 
