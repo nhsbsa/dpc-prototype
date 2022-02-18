@@ -29,14 +29,14 @@ Group<!-- Use this page as the index for your project -->
       <div class="nhsuk-grid-column-full">
 
         <ol class="nhsuk-breadcrumb__list">
-          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Home</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
           <li class="nhsuk-breadcrumb__item"><a href="search">Find a contractor</a></li>
         </ol>
 
       </div>
     </div>
 
-    <p class="nhsuk-breadcrumb__back"><a href="dashboard">Home</a></p>
+    <p class="nhsuk-breadcrumb__back"><a href="dashboard">Dashboard</a></p>
 
   </div>
 </nav>
@@ -60,31 +60,43 @@ Group<!-- Use this page as the index for your project -->
   </div>-->
 
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-      <div class="nhsuk-form-group"  style="float: left; margin: 0 15px 0 0;">
-        <label class="nhsuk-label" for="OCS">
-          OCS code
+    <div class="nhsuk-grid-column-full" style="margin-bottom: 24px;">
+      <div class="nhsuk-form-group"  style="float: left; margin: 0 30px 0 0;">
+        <label class="nhsuk-label" for="example">
+          OCS or Group code
         </label>
-        <input value="FF9" class="nhsuk-input nhsuk-input--width-5" id="OCS" name="OCS" type="text">
+        <input class="nhsuk-input nhsuk-input--width-10" id="example" name="example" type="text" value="FF9">
       </div>
-      <div class="nhsuk-form-group"  style="float: left; margin: 0 15px 0 0;">
-        <label class="nhsuk-label" for="YP">
-          Group
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-5" id="YP" name="YP" type="text">
-      </div>
-      <div class="nhsuk-form-group" style="float: left; width: 50%">
-        <label class="nhsuk-label" for="name">
+      <div class="nhsuk-form-group"  style="float: left; margin: 0 30px 0 0;">
+        <label class="nhsuk-label" for="example">
           Contractor name
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="name" name="name" type="text">
+        <input class="nhsuk-input" style="width: 41ex;" id="example" name="example" type="text">
+      </div>
+      <div class="nhsuk-form-group"  style="float: left; margin: 0 15px 0 0;">
+        <label class="nhsuk-label" for="example">
+          Status
+        </label>
+        <select class="nhsuk-select" id="select-1" name="select-1">
+            <option  value="1">Active</option>
+            <option value="2">Retired</option>
+            <option selected value="3">All</option>
+          </select>
       </div>
     </div>
 
     <div class="nhsuk-grid-column-full">
-      <button class="nhsuk-button" type="submit">
+      <form style="display: contents;" action="search-results-pagination" method="post">
+      <button style="float: left;" class="nhsuk-button" type="submit">
         Search
       </button>
+      </form>
+      <form style="display: contents;" action="#advanced-search" method="post">
+      <button style="float: left; margin-left: 15px;" class="nhsuk-button nhsuk-button--secondary" type="submit">
+        Advanced search
+      </button>
+      </form>
+      <p style="float: left; padding-top: 15px; padding-left: 15px;"><a href="search">Reset search</a></p>
     </div>
 
   </div>
@@ -96,10 +108,10 @@ Group<!-- Use this page as the index for your project -->
           <thead role="rowgroup" class="nhsuk-table__head">
             <tr role="row">
               <th role="columnheader" class="" scope="col">
-                Contractor name
+                OCS Code
               </th>
               <th role="columnheader" class="" scope="col">
-                OCS Code
+                Contractor name
               </th>
               <th role="columnheader" class="" scope="col">
               Group
@@ -115,10 +127,10 @@ Group<!-- Use this page as the index for your project -->
           <tbody class="nhsuk-table__body">
             <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Lloyds Pharmacy Ltd</a>
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF934
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">OCS code </span>FF934
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Lloyds Pharmacy Ltd</a>
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Group </span>YP02685
@@ -132,10 +144,10 @@ Group<!-- Use this page as the index for your project -->
             </tr>
             <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Superdrug Stores Plc</a>
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF990
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">OCS code </span>FF990
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Superdrug Stores Plc</a>
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Group </span>YP02685
@@ -149,10 +161,10 @@ Group<!-- Use this page as the index for your project -->
             </tr>
             <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Lloyds Pharmacy Ltd</a>
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF939
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">OCS code </span>FF939
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Lloyds Pharmacy Ltd</a>
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Group </span>YP02685
@@ -166,10 +178,10 @@ Group<!-- Use this page as the index for your project -->
             </tr>
             <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Kalhan Limited</a>
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF99
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">OCS code </span>FF99
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Kalhan Limited</a>
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Group </span>FFF99
@@ -183,10 +195,10 @@ Group<!-- Use this page as the index for your project -->
             </tr>
             <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Milton Chemist LTD</a>
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF910
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">OCS code </span>FF910
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Milton Chemist LTD</a>
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Group </span>YP02685
@@ -200,10 +212,10 @@ Group<!-- Use this page as the index for your project -->
             </tr>
             <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Greencross Pharmacy</a>
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF999
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">OCS code </span>FF999
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Greencross Pharmacy</a>
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Group </span>YP02685
@@ -217,10 +229,10 @@ Group<!-- Use this page as the index for your project -->
             </tr>
             <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Superdrug Stores Plc</a>
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF990
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">OCS code </span>FF990
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Superdrug Stores Plc</a>
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Group </span>YP02685
@@ -234,10 +246,10 @@ Group<!-- Use this page as the index for your project -->
             </tr>
             <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Lloyds Pharmacy Ltd</a>
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF939
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">OCS code </span>FF939
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Lloyds Pharmacy Ltd</a>
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Group </span>YP02685
@@ -251,10 +263,10 @@ Group<!-- Use this page as the index for your project -->
             </tr>
             <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Kalhan Limited</a>
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF99
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">OCS code </span>FF99
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Kalhan Limited</a>
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Group </span>YP02685
@@ -268,10 +280,10 @@ Group<!-- Use this page as the index for your project -->
             </tr>
             <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Milton Chemist LTD</a>
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF910
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">OCS code </span>FF910
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Milton Chemist LTD</a>
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Group </span>YP02685
@@ -285,10 +297,10 @@ Group<!-- Use this page as the index for your project -->
             </tr>
             <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Greencross Pharmacy</a>
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF999
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">OCS code </span>FF999
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Greencross Pharmacy</a>
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Group </span>YP02685
@@ -302,10 +314,10 @@ Group<!-- Use this page as the index for your project -->
             </tr>
             <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Superdrug Stores Plc</a>
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF990
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">OCS code </span>FF990
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Superdrug Stores Plc</a>
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Group </span>YP02685
@@ -319,10 +331,10 @@ Group<!-- Use this page as the index for your project -->
             </tr>
             <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Lloyds Pharmacy Ltd</a>
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF939
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">OCS code </span>FF939
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Lloyds Pharmacy Ltd</a>
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Group </span>YP02685
@@ -336,10 +348,10 @@ Group<!-- Use this page as the index for your project -->
             </tr>
             <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Kalhan Limited</a>
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF99
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">OCS code </span>FF99
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Kalhan Limited</a>
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Group </span>YP02685
@@ -353,10 +365,10 @@ Group<!-- Use this page as the index for your project -->
             </tr>
             <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Milton Chemist LTD</a>
+                <span class="nhsuk-table-responsive__heading">OCS code </span>FF910
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">OCS code </span>FF910
+                <span class="nhsuk-table-responsive__heading">Contractor name </span><a href="contractorv2-1">Milton Chemist LTD</a>
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Group (YP code) </span>YP02685
@@ -385,7 +397,7 @@ Group<!-- Use this page as the index for your project -->
 
            <a class="pagination__link" href="#" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;&raquo;</span></a>
 
-            <div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 1 - 15 of 34 documents</div>
+            <div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 1 - 15 of 34 contractors</div>
         </nav>
       </div>
       </div>

@@ -29,14 +29,14 @@
       <div class="nhsuk-grid-column-full">
 
         <ol class="nhsuk-breadcrumb__list">
-          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Home</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
           <li class="nhsuk-breadcrumb__item"><a href="search">Find a contractor</a></li>
         </ol>
 
       </div>
     </div>
 
-    <p class="nhsuk-breadcrumb__back"><a href="dashboard">Home</a></p>
+    <p class="nhsuk-breadcrumb__back"><a href="dashboard">Dashboard</a></p>
 
   </div>
 </nav>
@@ -51,31 +51,30 @@
     </div>
   </div>
 
-  <!--<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-      <p class="">Search using a OCS code, YP code or contractor's name.</p>
-    </div>
-  </div>-->
 
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-      <div class="nhsuk-form-group"  style="float: left; margin: 0 15px 0 0;">
+    <div class="nhsuk-grid-column-full" style="margin-bottom: 24px;">
+      <div class="nhsuk-form-group"  style="float: left; margin: 0 30px 0 0;">
         <label class="nhsuk-label" for="example">
-          OCS code
+          OCS or Group code
         </label>
-        <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text">
+        <input class="nhsuk-input nhsuk-input--width-10" id="example" name="example" type="text">
       </div>
-      <div class="nhsuk-form-group"  style="float: left; margin: 0 15px 0 0;">
-        <label class="nhsuk-label" for="example">
-          Group
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text">
-      </div>
-      <div class="nhsuk-form-group" style="float: left; width: 50%">
+      <div class="nhsuk-form-group"  style="float: left; margin: 0 30px 0 0;">
         <label class="nhsuk-label" for="example">
           Contractor name
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+        <input class="nhsuk-input" style="width: 41ex;" id="example" name="example" type="text">
+      </div>
+      <div class="nhsuk-form-group"  style="float: left; margin: 0 15px 0 0;">
+        <label class="nhsuk-label" for="example">
+          Status
+        </label>
+        <select class="nhsuk-select" id="select-1" name="select-1">
+            <option selected value="1">Active</option>
+            <option value="2">Retired</option>
+            <option value="3">All</option>
+          </select>
       </div>
     </div>
 
