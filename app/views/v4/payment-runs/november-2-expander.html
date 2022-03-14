@@ -51,22 +51,171 @@
         <div class="nhsuk-grid-column-two-thirds">
           <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Pharmacy (PH) <span
                   class="nhsuk-u-visually-hidden">-</span></span></span> Payment Run</h1>
-        </div>
-      </div>
-          <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-two-thirds">
-            <h2 style="float:left;" class="nhsuk-heading-s nhsuk-u-margin-bottom-2">September 2021</h2>
-            <form style="display: contents;" action="data-preview" method="post">
-              <button style="float:right;" class="nhsuk-button nhsuk-button--secondary" type="submit">
-                Summary data
-              </button>
-            </form>
-            <p style="float:left; clear: left;" class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed 0 of 4 sections.</p>
-            </div>
-          </div>
 
-          <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-two-thirds">
+          <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">September 2021</h2>
+          <p class="nhsuk-body">You have completed 0 of 4 sections.</p>
+
+          <details class="nhsuk-details nhsuk-expander  nhsuk-u-margin-bottom-7">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                Preview data
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+
+              <h3 class="nhsuk-heading-s">Transfer pricing data</h3>
+
+              <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-4">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">Number of STP's</dt>
+                  <dd class="nhsuk-summary-list__value">42</dd>
+
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    LPS Fees
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    -124,712.41
+                  </dd>
+
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    DPC Totals
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    774,742,920.93
+                  </dd>
+
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    LPS Reconciliation</dt>
+                  <dd class="nhsuk-summary-list__value">
+                    124,712.41
+                  </dd>
+
+                </div>
+
+              </dl>
+
+              <h3 class="nhsuk-heading-s">Invoice lines</h3>
+
+              <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-4">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Advances not used
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    2
+                  </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    DPC totals
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    774,191,006.31
+                  </dd>
+                </div>
+
+              </dl>
+
+              <h3 class="nhsuk-heading-s">ETP data</h3>
+
+              <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-4">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Items to load
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    123,456
+                  </dd>
+
+                </div>
+
+              </dl>
+
+              <h3 class="nhsuk-heading-s">PPC data</h3>
+
+              <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-4">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Items loaded
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    123,456
+                  </dd>
+
+                </div>
+
+              </dl>
+
+              <h3 class="nhsuk-heading-s">Late advanced data</h3>
+
+              <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-4">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Number of accounts
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    215
+                  </dd>
+
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                   Total value
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    &pound;14,648,688.13
+                  </dd>
+
+                </div>
+
+              </dl>
+
+              <p class="nhsuk-body-s nhsuk-u-margin-top-4 nhsuk-u-secondary-text-color">
+                Last updated:
+
+                <script>
+                const monthNames = ["January", "February", "March", "April", "May", "June",
+                  "July", "August", "September", "October", "November", "December"
+                ];
+
+                var today = new Date();
+
+                var dd = String(today.getDate()).padStart(2, '0');
+                var mm = monthNames[today.getMonth()];
+                var yyyy = today.getFullYear();
+
+                var hours = today.getHours();
+                var ampm = hours >= 12 ? 'pm' : 'am';
+                hours = hours % 12;
+                hours = hours ? hours : 12; // the hour '0' should be '12'
+
+                var time = hours + "." + (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+                today = dd + ' ' + mm + ' ' + yyyy + ' (' + time + ampm + ')';
+                document.write(today);
+
+                </script>
+              </p>
+
+            </div>
+          </details>
+
 
           <ol class="app-task-list">
             <li>

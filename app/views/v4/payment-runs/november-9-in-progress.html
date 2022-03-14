@@ -23,6 +23,17 @@
   <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
   {% block content %}
 
+    <script>
+    setTimeout("location.href = '/v3/payment-runs/november-10';", 15000);
+
+      var sec = 0;
+    function pad ( val ) { return val > 9 ? val : + val; }
+    setInterval( function(){
+        document.getElementById("seconds").innerHTML=pad(++sec%60);
+        document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
+    }, 1000);
+  </script>
+
   <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
     <div class="nhsuk-width-container">
       <div class="nhsuk-grid-row">
@@ -32,13 +43,13 @@
             <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
             <li class="nhsuk-breadcrumb__item"><a href="payment-runs">Payment runs</a></li>
             <li class="nhsuk-breadcrumb__item"><a href="PH-payment-runs">Pharmacy (PH)</a></li>
-            <li class="nhsuk-breadcrumb__item"><a href="november-2">September 2021</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="november-9-in-progress">September 2021</a></li>
           </ol>
 
         </div>
       </div>
 
-      <p class="nhsuk-breadcrumb__back"><a href="november-2">September 2021</a></p>
+      <p class="nhsuk-breadcrumb__back"><a href="november-9-in-progress">September 2021</a></p>
 
     </div>
   </nav>
@@ -51,22 +62,9 @@
         <div class="nhsuk-grid-column-two-thirds">
           <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Pharmacy (PH) <span
                   class="nhsuk-u-visually-hidden">-</span></span></span> Payment Run</h1>
-        </div>
-      </div>
-          <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-two-thirds">
-            <h2 style="float:left;" class="nhsuk-heading-s nhsuk-u-margin-bottom-2">September 2021</h2>
-            <form style="display: contents;" action="data-preview" method="post">
-              <button style="float:right;" class="nhsuk-button nhsuk-button--secondary" type="submit">
-                Summary data
-              </button>
-            </form>
-            <p style="float:left; clear: left;" class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed 0 of 4 sections.</p>
-            </div>
-          </div>
 
-          <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-two-thirds">
+          <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">September 2021</h2>
+          <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed 2 of 4 sections.</p>
 
           <ol class="app-task-list">
             <li>
@@ -88,25 +86,31 @@
                       Populate invoice lines
                     </a>
                   </span>
-                  <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Not started</strong>
+                  <strong class="nhsuk-tag app-task-list__tag">Completed</strong>
                 </li>
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
+                    <a href="step-3">
                       Load ETP data
+                    </a>
                   </span>
-                  <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Cannot start yet</strong>
+                  <strong class="nhsuk-tag app-task-list__tag">Completed</strong>
                 </li>
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
+                    <a href="step-4">
                       Load PPC data
+                    </a>
                   </span>
-                  <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Cannot start yet</strong>
+                  <strong class="nhsuk-tag app-task-list__tag">Completed</strong>
                 </li>
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
+                    <a href="step-5">
                       Load late advance data
+                    </a>
                   </span>
-                  <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Cannot start yet</strong>
+                  <strong class="nhsuk-tag app-task-list__tag">Completed</strong>
                 </li>
               </ul>
             </li>
@@ -118,15 +122,19 @@
               <ul class="app-task-list__items">
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
+                    <a href="step-6">
                       Calculate ESPS and Levies
+                    </a>
                   </span>
-                  <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Cannot start yet</strong>
+                  <strong class="nhsuk-tag app-task-list__tag">Completed</strong>
                 </li>
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
+                    <a href="step-7">
                       Create contractor schedules
+                    </a>
                   </span>
-                  <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Cannot start yet</strong>
+                  <strong class="nhsuk-tag app-task-list__tag">Completed</strong>
                 </li>
               </ul>
             </li>
@@ -138,15 +146,19 @@
               <ul class="app-task-list__items">
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                    Create payment extracts
+                    <a href="step-8">
+                      Create payment extracts
+                    </a>
                   </span>
-                  <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Cannot start yet</strong>
+                  <strong class="nhsuk-tag app-task-list__tag">Completed</strong>
                 </li>
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                    Create LPC and RA statistics
+                    <a href="step-9">
+                      Create LPC and RA statistics
+                    </a>
                   </span>
-                  <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Cannot start yet</strong>
+                  <strong class="nhsuk-tag nhsuk-tag--blue app-task-list__tag"><span id="seconds">0</span>% complete...</strong>
                 </li>
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">

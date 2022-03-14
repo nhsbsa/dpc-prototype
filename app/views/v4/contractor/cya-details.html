@@ -1,0 +1,204 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="search">Find a contractor</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="contractorv2-1">Milton Chemist LTD</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="cya-details">Check details</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="contractorv2-1">Milton Chemist LTD</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+    <form action="contractorv2-1" method="post">
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1 style="margin-bottom:12px;" class="nhsuk-heading-l">
+            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Manage contractor<span class="nhsuk-u-visually-hidden">-</span></span></span>
+                  Check Milton Chemist LTD details
+          </h1>
+          <p class="nhsuk-body-s" style="margin-bottom: 36px; margin-right:24px;"><b>OCS Code:</b> FF910<br><b>LPP:</b> QNC - Staffordshire & Stoke On Trent STP</p>
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Contractor name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Milton Chemist LTD
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="change-details#contractor-name">
+                  Change<span class="nhsuk-u-visually-hidden"> contractor name</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                OCS code
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                FF910
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="change-details#OCS">
+                  Change<span class="nhsuk-u-visually-hidden"> OCS code</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                LPP
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                QNC - Staffordshire & Stoke On Trent STP
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="change-details#LPP">
+                  Change<span class="nhsuk-u-visually-hidden"> LPP</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Supplier type
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                P - Pharmacy
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="change-details#supplier-type">
+                  Change<span class="nhsuk-u-visually-hidden"> supplier type</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                LPC
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                YL02343 - North Staffordshire LPC
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="change-details#LPC">
+                  Change<span class="nhsuk-u-visually-hidden"> LPC</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                group (YP code)
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                YP02685
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="change-details#group">
+                  Change<span class="nhsuk-u-visually-hidden"> group</span>
+                </a>
+              </dd>
+            </div>
+
+
+          </dl>
+
+          <h3 class="nhsuk-heading-s">Primary details</h3>
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Trading name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Miltons (chemists) Ltd
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="change-details#trading-name">
+                  Change<span class="nhsuk-u-visually-hidden"> trading name</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Contact number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                01782 848377
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="change-details#contact-number">
+                  Change<span class="nhsuk-u-visually-hidden"> contact number</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Premises address
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                15-19 Campbell Place<br><br>
+                Stoke-On-Trent<br><br>
+                ST4 1NH
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="change-details#premises-address">
+                  Change<span class="nhsuk-u-visually-hidden"> premises address</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+
+        <br>
+        <button class="nhsuk-button" type="submit">
+          Save contractor details
+        </button>
+
+      </div>
+    </form>
+  </main>
+</div>
+
+
+  {% endblock %}
+</body>
+
+</html>
