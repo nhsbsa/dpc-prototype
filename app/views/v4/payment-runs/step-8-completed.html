@@ -113,44 +113,15 @@ action="/v4/step<!-- Use this page as the index for your project -->
           </div>
 -->
 
-          <form action="/v4/step-8" method="post">
-
-          <div class="nhsuk-form-group">
-
-            <fieldset class="nhsuk-fieldset">
-              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-                <h1 class="nhsuk-fieldset__heading">
-                  Do you want to continue?
-                </h1>
-              </legend>
-
-              <!--<div class="nhsuk-hint">
-                Do not continue unless you are happy with the data shown.
-              </div>-->
-
-              <div class="nhsuk-radios nhsuk-radios--inline">
-
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="step8-1" name="step8" type="radio" value="yes">
-                  <label class="nhsuk-label nhsuk-radios__label" for="step8-1">
-                    Yes
-                  </label>
-                </div>
-
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="step8-2" name="step8" type="radio" value="no">
-                  <label class="nhsuk-label nhsuk-radios__label" for="step8-2">
-                    No
-                  </label>
-                </div>
-
-              </div>
-            </fieldset>
-
+          <div style="border-left: 8px solid #007f3b;" class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Completed: </span>
+            <p>Payment extracts created</p>
           </div>
 
+          <form action="javascript:history.go(-1)" method="post">
+
           <button class="nhsuk-button" type="submit">
-            Continue
+            Back to payment run
           </button>
 
           </form>

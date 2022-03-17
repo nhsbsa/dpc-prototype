@@ -1,4 +1,4 @@
-action="/v4/step<!-- Use this page as the index for your project -->
+<!-- Use this page as the index for your project -->
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 <!-- Extends the layout from /views/layout.html -->
 <!DOCTYPE html>
@@ -32,13 +32,13 @@ action="/v4/step<!-- Use this page as the index for your project -->
             <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
             <li class="nhsuk-breadcrumb__item"><a href="payment-runs">Payment runs</a></li>
             <li class="nhsuk-breadcrumb__item"><a href="PH-payment-runs">Pharmacy (PH)</a></li>
-            <li class="nhsuk-breadcrumb__item"><a href="november-8">September 2021</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="november-3">September 2021</a></li>
           </ol>
 
         </div>
       </div>
 
-      <p class="nhsuk-breadcrumb__back"><a href="november-8">September 2021</a></p>
+      <p class="nhsuk-breadcrumb__back"><a href="november-3">September 2021</a></p>
 
     </div>
   </nav>
@@ -50,9 +50,8 @@ action="/v4/step<!-- Use this page as the index for your project -->
 
         <div class="nhsuk-grid-column-two-thirds">
           <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Pharmacy (PH) <span
-                  class="nhsuk-u-visually-hidden">-</span></span></span> Create payment extracts</h1>
+                  class="nhsuk-u-visually-hidden">-</span></span></span> Load ETP data</h1>
 
-<!--
 
           <div class="nhsuk-do-dont-list nhsuk-u-margin-top-8">
             <h3 class="nhsuk-do-dont-list__label">Data preview</h3>
@@ -62,20 +61,10 @@ action="/v4/step<!-- Use this page as the index for your project -->
 
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
-                  Key Data #1
+                  Items to load
                 </dt>
                 <dd class="nhsuk-summary-list__value">
                   123,456
-                </dd>
-
-              </div>
-
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Key Data #2
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  &pound;12,345
                 </dd>
 
               </div>
@@ -111,46 +100,16 @@ action="/v4/step<!-- Use this page as the index for your project -->
 
 
           </div>
--->
 
-          <form action="/v4/step-8" method="post">
-
-          <div class="nhsuk-form-group">
-
-            <fieldset class="nhsuk-fieldset">
-              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-                <h1 class="nhsuk-fieldset__heading">
-                  Do you want to continue?
-                </h1>
-              </legend>
-
-              <!--<div class="nhsuk-hint">
-                Do not continue unless you are happy with the data shown.
-              </div>-->
-
-              <div class="nhsuk-radios nhsuk-radios--inline">
-
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="step8-1" name="step8" type="radio" value="yes">
-                  <label class="nhsuk-label nhsuk-radios__label" for="step8-1">
-                    Yes
-                  </label>
-                </div>
-
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="step8-2" name="step8" type="radio" value="no">
-                  <label class="nhsuk-label nhsuk-radios__label" for="step8-2">
-                    No
-                  </label>
-                </div>
-
-              </div>
-            </fieldset>
-
+          <div style="border-left: 8px solid #007f3b;" class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Completed: </span>
+            <p>ETP data loaded</p>
           </div>
 
+          <form action="javascript:history.go(-1)" method="post">
+
           <button class="nhsuk-button" type="submit">
-            Continue
+            Back to payment run
           </button>
 
           </form>
