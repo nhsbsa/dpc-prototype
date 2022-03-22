@@ -104,7 +104,7 @@
                   <span class="nhsuk-table-responsive__heading">Reference </span>1735388
                 </td>
                 <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">Date submitted </span>07/10/2021
+                  <span class="nhsuk-table-responsive__heading">Date submitted </span>7 October 2021
                 </td>
                 <td role="cell" class="nhsuk-table__cell">
                   <span class="nhsuk-table-responsive__heading">Submitter </span>DPC01
@@ -124,7 +124,7 @@
                   <span class="nhsuk-table-responsive__heading">Reference </span>1724537
                 </td>
                 <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">Date submitted </span>07/10/2021
+                  <span class="nhsuk-table-responsive__heading">Date submitted </span>7 October 2021
                 </td>
                 <td role="cell" class="nhsuk-table__cell">
                   <span class="nhsuk-table-responsive__heading">Submitter </span>DPC01
@@ -133,9 +133,50 @@
                   <span class="nhsuk-table-responsive__heading">Amount </span>-£24,147.77
                 </td>
               </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Expense head </span>162
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Description </span>FLU REMUN
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Reference </span>1724549
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Date submitted </span><script>
+                  const monthNames = ["January", "February", "March", "April", "May", "June",
+                    "July", "August", "September", "October", "November", "December"
+                  ];
+
+                  var today = new Date();
+
+                  var dd = String(today.getDate()).padStart(2, '0');
+                  var mm = monthNames[today.getMonth()];
+                  var yyyy = today.getFullYear();
+
+                  var hours = today.getHours();
+                  var ampm = hours >= 12 ? 'pm' : 'am';
+                  hours = hours % 12;
+                  hours = hours ? hours : 12; // the hour '0' should be '12'
+
+                  var time = hours + "." + (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+                  today = dd + ' ' + mm + ' ' + yyyy;
+                  document.write(today);
+
+                  </script>
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Submitter </span>JRH01
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Amount </span>£{% if data['paymentamount'] %}{{ data['paymentamount'] }}{% else %}2,543.00{% endif %}
+                </td>
+              </tr>
             </tbody>
           </table>
-          <p class="nhsuk-u-margin-top-4" style="float: right;"><b>Total amount:</b> -£24,105.77</p>
+          <p class="nhsuk-u-margin-top-4" style="float: right;"><b>Total amount:</b> -£21,562.77</p>
           <br><br>
         <button class="nhsuk-button" type="submit">
           Add payment

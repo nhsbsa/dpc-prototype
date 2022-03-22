@@ -46,7 +46,7 @@
 
 <div class="nhsuk-width-container {{ containerClasses }}">
   <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
-    <form action="contractorv2-1" method="post">
+    <form action="manage-payment-2" method="post">
 
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-two-thirds">
@@ -89,23 +89,12 @@
                 Payment amount
               </dt>
               <dd class="nhsuk-summary-list__value">
-                £{% if data['paymentamount'] %}{{ data['paymentamount'] }}{% else %}2,543{% endif %}
+                £{% if data['paymentamount'] %}{{ data['paymentamount'] }}{% else %}2,543.00{% endif %}
               </dd>
               <dd class="nhsuk-summary-list__actions">
                 <a href="change-details#contractor-name">
                   Change<span class="nhsuk-u-visually-hidden"> payment amount</span>
                 </a>
-              </dd>
-            </div>
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Reference
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                {% if data['Reference'] %}{{ data['Reference'] }}{% else %}jjsjsg{% endif %}
-              </dd>
-              <dd class="nhsuk-summary-list__actions">
-
               </dd>
             </div>
 
