@@ -1,0 +1,134 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="search">Find a contractor</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="contractorv2-1">Milton Chemist LTD</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="schedule">Manage August 2021 payments</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="expensive-items">Expensive items</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="#">Change expensive item</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="expensive-items">Back to August 2021 expensive items</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+    <form method="post" action="change-expensive-item-cya">
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1 style="margin-bottom:12px;" class="nhsuk-heading-l">
+            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Manage contractor<span class="nhsuk-u-visually-hidden">-</span></span></span>
+              Change {% if data['description'] %}{{ data['description'] }}{% else %}GLYCOPYRRONIUM BROMIDE 1MG TABLETS{% endif %} item
+          </h1>
+
+          <p class="nhsuk-body-s" style="margin-bottom: 36px; margin-right:24px;">
+            <b>OCS Code:</b> FF910<br>
+            <b>LPP:</b> QNC - Staffordshire & Stoke On Trent STP<br>
+            <b>Payment date:</b> 1 November 2021
+          </p>
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Form number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['formNumber'] %}{{ data['formNumber'] }}{% else %}Z00101{% endif %}
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Item number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['itemNumber'] %}{{ data['itemNumber'] }}{% else %}1{% endif %}
+              </dd>
+            </div>
+
+          </dl>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="description">
+              Description
+            </label>
+            <input class="nhsuk-input" id="description" name="description" type="text" value="{{ data['description'] }}">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="packSize">
+              Pack size
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-5" id="packSize" name="packSize" type="text" value="{{ data['packSize'] }}">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="quantity">
+              Quantity
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-5" id="quantity" name="quantity" type="text" value="{{ data['quantity'] }}">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="amount">
+              Amount
+            </label>
+            <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+            <input class="nhsuk-input nhsuk-input--width-10" id="amount" name="amount" type="text" value="{{ data['amount'] }}">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <button class="nhsuk-button" type="submit">
+            Save and continue
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+
+      </form>
+  </main>
+</div>
+
+
+  {% endblock %}
+</body>
+
+</html>
