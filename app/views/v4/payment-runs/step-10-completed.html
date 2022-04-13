@@ -100,7 +100,7 @@
               hours = hours % 12;
               hours = hours ? hours : 12; // the hour '0' should be '12'
 
-              var time = hours + "." + (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+              var time = hours + ":" + (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
 
               today = dd + ' ' + mm + ' ' + yyyy + ' (' + time + ampm + ')';
               document.write(today);
