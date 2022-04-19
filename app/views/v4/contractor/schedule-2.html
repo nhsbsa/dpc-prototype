@@ -393,9 +393,14 @@
 
                   <div style="margin-top: 0px;" class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
                     <div style="overflow: hidden;" class="nhsuk-card--care__heading-container">
-                      <h2 style="float:left;" class="nhsuk-card--care__heading">
+                      <h2 style="float:left; padding-top: 8px;" class="nhsuk-card--care__heading">
                         <span role="text">Fees</span>
                       </h2>
+                      <form action="schedule/fees-change" method="post">
+                        <button style="float: right; margin: 0;" class="nhsuk-button--small nhsuk-button nhsuk-button--reverse" type="submit">
+                          Add and change<div class="nhsuk-u-visually-hidden"> fees</div>
+                        </button>
+                      </form>
                     </div>
 
                     <div class="nhsuk-card__content" style="display: flow-root;">
@@ -406,6 +411,9 @@
                           <tr role="row">
                             <th role="columnheader" class="" scope="col">
                               Description
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                              Rate
                             </th>
                             <th role="columnheader" class="" scope="col">
                               Quantity
@@ -421,6 +429,9 @@
                               <span class="nhsuk-table-responsive__heading">Description </span>Activity payment
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Rate </span>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Quantity </span>7,617
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
@@ -432,15 +443,21 @@
                               <span class="nhsuk-table-responsive__heading">Description </span>Activity payment rate
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Rate </span>129
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Quantity </span>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                              <span class="nhsuk-table-responsive__heading">Amount </span>129
+                              <span class="nhsuk-table-responsive__heading">Amount </span>
                             </td>
                           </tr>
                           <tr role="row" class="nhsuk-table__row">
                             <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Description </span>2B appliances - home delivery
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Rate </span>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Quantity </span>
@@ -454,6 +471,9 @@
                               <span class="nhsuk-table-responsive__heading">Description </span>2E controlled drug schedules 2 and 3
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Rate </span>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Quantity </span>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
@@ -463,6 +483,9 @@
                           <tr role="row" class="nhsuk-table__row">
                             <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Description </span>2F expensive prescription fees
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Rate </span>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Quantity </span>34
@@ -476,6 +499,9 @@
                               <span class="nhsuk-table-responsive__heading">Description </span>Manualy priced
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Rate </span>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Quantity </span>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
@@ -485,6 +511,9 @@
                           <tr role="row" class="nhsuk-table__row">
                             <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Description </span>Transitional payment
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Rate </span>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Quantity </span>
@@ -498,6 +527,9 @@
                               <span class="nhsuk-table-responsive__heading">Description </span><strong>Subtotal of prescription fees</strong>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Rate </span>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Quantity </span>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
@@ -509,6 +541,9 @@
                               <span class="nhsuk-table-responsive__heading">Description </span>New medicine service
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Rate </span>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Quantity </span>6
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
@@ -518,6 +553,9 @@
                           <tr role="row" class="nhsuk-table__row">
                             <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Description </span><strong>Subtotal of other fees</strong>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Rate </span>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Quantity </span>
@@ -554,9 +592,14 @@
 
                   <div style="margin-top: 0px;" class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
                     <div style="overflow: hidden;" class="nhsuk-card--care__heading-container">
-                      <h2 style="float:left;" class="nhsuk-card--care__heading">
+                      <h2 style="float:left; padding-top: 8px;" class="nhsuk-card--care__heading">
                         <span role="text">Charges</span>
                       </h2>
+                      <form action="schedule/charges-change" method="post">
+                        <button style="float: right; margin: 0;" class="nhsuk-button--small nhsuk-button nhsuk-button--reverse" type="submit">
+                          Add and change<div class="nhsuk-u-visually-hidden"> charges</div>
+                        </button>
+                      </form>
                     </div>
 
                     <div class="nhsuk-card__content" style="display: flow-root;">
@@ -646,9 +689,14 @@
 
                   <div style="margin-top: 0px;" class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
                     <div style="overflow: hidden;" class="nhsuk-card--care__heading-container">
-                      <h2 style="float:left;" class="nhsuk-card--care__heading">
+                      <h2 style="float:left; padding-top: 8px;" class="nhsuk-card--care__heading">
                         <span role="text">Recovery</span>
                       </h2>
+                      <form action="schedule/charges-change" method="post">
+                        <button style="float: right; margin: 0;" class="nhsuk-button--small nhsuk-button nhsuk-button--reverse" type="submit">
+                          Add and change<div class="nhsuk-u-visually-hidden"> recovery</div>
+                        </button>
+                      </form>
                     </div>
                     <div class="nhsuk-card__content" style="display: flow-root;">
 
@@ -696,9 +744,14 @@
 
                   <div style="margin-top: 0px;" class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
                     <div style="overflow: hidden;" class="nhsuk-card--care__heading-container">
-                      <h2 style="float:left;" class="nhsuk-card--care__heading">
+                      <h2 style="float:left; padding-top: 8px;" class="nhsuk-card--care__heading">
                         <span role="text">Authorised by LPP</span>
                       </h2>
+                      <form action="schedule/charges-change" method="post">
+                        <button style="float: right; margin: 0;" class="nhsuk-button--small nhsuk-button nhsuk-button--reverse" type="submit">
+                          Add and change<div class="nhsuk-u-visually-hidden"> authorised by LPP</div>
+                        </button>
+                      </form>
                     </div>
                     <div class="nhsuk-card__content" style="display: flow-root;">
 
@@ -711,9 +764,14 @@
 
                   <div style="margin-top: 0px;" class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
                     <div style="overflow: hidden;" class="nhsuk-card--care__heading-container">
-                      <h2 style="float:left;" class="nhsuk-card--care__heading">
+                      <h2 style="float:left; padding-top: 8px;" class="nhsuk-card--care__heading">
                         <span role="text">Authorised by others</span>
                       </h2>
+                      <form action="schedule/charges-change" method="post">
+                        <button style="float: right; margin: 0;" class="nhsuk-button--small nhsuk-button nhsuk-button--reverse" type="submit">
+                          Add and change<div class="nhsuk-u-visually-hidden"> authorised by others</div>
+                        </button>
+                      </form>
                     </div>
                     <div class="nhsuk-card__content" style="display: flow-root;">
 
@@ -732,9 +790,14 @@
 
                   <div style="margin-top: 0px;" class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
                     <div style="overflow: hidden;" class="nhsuk-card--care__heading-container">
-                      <h2 style="float:left;" class="nhsuk-card--care__heading">
+                      <h2 style="float:left; padding-top: 8px;" class="nhsuk-card--care__heading">
                         <span role="text">Prescription data</span>
                       </h2>
+                      <form action="schedule/charges-change" method="post">
+                        <button style="float: right; margin: 0;" class="nhsuk-button--small nhsuk-button nhsuk-button--reverse" type="submit">
+                          Add and change<div class="nhsuk-u-visually-hidden"> prescription data</div>
+                        </button>
+                      </form>
                     </div>
                     <div class="nhsuk-card__content" style="display: flow-root;">
 
@@ -878,9 +941,14 @@
 
                   <div style="margin-top: 0px;" class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
                     <div style="overflow: hidden;" class="nhsuk-card--care__heading-container">
-                      <h2 style="float:left;" class="nhsuk-card--care__heading">
+                      <h2 style="float:left; padding-top: 8px;" class="nhsuk-card--care__heading">
                         <span role="text">Charge status switching</span>
                       </h2>
+                      <form action="schedule/charges-change" method="post">
+                        <button style="float: right; margin: 0;" class="nhsuk-button--small nhsuk-button nhsuk-button--reverse" type="submit">
+                          Add and change<div class="nhsuk-u-visually-hidden"> charge status switching</div>
+                        </button>
+                      </form>
                     </div>
                     <div class="nhsuk-card__content" style="display: flow-root;">
                       <p>No charge status switching information.</p>
