@@ -24,7 +24,7 @@
   {% block content %}
 
     <script>
-    setTimeout("location.href = '/v4/payment-runs/november-10';", 15000);
+    setTimeout("location.href = '/v4/payment-runs/november-complete';", 15000);
 
       var sec = 0;
     function pad ( val ) { return val > 9 ? val : + val; }
@@ -60,7 +60,7 @@
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-two-thirds">
           <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Pharmacy (PH) <span
-                  class="nhsuk-u-visually-hidden">-</span></span></span> Payment Run</h1>
+                  class="nhsuk-u-visually-hidden">-</span></span></span> Payment run</h1>
         </div>
       </div>
 
@@ -172,12 +172,6 @@
                     </a>
                   </span>
                   <strong class="nhsuk-tag nhsuk-tag--blue app-task-list__tag"><span id="seconds">0</span>% complete...</strong>
-                </li>
-                <li class="app-task-list__item">
-                  <span class="app-task-list__task-name">
-                    Create management statistics
-                  </span>
-                  <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Cannot start yet</strong>
                 </li>
               </ul>
             </li>

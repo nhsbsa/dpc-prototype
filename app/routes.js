@@ -696,7 +696,7 @@ router.post('/v4/step-1', function (req, res) {
   var step1Continue = req.session.data['step1']
 
   if (step1Continue === "yes") {
-    res.redirect('/v4/payment-runs/november-1-in-progress')
+    res.redirect('/v4/payment-runs/november-2')
   }
   else if (step1Continue === "no") {
     res.redirect('/v4/payment-runs/november-1')
@@ -714,7 +714,7 @@ router.post('/v4/step-2', function (req, res) {
   var step2Continue = req.session.data['step2']
 
   if (step2Continue === "yes") {
-    res.redirect('/v4/payment-runs/november-2-in-progress')
+    res.redirect('/v4/payment-runs/november-3')
   }
   else if (step2Continue === "no") {
     res.redirect('/v4/payment-runs/november-2')
@@ -732,7 +732,7 @@ router.post('/v4/step-3', function (req, res) {
   var step3Continue = req.session.data['step3']
 
   if (step3Continue === "yes") {
-    res.redirect('/v4/payment-runs/november-3-in-progress')
+    res.redirect('/v4/payment-runs/november-4')
   }
   else if (step3Continue === "no") {
     res.redirect('/v4/payment-runs/november-3')
@@ -750,7 +750,7 @@ router.post('/v4/step-4', function (req, res) {
   var step4Continue = req.session.data['step4']
 
   if (step4Continue === "yes") {
-    res.redirect('/v4/payment-runs/november-4-in-progress')
+    res.redirect('/v4/payment-runs/november-5')
   }
   else if (step4Continue === "no") {
     res.redirect('/v4/payment-runs/november-4')
@@ -768,7 +768,7 @@ router.post('/v4/step-4-error', function (req, res) {
   var step4Continue = req.session.data['step4']
 
   if (step4Continue === "yes") {
-    res.redirect('/v4/payment-runs/november-4-in-progress-success')
+    res.redirect('/v4/payment-runs/november-5')
   }
   else if (step4Continue === "no") {
     res.redirect('/v4/payment-runs/november-4-error')
@@ -786,7 +786,7 @@ router.post('/v4/step-5', function (req, res) {
   var step5Continue = req.session.data['step5']
 
   if (step5Continue === "yes") {
-    res.redirect('/v4/payment-runs/november-5-in-progress')
+    res.redirect('/v4/payment-runs/november-6')
   }
   else if (step5Continue === "no") {
     res.redirect('/v4/payment-runs/november-5')
@@ -804,7 +804,7 @@ router.post('/v4/step-6', function (req, res) {
   var step6Continue = req.session.data['step6']
 
   if (step6Continue === "yes") {
-    res.redirect('/v4/payment-runs/november-6-in-progress')
+    res.redirect('/v4/payment-runs/november-7')
   }
   else if (step6Continue === "no") {
     res.redirect('/v4/payment-runs/november-6')
@@ -822,7 +822,7 @@ router.post('/v4/step-7', function (req, res) {
   var step7Continue = req.session.data['step7']
 
   if (step7Continue === "yes") {
-    res.redirect('/v4/payment-runs/november-7-in-progress')
+    res.redirect('/v4/payment-runs/november-8')
   }
   else if (step7Continue === "no") {
     res.redirect('/v4/payment-runs/november-7')
@@ -840,7 +840,7 @@ router.post('/v4/step-8', function (req, res) {
   var step8Continue = req.session.data['step8']
 
   if (step8Continue === "yes") {
-    res.redirect('/v4/payment-runs/november-8-in-progress')
+    res.redirect('/v4/payment-runs/november-9')
   }
   else if (step8Continue === "no") {
     res.redirect('/v4/payment-runs/november-8')
@@ -858,7 +858,7 @@ router.post('/v4/step-9', function (req, res) {
   var step9Continue = req.session.data['step9']
 
   if (step9Continue === "yes") {
-    res.redirect('/v4/payment-runs/november-9-in-progress')
+    res.redirect('/v4/payment-runs/november-complete')
   }
   else if (step9Continue === "no") {
     res.redirect('/v4/payment-runs/november-9')
@@ -876,7 +876,7 @@ router.post('/v4/step-10', function (req, res) {
   var step10Continue = req.session.data['step10']
 
   if (step10Continue === "yes") {
-    res.redirect('/v4/payment-runs/november-10-in-progress')
+    res.redirect('/v4/payment-runs/november-complete')
   }
   else if (step10Continue === "no") {
     res.redirect('/v4/payment-runs/november-10')
