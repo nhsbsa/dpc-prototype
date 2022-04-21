@@ -1,0 +1,524 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../search">Find a contractor</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../contractorv2-1">Milton Chemist LTD</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../schedule-2">August 2021 schedule</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="expensive-items">Back to August 2021 schedule</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+    <form method="post" action="authorised-LPP-cya">
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1 style="margin-bottom:12px;" class="nhsuk-heading-l">
+            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Manage contractor<span class="nhsuk-u-visually-hidden">-</span></span></span>
+              Change August 2021 Authorised by LPP payments
+          </h1>
+
+          <p class="nhsuk-body-s" style="margin-bottom: 36px; margin-right:24px;">
+            <b>OCS Code:</b> FF910<br>
+            <b>LPP:</b> QNC - Staffordshire & Stoke On Trent STP<br>
+            <b>Payment date:</b> 1 November 2021
+          </p>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Essential Small Pharmacy Scheme amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Pre-registration trainee</h3>
+
+            <div class="nhsuk-form-group" style="float: left; padding-right: 25px;">
+              <label class="nhsuk-label" for="formNumber">
+                TBC
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="formNumber">
+                Amount
+              </label>
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Protected/Establishment Top Up amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Advances for high cost - Rem amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Advances for high cost - Drug amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Recover high cost items - Rem amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Recover high cost items - Drug amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Needle and syringe exchange scheme amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Temporary safeguard payment amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Collection of unused drugs amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Welfare milk amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Local scheme 1 amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Formulary development amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Local scheme 2 amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Local scheme 4 amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Bottle storage amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">LPC - Voluntary Levy amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">LPC - Statutory Levy amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Oxygen Therapy Service (Hardware) amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Oxygen Therapy Service (Service Element) amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Local Scheme 3 amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Instalment dispensing amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Fine for Breach of Service amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">LPC Voluntary Levy LPP adjustment amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">LPC Statutory Levy LPP adjustment amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Oxygen Headset Decomissioning Fee amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Advice to Care Homes amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Additional Pharmacist Access Services amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Local Pharmaceutical Services amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Local Pharmaceutical Services (OOH) amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Practice payment adjustment amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Medicine use reviews adjustment amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Stoma customisation fee adjustment amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Local Scheme 5 amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Local Scheme 6 amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Local Scheme 7 amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Local Scheme 8 amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Local Scheme 9 amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Local Scheme 10 amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Local Scheme 11 amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Local Scheme 12 amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Local Scheme 13 amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Local Scheme 14 amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Local Scheme 15 amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Appliance use reviews adjustment amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">Local Scheme 16 amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">NMS Fee Adjustment amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-xs" style="margin-bottom: 12px;">NMS Implementation Payment Adjustment amount</h3>
+
+            <div class="nhsuk-form-group">
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5" id="formNumber" name="formNumber" type="text" value="">
+            </div>
+          </div>
+
+
+          <div class="nhsuk-form-group">
+            <button class="nhsuk-button" type="submit">
+            Save and continue
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+
+      </form>
+  </main>
+</div>
+
+
+  {% endblock %}
+</body>
+
+</html>
