@@ -7,6 +7,8 @@
   <title></title>
 </head>
 <body>
+
+
   {% extends 'layout.html' %} <!--
          In /views/layout.html you can:
            - change the header and footer
@@ -17,6 +19,13 @@
    {% block beforeContent %} {% endblock %} <!-- Your page content goes inside the content block -->
    <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
    {% block content %}
+
+   <script>
+     window.onload = function() {
+         location.href = "login/sign-in";
+     }
+   </script>
+
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
@@ -30,7 +39,7 @@
         <li>contractor payment runs</li>
         <li>contractor payments information</li>
         <li>contractor maintenance</li>
-        <li>lap status</li>
+        <li>Locally Authorised Payments (LAP) status</li>
       </ul>
 
       <p><a class="nhsuk-button"
@@ -43,12 +52,7 @@
           <span class="nhsuk-details__summary-text">I do not have an account</span>
         </summary>
         <div class="nhsuk-details__text">
-          <h3 class="nhsuk-heading-xs">To get an account for this service you must:</h3>
-          <ul>
-            <li>be an approved member of staff</li>
-            <li>have an NHSmail email address</li>
-          </ul>
-          <p>To request access email the contractor payment team on <a href="mailto:nhsbsa.contractorpayments@nhs.net">nhsbsa.contractorpayments@nhs.net</a>.</p>
+          <p>To get an account for this service you must be an approved member of staff. To request access email the contractor payment team on <a href="mailto:nhsbsa.contractorpayments@nhs.net">nhsbsa.contractorpayments@nhs.net</a>.</p>
         </div>
       </details>
 
