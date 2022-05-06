@@ -231,15 +231,27 @@
 
         <div class="nhsuk-grid-column-full">
 
+          {% if data['complete'] %}
 
+          <form action="PH-payment-runs-complete" method="post">
+
+          <button class="nhsuk-button" type="submit">
+            Return to payment runs
+          </button>
+
+          </form>
+
+          {% else %}
 
           <form action="javascript:history.go(-1)" method="post">
 
           <button class="nhsuk-button" type="submit">
-            Back to payment run
+            Return to payment runs
           </button>
 
           </form>
+
+          {% endif %}
           </div>
       </div>
 
