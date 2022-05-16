@@ -22,6 +22,15 @@ $('[role="tablist"] a').attr({
   tabindex: '-1'
 })
 
+//Table dropdown
+
+  $(document).ready(function() {
+  $('[data-toggle="toggle"]').change(function(){
+    $(this).parents().next('.hide').toggle();
+  });
+});
+
+
 // Make each aria-controls correspond id of targeted section (re href)
 
 $('[role="tablist"] a').each(function () {

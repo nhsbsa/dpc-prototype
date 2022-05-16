@@ -51,6 +51,13 @@
     <!-- Custom JavaScript files can be added to this file -->
     {% include "includes/scripts.html" %}
     <!-- For adding page specific JavsScript -->
+    <script>
+      $(document).ready(function() {
+      $('[data-toggle="toggle"]').change(function(){
+        $(this).parents().next('.hide').toggle();
+      });
+    });
+    </script>
     {% block pageScripts %}{% endblock %}
   {% endblock %}
 {% endblock %}
