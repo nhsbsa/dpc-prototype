@@ -45,7 +45,7 @@
 
 <div class="nhsuk-width-container {{ containerClasses }}">
   <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
-    <form method="post" action="../schedule-2">
+    <form method="post" action="../schedule-4">
 
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-two-thirds">
@@ -61,7 +61,44 @@
           </p>
 
           <div class="nhsuk-form-group" style="margin-bottom: 36px">
-            <dl class="nhsuk-summary-list">
+
+            <table role="table" class="nhsuk-table-responsive">
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                    Description
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    TBC
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Amount
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Description </span>Essential Small Pharmacy Scheme
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">TBC no answer</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Amount </span>£145.21
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+
+            <p class="nhsuk-u-margin-top-4" style="float:right; clear: both;"><b>Total amount authorised by LPP:</b> £145.21</p>
+
+          </div>
+
+          <div class="nhsuk-form-group" style="margin-bottom: 36px">
+
+            <!--<dl class="nhsuk-summary-list">
 
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key" style="width:70%">
@@ -708,10 +745,15 @@
             </dl>
 
           <p class="nhsuk-u-margin-top-4""><b>Total amount authorised by LPP:</b> £0</p>
+          -->
           </div>
 
 
-          <div class="nhsuk-form-group">
+          <div class="nhsuk-form-group" style="clear: both;">
+            <a id="enter_experience_criteria" class="nhsuk-button nhsuk-button--secondary" href="authorised-LPP-change" role="button" draggable="false">
+              Change payments
+            </a>
+            <br>
             <button class="nhsuk-button" type="submit">
             Save and continue
             </button>
