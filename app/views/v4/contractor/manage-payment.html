@@ -44,7 +44,7 @@
 
 <div class="nhsuk-width-container {{ containerClasses }}">
   <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
-    <form action="add-payment" method="post">
+    <form action="manual-payment/expense-head" method="post">
 
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-two-thirds">
@@ -64,6 +64,32 @@
 
       <div class="nhsuk-grid-row">
 
+        <div class="nhsuk-grid-column-one-third">
+
+          <h2 class="nhsuk-heading-m">Levy status</h2>
+
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Levy
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['levy-status'] %}{{data['levy-status'] }}{% else %}No{% endif %}
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="manual-payment/levy">
+                    Change<span class="nhsuk-u-visually-hidden"> expense head</span>
+                  </a>
+                </dd>
+              </div>
+
+            </dl>
+
+        </div>
+      </div>
+
+      <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-full">
 
           <h2 class="nhsuk-heading-m">Payments</h2>

@@ -23,6 +23,11 @@
  * 3. Automatic wrapping for unbreakable text (e.g. URLs)
  * 4. Fallback for older browsers only
  */
+
+ .autocomplete__input {
+     max-width: 41ex;
+ }
+
 .nhsuk-summary-list-payment-run {
   font-weight: 400;
   font-size: 16px;
