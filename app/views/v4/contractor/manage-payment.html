@@ -78,11 +78,35 @@
                   {% if data['levy-status'] %}{{data['levy-status'] }}{% else %}No{% endif %}
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
-                  <a href="manual-payment/levy">
-                    Change<span class="nhsuk-u-visually-hidden"> expense head</span>
+                  <a href="manual-payment/levy?manage-payment=true">
+                    Change<span class="nhsuk-u-visually-hidden"> levy</span>
                   </a>
                 </dd>
               </div>
+              {% if data['voluntary-status'] %}
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {{data['voluntary-status'] }}
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                </dd>
+              </div>
+              {% endif %}
+              {% if data['statutory-status'] %}
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {{data['statutory-status'] }}
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                </dd>
+              </div>
+              {% endif %}
 
             </dl>
 

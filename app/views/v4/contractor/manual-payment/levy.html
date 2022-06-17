@@ -57,7 +57,11 @@
 
 <div class="nhsuk-width-container {{ containerClasses }}">
   <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
-    <form action="javascript:history.go(-1)" method="post">
+    {% if data['manage-payment'] == "true" %}
+    <form action="../manage-payment" method="post">
+    {% else %}
+    <form action="../manage-payment-link-individual" method="post">
+    {% endif %}
 
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-two-thirds">
@@ -71,8 +75,8 @@
             <div class="nhsuk-checkboxes nhsuk-checkboxes--small nhsuk-checkboxes--conditional">
 
               <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="contact-1" name="contact" type="checkbox" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
-                <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-1">
+                <input class="nhsuk-checkboxes__input" id="levy-status" name="levy-status" type="checkbox" value="Yes" aria-controls="conditional-contact-1" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="levy-status">
                   Levy
                 </label>
               </div>
@@ -81,13 +85,13 @@
 
                 <div class="nhsuk-form-group">
                   <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                    <input class="nhsuk-checkboxes__input" id="voluntary-status" name="voluntary-status" type="checkbox" value="Voluntary">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="voluntary-status">
                       Voluntary
                     </label>
                   </div>
                   <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                    <input class="nhsuk-checkboxes__input" id="statutory-status" name="statutory-status" type="checkbox" value="Statutory">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
                       Statutory
                     </label>
@@ -104,7 +108,7 @@
             Save status
           </button>
 
-          <p><a href="../manage-payment">Cancel change</a></p>
+          <p><a href="javascript:history.go(-1)">Cancel change</a></p>
 
       </div>
     </form>
