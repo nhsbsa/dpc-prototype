@@ -1,0 +1,360 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+
+  {% block pageScripts %}
+  <script type="text/javascript" src="/js/search.js"></script>
+  <script type="text/javascript" src="/js/auto.js"></script>
+  <script type="text/javascript" src="/js/add-letter-code-list.js"></script>
+  <script type="text/javascript" src="/js/action-menu.js"></script>
+  <script type="text/javascript" src="/js/sort.js"></script>
+  <script type="text/javascript" src="/js/suggestionDropdown.js"></script>
+  <script>
+    const data = [
+      {
+        code: 'Essential Small Pharmacy Scheme',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Pre-registration trainee',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Protected/Establishment Top Up',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Advances for high cost - Rem',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Advances for high cost - Drug',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Recover high cost items - Rem',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Recover high cost items - Drug',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Needle and syringe exchange scheme',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Temporary safeguard payment',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Collection of unused drugs',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Welfare milk',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Local scheme 1',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Formulary development',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Local scheme 2',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Local scheme 4',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Bottle storage',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'LPC - Voluntary Levy',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'LPC - Statutory Levy',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Oxygen Therapy Service (Hardware)',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Oxygen Therapy Service (Service Element)',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Local Scheme 3',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Instalment dispensing',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Fine for Breach of Service',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'LPC Voluntary Levy LPP adjustment',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'LPC Statutory Levy LPP adjustment',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Oxygen Headset Decomissioning Fee',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Advice to Care Homes',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Additional Pharmacist Access Services',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Local Pharmaceutical Services',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Local Pharmaceutical Services (OOH)',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Practice payment adjustment',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Medicine use reviews adjustment',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Stoma customisation fee adjustment',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Local Scheme 5',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Local Scheme 6',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Local Scheme 7',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Local Scheme 8',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Local Scheme 9',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Local Scheme 10',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Local Scheme 11',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Local Scheme 12',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Local Scheme 13',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Local Scheme 14',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Local Scheme 15',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Appliance use reviews adjustment',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Local Scheme 16',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'NMS Fee Adjustment',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'NMS Implementation Payment Adjustment',
+        name: '',
+        recall: 'Invitation letter',
+      },
+    ];
+    createSuggestionDropdown(data, 'letter-codes');
+  </script>
+  {% endblock %}
+
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../search">Find a contractor</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../contractorv2-1">MILTON CHEMIST LTD</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../schedule-3">August 2021 schedule</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="authorised-LPP">Payments authorised by LPP</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="contractorv2-1">Milton Chemist LTD</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+    <form action="authorised-LPP-change-individual" method="post">
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1 style="margin-bottom:12px;" class="nhsuk-heading-l">
+            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Manage contractor<span class="nhsuk-u-visually-hidden">-</span></span></span>
+              Find the payment description you want to add payment to
+          </h1>
+
+          <p class="nhsuk-body-s" style="margin-bottom: 36px; margin-right:24px;">
+            OCS Code: FF910<br>
+            LPP: QNC - STAFFORDSHIRE & STOKE ON TRENT STP<br>
+            Payment date: 1 November 2021
+          </p>
+
+                <div class="nhsuk-form-group">
+
+                    <fieldset class="nhsuk-fieldset" aria-describedby="dob-from" role="group">
+                        <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                          Description
+                        </legend>
+
+
+                            <div class="nhsuk-form-group">
+                              <label class="nhsuk-label nhsuk-date-input__label" for="letter-codes">
+                                <!--<span id="" class="nhsuk-hint">
+                                  You can search for the Expense head code or name.
+                                </span>-->
+
+                              <div id="letter-codes"></div>
+
+                              <ul id="letter-code-list" class="nhsuk-list">
+
+                              </ul>
+                            </div>
+                      </fieldset>
+
+
+
+                </div>
+
+          <button class="nhsuk-button" type="submit">
+            Continue
+          </button>
+          <p><a href="authorised-LPP">Cancel changes</a></p>
+
+      </div>
+    </form>
+  </main>
+</div>
+
+
+  {% endblock %}
+</body>
+
+</html>
