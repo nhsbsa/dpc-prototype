@@ -10,6 +10,18 @@
 @import "components/autocomplete"; // testing out the add test result page / had to create a custom component as autocomplete is used on the search
 
 /* ==========================================================================
+   COMPONENTS / #Schedule table totals
+   ========================================================================== */
+
+.totals{
+  background-color: #d8dde0!important;
+  font-weight: bold;
+}
+.totals:hover{
+  background-color: #aeb7bd!important;
+}
+
+/* ==========================================================================
    COMPONENTS / #Side navigation bar
    ========================================================================== */
 

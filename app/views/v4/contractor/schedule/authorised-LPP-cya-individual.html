@@ -52,7 +52,7 @@
         <div class="nhsuk-grid-column-full">
           <h1 style="margin-bottom:12px;" class="nhsuk-heading-l">
             <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Manage contractor<span class="nhsuk-u-visually-hidden">-</span></span></span>
-              Check August 2021 schedule payments authorised by LPP
+              Check August 2021 schedule pre-registration trainee payment authorised by LPP
           </h1>
 
           <p class="nhsuk-body-s" style="margin-bottom: 36px; margin-right:24px;">
@@ -75,9 +75,6 @@
                   <th role="columnheader" class="" scope="col">
                     Amount
                   </th>
-                  <th role="columnheader" class="" scope="col">
-                    <div class="nhsuk-u-visually-hidden">change actions</div>
-                  </th>
                 </tr>
               </thead>
               <tbody class="nhsuk-table__body">
@@ -91,14 +88,9 @@
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Amount </span>£{% if data['amount'] %}{{ data['amount'] }}{% else %}145.21{% endif %}
                   </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <a href="authorised-LPP-change-individual">Change</a>
-                  </td>
                 </tr>
               </tbody>
             </table>
-
-            <p class="nhsuk-u-margin-top-4" style="float:right; clear: both;"><b>Total amount authorised by LPP: </b>£{% if data['amount'] %}{{ data['amount'] }}{% else %}145.21{% endif %}</p>
 
           </div>
 
@@ -108,14 +100,14 @@
 
 
           <div class="nhsuk-form-group" style="clear: both;">
-            <a id="enter_experience_criteria" class="nhsuk-button nhsuk-button--secondary" href="authorised-LPP-autocomplete" role="button" draggable="false">
-              Add another payment
+            <a id="enter_experience_criteria" class="nhsuk-button nhsuk-button--secondary" href="authorised-LPP-change-individual" role="button" draggable="false">
+              Change payment
             </a>
             <br>
             <button class="nhsuk-button" type="submit">
             Save and continue
             </button>
-            <p><a href="authorised-LPP">Cancel changes</a></p>
+            <p><a href="authorised-LPP-2">Cancel change</a></p>
           </div>
 
         </div>

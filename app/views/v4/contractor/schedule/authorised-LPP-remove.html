@@ -29,69 +29,94 @@
       <div class="nhsuk-grid-column-full">
 
         <ol class="nhsuk-breadcrumb__list">
-          <li class="nhsuk-breadcrumb__item"><a href="../../dashboard/dashboard">Dashboard</a></li>
-          <li class="nhsuk-breadcrumb__item"><a href="../search">Find a contractor</a></li>
-          <li class="nhsuk-breadcrumb__item"><a href="../contractorv2-1">MILTON CHEMIST LTD</a></li>
-          <li class="nhsuk-breadcrumb__item"><a href="../schedule-3">August 2021 schedule</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="search">Find a contractor</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="contractorv2-1">MILTON CHEMIST LTD</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="schedule-4">Manage August 2021 payments</a></li>
           <li class="nhsuk-breadcrumb__item"><a href="authorised-LPP">Payments authorised by LPP</a></li>
         </ol>
 
       </div>
     </div>
 
-    <p class="nhsuk-breadcrumb__back"><a href="expensive-items">Back to August 2021 schedule</a></p>
+    <p class="nhsuk-breadcrumb__back"><a href="expensive-items">Back to August 2021 expensive items</a></p>
 
   </div>
 </nav>
 
 <div class="nhsuk-width-container {{ containerClasses }}">
   <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
-    <form method="post" action="authorised-LPP-cya-individual">
 
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-two-thirds">
           <h1 style="margin-bottom:12px;" class="nhsuk-heading-l">
             <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Manage contractor<span class="nhsuk-u-visually-hidden">-</span></span></span>
-              Change pre-registration trainee payment details
+              Are you sure you want to remove the pre-registration trainee payment?
           </h1>
 
           <p class="nhsuk-body-s" style="margin-bottom: 36px; margin-right:24px;">
             <b>OCS Code:</b> FF910<br>
             <b>LPP:</b> QNC - STAFFORDSHIRE & STOKE ON TRENT STP<br>
-            <b>Payment date:</b> 1 November 2021
+            <b>Payment date:</b> 1 November 2021<br>
           </p>
 
-          <div class="nhsuk-form-group">
+          <dl class="nhsuk-summary-list">
 
-            <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="formNumber">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Description
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Pre-registration trainee
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
                 Trainee name
-              </label>
-              <input class="nhsuk-input" id="trainee-name" name="trainee-name" type="text" value="">
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Garry Jennings
+              </dd>
             </div>
-
-            <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="formNumber">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
                 Amount
-              </label>
-              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
-              <input class="nhsuk-input nhsuk-input--width-5" id="amount" name="amount" type="text" value="">
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                £145.21
+              </dd>
             </div>
+          </dl>
+
+          <div class="nhsuk-radios nhsuk-radios--inline">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+                Yes
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                No
+              </label>
+            </div>
+
           </div>
-
-
-          <div class="nhsuk-form-group">
+          <br>
+          <form action="authorised-LPP" method="post">
             <button class="nhsuk-button" type="submit">
-            Continue
+              Save and continue
             </button>
-            <p><a href="authorised-LPP-2">Cancel change</a></p>
-          </div>
+          </form>
 
         </div>
       </div>
 
 
-      </form>
+
   </main>
 </div>
 
