@@ -13,6 +13,14 @@
    COMPONENTS / #Schedule table totals
    ========================================================================== */
 
+.sub-totals{
+ background-color: #f0f4f5;
+ font-weight: bold;
+}
+.sub-totals:hover{
+ background-color: #d8dde0;
+}
+
 .totals{
   background-color: #d8dde0!important;
   font-weight: bold;
