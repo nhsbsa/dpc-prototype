@@ -487,7 +487,11 @@
                 </tr>
               </tbody>
             </table>
+            {% if data['adjust-toggle'] == "Yes" %}
+            <p style="text-align: center; display: block; padding-top: 32px;"><a href="expensive-items-between?adjust-toggle=Yes">View all expensive items between £100 and £300</a></p>
+            {% else %}
             <p style="text-align: center; display: block; padding-top: 32px;"><a href="expensive-items-between">View all expensive items between £100 and £300</a></p>
+            {% endif %}
 
             <h3 class="nhsuk-heading-s nhsuk-u-margin-top-6" id="above">Items over £300</h3>
 
