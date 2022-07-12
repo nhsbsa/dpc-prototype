@@ -47,17 +47,26 @@
   <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
 
       <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-two-thirds">
-          <h1 style="margin-bottom:12px;" class="nhsuk-heading-l">
+        <div class="nhsuk-grid-column-full">
+
+          <h1 style="margin-bottom:12px; width: 66%; float: left;" class="nhsuk-heading-l">
             <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Manage contractor<span class="nhsuk-u-visually-hidden">-</span></span></span>
               August 2021 Expensive items
           </h1>
+
+
+
+
+
+          <div style="clear:both;">
 
           <p class="nhsuk-body-s" style="margin-bottom: 36px; margin-right:24px;">
             <b>OCS Code:</b> FF910<br>
             <b>LPP:</b> QNC - STAFFORDSHIRE & STOKE ON TRENT STP<br>
             <b>Payment date:</b> 1 November 2021
           </p>
+
+          </div>
 
         </div>
       </div>
@@ -118,19 +127,70 @@
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-full">
 
-            <h2 class="nhsuk-heading-m">Expensive items list</h2>
+            {% if data['adjust-toggle'] == "Yes" %}
+            <div style="float: right; padding-top:8px;" onclick="location.href='expensive-items?adjust-toggle=No';">
 
-            <form action="add-expensive-item" method="post">
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+
+            </div>
+
+            <ol class="nhsuk-breadcrumb__list">
+              <li style="float: right; padding-top: 13px" class="nhsuk-breadcrumb__item nhsuk-u-font-size-22"><b>Adjust expensive items</b></li>
+            </ol>
+            {% else %}
+            <div style="float: right; padding-top:8px;" onclick="location.href='expensive-items?adjust-toggle=Yes';">
+
+            <label class="switch">
+              <input type="checkbox" unchecked>
+              <span class="slider round"></span>
+            </label>
+
+            </div>
+
+            <ol class="nhsuk-breadcrumb__list">
+              <li style="float: right; padding-top: 8px" class="nhsuk-breadcrumb__item nhsuk-u-font-size-22"><b>Adjust expensive items</b></li>
+            </ol>
+            {% endif %}
+
+            <h2 class="nhsuk-heading-m" id="expensive-list">Expensive items list</h2>
+
+
+
+            <!-- {% if data['adjust-toggle'] == "Yes" %}
+            <form action="expensive-items?adjust-toggle=No" method="post">
               <button style="float: right; margin: 0;" class="nhsuk-button nhsuk-button--secondary" type="submit">
-                Add expensive item
+                Adjust expensive items
               </button>
             </form>
+            {% else %}
+            <form action="expensive-items?adjust-toggle=Yes" method="post">
+              <button style="float: right; margin: 0;" class="nhsuk-button nhsuk-button--secondary" type="submit">
+                Adjust expensive items
+              </button>
+            </form>
+            {% endif %} -->
+
+
+
+
+
 
             <!--<form action="change-expensive-items" method="post">
               <button style="float: right; margin-right: 15px;" class="nhsuk-button nhsuk-button--secondary" type="submit">
                 Change expensive items
               </button>
             </form>-->
+
+            {% if data['adjust-toggle'] == "Yes" %}
+            <form action="add-expensive-item" method="post">
+              <button style="float: right; margin-right: 14px;" class="nhsuk-button" type="submit">
+                Add expensive item
+              </button>
+            </form>
+            {% endif %}
 
             <nav style="clear: left;" class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
               <ol class="nhsuk-contents-list__list">
@@ -142,6 +202,8 @@
                 </li>
               </ol>
             </nav>
+
+
 
             <h3 class="nhsuk-heading-s" id="between">Items between £100 and £300</h3>
 
@@ -166,9 +228,11 @@
                   <th role="columnheader" class="" scope="col">
                     Amount
                   </th>
+                  {% if data['adjust-toggle'] == "Yes" %}
                   <th role="columnheader" class="" scope="col">
                     Action
                   </th>
+                  {% endif %}
                 </tr>
               </thead>
               <tbody class="nhsuk-table__body">
@@ -191,9 +255,11 @@
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Amount </span>£110.78
                   </td>
+                {% if data['adjust-toggle'] == "Yes" %}
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Action </span><a href="change-expensive-item?description=CONVEEN URISHEATH AND URILINER SYSTEM LARGE&formNumber=A00044&Quantity=60&Amount=£110.78&packSize=30.00&quantity=60&amount=£110.78">Change</a> or <a href="remove-expensive-item?description=CONVEEN URISHEATH AND URILINER SYSTEM LARGE&formNumber=A00044&Quantity=60&Amount=£110.78">remove</a>
                   </td>
+                {% endif %}
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
@@ -214,9 +280,11 @@
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Amount </span>£110.78
                   </td>
+                {% if data['adjust-toggle'] == "Yes" %}
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=CONVEEN URISHEATH AND URILINER SYSTEM LARGE&formNumber=A00044&Quantity=60&Amount=£110.78">remove</a>
                   </td>
+                {% endif %}
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
@@ -237,9 +305,11 @@
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Amount </span>£110.78
                   </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=CONVEEN URISHEATH AND URILINER SYSTEM LARGE&formNumber=A00044&Quantity=60&Amount=£110.78">remove</a>
-                  </td>
+                  {% if data['adjust-toggle'] == "Yes" %}
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=CONVEEN URISHEATH AND URILINER SYSTEM LARGE&formNumber=A00044&Quantity=60&Amount=£110.78">remove</a>
+                    </td>
+                  {% endif %}
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
@@ -260,9 +330,11 @@
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Amount </span>£110.78
                   </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=CONVEEN URISHEATH AND URILINER SYSTEM LARGE&formNumber=A00044&Quantity=60&Amount=£110.78">remove</a>
-                  </td>
+                  {% if data['adjust-toggle'] == "Yes" %}
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=CONVEEN URISHEATH AND URILINER SYSTEM LARGE&formNumber=A00044&Quantity=60&Amount=£110.78">remove</a>
+                    </td>
+                  {% endif %}
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
@@ -283,9 +355,11 @@
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Amount </span>£110.78
                   </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=CONVEEN URISHEATH AND URILINER SYSTEM LARGE&formNumber=A00044&Quantity=60&Amount=£110.78">remove</a>
-                  </td>
+                  {% if data['adjust-toggle'] == "Yes" %}
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=CONVEEN URISHEATH AND URILINER SYSTEM LARGE&formNumber=A00044&Quantity=60&Amount=£110.78">remove</a>
+                    </td>
+                  {% endif %}
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
@@ -306,9 +380,11 @@
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Amount </span>£110.78
                   </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=CONVEEN URISHEATH AND URILINER SYSTEM LARGE&formNumber=A00044&Quantity=60&Amount=£110.78">remove</a>
-                  </td>
+                  {% if data['adjust-toggle'] == "Yes" %}
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=CONVEEN URISHEATH AND URILINER SYSTEM LARGE&formNumber=A00044&Quantity=60&Amount=£110.78">remove</a>
+                    </td>
+                  {% endif %}
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
@@ -329,9 +405,11 @@
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Amount </span>£110.78
                   </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=CONVEEN URISHEATH AND URILINER SYSTEM LARGE&formNumber=A00044&Quantity=60&Amount=£110.78">remove</a>
-                  </td>
+                  {% if data['adjust-toggle'] == "Yes" %}
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=CONVEEN URISHEATH AND URILINER SYSTEM LARGE&formNumber=A00044&Quantity=60&Amount=£110.78">remove</a>
+                    </td>
+                  {% endif %}
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
@@ -352,9 +430,11 @@
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Amount </span>£110.78
                   </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=CONVEEN URISHEATH AND URILINER SYSTEM LARGE&formNumber=A00044&Quantity=60&Amount=£110.78">remove</a>
-                  </td>
+                  {% if data['adjust-toggle'] == "Yes" %}
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=CONVEEN URISHEATH AND URILINER SYSTEM LARGE&formNumber=A00044&Quantity=60&Amount=£110.78">remove</a>
+                    </td>
+                  {% endif %}
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
@@ -375,9 +455,11 @@
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Amount </span>£110.78
                   </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=CONVEEN URISHEATH AND URILINER SYSTEM LARGE&formNumber=A00044&Quantity=60&Amount=£110.78">remove</a>
-                  </td>
+                  {% if data['adjust-toggle'] == "Yes" %}
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=CONVEEN URISHEATH AND URILINER SYSTEM LARGE&formNumber=A00044&Quantity=60&Amount=£110.78">remove</a>
+                    </td>
+                  {% endif %}
                 </tr><tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Form number </span>A00044
@@ -397,9 +479,11 @@
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Amount </span>£110.78
                   </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=CONVEEN URISHEATH AND URILINER SYSTEM LARGE&formNumber=A00044&Quantity=60&Amount=£110.78">remove</a>
-                  </td>
+                  {% if data['adjust-toggle'] == "Yes" %}
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=CONVEEN URISHEATH AND URILINER SYSTEM LARGE&formNumber=A00044&Quantity=60&Amount=£110.78">remove</a>
+                    </td>
+                  {% endif %}
                 </tr>
               </tbody>
             </table>
@@ -428,9 +512,11 @@
                   <th role="columnheader" class="" scope="col">
                     Amount
                   </th>
+                  {% if data['adjust-toggle'] == "Yes" %}
                   <th role="columnheader" class="" scope="col">
                     Action
                   </th>
+                  {% endif %}
                 </tr>
               </thead>
               <tbody class="nhsuk-table__body">
@@ -453,9 +539,11 @@
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Amount </span>£367.67
                   </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=GLYCOPYRRONIUM BROMIDE 1MG TABLETS&formNumber=A00101&Quantity=45&Amount=£367.67">remove</a>
-                  </td>
+                  {% if data['adjust-toggle'] == "Yes" %}
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=CONVEEN URISHEATH AND URILINER SYSTEM LARGE&formNumber=A00044&Quantity=60&Amount=£110.78">remove</a>
+                    </td>
+                  {% endif %}
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
@@ -476,9 +564,11 @@
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Amount </span>£367.67
                   </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=GLYCOPYRRONIUM BROMIDE 1MG TABLETS&formNumber=A00101&Quantity=45&Amount=£367.67">remove</a>
-                  </td>
+                  {% if data['adjust-toggle'] == "Yes" %}
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=CONVEEN URISHEATH AND URILINER SYSTEM LARGE&formNumber=A00044&Quantity=60&Amount=£110.78">remove</a>
+                    </td>
+                  {% endif %}
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td role="cell" class="nhsuk-table__cell">
@@ -499,9 +589,11 @@
                   <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Amount </span>£367.67
                   </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=GLYCOPYRRONIUM BROMIDE 1MG TABLETS&formNumber=A00101&Quantity=45&Amount=£367.67">remove</a>
-                  </td>
+                  {% if data['adjust-toggle'] == "Yes" %}
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a> or <a href="remove-expensive-item?description=CONVEEN URISHEATH AND URILINER SYSTEM LARGE&formNumber=A00044&Quantity=60&Amount=£110.78">remove</a>
+                    </td>
+                  {% endif %}
                 </tr>
               </tbody>
             </table>
