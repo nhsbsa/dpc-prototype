@@ -33,13 +33,6 @@
   <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
   {% block content %}
 
-  {% if data['letter-codes'] == "36 - PREREG-TRAIN-AMT" %}
-  <script>
-    window.onload = function() {
-        location.href = "check-error";
-    }
-  </script>
-  {% endif %}
 
 <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
   <div class="nhsuk-width-container">
@@ -70,13 +63,13 @@
                   There is a problem
                 </h2>
                 <div class="nhsuk-error-summary__body">
-                    Some of the file rows contain errors
+                    Some of the uploaded files rows contain errors
                 </div>
               </div>
 
             	<span class="nhsuk-caption-l" id="status-monitor-home-sub-heading">Direct Payments to Contractors (DPC)</span>
             	<span class="nhsuk-u-visually-hidden"> - </span>
-            	<h1 class="nhsuk-heading-xl" id="status-monitor-home-heading">Payment upload check</h1>
+            	<h1 class="nhsuk-heading-l" id="status-monitor-home-heading">Check Payment upload</h1>
             </div>
         </div>
 
@@ -87,36 +80,27 @@
 
             <p class="nhsuk-body">There have been errors found in the payment upload file.</p>
 
-            <table role="table" class="nhsuk-table-responsive">
-              <caption class="nhsuk-table__caption">Incorrect payment upload details</caption>
-              <thead role="rowgroup" class="nhsuk-table__head">
-                <tr role="row">
-                  <th role="columnheader" class="" scope="col">
-                    OCS code
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    Value
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    Remarks / Comments
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="nhsuk-table__body">
-                <tr role="row" class="nhsuk-table__row" style="background-color: #F2BEBA;">
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">OCS code </span>FA002
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Value </span>£230.66
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Comments </span>Invalid OCS code
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            </div>
+            <dl class="nhsuk-summary-list">
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  <a href="error-list">Invalid OCS code</a>
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  3
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  <a href="#">Invalid payment value</a>
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  1
+                </dd>
+              </div>
+
+            </dl>
 
             <form action="upload" method="post">
 
@@ -128,129 +112,6 @@
 
             </form>
 
-            <div class="nhsuk-form-group">
-
-            <table role="table" class="nhsuk-table-responsive">
-              <caption class="nhsuk-table__caption">Payment upload details</caption>
-              <thead role="rowgroup" class="nhsuk-table__head">
-                <tr role="row">
-                  <th role="columnheader" class="" scope="col">
-                    OCS code
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    Value
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    Remarks / Comments
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="nhsuk-table__body">
-                <tr role="row" class="nhsuk-table__row" style="background-color: #F2BEBA;">
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">OCS code </span>FA002
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Value </span>£230.66
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Comments </span>Invalid OCS code
-                  </td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">OCS code </span>FA007
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Value </span>£1265.36
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Comments </span>Ok
-                  </td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">OCS code </span>FA008
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Value </span>£201.60
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Comments </span>Ok
-                  </td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">OCS code </span>FA026
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Value </span>£153.60
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Comments </span>Ok
-                  </td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">OCS code </span>FA031
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Value </span>£395
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Comments </span>Ok
-                  </td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">OCS code </span>FA037
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Value </span>£39.45
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Comments </span>Ok
-                  </td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">OCS code </span>FA040
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Value </span>£162.35
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Comments </span>Ok
-                  </td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">OCS code </span>FA041
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Value </span>£727.10
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Comments </span>Ok
-                  </td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">OCS code </span>FA042
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Value </span>£212.47
-                  </td>
-                  <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Comments </span>Ok
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-
-
-          </div>
         </div>
     </main>
 </div>

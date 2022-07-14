@@ -30,6 +30,7 @@ Group<!-- Use this page as the index for your project -->
 
         <ol class="nhsuk-breadcrumb__list">
           <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="search">Find a contractor</a></li>
         </ol>
 
       </div>
@@ -59,33 +60,37 @@ Group<!-- Use this page as the index for your project -->
   </div>-->
 
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full" style="margin-bottom: 24px;">
+    <div class="nhsuk-grid-column-one-quarter" style="margin-bottom: 24px;">
       <div class="nhsuk-form-group"  style="float: left; margin: 0 30px 0 0;">
         <label class="nhsuk-label" for="example">
           OCS or Group code
         </label>
-        <input class="nhsuk-input nhsuk-input--width-10" id="example" name="example" type="text" value="FF9">
+        <input class="nhsuk-input nhsuk-input--width-10" id="example" name="example" type="text">
       </div>
+    </div>
+    <div class="nhsuk-grid-column-one-half" style="margin-bottom: 24px;">
       <div class="nhsuk-form-group"  style="float: left; margin: 0 30px 0 0;">
         <label class="nhsuk-label" for="example">
           Contractor name
         </label>
         <input class="nhsuk-input" style="width: 41ex;" id="example" name="example" type="text">
       </div>
+    </div>
+    <div class="nhsuk-grid-column-one-quarter" style="margin-bottom: 24px;">
       <div class="nhsuk-form-group"  style="float: left; margin: 0 15px 0 0;">
         <label class="nhsuk-label" for="example">
           Status
         </label>
         <select class="nhsuk-select" id="select-1" name="select-1">
-            <option  value="1">Active</option>
+            <option selected value="1">Active</option>
             <option value="2">Retired</option>
-            <option selected value="3">All</option>
+            <option value="3">All</option>
           </select>
       </div>
     </div>
 
     <div class="nhsuk-grid-column-full">
-      <form style="display: contents;" action="search-results-pagination" method="post">
+      <form style="float: left; display: contents;" action="search-results-pagination" method="post">
       <button style="float: left;" class="nhsuk-button" type="submit">
         Search
       </button>

@@ -148,40 +148,103 @@
     <main class="nhsuk-main-wrapper " id="maincontent" role="main">
         <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-two-thirds">
+
+              <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="nhsuk-error-summary">
+                <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+                  There is a problem
+                </h2>
+                <div class="nhsuk-error-summary__body">
+                  <ul class="nhsuk-list nhsuk-error-summary__list">
+                    <li>
+                      <a href="#total-value">Total payment value must match the total of values in the uploaded file</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
             	<span class="nhsuk-caption-l" id="status-monitor-home-sub-heading">Direct Payments to Contractors (DPC)</span>
             	<span class="nhsuk-u-visually-hidden"> - </span>
-            	<h1 class="nhsuk-heading-l" id="status-monitor-home-heading">Payment upload</h1>
+            	<h1 class="nhsuk-heading-l" id="status-monitor-home-heading">Add details of payment upload</h1>
             </div>
         </div>
 
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-two-thirds">
 
-            <form action="add-details" method="post">
+            <form action="check" method="post">
 
-            <p class="nhsuk-body">You can upload a CSV, TXT or XLS file. The file must contain the OCS code and payment amount for each contractor. All payments must be for the same expense head.</p>
+            <p class="nhsuk-body">Add details of the payments.</p>
+
+            <dl class="nhsuk-summary-list">
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Schedule type
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  PH - Pharmacy
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="upload">
+                    Change<span class="nhsuk-u-visually-hidden"> schedule type</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  File
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  September 2018 Flu Drug Cost 9 3387.65
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="upload">
+                    Change<span class="nhsuk-u-visually-hidden"> file</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Payment run ID
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  M00299
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                </dd>
+              </div>
+            </dl>
 
             <div class="nhsuk-form-group">
               <label class="nhsuk-label" for="select-1">
-                Schedule type
+                Expense head
               </label>
-              <select class="nhsuk-select" id="select-1" name="select-1">
-                <option value="1" selected>PH - Pharmacy</option>
-                <option value="2">PL - Late Pharmacy</option>
-                <option value="3">AC - Appliance Contractor</option>
-                <option value="4">EP - EEPS Payments</option>
-              </select>
+              <div id="letter-codes"></div>
+              <ul id="letter-code-list" class="nhsuk-list">
+              </ul>
             </div>
 
             <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="file-upload-1">
-                Upload a file
+              <label class="nhsuk-label" for="example-with-hint-text">
+                Total number of contractors
               </label>
-              <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+              <input class="nhsuk-input nhsuk-input--width-3" id="example-with-hint-text" name="example-with-hint-text" type="text" inputmode="numeric">
+            </div>
+
+            <div class="nhsuk-form-group nhsuk-form-group--error">
+              <label class="nhsuk-label" for="total-value">
+                Total payment value
+              </label>
+              <span class="nhsuk-error-message" id="total-value-error">
+                <span class="nhsuk-u-visually-hidden">Error:</span> Value must match the total of values in the uploaded file
+              </span>
+              <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+              <input class="nhsuk-input nhsuk-input--width-5 nhsuk-input--error" id="total-value" name="total-value" type="text" inputmode="numeric">
             </div>
 
             <button class="nhsuk-button" type="submit">
-              Continue
+              Check payments
             </button>
 
             </form>
