@@ -61,25 +61,32 @@
           <h2 class="nhsuk-heading-m">Summary</h2>
 
           <dl class="nhsuk-summary-list">
-
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
                 Schedule type
               </dt>
               <dd class="nhsuk-summary-list__value">
-                PH- Pharmacy
+                {% if data['schedule-type'] %}{{ data['schedule-type'] }}{% else %}PH - Pharmacy{% endif %}
               </dd>
-
+              <dd class="nhsuk-summary-list__actions">
+                <a href="upload">
+                  Change<span class="nhsuk-u-visually-hidden"> schedule type</span>
+                </a>
+              </dd>
             </div>
 
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Expense head
+                File
               </dt>
               <dd class="nhsuk-summary-list__value">
-                36 - PREREG-TRAIN-AMT
+                {% if data['file-upload'] %}{{ data['file-upload'] }}{% else %}September 2018 Flu Drug Cost 9 3387.65.csv{% endif %}
               </dd>
-
+              <dd class="nhsuk-summary-list__actions">
+                <a href="upload">
+                  Change<span class="nhsuk-u-visually-hidden"> file</span>
+                </a>
+              </dd>
             </div>
 
             <div class="nhsuk-summary-list__row">
@@ -89,7 +96,22 @@
               <dd class="nhsuk-summary-list__value">
                 M00299
               </dd>
+              <dd class="nhsuk-summary-list__actions">
+              </dd>
+            </div>
 
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Expense head
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['letter-code'] %}{{ data['letter-code'] }}{% else %}38 - PROT/EST-TOP-AMT{% endif %}
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="add-details">
+                  Change<span class="nhsuk-u-visually-hidden"> expense head</span>
+                </a>
+              </dd>
             </div>
 
             <div class="nhsuk-summary-list__row">
@@ -97,9 +119,13 @@
                 Total number of contractors
               </dt>
               <dd class="nhsuk-summary-list__value">
-                9
+                {% if data['number-contractors'] %}{{ data['number-contractors'] }}{% else %}1,203{% endif %}
               </dd>
-
+              <dd class="nhsuk-summary-list__actions">
+                <a href="add-details">
+                  Change<span class="nhsuk-u-visually-hidden"> total number of contractors</span>
+                </a>
+              </dd>
             </div>
 
             <div class="nhsuk-summary-list__row">
@@ -107,11 +133,14 @@
                 Total payment value
               </dt>
               <dd class="nhsuk-summary-list__value">
-                £3,387.59
+                £{% if data['payment-value'] %}{{ data['payment-value'] }}{% else %}12,345.98{% endif %}
               </dd>
-
+              <dd class="nhsuk-summary-list__actions">
+                <a href="add-details">
+                  Change<span class="nhsuk-u-visually-hidden"> total payment value</span>
+                </a>
+              </dd>
             </div>
-
           </dl>
 
         </div>
@@ -133,7 +162,7 @@
             </div>
             <div class="gem-c-attachment__details">
               <h3 class="gem-c-attachment__title">
-                <a class="govuk-link gem-c-attachment__link" target="_self" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/747661/department-for-transport-information-asset-register.csv">Payment upload report</a>
+                <a class="govuk-link gem-c-attachment__link" target="_self" href="/images/report1657113452933.pdf" download>Payment upload report</a>
               </h3>
               <p class="gem-c-attachment__metadata"><span class="gem-c-attachment__attribute"><abbr title="Comma-separated Values" class="gem-c-attachment__abbr">PDF</abbr></span>, <span class="gem-c-attachment__attribute">210.34 KB</span></p>
             </div>
@@ -153,7 +182,7 @@
               </div>
               <div class="gem-c-attachment__details">
                 <h3 class="gem-c-attachment__title">
-                  <a class="govuk-link gem-c-attachment__link" target="_self" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/747661/department-for-transport-information-asset-register.csv">Payment upload report</a>
+                  <a class="govuk-link gem-c-attachment__link" target="_self" href="/images/report1657113502425.xls" download>Payment upload report</a>
                 </h3>
                 <p class="gem-c-attachment__metadata"><span class="gem-c-attachment__attribute"><abbr title="Comma-separated Values" class="gem-c-attachment__abbr">CSV</abbr></span>, <span class="gem-c-attachment__attribute">19.5 KB</span></p>
               </div>
@@ -162,7 +191,7 @@
 
         </div>
 
-        <p style="clear: both;" ><a class="nhsuk-button nhsuk-button--secondary" href="upload">Upload other payments</a></p>
+        <p style="clear: both;" ><a class="nhsuk-button nhsuk-button--secondary" href="upload">Upload another payment</a></p>
 
         <p style="clear: both;" ><a class="nhsuk-button" href="../dashboard/dashboard">Return to dashboard</a></p>
 

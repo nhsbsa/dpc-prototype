@@ -157,15 +157,13 @@
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-two-thirds">
 
-            <form action="add-details-error" method="post">
-
             <dl class="nhsuk-summary-list">
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
                   Schedule type
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  PH - Pharmacy
+                  {% if data['schedule-type'] %}{{ data['schedule-type'] }}{% else %}PH - Pharmacy{% endif %}
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
                   <a href="upload">
@@ -179,7 +177,7 @@
                   File
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  September 2018 Flu Drug Cost 9 3387.65
+                  {% if data['file-upload'] %}{{ data['file-upload'] }}{% else %}September 2018 Flu Drug Cost 9 3387.65.csv{% endif %}
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
                   <a href="upload">
@@ -200,6 +198,8 @@
               </div>
             </dl>
 
+            <form action="add-details-error" method="post">
+
             <div class="nhsuk-form-group">
               <label class="nhsuk-label" for="select-1">
                 Expense head
@@ -210,18 +210,18 @@
             </div>
 
             <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="example-with-hint-text">
+              <label class="nhsuk-label" for="number-contractors">
                 Total number of contractors
               </label>
-              <input class="nhsuk-input nhsuk-input--width-3" id="example-with-hint-text" name="example-with-hint-text" type="text" inputmode="numeric">
+              <input class="nhsuk-input nhsuk-input--width-3" id="number-contractors" name="number-contractors" type="text" inputmode="numeric">
             </div>
 
             <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="example-with-hint-text">
+              <label class="nhsuk-label" for="payment-value">
                 Total payment value
               </label>
               <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
-              <input class="nhsuk-input nhsuk-input--width-5" id="example-with-hint-text" name="example-with-hint-text" type="text" inputmode="numeric">
+              <input class="nhsuk-input nhsuk-input--width-5" id="payment-value" name="payment-value" type="text" inputmode="numeric">
             </div>
 
             <button class="nhsuk-button" type="submit">

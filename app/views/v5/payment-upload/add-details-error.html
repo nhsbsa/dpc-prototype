@@ -127,6 +127,14 @@
   <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
   {% block content %}
 
+  {% if data['letter-codes'] == "36 - PREREG-TRAIN-AMT" %}
+  <script>
+    window.onload = function() {
+        location.href = "check-error";
+    }
+  </script>
+  {% endif %}
+
 <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
   <div class="nhsuk-width-container">
     <div class="nhsuk-grid-row">
@@ -181,7 +189,7 @@
                   Schedule type
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  PH - Pharmacy
+                  {% if data['schedule-type'] %}{{ data['schedule-type'] }}{% else %}PH - Pharmacy{% endif %}
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
                   <a href="upload">
@@ -195,7 +203,7 @@
                   File
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  September 2018 Flu Drug Cost 9 3387.65
+                  {% if data['file-upload'] %}{{ data['file-upload'] }}{% else %}September 2018 Flu Drug Cost 9 3387.65.csv{% endif %}
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
                   <a href="upload">
@@ -226,21 +234,21 @@
             </div>
 
             <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="example-with-hint-text">
+              <label class="nhsuk-label" for="number-contractors">
                 Total number of contractors
               </label>
-              <input class="nhsuk-input nhsuk-input--width-3" id="example-with-hint-text" name="example-with-hint-text" type="text" inputmode="numeric">
+              <input value="{% if data['number-contractors'] %}{{ data['number-contractors'] }}{% else %}1203{% endif %}" class="nhsuk-input nhsuk-input--width-3" id="number-contractors" name="number-contractors" type="text" inputmode="numeric">
             </div>
 
             <div class="nhsuk-form-group nhsuk-form-group--error">
-              <label class="nhsuk-label" for="total-value">
+              <label class="nhsuk-label" for="payment-value">
                 Total payment value
               </label>
-              <span class="nhsuk-error-message" id="total-value-error">
+              <span class="nhsuk-error-message" id="payment-value-error">
                 <span class="nhsuk-u-visually-hidden">Error:</span> Value must match the total of values in the uploaded file
               </span>
               <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
-              <input class="nhsuk-input nhsuk-input--width-5 nhsuk-input--error" id="total-value" name="total-value" type="text" inputmode="numeric">
+              <input value="{% if data['payment-value'] %}{{ data['payment-value'] }}{% else %}12345.98{% endif %}" class="nhsuk-input nhsuk-input--width-5 nhsuk-input--error" id="payment-value" name="payment-value" type="text" inputmode="numeric">
             </div>
 
             <button class="nhsuk-button" type="submit">

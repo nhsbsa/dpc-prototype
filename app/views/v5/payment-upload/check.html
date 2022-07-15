@@ -40,13 +40,6 @@
     }
   </script>
   {% endif %}
-  {% if data['letter-codes'] == "38 - PROT/EST-TOP-AMT" %}
-  <script>
-    window.onload = function() {
-        location.href = "upload-error";
-    }
-  </script>
-  {% endif %}
 
 <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
   <div class="nhsuk-width-container">
@@ -91,7 +84,7 @@
                     Schedule type
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    PH - Pharmacy
+                    {% if data['schedule-type'] %}{{ data['schedule-type'] }}{% else %}PH - Pharmacy{% endif %}
                   </dd>
                   <dd class="nhsuk-summary-list__actions">
                     <a href="upload">
@@ -105,7 +98,7 @@
                     File
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    September 2018 Flu Drug Cost 9 3387.65
+                    {% if data['file-upload'] %}{{ data['file-upload'] }}{% else %}September 2018 Flu Drug Cost 9 3387.65.csv{% endif %}
                   </dd>
                   <dd class="nhsuk-summary-list__actions">
                     <a href="upload">
@@ -130,7 +123,7 @@
                     Expense head
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-
+                    {% if data['letter-code'] %}{{ data['letter-code'] }}{% else %}38 - PROT/EST-TOP-AMT{% endif %}
                   </dd>
                   <dd class="nhsuk-summary-list__actions">
                     <a href="add-details">
@@ -144,7 +137,7 @@
                     Total number of contractors
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    1,203
+                    {% if data['number-contractors'] %}{{ data['number-contractors'] }}{% else %}1,203{% endif %}
                   </dd>
                   <dd class="nhsuk-summary-list__actions">
                     <a href="add-details">
@@ -158,7 +151,7 @@
                     Total payment value
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    £12,345.98
+                    {% if data['payment-value'] %}{{ data['payment-value'] }}{% else %}£12,345.98{% endif %}
                   </dd>
                   <dd class="nhsuk-summary-list__actions">
                     <a href="add-details">

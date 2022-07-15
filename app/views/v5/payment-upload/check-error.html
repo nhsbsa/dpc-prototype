@@ -58,14 +58,14 @@
         <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-two-thirds">
 
-              <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="nhsuk-error-summary">
+              <!--<div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="nhsuk-error-summary">
                 <h2 class="nhsuk-error-summary__title" id="error-summary-title">
                   There is a problem
                 </h2>
                 <div class="nhsuk-error-summary__body">
                     Some of the uploaded files rows contain errors
                 </div>
-              </div>
+              </div>-->
 
             	<span class="nhsuk-caption-l" id="status-monitor-home-sub-heading">Direct Payments to Contractors (DPC)</span>
             	<span class="nhsuk-u-visually-hidden"> - </span>
@@ -76,14 +76,18 @@
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-two-thirds">
 
-            <div class="nhsuk-form-group">
+            <div style="border-left: 8px solid #d5281b;" class="nhsuk-inset-text">
+              <span class="nhsuk-u-visually-hidden">Validation: </span>
+              <p class="nhsuk-body">There have been errors found in the payment upload file that will need fixing .</p>
+            </div>
 
-            <p class="nhsuk-body">There have been errors found in the payment upload file.</p>
 
-            <dl class="nhsuk-summary-list">
+            <h2 class="nhsuk-heading-s">Error summary</h2>
+
+            <dl style="width: 75%;" class="nhsuk-summary-list">
 
               <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
+                <dt style="width: 100%;" class="nhsuk-summary-list__key">
                   <a href="error-list">Invalid OCS code</a>
                 </dt>
                 <dd class="nhsuk-summary-list__value">
@@ -92,7 +96,7 @@
               </div>
 
               <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
+                <dt style="width: 100%;" class="nhsuk-summary-list__key">
                   <a href="#">Invalid payment value</a>
                 </dt>
                 <dd class="nhsuk-summary-list__value">
@@ -106,13 +110,14 @@
 
               <div class="nhsuk-form-group">
                 <button class="nhsuk-button" type="submit">
-                  Re-upload payments file
+                  Reupload file
                 </button>
               </div>
 
             </form>
 
         </div>
+      </div>
     </main>
 </div>
 
