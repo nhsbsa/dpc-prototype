@@ -68,11 +68,6 @@
               <dd class="nhsuk-summary-list__value">
                 {% if data['schedule-type'] %}{{ data['schedule-type'] }}{% else %}PH - Pharmacy{% endif %}
               </dd>
-              <dd class="nhsuk-summary-list__actions">
-                <a href="upload">
-                  Change<span class="nhsuk-u-visually-hidden"> schedule type</span>
-                </a>
-              </dd>
             </div>
 
             <div class="nhsuk-summary-list__row">
@@ -81,11 +76,6 @@
               </dt>
               <dd class="nhsuk-summary-list__value">
                 {% if data['file-upload'] %}{{ data['file-upload'] }}{% else %}September 2018 Flu Drug Cost 9 3387.65.csv{% endif %}
-              </dd>
-              <dd class="nhsuk-summary-list__actions">
-                <a href="upload">
-                  Change<span class="nhsuk-u-visually-hidden"> file</span>
-                </a>
               </dd>
             </div>
 
@@ -96,8 +86,6 @@
               <dd class="nhsuk-summary-list__value">
                 M00299
               </dd>
-              <dd class="nhsuk-summary-list__actions">
-              </dd>
             </div>
 
             <div class="nhsuk-summary-list__row">
@@ -106,11 +94,6 @@
               </dt>
               <dd class="nhsuk-summary-list__value">
                 {% if data['letter-code'] %}{{ data['letter-code'] }}{% else %}38 - PROT/EST-TOP-AMT{% endif %}
-              </dd>
-              <dd class="nhsuk-summary-list__actions">
-                <a href="add-details">
-                  Change<span class="nhsuk-u-visually-hidden"> expense head</span>
-                </a>
               </dd>
             </div>
 
@@ -121,11 +104,6 @@
               <dd class="nhsuk-summary-list__value">
                 {% if data['number-contractors'] %}{{ data['number-contractors'] }}{% else %}1,203{% endif %}
               </dd>
-              <dd class="nhsuk-summary-list__actions">
-                <a href="add-details">
-                  Change<span class="nhsuk-u-visually-hidden"> total number of contractors</span>
-                </a>
-              </dd>
             </div>
 
             <div class="nhsuk-summary-list__row">
@@ -134,11 +112,6 @@
               </dt>
               <dd class="nhsuk-summary-list__value">
                 £{% if data['payment-value'] %}{{ data['payment-value'] }}{% else %}12,345.98{% endif %}
-              </dd>
-              <dd class="nhsuk-summary-list__actions">
-                <a href="add-details">
-                  Change<span class="nhsuk-u-visually-hidden"> total payment value</span>
-                </a>
               </dd>
             </div>
           </dl>

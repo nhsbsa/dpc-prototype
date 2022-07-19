@@ -20,96 +20,96 @@
   <script type="text/javascript" src="/js/suggestionDropdown.js"></script>
   <script>
     const data = [
-      {
-        code: '36 - PREREG-TRAIN-AMT',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: '38 - PROT/EST-TOP-AMT',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: '42 - PROT/EST-TOP-AMT',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: '52 - NEEDLE-EXCHG-AMT',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: '53 - COL-UNUSDRG-AMT',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: '56',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: '57',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: '58',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: '59',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: '61',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: '63',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: '67',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: '92',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: '143 - ADJUSTMENT DRUGS',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: '144 - ADJUSTMENT FEES',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: '145 - ADD ADV PAYMENT',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: '5117 - XB-ADV-CARE-HME',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: '5118 - XB-ADD-PHH-ACC-S',
-        name: '',
-        recall: 'Invitation letter',
-      },
+    {
+      code: '36 - Pre-registration trainee',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: '38 - Protected/Establishment Top Up',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: '42 - Protected/Establishment Top Up',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: '52 - Needle and syringe exchange scheme',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: '53 - Collection of unused drugs',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: '56 - Welfare milk',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: '57 - Local Scheme 1',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: '58 - Formulary development',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: '59 - Local Scheme 2',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: '61 - Local Scheme 4',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: '63 - Bottle Storage',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: '67 - Oxygen Therapy Service (Hardware)',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: '92',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: '143 - ADJUSTMENT DRUGS',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: '144 - ADJUSTMENT FEES',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: '145 - ADD ADV PAYMENT',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: '5117 - XB-ADV-CARE-HME',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: '5118 - XB-ADD-PHH-ACC-S',
+      name: '',
+      recall: 'Invitation letter',
+    },
     ];
     createSuggestionDropdown(data, 'letter-codes');
   </script>
@@ -127,10 +127,17 @@
   <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
   {% block content %}
 
-  {% if data['letter-codes'] == "36 - PREREG-TRAIN-AMT" %}
+  {% if data['letter-codes'] == "36 - Pre-registration trainee" %}
   <script>
     window.onload = function() {
         location.href = "check-error";
+    }
+  </script>
+  {% endif %}
+  {% if data['letter-codes'] == "38 - Protected/Establishment Top Up" %}
+  <script>
+    window.onload = function() {
+        location.href = "check";
     }
   </script>
   {% endif %}
