@@ -12,12 +12,6 @@
   {% extends 'layout-logged-in.html' %}
 
   {% block pageScripts %}
-  <script type="text/javascript" src="/js/search.js"></script>
-  <script type="text/javascript" src="/js/auto.js"></script>
-  <script type="text/javascript" src="/js/add-letter-code-list.js"></script>
-  <script type="text/javascript" src="/js/action-menu.js"></script>
-  <script type="text/javascript" src="/js/sort.js"></script>
-  <script type="text/javascript" src="/js/suggestionDropdown.js"></script>
 
   {% endblock %}
   <!--
@@ -32,22 +26,6 @@
   <!-- Your page content goes inside the content block -->
   <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
   {% block content %}
-
-  {% if data['letter-codes'] == "36 - Pre-registration trainee" %}
-  <script>
-    window.onload = function() {
-        location.href = "check-error";
-    }
-  </script>
-  {% endif %}
-
-  {% if data['letter-codes'] == "38 - Protected/Establishment Top Up" %}
-  <script>
-    window.onload = function() {
-        location.href = "check-warning";
-    }
-  </script>
-  {% endif %}
 
 <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
   <div class="nhsuk-width-container">
@@ -72,7 +50,7 @@
             <div class="nhsuk-grid-column-two-thirds">
             	<span class="nhsuk-caption-l" id="status-monitor-home-sub-heading">Direct Payments to Contractors (DPC)</span>
             	<span class="nhsuk-u-visually-hidden"> - </span>
-            	<h1 class="nhsuk-heading-l" id="status-monitor-home-heading">Payment upload check</h1>
+            	<h1 class="nhsuk-heading-l" id="status-monitor-home-heading">CHeck schedule message</h1>
             </div>
         </div>
 
@@ -81,12 +59,8 @@
 
             <form action="complete" method="post">
 
-              <div style="border-left: 8px solid #007f3b;" class="nhsuk-inset-text">
-                <span class="nhsuk-u-visually-hidden">Validation: </span>
-                <p>All payments succesfully checked</p>
-              </div>
-
               <dl class="nhsuk-summary-list">
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Schedule type
@@ -94,25 +68,7 @@
                   <dd class="nhsuk-summary-list__value">
                     {% if data['schedule-type'] %}{{ data['schedule-type'] }}{% else %}PH - Pharmacy{% endif %}
                   </dd>
-                  <dd class="nhsuk-summary-list__actions">
-                    <a href="upload">
-                      Change<span class="nhsuk-u-visually-hidden"> schedule type</span>
-                    </a>
-                  </dd>
-                </div>
 
-                <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    File
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    {% if data['file-upload'] %}{{ data['file-upload'] }}{% else %}September 2018 Flu Drug Cost 9 3387.65.csv{% endif %}
-                  </dd>
-                  <dd class="nhsuk-summary-list__actions">
-                    <a href="upload">
-                      Change<span class="nhsuk-u-visually-hidden"> file</span>
-                    </a>
-                  </dd>
                 </div>
 
                 <div class="nhsuk-summary-list__row">
@@ -122,58 +78,29 @@
                   <dd class="nhsuk-summary-list__value">
                     M00299
                   </dd>
-                  <dd class="nhsuk-summary-list__actions">
-                  </dd>
+
                 </div>
 
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
-                    Expense head
+                    Message
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    {% if data['letter-code'] %}{{ data['letter-code'] }}{% else %}38 - Protected/Establishment Top Up{% endif %}
+                    {% if data['message'] %}{{ data['message'] }}{% else %}This is where the message entered will appear.{% endif %}
                   </dd>
-                  <dd class="nhsuk-summary-list__actions">
-                    <a href="add-details">
-                      Change<span class="nhsuk-u-visually-hidden"> expense head</span>
-                    </a>
-                  </dd>
+
                 </div>
 
-                <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Total number of contractors
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    {% if data['number-contractors'] %}{{ data['number-contractors'] }}{% else %}1,203{% endif %}
-                  </dd>
-                  <dd class="nhsuk-summary-list__actions">
-                    <a href="add-details">
-                      Change<span class="nhsuk-u-visually-hidden"> total number of contractors</span>
-                    </a>
-                  </dd>
-                </div>
-
-                <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Total payment value
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    {% if data['payment-value'] %}{{ data['payment-value'] }}{% else %}£12,345.98{% endif %}
-                  </dd>
-                  <dd class="nhsuk-summary-list__actions">
-                    <a href="add-details">
-                      Change<span class="nhsuk-u-visually-hidden"> total payment value</span>
-                    </a>
-                  </dd>
-                </div>
               </dl>
 
-              <div class="nhsuk-form-group">
-                <button class="nhsuk-button" type="submit">
-                  Upload payments
-                </button>
-              </div>
+              <br>
+              <a id="enter_experience_criteria" class="nhsuk-button nhsuk-button--secondary" href="add" role="button" draggable="false">
+                Change schedule message
+              </a>
+              <br>
+              <button class="nhsuk-button" type="submit">
+                Save schedule message
+              </button>
 
             </form>
 

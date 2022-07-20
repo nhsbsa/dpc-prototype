@@ -33,18 +33,10 @@
   <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
   {% block content %}
 
-  {% if data['letter-codes'] == "36 - Pre-registration trainee" %}
+  {% if data['letter-codes'] == "36 - PREREG-TRAIN-AMT" %}
   <script>
     window.onload = function() {
         location.href = "check-error";
-    }
-  </script>
-  {% endif %}
-
-  {% if data['letter-codes'] == "38 - Protected/Establishment Top Up" %}
-  <script>
-    window.onload = function() {
-        location.href = "check-warning";
     }
   </script>
   {% endif %}
@@ -84,6 +76,16 @@
               <div style="border-left: 8px solid #007f3b;" class="nhsuk-inset-text">
                 <span class="nhsuk-u-visually-hidden">Validation: </span>
                 <p>All payments succesfully checked</p>
+              </div>
+
+              <div class="nhsuk-warning-callout">
+                <h3 class="nhsuk-warning-callout__label">
+                  <span role="text">
+                    <span class="nhsuk-u-visually-hidden">Important: </span>
+                    Warning
+                  </span>
+                </h3>
+                <p>The contractor FA002 has been retired as of 19/07/2022.</p>
               </div>
 
               <dl class="nhsuk-summary-list">

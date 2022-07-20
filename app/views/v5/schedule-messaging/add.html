@@ -12,12 +12,6 @@
   {% extends 'layout-logged-in.html' %}
 
   {% block pageScripts %}
-  <script type="text/javascript" src="/js/search.js"></script>
-  <script type="text/javascript" src="/js/auto.js"></script>
-  <script type="text/javascript" src="/js/add-letter-code-list.js"></script>
-  <script type="text/javascript" src="/js/action-menu.js"></script>
-  <script type="text/javascript" src="/js/sort.js"></script>
-  <script type="text/javascript" src="/js/suggestionDropdown.js"></script>
 
   {% endblock %}
   <!--
@@ -32,7 +26,6 @@
   <!-- Your page content goes inside the content block -->
   <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
   {% block content %}
-
 
 <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
   <div class="nhsuk-width-container">
@@ -51,83 +44,50 @@
   </div>
 </nav>
 
-
-
 <div class="nhsuk-width-container ">
     <main class="nhsuk-main-wrapper " id="maincontent" role="main">
         <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-two-thirds">
-
-              <!--<div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="nhsuk-error-summary">
-                <h2 class="nhsuk-error-summary__title" id="error-summary-title">
-                  There is a problem
-                </h2>
-                <div class="nhsuk-error-summary__body">
-                    Some of the uploaded files rows contain errors
-                </div>
-              </div>-->
-
             	<span class="nhsuk-caption-l" id="status-monitor-home-sub-heading">Direct Payments to Contractors (DPC)</span>
             	<span class="nhsuk-u-visually-hidden"> - </span>
-            	<h1 class="nhsuk-heading-l" id="status-monitor-home-heading">Check Payment upload</h1>
+            	<h1 class="nhsuk-heading-l" id="status-monitor-home-heading">Schedule messaging</h1>
             </div>
         </div>
 
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-two-thirds">
 
-            <div style="border-left: 8px solid #d5281b;" class="nhsuk-inset-text">
-              <span class="nhsuk-u-visually-hidden">Validation: </span>
-              <p class="nhsuk-body">There have been errors found in the payment upload file that will need fixing .</p>
+            <form action="check" method="post">
+
+            <p class="nhsuk-body">You can add a message to the schedule of all the contractors of a schedule type.</p>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="schedule-type">
+                Schedule type
+              </label>
+              <select class="nhsuk-select" id="schedule-type" name="schedule-type">
+                <option value="PH - Pharmacy" selected>PH - Pharmacy</option>
+                <option value="PL - Late Pharmacy">PL - Late Pharmacy</option>
+                <option value="AC - Appliance Contractor">AC - Appliance Contractor</option>
+                <option value="EP - EEPS Payments">EP - EEPS Payments</option>
+              </select>
             </div>
 
-
-            <h2 class="nhsuk-heading-s">Error summary</h2>
-
-            <dl style="width: 75%;" class="nhsuk-summary-list">
-
-              <div class="nhsuk-summary-list__row">
-                <dt style="width: 100%;" class="nhsuk-summary-list__key">
-                  <a href="error-list">Invalid OCS code</a>
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  3
-                </dd>
-              </div>
-
-              <div class="nhsuk-summary-list__row">
-                <dt style="width: 100%;" class="nhsuk-summary-list__key">
-                  <a href="#">Invalid payment value</a>
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  1
-                </dd>
-              </div>
-
-            </dl>
-
-            <div class="nhsuk-warning-callout">
-              <h3 class="nhsuk-warning-callout__label">
-                <span role="text">
-                  <span class="nhsuk-u-visually-hidden">Important: </span>
-                  Warning
-                </span>
-              </h3>
-              <p>The contractor FA002 has been retired as of 19/07/2022.</p>
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="message">
+                Message
+              </label>
+              <textarea class="nhsuk-textarea" id="message" name="message" rows="5" aria-describedby="example-hint"></textarea>
             </div>
 
-            <form action="upload" method="post">
-
-              <div class="nhsuk-form-group">
-                <button class="nhsuk-button" type="submit">
-                  Reupload file
-                </button>
-              </div>
+            <button class="nhsuk-button" type="submit">
+              Continue
+            </button>
 
             </form>
 
+          </div>
         </div>
-      </div>
     </main>
 </div>
 
