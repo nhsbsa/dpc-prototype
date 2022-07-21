@@ -33,6 +33,13 @@
   <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
   {% block content %}
 
+  {% if data['letter-codes'] == "36 - PREREG-TRAIN-AMT" %}
+  <script>
+    window.onload = function() {
+        location.href = "check-error";
+    }
+  </script>
+  {% endif %}
 
 <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
   <div class="nhsuk-width-container">
@@ -51,82 +58,24 @@
   </div>
 </nav>
 
-
-
 <div class="nhsuk-width-container ">
     <main class="nhsuk-main-wrapper " id="maincontent" role="main">
         <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-two-thirds">
-
-              <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="nhsuk-error-summary">
-                <h2 class="nhsuk-error-summary__title" id="error-summary-title">
-                  There is a problem
-                </h2>
-                <div class="nhsuk-error-summary__body">
-                  <ul class="nhsuk-list nhsuk-error-summary__list">
-                    <li>
-                    <a href="#error-summary">There have been errors found in the payment upload file that will need fixing before payments can be uploaded</a>
-                  </li>
-  </ul>
-                </div>
-              </div>
-
             	<span class="nhsuk-caption-l" id="status-monitor-home-sub-heading">Direct Payments to Contractors (DPC)</span>
             	<span class="nhsuk-u-visually-hidden"> - </span>
-            	<h1 class="nhsuk-heading-l" id="status-monitor-home-heading">Payment upload check failed</h1>
+            	<h1 class="nhsuk-heading-l" id="status-monitor-home-heading">Payment upload warnings</h1>
             </div>
         </div>
 
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-two-thirds">
 
-            <!--<div style="border-left: 8px solid #d5281b;" class="nhsuk-inset-text">
-              <span class="nhsuk-u-visually-hidden">Validation: </span>
-              <p class="nhsuk-body">There have been errors found in the payment upload file that will need fixing .</p>
-            </div>-->
+            <form action="" method="">
 
-
-            <h2 class="nhsuk-heading-s">Error summary</h2>
-
-            <div style="border-left: 8px solid #d5281b; margin-top: 24px; margin-bottom: 24px;" class="nhsuk-inset-text">
-              <p style="padding-top:8px;" class="nhsuk_body">The following errors need changing before reuploading the payment file.</p>
-            </div>
-
-            <dl style="width: 75%;" class="nhsuk-summary-list">
-              <div class="nhsuk-summary-list__row">
-                <dt style="width: 100%;" class="nhsuk-summary-list__key">
-                  <a href="error-list">Invalid OCS code</a>
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  3
-                </dd>
-              </div>
-              <div class="nhsuk-summary-list__row">
-                <dt style="width: 100%;" class="nhsuk-summary-list__key">
-                  <a href="#">Invalid payment value</a>
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  1
-                </dd>
-              </div>
-            </dl>
-
-
-            <!--<div class="nhsuk-warning-callout">
-              <h3 class="nhsuk-warning-callout__label">
-                <span role="text">
-                  <span class="nhsuk-u-visually-hidden">Important: </span>
-                  Warning
-                </span>
-              </h3>
-              <p>The contractor FA002 has been retired as of 19/07/2022.</p>
-              <p>One or more of the contractors accounts to get paid have retired since the dispensing month. <a class=" nhsuk-link--no-visited-state"  href="warning-list">View the retired contractors</a>.</p>
-            </div>-->
-
-              <h2 class="nhsuk-heading-s">Warning summary</h2>
-
-              <div style="border-left: 8px solid #ffb81C; margin-top: 24px; margin-bottom: 24px;" class="nhsuk-inset-text">
-                <p style="padding-top:8px;" class="nhsuk_body">The following warnings need considering before reuploading the payment file.</p>
+              <div class="nhsuk-inset-text">
+                <span class="nhsuk-u-visually-hidden">Information: </span>
+                <p class="nhsuk_body">The check has flagged the following warnings in regards to the accounts in the uploaded file.</p>
               </div>
 
               <table role="table" class="nhsuk-table-responsive nhsuk-u-padding-bottom-6">
@@ -179,29 +128,59 @@
                   </tr>
                 </tbody>
               </table>
-
-            <form action="upload" method="post">
-
+              <br>
               <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                    <h1 class="nhsuk-fieldset__heading">
+                      Do you want to continue with the payment upload?
+                    </h1>
+                  </legend>
+                </fieldset>
+
+                  <div class="nhsuk-radios nhsuk-radios--inline">
+
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="check" onclick="setLocation(this);">
+                      <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+                        Yes
+                      </label>
+                    </div>
+
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="../dashboard/dashboard" onclick="setLocation(this);">
+                      <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                        No, return to dashboard
+                      </label>
+                    </div>
+
+                  </div>
+
+                <br>
                 <button class="nhsuk-button" type="submit">
-                  Reupload file
+                  Continue
                 </button>
-                <p><a href="../dashboard/dashboard">Return to dashboard</a></p>
-              </div>
+                </div>
 
             </form>
 
+          </div>
         </div>
-      </div>
     </main>
 </div>
+
+<script>
+    function setLocation(element) {
+      document.forms[0].action = element.value
+    }
+  </script>
 
 <style>
   .nhsuk-form-group--warning {
     border-left: 4px solid #ffb81C;
     padding-left: 16px;
 }
-
 </style>
 
 
