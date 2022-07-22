@@ -14,6 +14,21 @@ th, td {
     border-bottom: 1px solid #aeb7bd;
 }
 
+/***** Text editor
+
+.trumbowyg-box {
+  border: 2px solid #425563 !important;
+  background-color: #ffffff; }
+
+.trumbowyg-button-pane::after {
+  height: 2px !important;
+  background-color: #425563 !important; }
+
+.trumbowyg-editor {
+  word-wrap: anywhere;
+  color: #212b32; }
+*****/
+
 /***** Sliders *****/
 /* The switch - the box around the slider */
 .switch {

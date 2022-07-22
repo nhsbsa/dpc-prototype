@@ -59,19 +59,26 @@
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-two-thirds">
 
-            <div class="nhsuk-card" style="background: #d5281b; margin-top: 0;">
-              <div class="nhsuk-card__content">
-                <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
-                  Errors found in the payment upload file
-                </h1>
+            <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+              <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+                There is a problem
+              </h2>
+              <div class="nhsuk-error-summary__body">
+                <ul class="nhsuk-list nhsuk-error-summary__list">
+                  <li>
+                    <a href="#error-summary">15 errors have been found in the payment upload file</a>
+                  </li>
+                </ul>
               </div>
             </div>
+
+            <h1 class="nhsuk-heading-l">Errors found in the payment upload file</h1>
 
             <p>The payment file cannot be uploaded with the errors found. The errors will need to be sorted and a file reuploaded to continue.</p>
 
 
 
-            <h2 class="nhsuk-heading-m">Error summary</h2>
+            <h2 class="nhsuk-heading-m" id="error-summary">Error summary</h2>
 
             <!--<div class="nhsuk-inset-text">
               <span class="nhsuk-u-visually-hidden">Information: </span>
