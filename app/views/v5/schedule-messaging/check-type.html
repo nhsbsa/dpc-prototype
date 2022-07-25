@@ -68,7 +68,11 @@
                   <dd class="nhsuk-summary-list__value">
                     {% if data['schedule-type'] %}{{ data['schedule-type'] }}{% else %}PH - Pharmacy{% endif %}
                   </dd>
-
+                  <dd class="nhsuk-summary-list__actions">
+                    <a href="schedule-type">
+                      Change<span class="nhsuk-u-visually-hidden"> schedule type</span>
+                    </a>
+                  </dd>
                 </div>
 
                 <div class="nhsuk-summary-list__row">
@@ -78,7 +82,8 @@
                   <dd class="nhsuk-summary-list__value">
                     M00299
                   </dd>
-
+                  <dd class="nhsuk-summary-list__actions">
+                  </dd>
                 </div>
 
                 <div class="nhsuk-summary-list__row">
@@ -88,16 +93,15 @@
                   <dd class="nhsuk-summary-list__value">
                     {% if data['message'] %}{{ data['message'] }}{% else %}This is where the message entered will appear.{% endif %}
                   </dd>
-
+                  <dd class="nhsuk-summary-list__actions">
+                    <a href="add-type">
+                      Change<span class="nhsuk-u-visually-hidden"> message</span>
+                    </a>
+                  </dd>
                 </div>
 
               </dl>
 
-              <br>
-              <a id="enter_experience_criteria" class="nhsuk-button nhsuk-button--secondary" href="add" role="button" draggable="false">
-                Change schedule message
-              </a>
-              <br>
               <button class="nhsuk-button" type="submit">
                 Save schedule message
               </button>
