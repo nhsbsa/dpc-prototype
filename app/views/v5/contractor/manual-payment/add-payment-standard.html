@@ -94,7 +94,7 @@
   <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
   {% block content %}
 
-  {% if data['letter-codes'] == "36 - PREREG-TRAIN-AMT" %}
+  {% if data['letter-codes'] == "36 - Pre-registration trainee" %}
   <script>
     window.onload = function() {
         location.href = "add-payment-trainee";
@@ -115,7 +115,7 @@
     }
   </script>
   {% endif %}
-  {% if data['letter-codes'] == "42 - PROT/EST-TOP-AMT" %}
+  {% if data['letter-codes'] == "42 - Protected/Establishment Top Up" %}
   <script>
     window.onload = function() {
         location.href = "add-payment-date-dropdown";
