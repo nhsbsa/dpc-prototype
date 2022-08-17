@@ -81,35 +81,78 @@
           <div class="nhsuk-grid-column-two-thirds">
 
             <div style="border-left: 8px solid #d5281b; margin-top: 24px; margin-bottom: 36px;" class="nhsuk-inset-text">
-              <p class="nhsuk_body"><a href="#error-summary">4 errors have been found in the payment upload file, details in the error summary</a></p>
+              <p class="nhsuk_body"><a class="nhsuk-link--no-visited-state" href="#error-summary">4 errors have been found in the payment upload file, details in the error summary</a></p>
             </div>
 
             <div style="border-left: 8px solid #ffb81C; margin-top: 36px; margin-bottom: 24px;" class="nhsuk-inset-text">
-              <p class="nhsuk_body"><a href="#warning-summary">3 warnings have been found in the payment upload file, details in the warning summary</a></p>
+              <p class="nhsuk_body"><a class="nhsuk-link--no-visited-state" href="#warning-summary">7 warnings have been found in the payment upload file, details in the warning summary</a></p>
             </div>
 
             <h2 class="nhsuk-heading-s" id="error-summary">Error summary</h2>
 
             <p>The following errors need changing before reuploading the payment file.</p>
 
-            <dl style="width: 75%;" class="nhsuk-summary-list" id="error-summary-list">
-              <div class="nhsuk-summary-list__row">
-                <dt style="width: 100%;" class="nhsuk-summary-list__key">
-                  <a href="error-list">Invalid OCS code</a>
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  3
-                </dd>
-              </div>
-              <div class="nhsuk-summary-list__row">
-                <dt style="width: 100%;" class="nhsuk-summary-list__key">
-                  <a href="#">Invalid payment value</a>
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  1
-                </dd>
-              </div>
-            </dl>
+            <table role="table" class="nhsuk-table-responsive nhsuk-u-padding-bottom-6">
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                    OCS code
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Value
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Error comment
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">OCS code </span>FA002
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Value </span>£230.66
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Comment </span>Invalid OCS code
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">OCS code </span>FA036
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Value </span>£1,953.01
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Comment </span>Invalid OCS code
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">OCS code </span>FA069
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Value </span>£102.00
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Comment </span>Invalid OCS code
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">OCS code </span>FA139
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Value </span>£26.001
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Comment </span>Invalid payment value
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
 
             <!--<div class="nhsuk-warning-callout">
@@ -127,7 +170,7 @@
 
               <p class="nhsuk_body">The following warnings need considering before reuploading the payment file.</p>
 
-              <table role="table" class="nhsuk-table-responsive nhsuk-u-padding-bottom-6">
+              <table role="table" class="nhsuk-table-responsive" style="padding-bottom: 16px !important;">
                 <thead role="rowgroup" class="nhsuk-table__head">
                   <tr role="row">
                     <th role="columnheader" class="" scope="col">
@@ -175,8 +218,33 @@
                       <span class="nhsuk-table-responsive__heading">Comment </span>Contractor account retired 10 September 2021
                     </td>
                   </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">OCS code </span>FA026
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Value </span>£157.00
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Comment </span>Contractor account retired 10 September 2021
+                    </td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">OCS code </span>FA026
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Value </span>£157.00
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Comment </span>Contractor account retired 10 September 2021
+                    </td>
+                  </tr>
                 </tbody>
               </table>
+              <p style="text-align: center; display: block; padding-bottom: 16px !important;"><a class="nhsuk-link--no-visited-state" href="#">View all 7 warnings</a></p>
+
+
 
             </div>
 
@@ -227,7 +295,7 @@
                 <button class="nhsuk-button" type="submit">
                   Reupload file
                 </button>
-                <p><a href="../dashboard/dashboard">Return to dashboard</a></p>
+                <p><a href="../dashboard/dashboard">Cancel payment upload</a></p>
               </div>
             </form>
 
