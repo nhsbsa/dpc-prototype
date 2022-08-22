@@ -90,14 +90,6 @@
                 {% if data['description'] %}{{ data['description'] }}{% else %}GLYCOPYRRONIUM BROMIDE 1MG TABLETS{% endif %}
               </dd>
 
-              <dd class="nhsuk-summary-list__actions">
-
-                <a href="add-expensive-item#description">
-                  Change<span class="nhsuk-u-visually-hidden"> description</span>
-                </a>
-
-              </dd>
-
             </div>
 
             <div class="nhsuk-summary-list__row">
@@ -106,14 +98,6 @@
               </dt>
               <dd class="nhsuk-summary-list__value">
                 {% if data['packSize'] %}{{ data['packSize'] }}{% else %}30.00{% endif %}
-              </dd>
-
-              <dd class="nhsuk-summary-list__actions">
-
-                <a href="add-expensive-item#packSize">
-                  Change<span class="nhsuk-u-visually-hidden"> pack size</span>
-                </a>
-
               </dd>
 
             </div>
@@ -126,14 +110,6 @@
                 {% if data['quantity'] %}{{ data['quantity'] }}{% else %}20{% endif %}
               </dd>
 
-              <dd class="nhsuk-summary-list__actions">
-
-                <a href="add-expensive-item#quantity">
-                  Change<span class="nhsuk-u-visually-hidden"> quantity</span>
-                </a>
-
-              </dd>
-
             </div>
 
             <div class="nhsuk-summary-list__row">
@@ -144,18 +120,14 @@
                 {% if data['amount'] %}{{ data['amount'] }}{% else %}£1,548.29{% endif %}
               </dd>
 
-              <dd class="nhsuk-summary-list__actions">
-
-                <a href="add-expensive-item#amount">
-                  Change<span class="nhsuk-u-visually-hidden"> amount</span>
-                </a>
-
-              </dd>
-
             </div>
 
           </dl>
 
+          <a class="nhsuk-button nhsuk-button--secondary" href="change-expensive-item?description=CONVEEN%20URISHEATH%20AND%20URILINER%20SYSTEM%20LARGE&formNumber=A00044&Quantity=60&Amount=£110.78&packSize=30.00&quantity=60&amount=£110.78" role="button" draggable="false">
+            Change
+          </a>
+          <br>
           <a class="nhsuk-button" href="expensive-items" role="button" draggable="false">
             Save and continue
           </a>
