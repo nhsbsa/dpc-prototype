@@ -29,14 +29,6 @@
   <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
   {% block content %}
 
-  {% if data['schedule-type'] == "EP - EEPS Payments" %}
-  <script>
-    window.onload = function() {
-        location.href = "edit";
-    }
-  </script>
-  {% endif %}
-
 <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
   <div class="nhsuk-width-container">
     <div class="nhsuk-grid-row">
@@ -60,63 +52,87 @@
             <div class="nhsuk-grid-column-two-thirds">
             	<span class="nhsuk-caption-l" id="status-monitor-home-sub-heading">Direct Payments to Contractors (DPC)</span>
             	<span class="nhsuk-u-visually-hidden"> - </span>
-            	<h1 class="nhsuk-heading-l" id="status-monitor-home-heading">Add schedule message</h1>
+            	<h1 class="nhsuk-heading-l" id="status-monitor-home-heading">Do you want to edit or remove the saved schedule message?</h1>
             </div>
         </div>
 
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-two-thirds">
-            <dl class="nhsuk-summary-list">
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Schedule type
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  {% if data['schedule-type'] %}{{ data['schedule-type'] }}{% else %}PH - Pharmacy{% endif %}
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                  <a href="schedule-type">
-                    Change<span class="nhsuk-u-visually-hidden"> schedule type</span>
-                  </a>
-                </dd>
-              </div>
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Payment run ID
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  M00299
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                </dd>
-              </div>
-            </dl>
-        </div>
-        </div>
 
-        <div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-two-thirds">
+            <form method="post">
 
-            <form action="check-type" method="post">
+              <dl class="nhsuk-summary-list">
 
-              <div class="nhsuk-hint" id="contact-hint">
-                You have a limit of 4000 characters, including spaces.
-              </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Schedule type
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    {% if data['schedule-type'] %}{{ data['schedule-type'] }}{% else %}EP - EEPS Payments{% endif %}
+                  </dd>
+
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Payment run ID
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    M00299
+                  </dd>
+
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Message
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    {% if data['message'] %}{{ data['message'] }}{% else %}This is where the saved schedule message appears{% endif %}
+                  </dd>
+
+                </div>
+
+              </dl>
 
             <div class="nhsuk-form-group">
-              <textarea id="message" name="message" class="text-editor-2 nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-1500">{% if data['saved'] %}This is where the saved schedule message appears{% endif %}</textarea>
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="add-type?saved=1&schedule-type=EP - EEPS Payment" onclick="setLocation(this);">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                    Edit
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="removed" onclick="setLocation(this);">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                    Remove
+                  </label>
+                </div>
+
+              </div>
             </div>
 
             <button class="nhsuk-button" type="submit">
-              Continue
+              Save and continue
             </button>
 
             </form>
 
           </div>
         </div>
+        <script>
+            function setLocation(element) {
+              document.forms[0].action = element.value
+            }
+          </script>
+
     </main>
 </div>
+
+
 
 <style>
     li {

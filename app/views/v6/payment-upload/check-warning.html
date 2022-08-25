@@ -33,18 +33,10 @@
   <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
   {% block content %}
 
-  {% if data['letter-codes'] == "36 - Pre-registration trainee" %}
+  {% if data['letter-codes'] == "36 - PREREG-TRAIN-AMT" %}
   <script>
     window.onload = function() {
-        location.href = "error-2";
-    }
-  </script>
-  {% endif %}
-
-  {% if data['letter-codes'] == " - Protected/Establishment Top Up" %}
-  <script>
-    window.onload = function() {
-        location.href = "warning";
+        location.href = "check-error-2";
     }
   </script>
   {% endif %}
@@ -72,7 +64,7 @@
             <div class="nhsuk-grid-column-two-thirds">
             	<span class="nhsuk-caption-l" id="status-monitor-home-sub-heading">Direct Payments to Contractors (DPC)</span>
             	<span class="nhsuk-u-visually-hidden"> - </span>
-            	<h1 class="nhsuk-heading-l" id="status-monitor-home-heading">Check payment upload</h1>
+            	<h1 class="nhsuk-heading-l" id="status-monitor-home-heading">Payment upload check</h1>
             </div>
         </div>
 
@@ -85,6 +77,35 @@
                 <span class="nhsuk-u-visually-hidden">Validation: </span>
                 <p>All payments succesfully checked</p>
               </div>
+
+              <div class="nhsuk-form-group nhsuk-form-group--warning">
+                <h2 class="nhsuk-heading-s">Warning</h2>
+
+                <p style="padding-top:8px;" class="nhsuk_body">The following warnings need to be considered before uploading payments.</p>
+
+                <dl style="width: 75%;" class="nhsuk-summary-list">
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt style="width: 100%;" class="nhsuk-summary-list__key">
+                      <a href="warning-list">Contractor account retired</a>
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      3
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt style="width: 100%;" class="nhsuk-summary-list__key">
+                      <a href="#">LPS contractor</a>
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      1
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+
+              <h2 class="nhsuk-heading-s">Payment upload summary</h2>
 
               <dl class="nhsuk-summary-list">
                 <div class="nhsuk-summary-list__row">
@@ -148,7 +169,9 @@
                     {% if data['number-contractors'] %}{{ data['number-contractors'] }}{% else %}1,203{% endif %}
                   </dd>
                   <dd class="nhsuk-summary-list__actions">
-                    
+                    <a href="add-details">
+                      Change<span class="nhsuk-u-visually-hidden"> total number of contractors</span>
+                    </a>
                   </dd>
                 </div>
 
@@ -160,16 +183,51 @@
                     {% if data['payment-value'] %}{{ data['payment-value'] }}{% else %}£12,345.98{% endif %}
                   </dd>
                   <dd class="nhsuk-summary-list__actions">
-
+                    <a href="add-details">
+                      Change<span class="nhsuk-u-visually-hidden"> total payment value</span>
+                    </a>
                   </dd>
                 </div>
               </dl>
+
+
+
+
+              <!--<div class="nhsuk-inset-text">
+                <span class="nhsuk-u-visually-hidden">Warning: </span>
+                <p class="nhsuk-body">The accounts of some contractors to be paid have been retired since the dispensing month. You can <a href="#">view these contractors</a>.</p>
+              </div>
+
+              <h2 class="nhsuk-heading-s">Warnings</h2>
+
+              <p class="nhsuk_body">The payment upload file has flagged warnings to be considered before uploading payments.</p>
+
+              <dl style="width: 75%;" class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt style="width: 100%;" class="nhsuk-summary-list__key">
+                    <a href="error-list">Contractor account retired</a>
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    3
+                  </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt style="width: 100%;" class="nhsuk-summary-list__key">
+                    <a href="#">LPS contractor</a>
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    1
+                  </dd>
+                </div>
+
+              </dl>-->
 
               <div class="nhsuk-form-group">
                 <button class="nhsuk-button" type="submit">
                   Upload payments
                 </button>
-                <p><a class="nhsuk-link--no-visited-state" href="../dashboard/dashboard">Cancel payment upload</a></p>
               </div>
 
             </form>
@@ -180,67 +238,10 @@
 </div>
 
 <style>
-    li {
-  display: inline-block;
-    color: #005EA5;
-    display: inline-block;
-    padding: 0px 5px 0px 5px;
-    margin-right: 15px;
-    text-decoration: none;
-    margin-bottom: 0px;
+  .nhsuk-form-group--warning {
+    border-left: 4px solid #ffb81C;
+    padding-left: 16px;
 }
-.padding {
-padding-left: 15px;
-}
-.pagination {
-padding: 0;
-display: flex;
-flex-direction: row;
-margin-bottom: 0px;
-}
-.pagination__item {
-display: inline-block;
-list-style: none;
-margin-bottom: 0px;
-}
-.pagination__link {
-display: block;
-padding: 5px 10px;
-text-decoration: none;
-font-size: 19px;
-}
-.current {
-  color:  #4c6272  !important;
-  font-weight: 700;
-  border: none;
-  pointer-events: none;
-  cursor: default;
-}
-.pagination__summary {
-margin-left: auto;
--webkit-font-smoothing: antialiased;
-padding: 8px 0;
-font-size: 19px;
-}
-.nav
-{
-  display: flex;
-flex-direction: row;
-align-items:center;
-margin-top: 20px;
-}
-@media (max-width: 640px) {
-  .pagination__summary {
-  margin-left: 0;
-  }
-  .nav{
-      flex-direction: column;
-      align-items: flex-start;
-  }
-  }
-
-.govuk-file-upload{font-family:"GDS Transport",arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-weight:400;font-size:16px;font-size:1rem;line-height:1.25;color:#0b0c0c;max-width:100%;margin-left:-5px;padding:5px}@media print{.govuk-file-upload{font-family:sans-serif}}@media(min-width: 40.0625em){.govuk-file-upload{font-size:19px;font-size:1.1875rem;line-height:1.3157894737}}@media print{.govuk-file-upload{font-size:14pt;line-height:1.15}}@media print{.govuk-file-upload{color:#000}}.govuk-file-upload::-webkit-file-upload-button{-webkit-appearance:button;color:inherit;font:inherit}.govuk-file-upload:focus{outline:3px solid #fd0;-webkit-box-shadow:inset 0 0 0 4px #0b0c0c;box-shadow:inset 0 0 0 4px #0b0c0c}.govuk-file-upload:focus-within{outline:3px solid #fd0;-webkit-box-shadow:inset 0 0 0 4px #0b0c0c;box-shadow:inset 0 0 0 4px #0b0c0c}
-
 </style>
 
 

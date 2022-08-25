@@ -1,0 +1,106 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="search">Find a contractor</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="contractorv2-1">MILTON CHEMIST LTD</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="manage-payment-2">August 2021 manual payments</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="manage-payment-2">August 2021 manual payments</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+    <form action="manage-payment-2" method="post">
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1 style="margin-bottom:12px;" class="nhsuk-heading-l">
+            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Manage contractor<span class="nhsuk-u-visually-hidden">-</span></span></span>
+                  Check August 2021 manual payment
+          </h1>
+          <p class="nhsuk-body-s" style="margin-bottom: 36px; margin-right:24px;"><b>Contractor name:</b> MILTON CHEMIST LTD<br><b>OCS Code:</b> FF910<br><b>LPP:</b> QNC - STAFFORDSHIRE & STOKE ON TRENT STP</p>
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__contact nhsuk-summary-list__key">
+                Expense head
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                162
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Description
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                FLU REMUN
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Payment amount
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                £{% if data['paymentamount'] %}{{ data['paymentamount'] }}{% else %}2,543.00{% endif %}
+              </dd>
+            </div>
+
+
+          </dl>
+
+        <br>
+        <a id="enter_experience_criteria" class="nhsuk-button nhsuk-button--secondary" href="change-payment" role="button" draggable="false">
+          Change payment
+        </a>
+        <br>
+        <button class="nhsuk-button" type="submit">
+          Save payment
+        </button>
+
+      </div>
+    </form>
+  </main>
+</div>
+
+
+  {% endblock %}
+</body>
+
+</html>

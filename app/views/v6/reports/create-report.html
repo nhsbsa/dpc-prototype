@@ -1,0 +1,197 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+
+  {% block pageScripts %}
+  <script type="text/javascript" src="/js/search.js"></script>
+  <script type="text/javascript" src="/js/auto.js"></script>
+  <script type="text/javascript" src="/js/add-letter-code-list.js"></script>
+  <script type="text/javascript" src="/js/action-menu.js"></script>
+  <script type="text/javascript" src="/js/sort.js"></script>
+  <script type="text/javascript" src="/js/suggestionDropdown.js"></script>
+  <script>
+    const data = [
+      {
+        code: 'Ceased Contractors Advance Analysis',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Contractors Receiving Payments',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Paper Schedule Turned Off',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'LPP Levy - Values and Factors',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'LPP Levy History',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Levy Values',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Amended Payment',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'CPS Input by Expense Head',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Exceptions Post Web Closed',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'PPC Pre-Load Totals',
+        name: '',
+        recall: 'Invitation letter',
+      },
+    ];
+    createSuggestionDropdown(data, 'report-name');
+  </script>
+  {% endblock %}
+
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="reports">Reports</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="reports">Back to reports</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1 class="nhsuk-heading-l">
+            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>
+              Which report template would you like to use?
+          </h1>
+          <form action="report-parameters" method="post">
+          <div class="nhsuk-hint" id="contact-hint">
+            You can either search a report template, select a popular template or select a batch report.
+          </div>
+
+          <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset" aria-describedby="dob-from" role="group">
+                <div class="nhsuk-form-group">
+                  <div id="report-name"></div>
+                  <ul id="letter-code-list" class="nhsuk-list">
+                  </ul>
+                </div>
+            </fieldset>
+
+
+
+
+            <button class="nhsuk-button" type="submit">
+              Continue
+            </button>
+          </form>
+          </div>
+
+        </div>
+
+        <div class="nhsuk-grid-column-two-thirds">
+
+          <h2 class="nhsuk-heading-m">Popular templates</h2>
+
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+
+          <h2 style="float: left;" class="nhsuk-heading-m">Batch reports</h2>
+          <p style="float: right;"><a href="#">Manage<div class="nhsuk-u-visually-hidden"> batch reports</div></a></p>
+
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+
+            <ul class="nhsuk-list">
+              <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Ceased Contractors Advance Analysis">Ceased Contractors Advance Analysis</a></li>
+              <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Contractors Receiving Payments">Contractors Receiving Payments</a></li>
+              <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Paper Schedule Turned Off">Paper Schedule Turned Off</a></li>
+              <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=LPP Levy - Values and Factors">LPP Levy - Values and Factors</a></li>
+              <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=LPP Levy History">LPP Levy History</a></li>
+            </ul>
+
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+
+            <ul class="nhsuk-list">
+              <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Levy Values">Levy Values</a></li>
+              <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Amended Payment">Amended Payment</a></li>
+              <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=CPS Input by Expense Head">CPS Input by Expense Head</a></li>
+              <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Exceptions Post Web Closed">Exceptions Post Web Closed</a></li>
+              <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=PPC Pre-Load Totals">PPC Pre-Load Totals</a></li>
+            </ul>
+
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+
+            <ul class="nhsuk-list">
+              <li><a class="nhsuk-link--no-visited-state" href="#">Monthly payment run reports</a></li>
+              <li><a class="nhsuk-link--no-visited-state" href="#">Levy reports</a></li>
+            </ul>
+
+        </div>
+
+      </div>
+
+
+
+  </main>
+</div>
+
+
+  {% endblock %}
+</body>
+
+</html>

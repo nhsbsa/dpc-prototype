@@ -1,0 +1,190 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+
+  {% block pageScripts %}
+  <script type="text/javascript" src="/js/search.js"></script>
+  <script type="text/javascript" src="/js/auto.js"></script>
+  <script type="text/javascript" src="/js/add-letter-code-list.js"></script>
+  <script type="text/javascript" src="/js/action-menu.js"></script>
+  <script type="text/javascript" src="/js/sort.js"></script>
+  <script type="text/javascript" src="/js/suggestionDropdown.js"></script>
+
+  {% endblock %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+  {% if data['letter-codes'] == "36 - PREREG-TRAIN-AMT" %}
+  <script>
+    window.onload = function() {
+        location.href = "check-error-2";
+    }
+  </script>
+  {% endif %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="../dashboard/dashboard">Dashboard</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container ">
+    <main class="nhsuk-main-wrapper " id="maincontent" role="main">
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+            	<span class="nhsuk-caption-l" id="status-monitor-home-sub-heading">Direct Payments to Contractors (DPC)</span>
+            	<span class="nhsuk-u-visually-hidden"> - </span>
+            	<h1 class="nhsuk-heading-l" id="status-monitor-home-heading">Payment upload warnings</h1>
+            </div>
+        </div>
+
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-two-thirds">
+
+            <form action="" method="">
+
+              <div class="nhsuk-inset-text">
+                <span class="nhsuk-u-visually-hidden">Information: </span>
+                <p class="nhsuk_body">The check has flagged the following warnings in regards to the accounts in the uploaded file.</p>
+              </div>
+
+              <table role="table" class="nhsuk-table-responsive nhsuk-u-padding-bottom-6">
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                      OCS code
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Value
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Warning comment
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">OCS code </span>FA002
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Value </span>£230.66
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Comment </span>LPS contractor
+                    </td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">OCS code </span>FA026
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Value </span>£157.00
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Comment </span>OOH contractor
+                    </td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">OCS code </span>FA026
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Value </span>£157.00
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <span class="nhsuk-table-responsive__heading">Comment </span>Contractor account retired 10 September 2021
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>
+              <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                    <h1 class="nhsuk-fieldset__heading">
+                      Do you want to continue with the payment upload?
+                    </h1>
+                  </legend>
+                </fieldset>
+
+                  <div class="nhsuk-radios nhsuk-radios--inline">
+
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="check?letter-codes=0" onclick="setLocation(this);">
+                      <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+                        Yes
+                      </label>
+                    </div>
+
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="../dashboard/dashboard" onclick="setLocation(this);">
+                      <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                        No, return to dashboard
+                      </label>
+                    </div>
+
+                  </div>
+
+                <br>
+                <button class="nhsuk-button" type="submit">
+                  Continue
+                </button>
+                </div>
+
+            </form>
+
+          </div>
+        </div>
+    </main>
+</div>
+
+<script>
+    function setLocation(element) {
+      document.forms[0].action = element.value
+    }
+  </script>
+
+<style>
+  .nhsuk-form-group--warning {
+    border-left: 4px solid #ffb81C;
+    padding-left: 16px;
+}
+</style>
+
+
+  {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,420 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../search">Find a contractor</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../contractorv2-1">MILTON CHEMIST LTD</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../schedule-3">August 2021 schedule</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="expensive-items">Back to August 2021 schedule</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+    <form method="post" action="../schedule-3">
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1 style="margin-bottom:12px;" class="nhsuk-heading-l">
+            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Manage contractor<span class="nhsuk-u-visually-hidden">-</span></span></span>
+              Check August 2021 prescription data
+          </h1>
+
+          <p class="nhsuk-body-s" style="margin-bottom: 36px; margin-right:24px;">
+            <b>OCS Code:</b> FF910<br>
+            <b>LPP:</b> QNC - STAFFORDSHIRE & STOKE ON TRENT STP<br>
+            <b>Payment date:</b> 1 November 2021
+          </p>
+
+          <div class="nhsuk-form-group" style="margin-bottom: 36px">
+            <dl class="nhsuk-summary-list">
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Prescription data amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="Drug-appliance-costs-change">
+                    Change<span class="nhsuk-u-visually-hidden"> [key text]</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Total forms received (including electronic prescriptions) quantity
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  3,551
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="Drug-appliance-costs-change">
+                    Change<span class="nhsuk-u-visually-hidden"> [key text]</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Total forms received (including electronic prescriptions) amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="Drug-appliance-costs-change">
+                    Change<span class="nhsuk-u-visually-hidden"> [key text]</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Total electronic prescription forms received quantity
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="Drug-appliance-costs-change">
+                    Change<span class="nhsuk-u-visually-hidden"> [key text]</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Total electronic prescription forms received amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="Drug-appliance-costs-change">
+                    Change<span class="nhsuk-u-visually-hidden"> [key text]</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Total electronic prescription items received quantity
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="Drug-appliance-costs-change">
+                    Change<span class="nhsuk-u-visually-hidden"> [key text]</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Total electronic prescription items received amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="Drug-appliance-costs-change">
+                    Change<span class="nhsuk-u-visually-hidden"> [key text]</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Items at zero discount rate, for which a fee is paid
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  471
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Items at standard discount rate, for which a fee is paid (including oxygen)
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  7,146
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Total of items, for which a fee is paid amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  7,617
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="Drug-appliance-costs-change">
+                    Change<span class="nhsuk-u-visually-hidden"> [key text]</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Average item value
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  8.03
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="Drug-appliance-costs-change">
+                    Change<span class="nhsuk-u-visually-hidden"> [key text]</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Referred back items quantity
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  1
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="Drug-appliance-costs-change">
+                    Change<span class="nhsuk-u-visually-hidden"> [key text]</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Referred back items amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="Drug-appliance-costs-change">
+                    Change<span class="nhsuk-u-visually-hidden"> [key text]</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Referred back forms quantity
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  1
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="Drug-appliance-costs-change">
+                    Change<span class="nhsuk-u-visually-hidden"> [key text]</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Referred back forms amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="Drug-appliance-costs-change">
+                    Change<span class="nhsuk-u-visually-hidden"> [key text]</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Medicines use reviews declared quantity
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="Drug-appliance-costs-change">
+                    Change<span class="nhsuk-u-visually-hidden"> [key text]</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Medicines use reviews declared amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="Drug-appliance-costs-change">
+                    Change<span class="nhsuk-u-visually-hidden"> [key text]</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Total MURs declared (previous) quantity
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="Drug-appliance-costs-change">
+                    Change<span class="nhsuk-u-visually-hidden"> [key text]</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Total MURs declared (previous) amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="Drug-appliance-costs-change">
+                    Change<span class="nhsuk-u-visually-hidden"> [key text]</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  FP57 forms declared quantity
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  1
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="Drug-appliance-costs-change">
+                    Change<span class="nhsuk-u-visually-hidden"> [key text]</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  FP57 forms declared amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="Drug-appliance-costs-change">
+                    Change<span class="nhsuk-u-visually-hidden"> [key text]</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  New medicine service undertaken
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  6
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  New medicine service items quantity
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  7,604
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="Drug-appliance-costs-change">
+                    Change<span class="nhsuk-u-visually-hidden"> [key text]</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  New medicine service items amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="Drug-appliance-costs-change">
+                    Change<span class="nhsuk-u-visually-hidden"> [key text]</span>
+                  </a>
+                </dd>
+              </div>
+
+
+            </dl>
+
+          </div>
+
+
+          <div class="nhsuk-form-group">
+            <button class="nhsuk-button" type="submit">
+            Save and continue
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+
+      </form>
+  </main>
+</div>
+
+
+  {% endblock %}
+</body>
+
+</html>

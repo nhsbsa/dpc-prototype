@@ -29,14 +29,6 @@
   <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
   {% block content %}
 
-  {% if data['schedule-type'] == "EP - EEPS Payments" %}
-  <script>
-    window.onload = function() {
-        location.href = "edit";
-    }
-  </script>
-  {% endif %}
-
 <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
   <div class="nhsuk-width-container">
     <div class="nhsuk-grid-row">
@@ -60,51 +52,22 @@
             <div class="nhsuk-grid-column-two-thirds">
             	<span class="nhsuk-caption-l" id="status-monitor-home-sub-heading">Direct Payments to Contractors (DPC)</span>
             	<span class="nhsuk-u-visually-hidden"> - </span>
-            	<h1 class="nhsuk-heading-l" id="status-monitor-home-heading">Add schedule message</h1>
+            	<h1 class="nhsuk-heading-l" id="status-monitor-home-heading">Which schedule type do you want to add a message to?</h1>
             </div>
         </div>
 
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-two-thirds">
-            <dl class="nhsuk-summary-list">
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Schedule type
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  {% if data['schedule-type'] %}{{ data['schedule-type'] }}{% else %}PH - Pharmacy{% endif %}
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                  <a href="schedule-type">
-                    Change<span class="nhsuk-u-visually-hidden"> schedule type</span>
-                  </a>
-                </dd>
-              </div>
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Payment run ID
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  M00299
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                </dd>
-              </div>
-            </dl>
-        </div>
-        </div>
 
-        <div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-two-thirds">
-
-            <form action="check-type" method="post">
-
-              <div class="nhsuk-hint" id="contact-hint">
-                You have a limit of 4000 characters, including spaces.
-              </div>
+            <form action="add-type" method="post">
 
             <div class="nhsuk-form-group">
-              <textarea id="message" name="message" class="text-editor-2 nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-1500">{% if data['saved'] %}This is where the saved schedule message appears{% endif %}</textarea>
+              <select class="nhsuk-select" id="schedule-type" name="schedule-type">
+                <option value="PH - Pharmacy" selected>PH - Pharmacy</option>
+                <option value="PL - Late Pharmacy">PL - Late Pharmacy</option>
+                <option value="AC - Appliance Contractor">AC - Appliance Contractor</option>
+                <option value="EP - EEPS Payments">EP - EEPS Payments</option>
+              </select>
             </div>
 
             <button class="nhsuk-button" type="submit">

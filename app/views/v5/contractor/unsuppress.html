@@ -44,12 +44,15 @@
 
         <ol class="nhsuk-breadcrumb__list">
           <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="search">Find a contractor</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="contractorv2-1">MILTON CHEMIST LTD</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="schedule-3-suppress">August 2021 schedule</a></li>
         </ol>
 
       </div>
     </div>
 
-    <p class="nhsuk-breadcrumb__back"><a href="../dashboard/dashboard">Dashboard</a></p>
+    <p class="nhsuk-breadcrumb__back"><a href="schedule-3-suppress">Back to August 2021 schedule</a></p>
 
   </div>
 </nav>
@@ -60,7 +63,12 @@
             <div class="nhsuk-grid-column-two-thirds">
             	<span class="nhsuk-caption-l" id="status-monitor-home-sub-heading">Direct Payments to Contractors (DPC)</span>
             	<span class="nhsuk-u-visually-hidden"> - </span>
-            	<h1 class="nhsuk-heading-l" id="status-monitor-home-heading">Add schedule message</h1>
+            	<h1 class="nhsuk-heading-l" id="status-monitor-home-heading">Are you sure you want to unsuppress the August 2021 schedule?</h1>
+              <p class="nhsuk-body-s" style="margin-bottom: 36px; margin-right:24px;">
+                OCS Code: FF910<br>
+                LPP: QNC - STAFFORDSHIRE & STOKE ON TRENT STP<br>
+                Payment date: 1 November 2021
+              </p>
             </div>
         </div>
 
@@ -69,25 +77,18 @@
             <dl class="nhsuk-summary-list">
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
-                  Schedule type
+                  Main branch
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  {% if data['schedule-type'] %}{{ data['schedule-type'] }}{% else %}PH - Pharmacy{% endif %}
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                  <a href="schedule-type">
-                    Change<span class="nhsuk-u-visually-hidden"> schedule type</span>
-                  </a>
+                  FTS01
                 </dd>
               </div>
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
-                  Payment run ID
+                  Sub branches
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  M00299
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
+                  0
                 </dd>
               </div>
             </dl>
@@ -97,18 +98,28 @@
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-two-thirds">
 
-            <form action="check-type" method="post">
+            <form action="schedule-3-suppress" method="post">
 
-              <div class="nhsuk-hint" id="contact-hint">
-                You have a limit of 4000 characters, including spaces.
+              <div class="nhsuk-radios nhsuk-radios--inline">
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+                  Yes
+                </label>
               </div>
 
-            <div class="nhsuk-form-group">
-              <textarea id="message" name="message" class="text-editor-2 nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-1500">{% if data['saved'] %}This is where the saved schedule message appears{% endif %}</textarea>
-            </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                  No
+                </label>
+              </div>
 
+            </div>
+            <br>
             <button class="nhsuk-button" type="submit">
-              Continue
+              Save and continue
             </button>
 
             </form>
