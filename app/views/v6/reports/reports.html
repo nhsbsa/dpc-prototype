@@ -54,7 +54,7 @@
           </a>
           <a href="cleanup">
             <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-float-right" type="submit"  style="margin-right:12px;">
-              Delete multiple reports
+              Delete all reports
             </button>
           </a>
         </div>
@@ -62,7 +62,7 @@
 
 
     <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-two-thirds">
+      <!--<div class="nhsuk-grid-column-two-thirds">
         <details class="nhsuk-details">
           <summary class="nhsuk-details__summary">
             <span class="nhsuk-details__summary-text">
@@ -77,12 +77,17 @@
           <div class="nhsuk-form-group nhsuk-u-margin-right-4" style="float: left;">
             <label class="nhsuk-label" for="reportStatus">Status</label>
             <select class="nhsuk-select" id="reportStatus" name="reportStatus">
-              <option value="ACTIVE">All statuses</option>
-              <option value="QUEUED">Queued</option>
-              <option value="RUNNING">Running</option>
-              <option value="COMPLETED">Completed</option>
-              <option value="DOWNLOADED">Downloaded</option>
-              <option value="ERROR">Error</option>
+              <optgroup label="Grouped statuses">
+                <option value="ALL">All</option>
+                <option value="ACTIVE" selected="selected">Active</option>
+              </optgroup>
+              <optgroup label="Statuses">
+                <option value="QUEUED">Queued</option>
+                <option value="RUNNING">Running</option>
+                <option value="COMPLETED">Completed</option>
+                <option value="DOWNLOADED">Downloaded</option>
+                <option value="ERROR">Error</option>
+              </optgroup>
             </select>
           </div>
           <div class="nhsuk-grid-column-full" style="padding-left:0px;">
@@ -97,9 +102,45 @@
         </details>
       </div>
       <div class="nhsuk-grid-column-one-third">
+      </div>-->
 
+      <div class="nhsuk-grid-column-two-thirds">
+        <p>
+          Reports that you've created will appear here. After a report has been downloaded the report will be deleted.
+        </p>
       </div>
+
       <div class="nhsuk-grid-column-full">
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Filter statuses
+            </span>
+          </summary>
+          <div class="nhsuk-details__text" style="overflow: hidden;">
+          <div class="nhsuk-form-group nhsuk-u-margin-right-4">
+            <label class="nhsuk-label" for="reportStatus">Status</label>
+            <select class="nhsuk-select" id="reportStatus" name="reportStatus">
+              <optgroup label="Grouped statuses">
+                <option value="ALL">All statuses</option>
+                <option value="ACTIVE" selected="selected">Active statuses</option>
+              </optgroup>
+              <optgroup label="Statuses">
+                <option value="QUEUED">Queued</option>
+                <option value="RUNNING">Running</option>
+                <option value="COMPLETED">Completed</option>
+                <option value="DOWNLOADED">Downloaded</option>
+                <option value="ERROR">Error</option>
+              </optgroup>
+            </select>
+          </div>
+          <a href="#">
+            <button class="nhsuk-button nhsuk-button--secondary" type="submit">
+              Filter status
+            </button>
+          </a>
+          </div>
+        </details>
 
         <table role="table" class="nhsuk-table-responsive" id="report-executed-table">
           <thead role="rowgroup" class="nhsuk-table__head">
@@ -111,24 +152,6 @@
           </tr>
           </thead>
           <tbody class="nhsuk-table__body">
-          <tr role="row" class="nhsuk-table__row">
-            <td id="view-child[1123]-name-cell" role="cell" class="nhsuk-table__cell">
-              <span id="view-child[1123]-name-cell-responsive-heading" class="nhsuk-table-responsive__heading">Name</span>
-              <a id="view-child[1123]-name-cell-value-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href="#">Check Schedules for Zeroes - M00299</a>
-            </td>
-            <td id="view-child[1123]-created-cell" role="cell" class="nhsuk-table__cell">
-              <span id="view-child[1123]-created-cell-responsive-heading" class="nhsuk-table-responsive__heading">Created</span>
-              <span id="view-child[1123]-created-cell-value">15 August 2022</span>
-            </td>
-            <td id="view-child[1123]-status-cell" role="cell" class="nhsuk-table__cell">
-                <span id="view-child[1123]-status-cell-responsive-heading" class="nhsuk-table-responsive__heading">Status</span>
-                <span id="view-child[1123]-status-cell-value">Queued</span>
-            </td>
-            <td role="cell" class="nhsuk-table__cell" id="action[0]">
-                <span class="nhsuk-table-responsive__heading">action:</span>
-                <a id="download-report-[1123]-link-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href="cancel">Cancel</a>
-            </td>
-          </tr>
           <tr role="row" class="nhsuk-table__row">
             <td id="view-child[1123]-name-cell" role="cell" class="nhsuk-table__cell">
               <span id="view-child[1123]-name-cell-responsive-heading" class="nhsuk-table-responsive__heading">Name</span>
@@ -162,7 +185,7 @@
             </td>
             <td role="cell" class="nhsuk-table__cell" id="action[0]">
                 <span class="nhsuk-table-responsive__heading">action:</span>
-                <a id="download-report-[1123]-link-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href="cancel">Cancel</a>
+                <a id="download-report-[1123]-link-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href="cancel">Refresh</a>
             </td>
           </tr>
           <tr role="row" class="nhsuk-table__row">
@@ -180,7 +203,7 @@
             </td>
             <td role="cell" class="nhsuk-table__cell" id="action[0]">
                 <span class="nhsuk-table-responsive__heading">action:</span>
-                <a id="download-report-[1123]-link-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href="cancel">Cancel</a>
+                <a id="download-report-[1123]-link-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href="cancel">Refresh</a>
             </td>
           </tr>
           <tr role="row" class="nhsuk-table__row">
@@ -216,7 +239,7 @@
             </td>
             <td role="cell" class="nhsuk-table__cell" id="action[0]">
                 <span class="nhsuk-table-responsive__heading">action:</span>
-                <a id="download-report-[1123]-link-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href="cancel">Cancel</a>
+                <a id="download-report-[1123]-link-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href="cancel">Refresh</a>
             </td>
           </tr>
           <tr role="row" class="nhsuk-table__row">
@@ -249,45 +272,7 @@
             </td>
             <td id="view-child[1123]-status-cell" role="cell" class="nhsuk-table__cell">
                 <span id="view-child[1123]-status-cell-responsive-heading" class="nhsuk-table-responsive__heading">Status</span>
-                <span id="view-child[1123]-status-cell-value">Downloaded</span>
-            </td>
-            <td role="cell" class="nhsuk-table__cell" id="action[0]">
-                <span class="nhsuk-table-responsive__heading">action:</span>
-                <a id="download-report-[1123]-link-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href=#">Download</a> or
-                <a id="delete-report-[1123]-link-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href="delete">Delete</a>
-            </td>
-          </tr>
-          <tr role="row" class="nhsuk-table__row">
-            <td id="view-child[1123]-name-cell" role="cell" class="nhsuk-table__cell">
-              <span id="view-child[1123]-name-cell-responsive-heading" class="nhsuk-table-responsive__heading">Name</span>
-              <a id="view-child[1123]-name-cell-value-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href="#">Check Schedules for Zeroes - M00299</a>
-            </td>
-            <td id="view-child[1123]-created-cell" role="cell" class="nhsuk-table__cell">
-              <span id="view-child[1123]-created-cell-responsive-heading" class="nhsuk-table-responsive__heading">Created</span>
-              <span id="view-child[1123]-created-cell-value">15 August 2022</span>
-            </td>
-            <td id="view-child[1123]-status-cell" role="cell" class="nhsuk-table__cell">
-                <span id="view-child[1123]-status-cell-responsive-heading" class="nhsuk-table-responsive__heading">Status</span>
-                <span id="view-child[1123]-status-cell-value">Downloaded</span>
-            </td>
-            <td role="cell" class="nhsuk-table__cell" id="action[0]">
-                <span class="nhsuk-table-responsive__heading">action:</span>
-                <a id="download-report-[1123]-link-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href=#">Download</a> or
-                <a id="delete-report-[1123]-link-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href="delete">Delete</a>
-            </td>
-          </tr>
-          <tr role="row" class="nhsuk-table__row">
-            <td id="view-child[1123]-name-cell" role="cell" class="nhsuk-table__cell">
-              <span id="view-child[1123]-name-cell-responsive-heading" class="nhsuk-table-responsive__heading">Name</span>
-              <a id="view-child[1123]-name-cell-value-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href="#">Check Schedules for Zeroes - M00299</a>
-            </td>
-            <td id="view-child[1123]-created-cell" role="cell" class="nhsuk-table__cell">
-              <span id="view-child[1123]-created-cell-responsive-heading" class="nhsuk-table-responsive__heading">Created</span>
-              <span id="view-child[1123]-created-cell-value">15 August 2022</span>
-            </td>
-            <td id="view-child[1123]-status-cell" role="cell" class="nhsuk-table__cell">
-                <span id="view-child[1123]-status-cell-responsive-heading" class="nhsuk-table-responsive__heading">Status</span>
-                <span id="view-child[1123]-status-cell-value">Downloaded</span>
+                <span id="view-child[1123]-status-cell-value">Completed</span>
             </td>
             <td role="cell" class="nhsuk-table__cell" id="action[0]">
                 <span class="nhsuk-table-responsive__heading">action:</span>
@@ -300,22 +285,6 @@
       </div>
     </div>
 
-    <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-full">
-        <nav class="nav" role="navigation" aria-label="Pagination">
-
-          <ul class="pagination">
-            <li class="pagination__item"><a class="pagination__link current" href="#0" aria-current="true" aria-label="Page 1, current page">1</a></li>
-            <li class="pagination__item"><a class="pagination__link" href="#" aria-label="Page 2">2</a></li>
-            <li class="pagination__item"><a class="pagination__link" href="#" aria-label="Page 3">3</a></li>
-          </ul>
-
-          <a class="pagination__link" href="#" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;&raquo;</span></a>
-
-          <div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 1 - 10 of 27 reports</div>
-        </nav>
-      </div>
-    </div>
     </main>
 </div>
 

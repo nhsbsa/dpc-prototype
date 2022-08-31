@@ -63,7 +63,7 @@
             <div class="nhsuk-grid-column-two-thirds">
             	<span class="nhsuk-caption-l" id="status-monitor-home-sub-heading">Direct Payments to Contractors (DPC)</span>
             	<span class="nhsuk-u-visually-hidden"> - </span>
-            	<h1 class="nhsuk-heading-l" id="status-monitor-home-heading">Suppress August 2021 schedule</h1>
+            	<h1 class="nhsuk-heading-l" id="status-monitor-home-heading">Are you sure you want to unsuppress the August 2021 schedule?</h1>
               <p class="nhsuk-body-s" style="margin-bottom: 36px; margin-right:24px;">
                 OCS Code: FF910<br>
                 LPP: QNC - STAFFORDSHIRE & STOKE ON TRENT STP<br>
@@ -91,30 +91,61 @@
                   2
                 </dd>
               </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Sub branch originally suppressed
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  FF910
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Schedule suppressed by
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  CHHIN
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Schedule suppressed comment
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Schedule has been suppressed because contractor is electric only.
+                </dd>
+              </div>
             </dl>
+            <div class="nhsuk-inset-text">
+              <span class="nhsuk-u-visually-hidden">Information: </span>
+              <p>This is a sub branch, all associated sub branches will be unsuppressed too.</p>
+            </div>
         </div>
         </div>
 
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-two-thirds">
 
-            <div class="nhsuk-inset-text" style="margin-top: 0px; margin-bottom: 24px;">
-              <span class="nhsuk-u-visually-hidden">Information: </span>
-              <p>This is a sub branch, all associated sub branches will be linked too.</p>
-            </div>
+            <form action="schedule-3-suppress" method="post">
 
-            <form action="schedule-3-suppressed" method="post">
+              <div class="nhsuk-radios nhsuk-radios--inline">
 
-            <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="example-2">
-                Comment
-              </label>
-              <div class="nhsuk-hint" id="contact-hint">
-                You have a limit of 100 characters, including spaces.
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+                  Yes
+                </label>
               </div>
-              <textarea class="nhsuk-textarea" id="notes" name="notes" rows="5" aria-describedby="example-hint"></textarea>
-            </div>
 
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                  No
+                </label>
+              </div>
+
+            </div>
+            <br>
             <button class="nhsuk-button" type="submit">
               Save and continue
             </button>

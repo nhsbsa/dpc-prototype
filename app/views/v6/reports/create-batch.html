@@ -10,6 +10,7 @@
 
 <body>
   {% extends 'layout-logged-in.html' %}
+
   <!--
          In /views/layout.html you can:
            - change the header and footer
@@ -30,12 +31,14 @@
 
         <ol class="nhsuk-breadcrumb__list">
           <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="reports">Reports</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="manage-batch-reports">Manage batch reports</a></li>
         </ol>
 
       </div>
     </div>
 
-    <p class="nhsuk-breadcrumb__back"><a href="../dashboard/dashboard">Back to dashboard</a></p>
+    <p class="nhsuk-breadcrumb__back"><a href="manage-batch-reports">Back to manage batch reports</a></p>
 
   </div>
 </nav>
@@ -47,34 +50,39 @@
         <div class="nhsuk-grid-column-two-thirds">
           <h1 class="nhsuk-heading-l">
             <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>
-              Are you sure you want to delete all reports?
+              Create batch report
           </h1>
 
-          <div class="nhsuk-radios nhsuk-radios--inline">
 
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
-                Yes
-              </label>
-            </div>
 
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
-                No
-              </label>
-            </div>
-
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="batch-name">
+              Batch name
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="batch-name" name="batch-name" type="text">
           </div>
-          <br>
-          <form action="reports-empty" method="post">
-            <button class="nhsuk-button" type="submit">
-              Save and continue
-            </button>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+              Reports
+            </label>
+            <a href="add-report-batch">
+              <button class="nhsuk-button nhsuk-button--secondary" type="submit">
+                Add report
+              </button>
+            </a>
+          </div>
+
+          <form action="manage-batch-reports" method="post">
+
+          <button class="nhsuk-button" type="submit">
+            Create batch report
+          </button>
+
           </form>
 
         </div>
+
       </div>
 
 

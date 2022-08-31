@@ -47,8 +47,61 @@
         <div class="nhsuk-grid-column-two-thirds">
           <h1 class="nhsuk-heading-l">
             <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>
-              Are you sure you want to delete all reports?
+              Are you sure you want to delete the Monthly payment run reports batch report?
           </h1>
+
+          <!--<dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Form number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['formNumber'] %}{{ data['formNumber'] }}{% else %}A00101{% endif %}
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Item number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                3
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Description
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['description'] %}{{ data['description'] }}{% else %}GLYCOPYRRONIUM BROMIDE 1MG TABLETS{% endif %}
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Pack size
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                30.00
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Quantity
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['Quantity'] %}{{ data['Quantity'] }}{% else %}45{% endif %}
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Amount
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['Amount'] %}{{ data['Amount'] }}{% else %}£367.67{% endif %}
+              </dd>
+            </div>
+
+          </dl>-->
 
           <div class="nhsuk-radios nhsuk-radios--inline">
 
@@ -68,7 +121,7 @@
 
           </div>
           <br>
-          <form action="reports-empty" method="post">
+          <form action="manage-batch-reports" method="post">
             <button class="nhsuk-button" type="submit">
               Save and continue
             </button>
