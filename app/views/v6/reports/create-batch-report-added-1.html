@@ -11,6 +11,70 @@
 <body>
   {% extends 'layout-logged-in.html' %}
 
+  {% block pageScripts %}
+  <script type="text/javascript" src="/js/search.js"></script>
+  <script type="text/javascript" src="/js/auto.js"></script>
+  <script type="text/javascript" src="/js/add-letter-code-list.js"></script>
+  <script type="text/javascript" src="/js/action-menu.js"></script>
+  <script type="text/javascript" src="/js/sort.js"></script>
+  <script type="text/javascript" src="/js/suggestionDropdown.js"></script>
+  <script>
+    const data = [
+      {
+        code: 'Ceased Contractors Advance Analysis',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Contractors Receiving Payments',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Paper Schedule Turned Off',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'LPP Levy - Values and Factors',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'LPP Levy History',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Levy Values',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Amended Payment',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'CPS Input by Expense Head',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Exceptions Post Web Closed',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'PPC Pre-Load Totals',
+        name: '',
+        recall: 'Invitation letter',
+      },
+    ];
+    createSuggestionDropdown(data, 'report-name-2');
+  </script>
+  {% endblock %}
+
   <!--
          In /views/layout.html you can:
            - change the header and footer
@@ -32,6 +96,7 @@
         <ol class="nhsuk-breadcrumb__list">
           <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
           <li class="nhsuk-breadcrumb__item"><a href="reports">Reports</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="create-report">Create report</a></li>
           <li class="nhsuk-breadcrumb__item"><a href="manage-batch-reports">Manage batch reports</a></li>
         </ol>
 
@@ -53,13 +118,15 @@
               Create batch report
           </h1>
 
+          <form action="create-batch-report-added-2" method="post">
+
           <div class="nhsuk-form-group">
             <h2 class="nhsuk-heading-s">
               <label for="batch-name">
                 Batch name
               </label>
             </h2>
-            <input class="nhsuk-input nhsuk-input--width-20" id="batch-name" name="batch-name" type="text">
+            <input class="nhsuk-input nhsuk-input--width-20" id="batch-name" name="batch-name" type="text" value="{{ data['batch-name'] }}">
           </div>
 
           <div class="nhsuk-form-group">
@@ -70,51 +137,33 @@
             <dl class="nhsuk-summary-list">
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__value">
-                  Pricing contractor averages
+                  {% if data['report-name-1'] %}{{ data['report-name-1'] }}{% else %}Pricing contractor averages{% endif %}
                 </dt>
                 <dd class="nhsuk-summary-list__actions">
-                  <a href="#">
-                    Remove<span class="nhsuk-u-visually-hidden"> report</span>
-                  </a>
-                </dd>
-              </div>
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__value">
-                  CPS Input by Expense Head
-                </dt>
-                <dd class="nhsuk-summary-list__actions">
-                  <a href="#">
-                    Remove<span class="nhsuk-u-visually-hidden"> report</span>
-                  </a>
-                </dd>
-              </div>
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__value">
-                  Expense Head Enquiry
-                </dt>
-                <dd class="nhsuk-summary-list__actions">
-                  <a href="#">
-                    Remove<span class="nhsuk-u-visually-hidden"> report</span>
-                  </a>
-                </dd>
-              </div>
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__value">
-                  LPS Fees Breakdown
-                </dt>
-                <dd class="nhsuk-summary-list__actions">
-                  <a href="#">
+                  <a href="create-batch">
                     Remove<span class="nhsuk-u-visually-hidden"> report</span>
                   </a>
                 </dd>
               </div>
             </dl>
 
-            <a href="add-report-batch">
+            <div class="nhsuk-hint" id="contact-hint">
+              Search for a report to add to the batch report.
+            </div>
+            <fieldset class="nhsuk-fieldset" aria-describedby="dob-from" role="group">
+                <div class="nhsuk-form-group">
+                  <div id="report-name-2"></div>
+                  <ul id="letter-code-list" class="nhsuk-list">
+                  </ul>
+                </div>
+            </fieldset>
+
               <button class="nhsuk-button nhsuk-button--secondary" type="submit">
                 Add report
               </button>
-            </a>
+
+            </form>
+
           </div>
 
           <form action="manage-batch-reports" method="post">
@@ -126,7 +175,6 @@
 
         </div>
 
-      </div>
 
 
 

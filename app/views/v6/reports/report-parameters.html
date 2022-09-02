@@ -76,20 +76,20 @@
                 Payment run ID
               </label>
               <select class="nhsuk-select" id="schedule-type" name="schedule-type">
-                <option value="M00299" selected>M00299 - 24/8/2021</option>
-                <option value="M00298">M00298 - 17/8/2021</option>
-                <option value="M00297">M00297 - 10/8/2021</option>
-                <option value="M00296">M00296 - 3/8/2021</option>
+                <option value="M00299" selected>M00299</option>
+                <option value="M00298">M00298</option>
+                <option value="M00297">M00297</option>
+                <option value="M00296">M00296</option>
               </select>
             </div>
 
             <div class="nhsuk-form-group">
             <div class="nhsuk-radios nhsuk-radios--inline">
               <label class="nhsuk-label" for="schedule-type">
-                Format
+                Format: {% if data['report-format'] %}{{ data['report-format'] }}{% else %}CSV{% endif %}
               </label>
 
-              <div class="nhsuk-radios__item">
+              <!--<div class="nhsuk-radios__item">
                 <input checked class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
                 <label class="nhsuk-label nhsuk-radios__label" for="example-1">
                   PDF
@@ -109,10 +109,10 @@
                   CSV
                 </label>
               </div>
-              </div>
+              </div>-->
 
             </div>
-
+            <br>
           <div class="nhsuk-form-group">
           <form action="complete" method="post">
             <button class="nhsuk-button" type="submit">

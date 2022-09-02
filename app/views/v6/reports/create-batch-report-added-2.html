@@ -71,7 +71,7 @@
         recall: 'Invitation letter',
       },
     ];
-    createSuggestionDropdown(data, 'report-name');
+    createSuggestionDropdown(data, 'report-name-3');
   </script>
   {% endblock %}
 
@@ -96,12 +96,14 @@
         <ol class="nhsuk-breadcrumb__list">
           <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
           <li class="nhsuk-breadcrumb__item"><a href="reports">Reports</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="create-report">Create report</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="manage-batch-reports">Manage batch reports</a></li>
         </ol>
 
       </div>
     </div>
 
-    <p class="nhsuk-breadcrumb__back"><a href="reports">Back to reports</a></p>
+    <p class="nhsuk-breadcrumb__back"><a href="manage-batch-reports">Back to manage batch reports</a></p>
 
   </div>
 </nav>
@@ -113,77 +115,76 @@
         <div class="nhsuk-grid-column-two-thirds">
           <h1 class="nhsuk-heading-l">
             <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>
-              Which report template would you like to use?
+              Create batch report
           </h1>
-          <form action="report-parameters" method="post">
-          <div class="nhsuk-hint" id="contact-hint">
-            You can either search a report template, select a popular template or select a batch report.
+
+          <form action="create-batch-report-added-3" method="post">
+
+          <div class="nhsuk-form-group">
+            <h2 class="nhsuk-heading-s">
+              <label for="batch-name">
+                Batch name
+              </label>
+            </h2>
+            <input class="nhsuk-input nhsuk-input--width-20" id="batch-name" name="batch-name" type="text" value="{{ data['batch-name'] }}">
           </div>
 
           <div class="nhsuk-form-group">
+            <h2 class="nhsuk-heading-s">
+              Reports
+            </h2>
 
+            <dl class="nhsuk-summary-list">
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__value">
+                  {% if data['report-name-1'] %}{{ data['report-name-1'] }}{% else %}Pricing contractor averages{% endif %}
+                </dt>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="create-batch-report-added-1">
+                    Remove<span class="nhsuk-u-visually-hidden"> report</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__value">
+                  {% if data['report-name-2'] %}{{ data['report-name-2'] }}{% else %}Paper Schedule Turned Off{% endif %}
+                </dt>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="create-batch-report-added-1">
+                    Remove<span class="nhsuk-u-visually-hidden"> report</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+
+            <div class="nhsuk-hint" id="contact-hint">
+              Search for a report to add to the batch report.
+            </div>
             <fieldset class="nhsuk-fieldset" aria-describedby="dob-from" role="group">
                 <div class="nhsuk-form-group">
-                  <div id="report-name"></div>
+                  <div id="report-name-3"></div>
                   <ul id="letter-code-list" class="nhsuk-list">
                   </ul>
                 </div>
             </fieldset>
 
+              <button class="nhsuk-button nhsuk-button--secondary" type="submit">
+                Add report
+              </button>
 
+            </form>
 
-
-            <button class="nhsuk-button" type="submit">
-              Continue
-            </button>
-          </form>
           </div>
 
-        </div>
+          <form action="manage-batch-reports" method="post">
+          <button class="nhsuk-button" type="submit">
+            Create batch report
+          </button>
 
-        <div class="nhsuk-grid-column-two-thirds">
-
-          <h2 class="nhsuk-heading-m">Popular templates</h2>
-
-        </div>
-        <div class="nhsuk-grid-column-one-third">
-
-          <h2 style="float: left;" class="nhsuk-heading-m">Batch reports</h2>
-          <p style="float: right;"><a class="nhsuk-link--no-visited-state" href="manage-batch-reports">Manage<div class="nhsuk-u-visually-hidden"> batch reports</div></a></p>
-
-        </div>
-        <div class="nhsuk-grid-column-one-third">
-
-            <ul class="nhsuk-list">
-              <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Ceased Contractors Advance Analysis">Ceased Contractors Advance Analysis</a></li>
-              <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=LPS Fees Breakdown&report-format=PDF">LPS Fees Breakdown</a></li>
-              <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Paper Schedule Turned Off">Paper Schedule Turned Off</a></li>
-              <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=LPP Levy - Values and Factors">LPP Levy - Values and Factors</a></li>
-              <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=LPP Levy History">LPP Levy History</a></li>
-            </ul>
-
-        </div>
-        <div class="nhsuk-grid-column-one-third">
-
-            <ul class="nhsuk-list">
-              <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Levy Values">Levy Values</a></li>
-              <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Amended Payment">Amended Payment</a></li>
-              <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=CPS Input by Expense Head">CPS Input by Expense Head</a></li>
-              <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Exceptions Post Web Closed">Exceptions Post Web Closed</a></li>
-              <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=PPC Pre-Load Totals">PPC Pre-Load Totals</a></li>
-            </ul>
-
-        </div>
-        <div class="nhsuk-grid-column-one-third">
-
-            <ul class="nhsuk-list">
-              <li><a class="nhsuk-link--no-visited-state" href="batch-report-parameters?report-name=Monthly payment run reports">Monthly payment run reports</a></li>
-              <li><a class="nhsuk-link--no-visited-state" href="#">Levy reports</a></li>
-            </ul>
+          </form>
 
         </div>
 
-      </div>
 
 
 

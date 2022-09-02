@@ -62,8 +62,15 @@
 
 
     <div class="nhsuk-grid-row">
-      <!--<div class="nhsuk-grid-column-two-thirds">
-        <details class="nhsuk-details">
+
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <p>
+        Created reports will be available on this page. After a report has been downloaded it will be removed from active reports.
+      </p>
+
+        <!--  <details class="nhsuk-details">
           <summary class="nhsuk-details__summary">
             <span class="nhsuk-details__summary-text">
               Filter reports
@@ -99,13 +106,14 @@
             <p style="float: left; padding-top: 15px; padding-left: 15px;"><a href="search">Reset filters</a></p>
             </div>
           </div>
-        </details>
-      </div>-->
+        </details>-->
+      </div>
       <div class="nhsuk-grid-column-one-third">
 
       </div>
 
       <div class="nhsuk-grid-column-full">
+
         <details class="nhsuk-details">
           <summary class="nhsuk-details__summary">
             <span class="nhsuk-details__summary-text">
@@ -113,7 +121,11 @@
             </span>
           </summary>
           <div class="nhsuk-details__text" style="overflow: hidden;">
-          <div class="nhsuk-form-group nhsuk-u-margin-right-4">
+            <div class="nhsuk-form-group nhsuk-u-margin-right-4" style="float: left;">
+            <label class="nhsuk-label" for="reportName">Report name</label>
+            <input class="nhsuk-input nhsuk-input--width-10" id="reportName" type="text" name="reportName" value="">
+            </div>
+          <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="reportStatus">Status</label>
             <select class="nhsuk-select" id="reportStatus" name="reportStatus">
               <optgroup label="Grouped statuses">
@@ -125,6 +137,7 @@
                 <option value="RUNNING">Running</option>
                 <option value="COMPLETED">Completed</option>
                 <option value="DOWNLOADED">Downloaded</option>
+                <option value="DELETED">Deleted</option>
                 <option value="ERROR">Error</option>
               </optgroup>
             </select>
