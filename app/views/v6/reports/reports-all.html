@@ -111,7 +111,7 @@
       </div>
 
       <div class="nhsuk-grid-column-full">
-        <details class="nhsuk-details">
+        <details class="nhsuk-details" style="max-width: 66%; float: left;">
           <summary class="nhsuk-details__summary">
             <span class="nhsuk-details__summary-text">
               Filter statuses
@@ -126,8 +126,8 @@
             <label class="nhsuk-label" for="reportStatus">Status</label>
             <select class="nhsuk-select" id="reportStatus" name="reportStatus">
               <optgroup label="Grouped statuses">
-                <option value="ALL" selected="selected">All statuses</option>
-                <option value="ACTIVE">Active statuses</option>
+                <option value="ALL">All statuses</option>
+                <option value="ACTIVE" selected="selected">Active statuses</option>
               </optgroup>
               <optgroup label="Statuses">
                 <option value="QUEUED">Queued</option>
@@ -146,6 +146,7 @@
           </a>
           </div>
         </details>
+        <p style="float: right;"><a href="#">Refresh</a></p>
 
         <table role="table" class="nhsuk-table-responsive" id="report-executed-table">
           <thead role="rowgroup" class="nhsuk-table__head">
