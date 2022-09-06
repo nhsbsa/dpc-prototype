@@ -20,56 +20,251 @@
   <script type="text/javascript" src="/js/suggestionDropdown.js"></script>
   <script>
     const data = [
-      {
-        code: 'Ceased Contractors Advance Analysis',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: 'Contractors Receiving Payments',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: 'Paper Schedule Turned Off',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: 'LPP Levy - Values and Factors',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: 'LPP Levy History',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: 'Levy Values',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: 'Amended Payment',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: 'CPS Input by Expense Head',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: 'Exceptions Post Web Closed',
-        name: '',
-        recall: 'Invitation letter',
-      },
-      {
-        code: 'PPC Pre-Load Totals',
-        name: '',
-        recall: 'Invitation letter',
-      },
+    {
+      code: 'Ceased Contractors Advance Analysis',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Local Payment without Pricing (Excluding CPS)',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Negative Monitoring',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Number of Advance Items between 1 and 5',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Payment Totals >250k',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Ceased Contractor Link',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Contractors Payment Methods',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Contractors Receiving Payments',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Expense Head Enquiry by LPP',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Monitoring of LPS Contractors',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Paper Schedule Turned Off',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Pricing Contractors Averages',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'LPP Levy - Values and Factors',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'LPP Levy Count',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'LPP Levy History',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Levy Analysis',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Levy Values',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Payees Removed from Plist',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Amended Payment',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'CPS Input Details',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'CPS Input by Expense Head',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'De-registered Accounts',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Exceptions Post Web Closed',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Exceptions Total by Expense Head',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Exceptions Total by LPP Code',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Exceptions v Authorised Payments',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'High Cost Advances/Recovery Reconciliation',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'LPS Reconciliation',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Load Late Advances Check',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'PPC Reports',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'PPC Expense Head Totals',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'PPC Pre-Load Integrity',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'PPC Pre-Load Totals',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'PPC Removed Contractors',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Post Pricing Divisional Summary',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Pre Pricing Divisional Summary',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Reconciliation Details',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Suppressed Schedules',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'View Authorisation Sheet',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Adjusted Schedule',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Average Item Value',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'ESchedules Audit',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Expense Head Enquiry',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Invoice Line Payment',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Item Variance',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'LPS Fees Breakdown',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Late Letters',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Negative Late Letter',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Payment Upload',
+      name: '',
+      recall: 'Invitation letter',
+    },
     ];
     createSuggestionDropdown(data, 'report-name');
   </script>
