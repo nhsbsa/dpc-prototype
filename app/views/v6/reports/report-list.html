@@ -1,0 +1,420 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+
+  {% block pageScripts %}
+  <script type="text/javascript" src="/js/search.js"></script>
+  <script type="text/javascript" src="/js/auto.js"></script>
+  <script type="text/javascript" src="/js/add-letter-code-list.js"></script>
+  <script type="text/javascript" src="/js/action-menu.js"></script>
+  <script type="text/javascript" src="/js/sort.js"></script>
+  <script type="text/javascript" src="/js/suggestionDropdown.js"></script>
+  <script>
+    const data = [
+    {
+      code: 'Ceased Contractors Advance Analysis',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Local Payment without Pricing (Excluding CPS)',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Negative Monitoring',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Number of Advance Items between 1 and 5',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Payment Totals >250k',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Ceased Contractor Link',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Contractors Payment Methods',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Contractors Receiving Payments',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Expense Head Enquiry by LPP',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Monitoring of LPS Contractors',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Paper Schedule Turned Off',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Pricing Contractors Averages',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'LPP Levy - Values and Factors',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'LPP Levy Count',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'LPP Levy History',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Levy Analysis',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Levy Values',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Payees Removed from Plist',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Amended Payment',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'CPS Input Details',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'CPS Input by Expense Head',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'De-registered Accounts',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Exceptions Post Web Closed',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Exceptions Total by Expense Head',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Exceptions Total by LPP Code',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Exceptions v Authorised Payments',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'High Cost Advances/Recovery Reconciliation',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'LPS Reconciliation',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Load Late Advances Check',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'PPC Reports',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'PPC Expense Head Totals',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'PPC Pre-Load Integrity',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'PPC Pre-Load Totals',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'PPC Removed Contractors',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Post Pricing Divisional Summary',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Pre Pricing Divisional Summary',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Reconciliation Details',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Suppressed Schedules',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'View Authorisation Sheet',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Adjusted Schedule',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Average Item Value',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'ESchedules Audit',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Expense Head Enquiry',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Invoice Line Payment',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Item Variance',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'LPS Fees Breakdown',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Late Letters',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Negative Late Letter',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'Payment Upload',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    ];
+    createSuggestionDropdown(data, 'report-name');
+  </script>
+  {% endblock %}
+
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="reports">Reports</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="create-report">Create report</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="create-report">Back to create reports</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+          <h1 class="nhsuk-heading-l">
+            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>
+              Which report template would you like to use?
+          </h1>
+
+        </div>
+        <div class="nhsuk-grid-column-one-half">
+
+          <h2 class="nhsuk-heading-m">Analysis reports</h2>
+
+          <ul class="nhsuk-list">
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Ceased Contractors Advance Analysis">Ceased Contractors Advance Analysis</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Local Payment without Pricing (Excluding CPS)&report-format=PDF">Local Payment without Pricing (Excluding CPS)</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Negative Monitoring">Negative Monitoring</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Number of Advance Items between 1 and 5">Number of Advance Items between 1 and 5</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Payment Totals >250k">Payment Totals >250k</a></li>
+          </ul>
+
+          <h2 class="nhsuk-heading-m">Contractor Enquiry Reports</h2>
+
+          <ul class="nhsuk-list">
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Ceased Contractor Link">Ceased Contractor Link</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Contractors Payment Methods">Contractors Payment Methods</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Contractors Receiving Payments">Contractors Receiving Payments</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Expense Head Enquiry by LPP">Expense Head Enquiry by LPP</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Monitoring of LPS Contractors">Monitoring of LPS Contractors</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Paper Schedule Turned Off">Paper Schedule Turned Off</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Pricing Contractors Averages">Pricing Contractors Averages</a></li>
+          </ul>
+
+          <h2 class="nhsuk-heading-m">Levy Reports</h2>
+
+          <ul class="nhsuk-list">
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=LPP Levy - Values and Factors">LPP Levy - Values and Factors</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=LPP Levy Count">LPP Levy Count</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=LPP Levy History">LPP Levy History</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Levy Analysis">Levy Analysis</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Levy Values">Levy Values</a></li>
+          </ul>
+
+          <h2 class="nhsuk-heading-m">Master Data Load Reports</h2>
+
+          <ul class="nhsuk-list">
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Payees Removed from Plist">Payees Removed from Plist</a></li>
+          </ul>
+
+          <h2 class="nhsuk-heading-m">Payment Run Reports</h2>
+
+          <ul class="nhsuk-list">
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Amended Payment">Amended Payment</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=CPS Input Details">CPS Input Details</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=CPS Input by Expense Head">CPS Input by Expense Head</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=De-registered Accounts">De-registered Accounts</a></li>
+          </ul>
+
+        </div>
+        <div class="nhsuk-grid-column-one-half">
+
+          <h2 class="nhsuk-heading-m">Exception Reports</h2>
+
+          <ul class="nhsuk-list">
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Exceptions Post Web Closed">Exceptions Post Web Closed</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Exceptions Total by Expense Head">Exceptions Total by Expense Head</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Exceptions Total by LPP Code">Exceptions Total by LPP Code</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Exceptions v Authorised Payments">Exceptions v Authorised Payments</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=High Cost Advances/Recovery Reconciliation">High Cost Advances/Recovery Reconciliation</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=LPS Reconciliation">LPS Reconciliation</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Load Late Advances Check">Load Late Advances Check</a></li>
+          </ul>
+
+          <h2 class="nhsuk-heading-m">PPC Reports</h2>
+
+          <ul class="nhsuk-list">
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=PPC Expense Head Totals">PPC Expense Head Totals</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=PPC Pre-Load Integrity">PPC Pre-Load Integrity</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=PPC Pre-Load Totals">PPC Pre-Load Totals</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=PPC Removed Contractors">PPC Removed Contractors</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Post Pricing Divisional Summary">Post Pricing Divisional Summary</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Pre Pricing Divisional Summary">Pre Pricing Divisional Summary</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Reconciliation Details">Reconciliation Details</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Suppressed Schedules">Suppressed Schedules</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=View Authorisation Sheet">View Authorisation Sheet</a></li>
+          </ul>
+
+          <h2 class="nhsuk-heading-m">Other Reports</h2>
+
+          <ul class="nhsuk-list">
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Adjusted Schedule">Adjusted Schedule</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Average Item Value">Average Item Value</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=ESchedules Audit">ESchedules Audit</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Invoice Line Payment">Invoice Line Payment</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Item Variance">Item Variance</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=LPS Fees Breakdown">LPS Fees Breakdown</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Late Letters">Late Letters</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Negative Late Letter">Negative Late Letter</a></li>
+            <li><a class="nhsuk-link--no-visited-state" href="report-parameters?report-name=Payment Upload">Payment Upload</a></li>
+          </ul>
+
+        </div>
+      </div>
+
+
+
+  </main>
+</div>
+
+
+  {% endblock %}
+</body>
+
+</html>
