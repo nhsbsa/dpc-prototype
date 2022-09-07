@@ -23,6 +23,15 @@
   <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
   {% block content %}
 
+  {% if data['download'] == 'true' %}
+  <a class="nhsuk-u-visually-hidden" href="/images/ceased-report.xlsx" download="Ceased Contractors Advance Analysis report - M00299" id="link">download pdf</a>
+<script>
+  var link = document.getElementById("link");
+  link.click()
+</script>
+  {% else %}
+  {% endif %}
+
 <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
   <div class="nhsuk-width-container">
     <div class="nhsuk-grid-row">
@@ -146,7 +155,7 @@
           </a>
           </div>
         </details>
-        <p style="float: right;"><a href="#">Refresh</a></p>
+        <p style="float: right;"><a href="reports?download=false">Refresh</a></p>
 
         <table role="table" class="nhsuk-table-responsive" id="report-executed-table">
           <thead role="rowgroup" class="nhsuk-table__head">
@@ -242,10 +251,12 @@
             <td role="cell" class="nhsuk-table__cell" id="action[0]">
             </td>
           </tr>
+          {% if data['download'] == 'true' %}
+          {% else %}
           <tr role="row" class="nhsuk-table__row">
             <td id="view-child[1123]-name-cell" role="cell" class="nhsuk-table__cell">
               <span id="view-child[1123]-name-cell-responsive-heading" class="nhsuk-table-responsive__heading">Name</span>
-              <a id="view-child[1123]-name-cell-value-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href="report-details?reportName=Check Schedules for Zeroes - M00299&dateCreated=15 August 2022">Check Schedules for Zeroes - M00299</a>
+              <a id="view-child[1123]-name-cell-value-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href="report-details?reportName=Ceased Contractors Advance Analysis report - M00299&dateCreated=15 August 2022">Ceased Contractors Advance Analysis report - M00299</a>
             </td>
             <td id="view-child[1123]-created-cell" role="cell" class="nhsuk-table__cell">
               <span id="view-child[1123]-created-cell-responsive-heading" class="nhsuk-table-responsive__heading">Created</span>
@@ -257,10 +268,11 @@
             </td>
             <td role="cell" class="nhsuk-table__cell" id="action[0]">
                 <span class="nhsuk-table-responsive__heading">action:</span>
-                <a id="download-report-[1123]-link-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href=#">Download</a> or
-                <a id="delete-report-[1123]-link-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href="delete">Delete</a>
+                <a id="download-report-[1123]-link-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href="reports?download=true">Download</a> or
+                <a id="delete-report-[1123]-link-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href="delete">delete</a>
             </td>
           </tr>
+          {% endif %}
           <tr role="row" class="nhsuk-table__row">
             <td id="view-child[1123]-name-cell" role="cell" class="nhsuk-table__cell">
               <span id="view-child[1123]-name-cell-responsive-heading" class="nhsuk-table-responsive__heading">Name</span>
@@ -277,7 +289,7 @@
             <td role="cell" class="nhsuk-table__cell" id="action[0]">
                 <span class="nhsuk-table-responsive__heading">action:</span>
                 <a id="download-report-[1123]-link-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href=#">Download</a> or
-                <a id="delete-report-[1123]-link-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href="delete">Delete</a>
+                <a id="delete-report-[1123]-link-link" class="nhsuk-link nhsuk-link--no-visited-state" draggable="false" href="delete">delete</a>
             </td>
           </tr>
           </tbody>
