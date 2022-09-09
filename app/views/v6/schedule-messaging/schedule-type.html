@@ -61,15 +61,38 @@
 
             <form action="add-type" method="post">
 
-            <div class="nhsuk-form-group">
-              <select class="nhsuk-select" id="schedule-type" name="schedule-type">
-                <option value="PH - Pharmacy" selected>PH - Pharmacy</option>
-                <option value="PL - Late Pharmacy">PL - Late Pharmacy</option>
-                <option value="AC - Appliance Contractor">AC - Appliance Contractor</option>
-                <option value="EP - EEPS Payments">EP - EEPS Payments</option>
-              </select>
-            </div>
+              <div class="nhsuk-radios">
 
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="schedule-type" name="schedule-type" type="radio" value="PH - Pharmacy">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                    PH - Pharmacy
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="schedule-type" name="schedule-type" type="radio" value="PL - Late Pharmacy">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                    PL - Late Pharmacy
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="schedule-type" name="schedule-type" type="radio" value="AC - Appliance Contractor">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                    AC - Appliance Contractor
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="schedule-type" name="schedule-type" type="radio" value="EP - EEPS Payments">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                    EP - EEPS Payments
+                  </label>
+                </div>
+
+              </div>
+              <br>
             <button class="nhsuk-button" type="submit">
               Continue
             </button>
