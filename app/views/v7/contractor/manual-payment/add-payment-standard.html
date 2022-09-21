@@ -1,0 +1,231 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+
+  {% block pageScripts %}
+  <script type="text/javascript" src="/js/search.js"></script>
+  <script type="text/javascript" src="/js/auto.js"></script>
+  <script type="text/javascript" src="/js/add-letter-code-list.js"></script>
+  <script type="text/javascript" src="/js/action-menu.js"></script>
+  <script type="text/javascript" src="/js/sort.js"></script>
+  <script type="text/javascript" src="/js/suggestionDropdown.js"></script>
+  <script>
+    const data = [
+      {
+        code: '36 - PREREG-TRAIN-AMT',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '42 - PROT/EST-TOP-AMT',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '52 - NEEDLE-EXCHG-AMT',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '53 - COL-UNUSDRG-AMT',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '56',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '57',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '58',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '59',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '61',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '63',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '67',
+        name: '',
+        recall: 'Invitation letter',
+      },
+    ];
+    createSuggestionDropdown(data, 'letter-codes');
+  </script>
+  {% endblock %}
+
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+  {% if data['letter-codes'] == "36 - Pre-registration trainee" %}
+  <script>
+    window.onload = function() {
+        location.href = "add-payment-trainee";
+    }
+  </script>
+  {% endif %}
+  {% if data['letter-codes'] == "92" %}
+  <script>
+    window.onload = function() {
+        location.href = "add-payment-date-uneditable";
+    }
+  </script>
+  {% endif %}
+  {% if data['letter-codes'] == "145 - ADD ADV PAYMENT" %}
+  <script>
+    window.onload = function() {
+        location.href = "add-payment-date-uneditable";
+    }
+  </script>
+  {% endif %}
+  {% if data['letter-codes'] == "42 - Protected/Establishment Top Up" %}
+  <script>
+    window.onload = function() {
+        location.href = "add-payment-date-dropdown";
+    }
+  </script>
+  {% endif %}
+  {% if data['letter-codes'] == "143 - ADJUSTMENT DRUGS" %}
+  <script>
+    window.onload = function() {
+        location.href = "add-payment-adjustment";
+    }
+  </script>
+  {% endif %}
+  {% if data['letter-codes'] == "144 - ADJUSTMENT FEES" %}
+  <script>
+    window.onload = function() {
+        location.href = "add-payment-adjustment";
+    }
+  </script>
+  {% endif %}
+  {% if data['letter-codes'] == "5117 - XB-ADV-CARE-HME" %}
+  <script>
+    window.onload = function() {
+        location.href = "add-payment-boundary";
+    }
+  </script>
+  {% endif %}
+  {% if data['letter-codes'] == "5118 - XB-ADD-PHH-ACC-S" %}
+  <script>
+    window.onload = function() {
+        location.href = "add-payment-boundary";
+    }
+  </script>
+  {% endif %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../search">Find a contractor</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../contractorv2-1">MILTON CHEMIST LTD</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../manage-payment">August 2021 manual payments</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="contractorv2-1">Milton Chemist LTD</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+    <form action="cya-payment-standard" method="post">
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1 style="margin-bottom:12px;" class="nhsuk-heading-l">
+            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Manage contractor<span class="nhsuk-u-visually-hidden">-</span></span></span>
+              Add August 2021 manual payment details
+          </h1>
+          <p class="nhsuk-body-s" style="margin-bottom: 36px; margin-right:24px;"><b>OCS Code:</b> FF910<br><b>LPP:</b> QNC - STAFFORDSHIRE & STOKE ON TRENT STP</p>
+
+          <dl class="nhsuk-summary-list">
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Expense head
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['letter-codes'] %}{{data['letter-codes'] }}{% else %}38 - PROT/EST-TOP-AMT{% endif %}
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="expense-head">
+                    Change<span class="nhsuk-u-visually-hidden"> expense head</span>
+                  </a>
+                </dd>
+              </div>
+
+            </dl>
+
+                  <p><b>Expense head current total:</b> £0</p>
+
+                  <div class="nhsuk-form-group">
+                  <label class="nhsuk-label" for="LPP">
+                    Payment amount
+                  </label>
+                  <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+                  <input class="nhsuk-input nhsuk-input--width-10" id="payment-amount" name="payment-amount" type="text" value="" inputmode="numeric">
+                  </div>
+
+
+                <br>
+          <button class="nhsuk-button" type="submit">
+            Continue
+          </button>
+
+          <p><a href="../manage-payment">Cancel payment</a></p>
+
+      </div>
+    </form>
+  </main>
+</div>
+
+
+  {% endblock %}
+</body>
+
+</html>

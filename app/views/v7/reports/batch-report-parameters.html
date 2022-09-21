@@ -1,0 +1,407 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+
+  {% block pageScripts %}
+  <script type="text/javascript" src="/js/search.js"></script>
+  <script type="text/javascript" src="/js/auto.js"></script>
+  <script type="text/javascript" src="/js/add-letter-code-list.js"></script>
+  <script type="text/javascript" src="/js/action-menu.js"></script>
+  <script type="text/javascript" src="/js/sort.js"></script>
+  <script type="text/javascript" src="/js/suggestionDropdown.js"></script>
+  <script>
+    const data = [
+      {
+        code: '36 - Pre-registration trainee',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '38 - Protected/Establishment Top Up',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '42 - Protected/Establishment Top Up',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '52 - Needle and syringe exchange scheme',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '53 - Collection of unused drugs',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '56 - Welfare milk',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '57 - Local Scheme 1',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '58 - Formulary development',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '59 - Local Scheme 2',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '61 - Local Scheme 4',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '63 - Bottle Storage',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '67 - Oxygen Therapy Service (Hardware)',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '92',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '143 - ADJUSTMENT DRUGS',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '144 - ADJUSTMENT FEES',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '145 - ADD ADV PAYMENT',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '5117 - XB-ADV-CARE-HME',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '5118 - XB-ADD-PHH-ACC-S',
+        name: '',
+        recall: 'Invitation letter',
+      },
+    ];
+    createSuggestionDropdown(data, 'letter-codes');
+  </script>
+  <script>
+    const data = [
+      {
+        code: '36 - Pre-registration trainee',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '38 - Protected/Establishment Top Up',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '42 - Protected/Establishment Top Up',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '52 - Needle and syringe exchange scheme',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '53 - Collection of unused drugs',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '56 - Welfare milk',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '57 - Local Scheme 1',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '58 - Formulary development',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '59 - Local Scheme 2',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '61 - Local Scheme 4',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '63 - Bottle Storage',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '67 - Oxygen Therapy Service (Hardware)',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '92',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '143 - ADJUSTMENT DRUGS',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '144 - ADJUSTMENT FEES',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '145 - ADD ADV PAYMENT',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '5117 - XB-ADV-CARE-HME',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: '5118 - XB-ADD-PHH-ACC-S',
+        name: '',
+        recall: 'Invitation letter',
+      },
+    ];
+    createSuggestionDropdown(data, 'ocs-codes');
+  </script>
+  {% endblock %}
+
+
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="reports?download=false">Reports</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="reports?download=false">Back to reports</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1 class="nhsuk-heading-l">
+            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>
+              {% if data['report-name'] %}{{ data['report-name'] }}{% else %}Ceased Contractors Advance Analysis{% endif %} batch report details
+          </h1>
+        </div>
+      </div>
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+          <div style="contain: content;" class="nhsuk-form-group">
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="schedule-type">
+                Schedule type
+              </label>
+              <select class="nhsuk-select nhsuk-required" id="row_SCHEDULE_ID_0" name="dynamicForm.fields[0].value">
+                                    <option value="PH">PH - Pharmacy</option>
+                                    <option value="AC">AC - Appliance Contractor</option>
+                                    <option value="PL">PL - Late Pharmacy</option>
+                                    <option value="IM">IM - Isle Of Man</option>
+                                    <option value="A3">A3 - EEPs Ad-Hoc Payments</option>
+                                    <option value="AH">AH - Pharmacy Early Payments</option>
+                                    <option value="A1">A1 - PEPS First Run</option>
+                                    <option value="A2">A2 - PEPS Second Run</option>
+                                    <option value="EP">EP - EEPS Payments</option>
+                                </select>
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="schedule-type">
+                Payment run ID
+              </label>
+              <select class="nhsuk-select" id="schedule-type" name="schedule-type">
+                <option value="M00299" selected>M00299</option>
+                <option value="M00298">M00298</option>
+                <option value="M00297">M00297</option>
+                <option value="M00296">M00296</option>
+              </select>
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="input-width-20">
+                OCS Code
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="schedule-type">
+                Expense head
+              </label>
+              <label class="nhsuk-label nhsuk-date-input__label" for="letter-codes">
+                <span id="" class="nhsuk-hint">
+                  You can search for the Expense head code or name.
+                </span>
+
+              <div id="letter-codes"></div>
+
+              <ul id="letter-code-list" class="nhsuk-list">
+
+              </ul>
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="schedule-type">
+                End payment run ID
+              </label>
+              <select class="nhsuk-select" id="schedule-type" name="schedule-type">
+                <option value="M00299" selected>M00299</option>
+                <option value="M00298">M00298</option>
+                <option value="M00297">M00297</option>
+                <option value="M00296">M00296</option>
+              </select>
+            </div>
+
+            <div class="nhsuk-form-group">
+            <div class="nhsuk-radios nhsuk-radios--inline">
+              <label class="nhsuk-label" for="schedule-type">
+                Format: {% if data['report-format'] %}{{ data['report-format'] }}{% else %}CSV, PDF{% endif %}
+              </label>
+
+              <!--<div class="nhsuk-radios__item">
+                <input checked class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                  PDF
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                  XLS
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                  CSV
+                </label>
+              </div>
+              </div>-->
+
+              </div>
+            </div>
+            <!--<details class="nhsuk-details" style="margin-top: 12px;">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Which reports the data is used for
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <h3 class="nhsuk-heading-xs">Expense head</h3>
+                <ul>
+                  <li>Expense head enquiry</li>
+                </ul>
+                <h3 class="nhsuk-heading-xs">End payment run ID</h3>
+                <ul>
+                  <li>Expense head enquiry</li>
+                </ul>
+              </div>
+            </details>-->
+
+          <div class="nhsuk-form-group">
+          <form action="batch-complete" method="post">
+            <button class="nhsuk-button" type="submit">
+              Create report
+            </button>
+          </form>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="nhsuk-grid-column-one-third">
+        <div  class="action-block">
+          <h2 class="nhsuk-heading-s">Reports to be created:</h2>
+          <ul>
+            <li>Pricing contractor averages</li>
+            <li>CPS Input by Expense Head</li>
+            <li>Expense Head Enquiry</li>
+            <li>LPS Fees Breakdown</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+  </main>
+</div>
+
+
+  {% endblock %}
+</body>
+
+</html>

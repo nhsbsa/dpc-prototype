@@ -1,0 +1,237 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="schedule">E-Schedule</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="schedule">Go back to E-Schedule</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container ">
+    <main class="nhsuk-main-wrapper " id="maincontent" role="main">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>Check E-Schedule</h1>
+        </div>
+      </div>
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+        <form action="confirmation" method="post">
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                E-Schedule name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}
+              </dd>
+
+              <dd class="nhsuk-summary-list__actions">
+
+                <a href="create-e-schedule">
+                  Change<span class="nhsuk-u-visually-hidden"> E-Schedule name</span>
+                </a>
+
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Schedule type
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['e-schedule-type'] %}{{ data['e-schedule-type'] }}{% else %}Paper{% endif %}
+              </dd>
+
+              <dd class="nhsuk-summary-list__actions">
+
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> Schedule type</span>
+                </a>
+
+              </dd>
+
+            </div>
+
+            {% if data['e-schedule-type'] == 'Both (electronic and paper)' %}
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                E-Schedule file name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}
+              </dd>
+
+              <dd class="nhsuk-summary-list__actions">
+
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> E-Schedule file name </span>
+                </a>
+
+              </dd>
+
+            </div>
+
+            {% endif %}
+
+            {% if data['e-schedule-type'] == 'Electronic' %}
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                E-Schedule file name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}
+              </dd>
+
+              <dd class="nhsuk-summary-list__actions">
+
+              </dd>
+
+            </div>
+
+            {% endif %}
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Transparent
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['e-schedule-type'] == 'Paper' %}No{% else %}Yes{% endif %}
+              </dd>
+
+              <dd class="nhsuk-summary-list__actions">
+
+              </dd>
+
+            </div>
+
+
+          </dl>
+
+          <button class="nhsuk-button" type="submit">
+            Create E-Schedule
+          </button>
+          <p><a href="schedule">Cancel E-Schedule</a></p>
+        </form>
+
+        </div>
+      </div>
+
+    </main>
+</div>
+
+<style>
+    li {
+  display: inline-block;
+    color: #005EA5;
+    display: inline-block;
+    padding: 0px 5px 0px 5px;
+    margin-right: 15px;
+    text-decoration: none;
+    margin-bottom: 0px;
+}
+.padding {
+padding-left: 15px;
+}
+.pagination {
+padding: 0;
+display: flex;
+flex-direction: row;
+margin-bottom: 0px;
+}
+.pagination__item {
+display: inline-block;
+list-style: none;
+margin-bottom: 0px;
+}
+.pagination__link {
+display: block;
+padding: 5px 10px;
+text-decoration: none;
+font-size: 19px;
+}
+.current {
+  color:  #4c6272  !important;
+  font-weight: 700;
+  border: none;
+  pointer-events: none;
+  cursor: default;
+}
+.pagination__summary {
+margin-left: auto;
+-webkit-font-smoothing: antialiased;
+padding: 8px 0;
+font-size: 19px;
+}
+.nav
+{
+  display: flex;
+flex-direction: row;
+align-items:center;
+margin-top: 20px;
+}
+@media (max-width: 640px) {
+  .pagination__summary {
+  margin-left: 0;
+  }
+  .nav{
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  }
+
+</style>
+
+<script>
+ function setLocation(element) {
+         document.forms[0].action = element.value
+ }
+</script>
+
+
+  {% endblock %}
+</body>
+
+</html>
