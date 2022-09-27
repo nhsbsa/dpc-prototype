@@ -65,10 +65,9 @@
     <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
 
       <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-two-thirds">
-          <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>
-            Manage {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %} E-Schedule</h1>
-        </div>
+        <h1 class="nhsuk-grid-column-three-quarters"><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>
+          Manage {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %} E-Schedule</h1>
+          <p class="nhsuk-grid-column-one-quarter"><a class="nhsuk-button nhsuk-button--warning nhsuk-float-right" href="delete">Delete E-Schedule</a></p>
       </div>
 
       <div class="nhsuk-grid-row">
@@ -76,8 +75,6 @@
         <div class="nhsuk-grid-column-two-thirds">
 
           <h2 style="float: left;" class="nhsuk-heading-m">E-Schedule details</h2>
-
-          <p><a style="color: #d5281b; float: right;" href="delete-e-schedule">Delete E-Schedule</a></p>
 
           <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
             <div class="nhsuk-summary-list__row">
@@ -88,7 +85,7 @@
                 {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}
               </dd>
               <dd class="nhsuk-summary-list__actions">
-                <a href="create-e-schedule" class="nhsuk-link--no-visited-state">
+                <a href="change-e-schedule" class="nhsuk-link--no-visited-state">
                   Change<span class="nhsuk-u-visually-hidden"> E-Schedule name</span>
                 </a>
               </dd>
@@ -112,9 +109,6 @@
                 {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}
               </dd>
               <dd class="nhsuk-summary-list__actions">
-                <a href="#" class="nhsuk-link--no-visited-state">
-                  Change<span class="nhsuk-u-visually-hidden"> E-Schedule file name </span>
-                </a>
               </dd>
             </div>
             {% endif %}
@@ -165,8 +159,8 @@
 
               <dd class="nhsuk-summary-list__actions">
 
-                <a href="#">
-                  Unlink<span class="nhsuk-u-visually-hidden"> name</span>
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
                 </a>
 
               </dd>
@@ -179,8 +173,8 @@
 
               <dd class="nhsuk-summary-list__actions">
 
-                <a href="#">
-                  Unlink<span class="nhsuk-u-visually-hidden"> name</span>
+                <a href="unlink" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
                 </a>
 
               </dd>
@@ -189,9 +183,11 @@
 
           </dl>
 
-          <p style="float: right;"><a href="unlink-all">Unlink all contractors</a></p>
+          <p style="float: right;"><a href="unlink-all" class="nhsuk-link--no-visited-state">Unlink all contractors</a></p>
 
-          <p style="clear: both;"><a class="nhsuk-button" href="schedule">Save E-Schedule</a></p>
+          <!--<p style="clear: both;"><a class="nhsuk-button" href="schedule">Save E-Schedule</a></p>-->
+
+          <p style="clear: both;"><a class="nhsuk-link--no-visited-state" href="schedule">Return to E-Schedules</a></p>
 
         </div>
 

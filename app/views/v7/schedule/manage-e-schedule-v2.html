@@ -67,7 +67,6 @@
       <div class="nhsuk-grid-row">
         <h1 class="nhsuk-grid-column-three-quarters"><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>
           Manage {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %} E-Schedule</h1>
-          <p class="nhsuk-grid-column-one-quarter"><a class="nhsuk-button nhsuk-button--warning nhsuk-float-right" href="delete">Delete E-Schedule</a></p>
       </div>
 
       <div class="nhsuk-grid-row">
@@ -86,7 +85,7 @@
               </dd>
               <dd class="nhsuk-summary-list__actions">
                 <a href="change-e-schedule" class="nhsuk-link--no-visited-state">
-                  Change<span class="nhsuk-u-visually-hidden"> E-Schedule name</span>
+                  Change<span class="nhsuk-u-visually-hidden"> E-Schedule details</span>
                 </a>
               </dd>
             </div>
@@ -136,23 +135,13 @@
             </div>
           </dl>
 
-          <h2 class="nhsuk-heading-m">Link a new contractor</h2>
-
-          <div class="nhsuk-form-group">
-            <div id="report-name"></div>
-            <ul id="letter-code-list" class="nhsuk-list">
-            </ul>
-          </div>
-
-          <p><a class="nhsuk-button nhsuk-button--secondary" style="margin-bottom: 0px;" href="manage-e-schedule-1">Link contractor</a></p>
-
           <h2 class="nhsuk-heading-m" style="float: left;">Linked contractors</h2>
 
           <!--<p style="float: right;"><a href="unlink-all">Unlink all contractors</a></p>-->
 
           <p style="float: left; clear; both;">You have not linked any contractors to this E-Schedule.</p>
 
-          <!--<p style="clear: both;"><a class="nhsuk-button" href="schedule">Save E-Schedule</a></p>-->
+          <a class="nhsuk-button nhsuk-button--secondary" href="manage-linked-contractors-empty">Manage linked contractors</a>
 
           <p style="clear: both;"><a class="nhsuk-link--no-visited-state" href="schedule">Return to E-Schedules</a></p>
 

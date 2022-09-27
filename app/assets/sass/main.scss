@@ -14,6 +14,17 @@ th, td {
     border-bottom: 1px solid #aeb7bd;
 }
 
+/***** Warning button ******/
+
+.nhsuk-button--warning{background-color:#d4351c;-webkit-box-shadow:0 2px 0 #55150b;box-shadow:0 2px 0 #55150b}
+.nhsuk-button--warning,
+.nhsuk-button--warning:link,
+.nhsuk-button--warning:visited,
+.nhsuk-button--warning:active,
+.nhsuk-button--warning:hover{color:#fff}
+.nhsuk-button--warning:hover{background-color:#aa2a16}
+.nhsuk-button--warning:hover[disabled]{background-color:#d4351c}
+
 /***** Text editor *****/
 
 .trumbowyg-box {

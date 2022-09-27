@@ -51,6 +51,7 @@
           <ol class="nhsuk-breadcrumb__list">
             <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
             <li class="nhsuk-breadcrumb__item"><a href="schedule">E-Schedule</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="schedule">{% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}</a></li>
           </ol>
 
         </div>
@@ -66,75 +67,12 @@
 
       <div class="nhsuk-grid-row">
         <h1 class="nhsuk-grid-column-three-quarters"><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>
-          Manage {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %} E-Schedule</h1>
-          <p class="nhsuk-grid-column-one-quarter"><a class="nhsuk-button nhsuk-button--warning nhsuk-float-right" href="delete">Delete E-Schedule</a></p>
+          {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %} linked contractors</h1>
       </div>
 
       <div class="nhsuk-grid-row">
 
         <div class="nhsuk-grid-column-two-thirds">
-
-          <h2 style="float: left;" class="nhsuk-heading-m">E-Schedule details</h2>
-
-          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                E-Schedule name
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}
-              </dd>
-              <dd class="nhsuk-summary-list__actions">
-                <a href="change-e-schedule" class="nhsuk-link--no-visited-state">
-                  Change<span class="nhsuk-u-visually-hidden"> E-Schedule name</span>
-                </a>
-              </dd>
-            </div>
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Schedule type
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                {% if data['e-schedule-type'] %}{{ data['e-schedule-type'] }}{% else %}Paper{% endif %}
-              </dd>
-              <dd class="nhsuk-summary-list__actions">
-              </dd>
-            </div>
-            {% if data['e-schedule-type'] == 'Both (electronic and paper)' %}
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                E-Schedule file name
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}
-              </dd>
-              <dd class="nhsuk-summary-list__actions">
-              </dd>
-            </div>
-            {% endif %}
-            {% if data['e-schedule-type'] == 'Electronic' %}
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                E-Schedule file name
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}
-              </dd>
-              <dd class="nhsuk-summary-list__actions">
-              </dd>
-            </div>
-            {% endif %}
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Transparent
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                {% if data['e-schedule-type'] == 'Paper' %}No{% else %}Yes{% endif %}
-              </dd>
-              <dd class="nhsuk-summary-list__actions">
-              </dd>
-            </div>
-          </dl>
 
           <h2 class="nhsuk-heading-m">Link a new contractor</h2>
 
@@ -146,34 +84,35 @@
 
           <p><a class="nhsuk-button nhsuk-button--secondary" style="margin-bottom: 0px;" href="manage-e-schedule-2">Link contractor</a></p>
 
-          <h2 class="nhsuk-heading-m" style="float: left;">Linked contractors</h2>
+          <h2 style="float: left;" class="nhsuk-heading-m">Linked contractors</h2>
 
-
+          <p style="float: right; padding-top: 8px;"><a href="unlink-all" class="nhsuk-link--no-visited-state">Unlink all contractors</a></p>
 
           <dl class="nhsuk-summary-list">
-
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
                 FF910 Milton Chemist LTD
               </dt>
-
               <dd class="nhsuk-summary-list__actions">
-
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                FF567 Gary's Pharmacy
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
                 <a href="unlink" class="nhsuk-link--no-visited-state">
                   Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
                 </a>
-
               </dd>
-
             </div>
-
           </dl>
 
-          <!--<p style="float: right;"><a href="unlink-all">Unlink all contractors</a></p>-->
 
-          <!--<p style="clear: both;"><a class="nhsuk-button" href="schedule">Save E-Schedule</a></p>-->
-
-          <p style="clear: both;"><a class="nhsuk-link--no-visited-state" href="schedule">Return to E-Schedules</a></p>
+          <a class="nhsuk-button" href="manage-e-schedule-v2-linked">Save and return to E-Schedule</a>
 
         </div>
 

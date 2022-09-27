@@ -31,12 +31,13 @@
 
         <ol class="nhsuk-breadcrumb__list">
           <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="schedule">E-Schedule</a></li>
         </ol>
 
       </div>
     </div>
 
-    <p class="nhsuk-breadcrumb__back"><a href="dashboard">Dashboard</a></p>
+    <p class="nhsuk-breadcrumb__back"><a href="schedule">Go back to E-Schedule</a></p>
 
   </div>
 </nav>
@@ -45,42 +46,60 @@
     <main class="nhsuk-main-wrapper " id="maincontent" role="main">
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-two-thirds">
-          <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>E-Schedules</h1>
-        </div>
-        <div class="nhsuk-grid-column-one-third">
-          <a href="create-e-schedule">
-            <button class="nhsuk-button nhsuk-u-float-right" type="submit">
-              Create E-Schedule
-            </button>
-          </a>
+          <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>Change E-Schedule</h1>
         </div>
       </div>
 
       <div class="nhsuk-grid-row">
-        <form style="display: contents;" action="schedule-search" method="post">
-       <div class="nhsuk-grid-column-one-half" style="margin-bottom: 24px;">
-         <div class="nhsuk-form-group"  style="float: left; margin: 0 30px 0 0;">
-           <label class="nhsuk-label" for="e-schedule-name">
-             E-Schedule name
-           </label>
-           <input class="nhsuk-input" style="width: 41ex;" id="e-schedule-name" name="e-schedule-name" type="text">
-         </div>
-       </div>
+        <div class="nhsuk-grid-column-two-thirds">
 
-       <div class="nhsuk-grid-column-full">
+        <form action="check-schedule?check=true" method="post">
 
-         <button class="nhsuk-button" type="submit">
-           Search
-         </button>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="e-schedule-name">
+              E-Schedule name
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="e-schedule-name" name="e-schedule-name" type="text" value="{% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="e-schedule-type">
+              Schedule type
+            </label>
+            <div class="nhsuk-radios">
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-1" name="e-schedule-type" type="radio" value="Electronic">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                  Electronic
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input checked="checked" class="nhsuk-radios__input" id="example-2" name="e-schedule-type" type="radio" value="Paper">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                  Paper
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-3" name="e-schedule-type" type="radio" value="Both (electronic and paper)">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-3">
+                  Both (electronic and paper)
+                </label>
+              </div>
+
+            </div>
+          </div>
+
+          <button class="nhsuk-button" type="submit">
+            Continue
+          </button>
+          <p><a href="schedule">Cancel E-Schedule change</a></p>
+        </form>
+
+        </div>
       </div>
-         </form>
-
-
-     </div>
-
-
-
-
 
     </main>
 </div>
@@ -146,6 +165,12 @@ margin-top: 20px;
   }
 
 </style>
+
+<script>
+ function setLocation(element) {
+         document.forms[0].action = element.value
+ }
+</script>
 
 
   {% endblock %}

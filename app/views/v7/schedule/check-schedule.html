@@ -67,10 +67,6 @@
 
               <dd class="nhsuk-summary-list__actions">
 
-                <a href="create-e-schedule">
-                  Change<span class="nhsuk-u-visually-hidden"> E-Schedule name</span>
-                </a>
-
               </dd>
 
             </div>
@@ -84,10 +80,6 @@
               </dd>
 
               <dd class="nhsuk-summary-list__actions">
-
-                <a href="#">
-                  Change<span class="nhsuk-u-visually-hidden"> Schedule type</span>
-                </a>
 
               </dd>
 
@@ -104,10 +96,6 @@
               </dd>
 
               <dd class="nhsuk-summary-list__actions">
-
-                <a href="#">
-                  Change<span class="nhsuk-u-visually-hidden"> E-Schedule file name </span>
-                </a>
 
               </dd>
 
@@ -146,14 +134,20 @@
               </dd>
 
             </div>
-
-
           </dl>
 
+          <p><a class="nhsuk-button nhsuk-button--secondary" href="create-e-schedule">Change E-Schedule</a></p>
+
+          {% if data['check'] == 'true' %}
+          <p><a class="nhsuk-button" href="manage-e-schedule-2">Save E-Schedule</a></p>
+          <p><a href="schedule">Cancel E-Schedule change</a></p>
+          {% else %}
           <button class="nhsuk-button" type="submit">
             Create E-Schedule
           </button>
           <p><a href="schedule">Cancel E-Schedule</a></p>
+          {% endif %}
+
         </form>
 
         </div>
