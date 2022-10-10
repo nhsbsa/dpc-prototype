@@ -1,0 +1,141 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="search">Search for a LAP user</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="search">Go back to Search for a LAP user</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container ">
+    <main class="nhsuk-main-wrapper " id="maincontent" role="main">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>Manage LAP user</h1>
+        </div>
+      </div>
+
+      <div class="nhsuk-grid-row">
+        <form method="post">
+          <div class="nhsuk-grid-column-two-thirds">
+            <h2 class="nhsuk-heading-m">Account details</h2>
+            <dl class="nhsuk-summary-list">
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  User ID
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['user-id'] %}{{ data['user-id'] }}{% else %}5HG00A{% endif %}
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Work group
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  LPP
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Active date
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  8 August 2002
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Status
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['status'] %}{{ data['status'] }}{% else %}Locked{% endif %}
+                </dd>
+              </div>
+            </dl>
+
+            <h2 class="nhsuk-heading-m">Contact details</h2>
+            <dl class="nhsuk-summary-list">
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['LAP-name'] %}{{ data['LAP-name'] }}{% else %}Ashton, Leigh & Wigan{% endif %}
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Email
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['email'] %}{{ data['email'] }}{% else %}email@email.com{% endif %}
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Telephone number
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['telephone'] %}{{ data['telephone'] }}{% else %}07971721980{% endif %}
+                </dd>
+              </div>
+            </dl>
+         </div>
+         <div class="nhsuk-grid-column-one-third">
+           <div  class="action-block">
+           <h2 class="nhsuk-heading-m">What you can do</h2>
+              <ul class="nhsuk-list">
+                <li><a class="nhsuk-link--no-visited-state" href="change-contact">Change contact details</a></li>
+                <li><a class="nhsuk-link--no-visited-state" href="change-password">Change password</a></li>
+                {% if data['status'] == 'Locked' %}<li><a class="nhsuk-link--no-visited-state" href="unlock-user">Unlock user</a></li>{% endif %}
+                {% if data['status'] != 'Inactive' %}<li><a class="nhsuk-link--no-visited-state" href="inactivate-user">Inactivate user</a></li>{% endif %}
+              </ul>
+            </div>
+        </div>
+        </form>
+       </div>
+
+
+    </main>
+</div>
+
+  {% endblock %}
+</body>
+
+</html>

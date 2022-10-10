@@ -1,0 +1,104 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="search">Search for a LAP user</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="manage-user">Manage LAP user</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="manage-user">Go back to Manage LAP user</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container ">
+    <main class="nhsuk-main-wrapper " id="maincontent" role="main">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>Check LAP user {% if data['user-id'] %}{{ data['user-id'] }}{% else %}5HG00A{% endif %}'s contact details</h1>
+        </div>
+      </div>
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <form method="post" action="manage-user" >
+
+            <dl class="nhsuk-summary-list">
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['LAP-name'] %}{{ data['LAP-name'] }}{% else %}Ashton, Leigh & Wigan{% endif %}
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Email
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['email'] %}{{ data['email'] }}{% else %}email@email.com{% endif %}
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Telephone number
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['telephone'] %}{{ data['telephone'] }}{% else %}07971721980{% endif %}
+                </dd>
+              </div>
+            </dl>
+
+            <p><a class="nhsuk-button nhsuk-button--secondary" href="change-contact?status=Active">Change contact details</a></p>
+
+            <button class="nhsuk-button" type="submit">
+              Save contact details
+            </button>
+
+            <p><a class="nhsuk-link--no-visited-state" href="manage-user">Cancel changes</a></p>
+
+          </form>
+        </div>
+       </div>
+
+
+    </main>
+</div>
+
+  {% endblock %}
+</body>
+
+</html>
