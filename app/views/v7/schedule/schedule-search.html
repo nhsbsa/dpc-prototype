@@ -57,7 +57,9 @@
       </div>
 
       <div class="nhsuk-grid-row">
+        <form style="display: contents;" action="schedule-search" method="post">
        <div class="nhsuk-grid-column-one-half" style="margin-bottom: 24px;">
+
          <div class="nhsuk-form-group"  style="float: left; margin: 0 30px 0 0;">
            <label class="nhsuk-label" for="example">
              E-Schedule name
@@ -67,12 +69,12 @@
        </div>
 
        <div class="nhsuk-grid-column-full">
-         <form style="display: contents;" action="search-results" method="post">
+
          <button class="nhsuk-button" type="submit">
            Search
          </button>
-         </form>
        </div>
+       </form>
      </div>
 
 
@@ -83,30 +85,42 @@
                <thead role="rowgroup" class="nhsuk-table__head">
                  <tr role="row">
                    <th role="columnheader" class="" scope="col">
+                     ES Code
+                   </th>
+                   <th role="columnheader" class="" scope="col">
                      E-Schedule name
                    </th>
                    <th role="columnheader" class="" scope="col">
                      Schedule type
-                   </th>
-                   <th role="columnheader" class="" scope="col">
-                     Transparency indicator
                    </th>
                  </tr>
                </thead>
                <tbody class="nhsuk-table__body">
                  <tr role="row" class="nhsuk-table__row">
                    <td role="cell" class="nhsuk-table__cell">
+                     <span class="nhsuk-table-responsive__heading">ES Code </span>ES00630
+                   </td>
+                   <td role="cell" class="nhsuk-table__cell">
                      <span class="nhsuk-table-responsive__heading">E-Schedule name </span><span class="nhsuk-u-visually-hidden">Manage </span><a class="nhsuk-link--no-visited-state" href="manage-e-schedule-v2-linked">{% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}</a>
                    </td>
                    <td role="cell" class="nhsuk-table__cell">
                      <span class="nhsuk-table-responsive__heading">Schedule type </span>Paper
                    </td>
-                   <td role="cell" class="nhsuk-table__cell">
-                     <span class="nhsuk-table-responsive__heading">Transparency indicator </span>Yes
-                   </td>
                  </tr>
                </tbody>
              </table>
+
+             <details class="nhsuk-details nhsuk-u-margin-top-5">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Cannot find the E-Schedule you're looking for?
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <p>Only active E-Schedules are available for changes. If a E-Schedule has had all it's contractors unlinked it can no longer be accessed for changes.</p>
+                <p>Details of all E-Schedules are available by downloading the ESchedules Audit report.</p>
+              </div>
+            </details>
            </div>
          </div>
 

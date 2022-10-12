@@ -51,13 +51,13 @@
           <ol class="nhsuk-breadcrumb__list">
             <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
             <li class="nhsuk-breadcrumb__item"><a href="schedule">E-Schedule</a></li>
-            <li class="nhsuk-breadcrumb__item"><a href="schedule">{% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="manage-e-schedule-v2-linked">{% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}</a></li>
           </ol>
 
         </div>
       </div>
 
-      <p class="nhsuk-breadcrumb__back"><a href="schedule">Go back to E-Schedule</a></p>
+      <p class="nhsuk-breadcrumb__back"><a href="manage-e-schedule-v2-linked">Go back to {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}</a></p>
 
     </div>
   </nav>
@@ -112,7 +112,7 @@
           </dl>
 
 
-          <a class="nhsuk-button" href="manage-e-schedule-v2-linked">Save and return to E-Schedule</a>
+          <a class="nhsuk-button" href="manage-e-schedule-v2-linked">Save linked contractors</a>
 
         </div>
 

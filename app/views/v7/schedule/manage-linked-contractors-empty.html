@@ -51,7 +51,7 @@
           <ol class="nhsuk-breadcrumb__list">
             <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
             <li class="nhsuk-breadcrumb__item"><a href="schedule">E-Schedule</a></li>
-            <li class="nhsuk-breadcrumb__item"><a href="schedule">{% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="manage-e-schedule-v2">{% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}</a></li>
           </ol>
 
         </div>
@@ -84,6 +84,17 @@
 
           <p><a class="nhsuk-button nhsuk-button--secondary" style="margin-bottom: 0px;" href="manage-linked-contractors">Link contractor</a></p>
 
+          <details class="nhsuk-details nhsuk-u-margin-top-5">
+           <summary class="nhsuk-details__summary">
+             <span class="nhsuk-details__summary-text">
+               Cannot find the contractor you're looking for?
+             </span>
+           </summary>
+           <div class="nhsuk-details__text">
+             <p>You can not link a contractor who is already linked to an E-Schedule or part of YP code group.</p>
+           </div>
+         </details>
+
           <h2 style="float: left;" class="nhsuk-heading-m">Linked contractors</h2>
 
           <!--<p style="float: right; padding-top: 8px;"><a href="unlink-all" class="nhsuk-link--no-visited-state">Unlink all contractors</a></p>-->
@@ -91,7 +102,7 @@
           <p style="float: left; clear; both;">You have not linked any contractors to this E-Schedule.</p>
 
 
-          <a class="nhsuk-button" href="manage-e-schedule-v2">Save and return to E-Schedule</a>
+          <a class="nhsuk-button" href="manage-e-schedule-v2">Save linked contractors</a>
 
         </div>
 

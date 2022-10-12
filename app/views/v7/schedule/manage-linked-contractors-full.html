@@ -51,7 +51,7 @@
           <ol class="nhsuk-breadcrumb__list">
             <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
             <li class="nhsuk-breadcrumb__item"><a href="schedule">E-Schedule</a></li>
-            <li class="nhsuk-breadcrumb__item"><a href="schedule">{% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="manage-e-schedule-v2-linked">{% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}</a></li>
           </ol>
 
         </div>
@@ -82,13 +82,13 @@
             </ul>
           </div>
 
-          <p><a class="nhsuk-button nhsuk-button--secondary" style="margin-bottom: 0px;" href="manage-e-schedule-2">Link contractor</a></p>
+          <p><a class="nhsuk-button nhsuk-button--secondary" style="margin-bottom: 0px;" href="#">Link contractor</a></p>
 
           <h2 style="float: left;" class="nhsuk-heading-m">Linked contractors</h2>
 
           <p style="float: right; padding-top: 8px;"><a href="unlink-all" class="nhsuk-link--no-visited-state">Unlink all contractors</a></p>
 
-          <dl class="nhsuk-summary-list">
+          <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
                 FF910 Milton Chemist LTD
@@ -105,46 +105,46 @@
               </dt>
               <dd class="nhsuk-summary-list__actions">
                 <a href="unlink" class="nhsuk-link--no-visited-state">
-                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF567 Gary's Pharmacy</span>
                 </a>
               </dd>
             </div>
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                FF910 Milton Chemist LTD
+                YP710 Boots LTD
               </dt>
               <dd class="nhsuk-summary-list__actions">
                 <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
-                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                  Unlink<span class="nhsuk-u-visually-hidden"> YP710 Boots LTD</span>
                 </a>
               </dd>
             </div>
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                FF567 Gary's Pharmacy
+                FF890 Barnard pharmacy
               </dt>
               <dd class="nhsuk-summary-list__actions">
                 <a href="unlink" class="nhsuk-link--no-visited-state">
-                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF890 Barnard pharmacy</span>
                 </a>
               </dd>
             </div>
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                FF567 Gary's Pharmacy
+                FF056 Castle Pharmacy
               </dt>
               <dd class="nhsuk-summary-list__actions">
                 <a href="unlink" class="nhsuk-link--no-visited-state">
-                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF056 Castle Pharmacy</span>
                 </a>
               </dd>
             </div>
           </dl>
 
-          <p style="text-align: center; display: block; padding-top: 32px;"><a class="nhsuk-link--no-visited-state" href="schedule-list">View all linked contractors</a></p>
+          <p style="text-align: center; display: block; padding-top: 24px; margin-bottom: 36px;"><a class="nhsuk-link--no-visited-state" href="schedule-list">View all linked contractors</a></p>
 
 
-          <a class="nhsuk-button" href="manage-e-schedule-v2-linked">Save and return to E-Schedule</a>
+          <a class="nhsuk-button" href="manage-e-schedule-v2-linked">Save linked contractors</a>
 
         </div>
 

@@ -23,26 +23,27 @@
   <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
   {% block content %}
 
-  <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
-    <div class="nhsuk-width-container">
-      <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-full">
 
-          <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
-            <li class="nhsuk-breadcrumb__item"><a href="schedule">E-Schedule</a></li>
-          </ol>
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
 
-        </div>
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="schedule">E-Schedule</a></li>
+        </ol>
+
       </div>
-
-      <p class="nhsuk-breadcrumb__back"><a href="schedule">Go back to E-Schedule</a></p>
-
     </div>
-  </nav>
 
-  <div class="nhsuk-width-container {{ containerClasses }}">
-    <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+    <p class="nhsuk-breadcrumb__back"><a href="schedule">Go back to E-Schedule</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container ">
+    <main class="nhsuk-main-wrapper " id="maincontent" role="main">
 
       <div class="nhsuk-grid-row">
 
@@ -51,23 +52,23 @@
           <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
             <div class="nhsuk-card__content">
               <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
-                {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %} E-Schedule created
+                All {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %} E-Schedule contractors unlinked
               </h1>
             </div>
           </div>
 
-          <h2 class="nhsuk-heading-m">What happens next</h2>
+          <p>E-Schedule has been removed from the system due to all contractors unlinked.</p>
 
-          <p>You need to link contractors to the E-Schedule.</p>
-
-          <p><a class="nhsuk-button" href="manage-linked-contractors-empty">Link contractors</a></p>
+          <p><a class="nhsuk-button" href="schedule">Return to E-Schedules</a></p>
 
         </div>
 
       </div>
 
+
     </main>
-  </div>
+</div>
+
   {% endblock %}
 </body>
 

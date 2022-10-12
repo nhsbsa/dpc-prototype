@@ -112,34 +112,17 @@
               <dd class="nhsuk-summary-list__value">
                 {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}
               </dd>
-
               <dd class="nhsuk-summary-list__actions">
-
               </dd>
-
             </div>
-
             {% endif %}
 
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Transparent
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                {% if data['e-schedule-type'] == 'Paper' %}No{% else %}Yes{% endif %}
-              </dd>
-
-              <dd class="nhsuk-summary-list__actions">
-
-              </dd>
-
-            </div>
           </dl>
 
           <p><a class="nhsuk-button nhsuk-button--secondary" href="create-e-schedule">Change E-Schedule</a></p>
 
           {% if data['check'] == 'true' %}
-          <p><a class="nhsuk-button" href="manage-e-schedule-2">Save E-Schedule</a></p>
+          <p><a class="nhsuk-button" href="manage-e-schedule-v2-linked">Save E-Schedule</a></p>
           <p><a href="schedule">Cancel E-Schedule change</a></p>
           {% else %}
           <button class="nhsuk-button" type="submit">
