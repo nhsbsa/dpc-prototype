@@ -16,6 +16,32 @@ th, td {
 
 /***** Input prefix ******/
 
+.nhsuk-input__wrapper {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex
+}
+
+.nhsuk-input__wrapper .nhsuk-input {
+    -ms-flex: 0 1 auto;
+    -webkit-box-flex: 0;
+    flex: 0 1 auto
+}
+
+.nhsuk-input__wrapper .nhsuk-input:focus {
+    z-index: 1
+}
+
+@media(max-width: 19.99em) {
+    .nhsuk-input__wrapper {
+        display: block
+    }
+
+    .nhsuk-input__wrapper .nhsuk-input {
+        max-width: 100%
+    }
+}
+
 .nhsuk-input__prefix,
 .nhsuk-input__suffix {
     font-family: "Frutiger W01", arial, sans-serif;
