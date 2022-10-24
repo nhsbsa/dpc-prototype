@@ -31,13 +31,13 @@
           <ol class="nhsuk-breadcrumb__list">
             <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
             <li class="nhsuk-breadcrumb__item"><a href="payment-runs">Payment runs</a></li>
-            <li class="nhsuk-breadcrumb__item"><a href="PH-payment-runs">Pharmacy (PH)</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="PH-payment-runs">{% if data['payment-type']%}{{ data['payment-type']}}{% else %}Pharmacy (PH){% endif %}</a></li>
           </ol>
 
         </div>
       </div>
 
-      <p class="nhsuk-breadcrumb__back"><a href="PH-payment-runs">Pharmacy (PH)</a></p>
+      <p class="nhsuk-breadcrumb__back"><a href="PH-payment-runs">{% if data['payment-type']%}{{ data['payment-type']}}{% else %}Pharmacy (PH){% endif %}</a></p>
 
     </div>
   </nav>
@@ -62,7 +62,7 @@
 
           <h2 class="nhsuk-heading-m">What happens next</h2>
 
-          <p>Payments will be issued to pharmacy contractors on 12 November 2021.</p>
+          <p>Payments will be issued to {% if data['payment-type']%}{{ data['payment-type']}}{% else %}Pharmacy (PH){% endif %} contractors on 12 November 2021.</p>
 
           <p>You can <a href="data-preview-complete?paymentMonth=September 2021&complete=Yes">view and download the September 2021 summary data</a>.</p>
 

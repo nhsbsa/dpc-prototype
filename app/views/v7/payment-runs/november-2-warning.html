@@ -31,13 +31,13 @@
           <ol class="nhsuk-breadcrumb__list">
             <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
             <li class="nhsuk-breadcrumb__item"><a href="payment-runs">Payment runs</a></li>
-            <li class="nhsuk-breadcrumb__item"><a href="PH-payment-runs">Pharmacy (PH)</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="PH-payment-runs">{% if data['payment-type']%}{{ data['payment-type']}}{% else %}Pharmacy (PH){% endif %}</a></li>
           </ol>
 
         </div>
       </div>
 
-      <p class="nhsuk-breadcrumb__back"><a href="PH-payment-runs">Pharmacy (PH)</a></p>
+      <p class="nhsuk-breadcrumb__back"><a href="PH-payment-runs">{% if data['payment-type']%}{{ data['payment-type']}}{% else %}Pharmacy (PH){% endif %}</a></p>
 
     </div>
   </nav>
@@ -61,7 +61,7 @@
             </div>
           </div>
 
-          <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Pharmacy (PH) <span
+          <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">{% if data['payment-type']%}{{ data['payment-type']}}{% else %}Pharmacy (PH){% endif %} <span
                   class="nhsuk-u-visually-hidden">-</span></span></span>Payment run steps</h1>
         </div>
       </div>

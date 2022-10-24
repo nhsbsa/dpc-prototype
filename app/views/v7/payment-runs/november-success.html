@@ -31,7 +31,7 @@
           <ol class="nhsuk-breadcrumb__list">
             <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
             <li class="nhsuk-breadcrumb__item"><a href="payment-runs">Payment runs</a></li>
-            <li class="nhsuk-breadcrumb__item"><a href="PH-payment-runs">Pharmacy (PH)</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="PH-payment-runs">{% if data['payment-type']%}{{ data['payment-type']}}{% else %}Pharmacy (PH){% endif %}</a></li>
             <li class="nhsuk-breadcrumb__item"><a href="november-success">September 2021</a></li>
           </ol>
 
@@ -49,7 +49,7 @@
       <div class="nhsuk-grid-row">
 
         <div class="nhsuk-grid-column-two-thirds">
-          <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Pharmacy (PH) <span
+          <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">{% if data['payment-type']%}{{ data['payment-type']}}{% else %}Pharmacy (PH){% endif %} <span
                   class="nhsuk-u-visually-hidden">-</span></span></span>Payment run steps</h1>
 
           <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">September 2021</h2>

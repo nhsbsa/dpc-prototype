@@ -31,13 +31,13 @@
           <ol class="nhsuk-breadcrumb__list">
             <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
             <li class="nhsuk-breadcrumb__item"><a href="payment-runs">Payment runs</a></li>
-            <li class="nhsuk-breadcrumb__item"><a href="javascript:history.go(-1)">Pharmacy (PH)</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="javascript:history.go(-1)">{% if data['payment-type']%}{{ data['payment-type']}}{% else %}Pharmacy (PH){% endif %}</a></li>
           </ol>
 
         </div>
       </div>
 
-      <p class="nhsuk-breadcrumb__back"><a href="javascript:history.go(-1)">Pharmacy (PH)</a></p>
+      <p class="nhsuk-breadcrumb__back"><a href="javascript:history.go(-1)">{% if data['payment-type']%}{{ data['payment-type']}}{% else %}Pharmacy (PH){% endif %}</a></p>
 
     </div>
   </nav>
@@ -48,7 +48,7 @@
       <div class="nhsuk-grid-row">
 
         <div class="nhsuk-grid-column-two-thirds">
-          <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Pharmacy (PH) payment run<span
+          <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">{% if data['payment-type']%}{{ data['payment-type']}}{% else %}Pharmacy (PH){% endif %} payment run<span
                   class="nhsuk-u-visually-hidden">-</span></span></span>{% if data['paymentMonth'] %}{{ data['paymentMonth'] }}{% else %}September 2021{% endif %} summary data</h1>
 
         </div>
@@ -221,7 +221,7 @@
             </div>
             <div class="gem-c-attachment__details">
               <h3 class="gem-c-attachment__title">
-                <a class="govuk-link gem-c-attachment__link" target="_self" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/747661/department-for-transport-information-asset-register.csv">{% if data['paymentMonth'] %}{{ data['paymentMonth'] }}{% else %}September 2021{% endif %} pharmacy payment run summary data</a>
+                <a class="govuk-link gem-c-attachment__link" target="_self" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/747661/department-for-transport-information-asset-register.csv">{% if data['paymentMonth'] %}{{ data['paymentMonth'] }}{% else %}September 2021{% endif %} {% if data['payment-type']%}{{ data['payment-type']}}{% else %}Pharmacy (PH){% endif %} payment run summary data</a>
               </h3>
               <p class="gem-c-attachment__metadata"><span class="gem-c-attachment__attribute"><abbr title="Comma-separated Values" class="gem-c-attachment__abbr">CSV</abbr></span>, <span class="gem-c-attachment__attribute">19.5 KB</span></p>
             </div>
