@@ -14,6 +14,16 @@ th, td {
     border-bottom: 1px solid #aeb7bd;
 }
 
+/***** Inset text options ******/
+
+.nhsuk-inset-text-success {
+border-left: 8px solid #007f3b!important
+}
+
+.nhsuk-inset-text-fail {
+border-left: 8px solid #d5281b!important
+}
+
 /***** Input prefix ******/
 
 .nhsuk-input__wrapper {

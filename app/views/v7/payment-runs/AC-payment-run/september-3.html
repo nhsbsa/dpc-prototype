@@ -4,18 +4,11 @@
 <!DOCTYPE html>
 <html>
 
-
-
 <head>
   <title></title>
 </head>
 
 <body>
-
-
-
-
-
   {% extends 'layout-logged-in.html' %}
   <!--
          In /views/layout.html you can:
@@ -36,15 +29,15 @@
         <div class="nhsuk-grid-column-full">
 
           <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
-            <li class="nhsuk-breadcrumb__item"><a href="payment-runs">Payment runs</a></li>
-            <li class="nhsuk-breadcrumb__item"><a href="PH-payment-runs">{% if data['payment-type']%}{{ data['payment-type']}}{% else %}Pharmacy (PH){% endif %}</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="../../dashboard/dashboard" class="nhsuk-link--no-visited-state">Dashboard</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="../payment-runs" class="nhsuk-link--no-visited-state">Payment runs</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="../PH-payment-runs" class="nhsuk-link--no-visited-state">{% if data['payment-type']%}{{ data['payment-type']}}{% else %}Appliance Contractors{% endif %}</a></li>
           </ol>
 
         </div>
       </div>
 
-      <p class="nhsuk-breadcrumb__back"><a href="PH-payment-runs">{% if data['payment-type']%}{{ data['payment-type']}}{% else %}Pharmacy (PH){% endif %}</a></p>
+      <p class="nhsuk-breadcrumb__back"><a href="../PH-payment-runs" class="nhsuk-link--no-visited-state">{% if data['payment-type']%}{{ data['payment-type']}}{% else %}Appliance Contractors{% endif %}</a></p>
 
     </div>
   </nav>
@@ -54,7 +47,7 @@
 
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-two-thirds">
-          <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">{% if data['payment-type']%}{{ data['payment-type']}}{% else %}Pharmacy (PH){% endif %} <span
+          <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">{% if data['payment-type']%}{{ data['payment-type']}}{% else %}Appliance Contractors{% endif %} <span
                   class="nhsuk-u-visually-hidden">-</span></span></span>Payment run steps</h1>
         </div>
       </div>
@@ -67,7 +60,7 @@
             Summary data
           </button>
         </form>
-        <p style="float:left; clear: left;" class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed 0 of 9 steps.</p>
+        <p style="float:left; clear: left;" class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed 2 of 7 steps.</p>
         </div>
       </div>
 
@@ -83,33 +76,31 @@
               <ul class="app-task-list__items">
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                    <a href="step-1">
+                    <a class="nhsuk-link--no-visited-state" href="step-1">
                       Transfer pricing data
+                    </a>
+                  </span>
+                  <strong class="nhsuk-tag app-task-list__tag">Completed</strong>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a class="nhsuk-link--no-visited-state" href="step-2">
+                      Populate invoice lines
+                    </a>
+                  </span>
+                  <strong class="nhsuk-tag app-task-list__tag">Completed</strong>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a class="nhsuk-link--no-visited-state" href="step-3">
+                      Load ETP data
                     </a>
                   </span>
                   <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag">Not started</strong>
                 </li>
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                      Populate invoice lines
-                  </span>
-                  <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Cannot start yet</strong>
-                </li>
-                <li class="app-task-list__item">
-                  <span class="app-task-list__task-name">
-                      Load ETP data
-                  </span>
-                  <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Cannot start yet</strong>
-                </li>
-                <li class="app-task-list__item">
-                  <span class="app-task-list__task-name">
-                      Load PPC data
-                  </span>
-                  <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Cannot start yet</strong>
-                </li>
-                <li class="app-task-list__item">
-                  <span class="app-task-list__task-name">
-                      Load late advance data
+                      Create ETP R2 local payments
                   </span>
                   <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Cannot start yet</strong>
                 </li>
@@ -123,7 +114,7 @@
               <ul class="app-task-list__items">
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                      Calculate ESPS and Levies
+                      Populate local control totals
                   </span>
                   <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Cannot start yet</strong>
                 </li>
@@ -138,18 +129,12 @@
 
             <li>
               <h2 class="app-task-list__section">
-                <span class="app-task-list__section-number">3. </span> Create payment extracts and statistics
+                <span class="app-task-list__section-number">3. </span> Create payment extracts
               </h2>
               <ul class="app-task-list__items">
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
                     Create payment extracts
-                  </span>
-                  <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Cannot start yet</strong>
-                </li>
-                <li class="app-task-list__item">
-                  <span class="app-task-list__task-name">
-                    Create LPC and RA statistics
                   </span>
                   <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Cannot start yet</strong>
                 </li>
@@ -172,14 +157,6 @@
         </div>
 
       </div>
-
-      {% if data['payment-type'] == "Appliance Contractors" %}
-      <script>
-        window.onload = function() {
-            location.href = "AC-payment-run/september-1";
-        }
-      </script>
-      {% endif %}
 
     </main>
   </div>
