@@ -126,6 +126,23 @@
 
           </div>
 
+          {% if data['completed'] == 'yes' %}
+
+          <form action="javascript:history.go(-1)" method="post">
+
+          <div style="border-left: 8px solid #007f3b;" class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Completed: </span>
+            <p>Payment extracts created</p>
+          </div>
+
+          <button class="nhsuk-button" type="submit">
+            Return to payment run
+          </button>
+
+          </form>
+
+          {% else %}
+
           <form action="" method="post">
 
           <div class="nhsuk-form-group">
@@ -144,7 +161,7 @@
               <div class="nhsuk-radios nhsuk-radios--inline">
 
                 <div class="nhsuk-radios__item">
-                  <input onclick="setLocation(this);" class="nhsuk-radios__input" id="step1-1" name="step1" type="radio" value="september-complete">
+                  <input onclick="setLocation(this);" class="nhsuk-radios__input" id="step1-1" name="step1" type="radio" value="step-7-complete?status=just">
                   <label class="nhsuk-label nhsuk-radios__label" for="step1-1">
                     Yes
                   </label>
@@ -167,6 +184,8 @@
           </button>
 
           </form>
+
+          {% endif %}
 
         </div>
 

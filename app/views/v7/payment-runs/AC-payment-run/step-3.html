@@ -52,15 +52,28 @@
           <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">{% if data['payment-type']%}{{ data['payment-type']}}{% else %}Appliance Contractors{% endif %} <span
           class="nhsuk-u-visually-hidden">-</span></span></span> Load ETP data</h1>
 
+          {% if data['journey'] == 'good' %}
+
+            <div class="nhsuk-inset-text nhsuk-inset-text-warning">
+              <span class="nhsuk-u-visually-hidden">Information: </span>
+              <p>Number of ETP items from ETP and controls do not match, difference in items of 123.</p>
+            </div>
+
+          {% else %}
+
           <div class="nhsuk-inset-text nhsuk-inset-text-success">
             <span class="nhsuk-u-visually-hidden">Information: </span>
             <p>Number of ETP items from ETP and controls match.</p>
           </div>
 
+          {% endif %}
+
           <!--<div class="nhsuk-inset-text nhsuk-inset-text-fail">
             <span class="nhsuk-u-visually-hidden">Information: </span>
             <p>Number of ETP items from ETP and controls do not match. You will need to...</p>
           </div>-->
+
+          {% if data['journey'] == 'error' %}
 
           <form action="" method="post">
 
@@ -76,7 +89,7 @@
               <div class="nhsuk-radios nhsuk-radios--inline">
 
                 <div class="nhsuk-radios__item">
-                  <input onclick="setLocation(this);" class="nhsuk-radios__input" id="step1-1" name="step1" type="radio" value="september-4">
+                  <input onclick="setLocation(this);" class="nhsuk-radios__input" id="step1-1" name="step1" type="radio" value="step-3-error">
                   <label class="nhsuk-label nhsuk-radios__label" for="step1-1">
                     Yes
                   </label>
@@ -99,6 +112,48 @@
           </button>
 
           </form>
+
+          {% else %}
+
+          <form action="" method="post">
+
+          <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                <h1 class="nhsuk-fieldset__heading">
+                  Do you want to continue?
+                </h1>
+              </legend>
+
+              <div class="nhsuk-radios nhsuk-radios--inline">
+
+                <div class="nhsuk-radios__item">
+                  <input onclick="setLocation(this);" class="nhsuk-radios__input" id="step1-1" name="step1" type="radio" value="step-3-complete?status=just">
+                  <label class="nhsuk-label nhsuk-radios__label" for="step1-1">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input onclick="setLocation(this);" class="nhsuk-radios__input" id="step1-2" name="step1" type="radio" value="september-3">
+                  <label class="nhsuk-label nhsuk-radios__label" for="step1-2">
+                    No
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+          <button class="nhsuk-button" type="submit">
+            Continue
+          </button>
+
+          </form>
+
+          {% endif %}
 
         </div>
 

@@ -29,16 +29,16 @@
         <div class="nhsuk-grid-column-full">
 
           <ol class="nhsuk-breadcrumb__list">
-            <li class="nhsuk-breadcrumb__item"><a href="../../dashboard/dashboard" class="nhsuk-link--no-visited-state">Dashboard</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="../../dashboard/dashboard" class="nhsuk-link--no-visited-state">Home</a></li>
             <li class="nhsuk-breadcrumb__item"><a href="../payment-runs" class="nhsuk-link--no-visited-state">Payment runs</a></li>
             <li class="nhsuk-breadcrumb__item"><a href="../PH-payment-runs" class="nhsuk-link--no-visited-state">{% if data['payment-type']%}{{ data['payment-type']}}{% else %}Appliance Contractors{% endif %}</a></li>
-            <li class="nhsuk-breadcrumb__item"><a href="september-1" class="nhsuk-link--no-visited-state" class="nhsuk-link--no-visited-state">September 2021</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="september-7" class="nhsuk-link--no-visited-state">September 2021</a></li>
           </ol>
 
         </div>
       </div>
 
-      <p class="nhsuk-breadcrumb__back"><a href="september-1" class="nhsuk-link--no-visited-state" class="nhsuk-link--no-visited-state">September 2021</a></p>
+      <p class="nhsuk-breadcrumb__back"><a href="september-7" class="nhsuk-link--no-visited-state">September 2021</a></p>
 
     </div>
   </nav>
@@ -49,56 +49,62 @@
       <div class="nhsuk-grid-row">
 
         <div class="nhsuk-grid-column-two-thirds">
-          <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">{% if data['payment-type']%}{{ data['payment-type']}}{% else %}Appliance Contractors{% endif %} <span
-                  class="nhsuk-u-visually-hidden">-</span></span></span> Transfer pricing data</h1>
-
+          <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+            <div class="nhsuk-card__content">
+              <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                Payment extracts created
+              </h1>
+              <h2 class="nhsuk-card__heading nhsuk-u-font-weight-normal" style="text-align: center; color: white;">
+                September 2021
+              </h2>
+            </div>
+          </div>
 
           <div class="nhsuk-do-dont-list nhsuk-u-margin-top-8">
-            {% if data['completed'] == 'yes' or data['completed'] == 'just' %}
-            <h3 class="nhsuk-do-dont-list__label">Data Summary</h3>
-            {% else %}
-            <h3 class="nhsuk-do-dont-list__label">Data preview</h3>
-            {% endif %}
+            <h3 class="nhsuk-do-dont-list__label">Data summary</h3>
+
 
             <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-4">
 
               <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key" style="width: 50%;">Errors</dt>
-                <dd class="nhsuk-summary-list__value">0</dd>
-
+                <dt class="nhsuk-summary-list__key" style="width: 100%">
+                  Total amount for Appliances in Invoice Line Payments
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  78,053,828.69
+                </dd>
               </div>
 
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
-                  Number of rows transferred
+                  Total amount for Appliances in Inv_Spool_to_Integra
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  111
+                  78,053,828.69
                 </dd>
-
               </div>
 
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
-                  Unknown payees
+                  File number
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  0
+                  1,270
                 </dd>
-
               </div>
 
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
-                  LPPs loaded
+                  Supplier File Number
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  39
+                  389
                 </dd>
-
               </div>
 
             </dl>
+
+            <p>Transfer pricing data completed in 2 minutes 51 seconds.</p>
 
             <p class="nhsuk-body-s nhsuk-u-margin-top-4 nhsuk-u-secondary-text-color">
               Last updated:
@@ -130,76 +136,22 @@
 
           </div>
 
-          {% if data['completed'] == 'yes' %}
+          {% if data['status'] == 'just' %}
+
+          <form action="september-complete" method="post">
+
+          <button class="nhsuk-button" type="submit">
+            Return to payment run steps
+          </button>
+
+          </form>
+
+          {% else %}
 
           <form action="javascript:history.go(-1)" method="post">
 
-          <div style="border-left: 8px solid #007f3b;" class="nhsuk-inset-text">
-            <span class="nhsuk-u-visually-hidden">Completed: </span>
-            <p>Pricing data transferred</p>
-          </div>
-
           <button class="nhsuk-button" type="submit">
-            Return to payment run
-          </button>
-
-          </form>
-
-          <!--{% elseif data['completed'] == 'just' %}
-
-          <form action="september-2" method="post">
-
-          <div style="border-left: 8px solid #007f3b;" class="nhsuk-inset-text">
-            <span class="nhsuk-u-visually-hidden">Completed: </span>
-            <p>Pricing data transferred</p>
-          </div>
-
-          <button class="nhsuk-button" type="submit">
-            Return to payment run
-          </button>
-
-          </form>
-          -->
-          {% else %}
-
-          <form action="" method="post">
-
-          <div class="nhsuk-form-group">
-
-            <fieldset class="nhsuk-fieldset">
-              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-                <h1 class="nhsuk-fieldset__heading">
-                  Do you want to continue?
-                </h1>
-              </legend>
-
-              <div class="nhsuk-hint">
-                Only continue if the data shown is correct.
-              </div>
-
-              <div class="nhsuk-radios nhsuk-radios--inline">
-
-                <div class="nhsuk-radios__item">
-                  <input onclick="setLocation(this);" class="nhsuk-radios__input" id="step1-1" name="step1" type="radio" value="step-1-complete?status=just">
-                  <label class="nhsuk-label nhsuk-radios__label" for="step1-1">
-                    Yes
-                  </label>
-                </div>
-
-                <div class="nhsuk-radios__item">
-                  <input onclick="setLocation(this);" class="nhsuk-radios__input" id="step1-2" name="step1" type="radio" value="september-1">
-                  <label class="nhsuk-label nhsuk-radios__label" for="step1-2">
-                    No
-                  </label>
-                </div>
-
-              </div>
-            </fieldset>
-
-          </div>
-
-          <button class="nhsuk-button" type="submit">
-            Continue
+            Return to payment run steps
           </button>
 
           </form>

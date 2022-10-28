@@ -127,14 +127,14 @@
               <div class="nhsuk-radios nhsuk-radios--inline">
 
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="step2-1" name="step2" type="radio" value="yes">
+                  <input onclick="setLocation(this);" class="nhsuk-radios__input" id="step2-1" name="step2" type="radio" value="step-2-completed?status=just">
                   <label class="nhsuk-label nhsuk-radios__label" for="step2-1">
                     Yes
                   </label>
                 </div>
 
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="step2-2" name="step2" type="radio" value="no">
+                  <input onclick="setLocation(this);" class="nhsuk-radios__input" id="step2-2" name="step2" type="radio" value="november-2">
                   <label class="nhsuk-label nhsuk-radios__label" for="step2-2">
                     No
                   </label>
@@ -154,6 +154,12 @@
         </div>
 
       </div>
+
+      <script>
+       function setLocation(element) {
+               document.forms[0].action = element.value
+       }
+      </script>
 
     </main>
   </div>

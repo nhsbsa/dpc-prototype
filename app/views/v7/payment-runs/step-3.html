@@ -101,7 +101,9 @@
 
           </div>
 
-          <form action="/v7/step-3" method="post">
+          {% if data['journey'] == 'error' %}
+
+          <form action="" method="post">
 
           <div class="nhsuk-form-group">
 
@@ -119,15 +121,15 @@
               <div class="nhsuk-radios nhsuk-radios--inline">
 
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="step3-1" name="step3" type="radio" value="yes">
-                  <label class="nhsuk-label nhsuk-radios__label" for="step3-1">
+                  <input onclick="setLocation(this);" class="nhsuk-radios__input" id="step1-1" name="step1" type="radio" value="step-3-error">
+                  <label class="nhsuk-label nhsuk-radios__label" for="step1-1">
                     Yes
                   </label>
                 </div>
 
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="step3-2" name="step3" type="radio" value="no">
-                  <label class="nhsuk-label nhsuk-radios__label" for="step3-2">
+                  <input onclick="setLocation(this);" class="nhsuk-radios__input" id="step1-2" name="step1" type="radio" value="november-3">
+                  <label class="nhsuk-label nhsuk-radios__label" for="step1-2">
                     No
                   </label>
                 </div>
@@ -143,9 +145,61 @@
 
           </form>
 
+          {% else %}
+
+          <form action="" method="post">
+
+          <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                <h1 class="nhsuk-fieldset__heading">
+                  Do you want to continue?
+                </h1>
+              </legend>
+
+              <div class="nhsuk-hint">
+                Only continue if the data shown is correct.
+              </div>
+
+              <div class="nhsuk-radios nhsuk-radios--inline">
+
+                <div class="nhsuk-radios__item">
+                  <input onclick="setLocation(this);" class="nhsuk-radios__input" id="step1-1" name="step1" type="radio" value="step-3-completed?status=just">
+                  <label class="nhsuk-label nhsuk-radios__label" for="step1-1">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input onclick="setLocation(this);" class="nhsuk-radios__input" id="step1-2" name="step1" type="radio" value="november-3">
+                  <label class="nhsuk-label nhsuk-radios__label" for="step1-2">
+                    No
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+          <button class="nhsuk-button" type="submit">
+            Continue
+          </button>
+
+          </form>
+
+          {% endif %}
+
         </div>
 
       </div>
+
+      <script>
+       function setLocation(element) {
+               document.forms[0].action = element.value
+       }
+      </script>
 
     </main>
   </div>
