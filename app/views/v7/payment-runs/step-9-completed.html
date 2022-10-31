@@ -49,81 +49,41 @@
       <div class="nhsuk-grid-row">
 
         <div class="nhsuk-grid-column-two-thirds">
-          <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Pharmacy (PH) <span
-                  class="nhsuk-u-visually-hidden">-</span></span></span> Create LPC and RA statistics</h1>
-
-<!--
-          <div class="nhsuk-do-dont-list nhsuk-u-margin-top-8">
-            <h3 class="nhsuk-do-dont-list__label">Data preview</h3>
-
-
-            <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-4">
-
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Key Data #1
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  123,456
-                </dd>
-
-              </div>
-
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Key Data #2
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  &pound;12,345
-                </dd>
-
-              </div>
-
-            </dl>
-
-            <p class="nhsuk-body-s nhsuk-u-margin-top-4 nhsuk-u-secondary-text-color">
-              Last updated:
-
-              <script>
-              const monthNames = ["January", "February", "March", "April", "May", "June",
-                "July", "August", "September", "October", "November", "December"
-              ];
-
-              var today = new Date();
-
-              var dd = String(today.getDate()).padStart(2, '0');
-              var mm = monthNames[today.getMonth()];
-              var yyyy = today.getFullYear();
-
-              var hours = today.getHours();
-              var ampm = hours >= 12 ? 'pm' : 'am';
-              hours = hours % 12;
-              hours = hours ? hours : 12; // the hour '0' should be '12'
-
-              var time = hours + "." + (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
-
-              today = dd + ' ' + mm + ' ' + yyyy + ' (' + time + ampm + ')';
-              document.write(today);
-
-              </script>
-            </p>
-
-
-          </div>
--->
-
-          <div style="border-left: 8px solid #007f3b;" class="nhsuk-inset-text">
-            <span class="nhsuk-u-visually-hidden">Completed: </span>
-            <p>LPC and RA statistics created</p>
+          <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+            <div class="nhsuk-card__content">
+              <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                LPC and RA statistics created
+              </h1>
+              <h2 class="nhsuk-card__heading nhsuk-u-font-weight-normal" style="text-align: center; color: white;">
+                September 2021
+              </h2>
+            </div>
           </div>
 
-          <form action="javascript:history.go(-1)" method="post">
 
-          <button class="nhsuk-button" type="submit">
-            Back to payment run
-          </button>
+                  <p>Create LPC and RA statistics completed in 1 minutes 2 seconds.</p>
 
-          </form>
+                  {% if data['status'] == 'just' %}
+
+                  <form action="november-complete" method="post">
+
+                  <button class="nhsuk-button" type="submit">
+                    Return to payment run steps
+                  </button>
+
+                  </form>
+
+                  {% else %}
+
+                  <form action="javascript:history.go(-1)" method="post">
+
+                  <button class="nhsuk-button" type="submit">
+                    Return to payment run steps
+                  </button>
+
+                  </form>
+
+                  {% endif %}
         </div>
 
       </div>

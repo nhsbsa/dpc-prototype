@@ -131,14 +131,14 @@ action="/v7/step<!-- Use this page as the index for your project -->
               <div class="nhsuk-radios nhsuk-radios--inline">
 
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="step8-1" name="step8" type="radio" value="yes">
+                  <input onclick="setLocation(this);" class="nhsuk-radios__input" id="step8-1" name="step8" type="radio" value="step-8-completed?status=just">
                   <label class="nhsuk-label nhsuk-radios__label" for="step8-1">
                     Yes
                   </label>
                 </div>
 
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="step8-2" name="step8" type="radio" value="no">
+                  <input onclick="setLocation(this);" class="nhsuk-radios__input" id="step8-2" name="step8" type="radio" value="november-8">
                   <label class="nhsuk-label nhsuk-radios__label" for="step8-2">
                     No
                   </label>
@@ -158,6 +158,12 @@ action="/v7/step<!-- Use this page as the index for your project -->
         </div>
 
       </div>
+
+      <script>
+       function setLocation(element) {
+               document.forms[0].action = element.value
+       }
+      </script>
 
     </main>
   </div>
