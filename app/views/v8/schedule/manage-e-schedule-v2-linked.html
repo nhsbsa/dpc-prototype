@@ -1,0 +1,183 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+
+  {% block pageScripts %}
+  <script type="text/javascript" src="/js/search.js"></script>
+  <script type="text/javascript" src="/js/auto.js"></script>
+  <script type="text/javascript" src="/js/add-letter-code-list.js"></script>
+  <script type="text/javascript" src="/js/action-menu.js"></script>
+  <script type="text/javascript" src="/js/sort.js"></script>
+  <script type="text/javascript" src="/js/suggestionDropdown.js"></script>
+  <script>
+    const data = [
+    {
+      code: 'FF910 Milton Chemist LTD',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    ];
+    createSuggestionDropdown(data, 'report-name');
+  </script>
+  {% endblock %}
+
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+  <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+
+          <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="schedule">E-Schedule</a></li>
+          </ol>
+
+        </div>
+      </div>
+
+      <p class="nhsuk-breadcrumb__back"><a href="schedule">Go back to E-Schedule</a></p>
+
+    </div>
+  </nav>
+
+  <div class="nhsuk-width-container {{ containerClasses }}">
+    <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
+      <div class="nhsuk-grid-row">
+        <h1 class="nhsuk-grid-column-three-quarters"><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>
+          {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %} E-Schedule overview</h1>
+      </div>
+
+      <div class="nhsuk-grid-row">
+
+        <div class="nhsuk-grid-column-two-thirds">
+
+          <h2 style="float: left;" class="nhsuk-heading-m">E-Schedule details</h2>
+
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key" style="border-bottom: 1px solid #d8dde0;">
+                ES Code
+              </dt>
+              <dd class="nhsuk-summary-list__value" style="border-bottom: 1px solid #d8dde0;">
+                ES00630
+              </dd>
+              <dd class="nhsuk-summary-list__actions" style="border-bottom: 1px solid #d8dde0;">
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                E-Schedule name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="change-e-schedule" class="nhsuk-link--no-visited-state">
+                  Change<span class="nhsuk-u-visually-hidden"> E-Schedule details</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Schedule type
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['e-schedule-type'] %}{{ data['e-schedule-type'] }}{% else %}Paper{% endif %}
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+              </dd>
+            </div>
+            {% if data['e-schedule-type'] == 'Both (electronic and paper)' %}
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                E-Schedule file name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+              </dd>
+            </div>
+            {% endif %}
+            {% if data['e-schedule-type'] == 'Electronic' %}
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                E-Schedule file name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+              </dd>
+            </div>
+            {% endif %}
+          </dl>
+
+          <h2 class="nhsuk-heading-m" style="float: left;">Linked contractors</h2>
+
+          <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                FF001 Milton Chemist LTD
+              </dt>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                FF004 Gary's Pharmacy
+              </dt>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                FF012 Boots LTD
+              </dt>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                FF029 Barnard pharmacy
+              </dt>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                FF056 Castle Pharmacy	
+              </dt>
+            </div>
+          </dl>
+
+          <p style="text-align: center; display: block; padding-top: 16px; margin-bottom: 36px;">Plus 22 more contractors</p>
+
+          <a class="nhsuk-button nhsuk-button--secondary" href="manage-linked-contractors">Manage linked contractors</a>
+
+          <p style="clear: both;"><a class="nhsuk-link--no-visited-state" href="schedule">Return to E-Schedules</a></p>
+
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+  {% endblock %}
+</body>
+
+</html>

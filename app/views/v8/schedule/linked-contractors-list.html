@@ -1,0 +1,256 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+  <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+
+          <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="schedule">E-Schedule</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="manage-e-schedule-v2-linked">{% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="manage-linked-contractors-full">Manage linked contractors</a></li>
+          </ol>
+
+        </div>
+      </div>
+
+      <p class="nhsuk-breadcrumb__back"><a href="manage-linked-contractors-full">Go back to manage linked contractors</a></p>
+
+    </div>
+  </nav>
+
+  <div class="nhsuk-width-container {{ containerClasses }}">
+    <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
+      <div class="nhsuk-grid-row">
+        <h1 class="nhsuk-grid-column-three-quarters"><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>
+          All {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %} linked contractors</h1>
+          <p class="nhsuk-grid-column-one-quarter" style="float: right; padding-top: 24px;"><a href="unlink-all" class="nhsuk-button nhsuk-button--secondary">Unlink all contractors</a></p>
+      </div>
+
+      <div class="nhsuk-grid-row">
+
+        <div class="nhsuk-grid-column-two-thirds">
+
+          <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                FF001 Milton Chemist LTD
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                FF004 Gary's Pharmacy
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF567 Gary's Pharmacy</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                FF012 Boots LTD
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> YP710 Boots LTD</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                FF029 Barnard pharmacy
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF890 Barnard pharmacy</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                FF056 Castle Pharmacy
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF056 Castle Pharmacy</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                FF139 Milton Chemist LTD
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                FF183 Gary's Pharmacy
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF567 Gary's Pharmacy</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                FF349 Boots LTD
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> YP710 Boots LTD</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                FF487 Barnard pharmacy
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF890 Barnard pharmacy</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                FF599 Castle Pharmacy
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF056 Castle Pharmacy</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+        </div>
+
+      </div>
+
+      <div class="nhsuk-grid-row">
+
+        <div class="nhsuk-grid-column-full">
+
+          <nav class="nav" role="navigation" aria-label="Pagination">
+
+                <ul class="pagination">
+                  <li class="pagination__item"><a class="pagination__link current" href="#0" aria-current="true" aria-label="Page 1, current page">1</a></li>
+                  <li class="pagination__item"><a class="pagination__link" href="#" aria-label="Page 2">2</a></li>
+                  <li class="pagination__item"><a class="pagination__link" href="#" aria-label="Page 3">3</a></li>
+                  <li class="pagination__item"><a class="pagination__link" href="#" aria-label="Page 3">4</a></li>
+                </ul>
+
+               <a class="pagination__link" href="#" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;&raquo;</span></a>
+
+                <div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 1 - 10 of 34 contractors</div>
+            </nav>
+
+        </div>
+
+      </div>
+
+      <style>
+          li {
+        display: inline-block;
+          color: #005EA5;
+          display: inline-block;
+          padding: 0px 5px 0px 5px;
+          margin-right: 15px;
+          text-decoration: none;
+          margin-bottom: 0px;
+      }
+      .padding {
+      padding-left: 15px;
+      }
+      .pagination {
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 0px;
+      }
+      .pagination__item {
+      display: inline-block;
+      list-style: none;
+      margin-bottom: 0px;
+      }
+      .pagination__link {
+      display: block;
+      padding: 5px 10px;
+      text-decoration: none;
+      font-size: 19px;
+      }
+      .current {
+        color:  #4c6272  !important;
+        font-weight: 700;
+        border: none;
+        pointer-events: none;
+        cursor: default;
+      }
+      .pagination__summary {
+      margin-left: auto;
+      -webkit-font-smoothing: antialiased;
+      padding: 8px 0;
+      font-size: 19px;
+      }
+      .nav
+      {
+        display: flex;
+      flex-direction: row;
+      align-items:center;
+      margin-top: 20px;
+      }
+      @media (max-width: 640px) {
+        .pagination__summary {
+        margin-left: 0;
+        }
+        .nav{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        }
+
+      </style>
+
+    </main>
+  </div>
+  {% endblock %}
+</body>
+
+</html>

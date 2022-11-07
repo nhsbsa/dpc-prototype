@@ -1,0 +1,497 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="dashboard">Dashboard</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container ">
+    <main class="nhsuk-main-wrapper " id="maincontent" role="main">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>Search for a LPA user</h1>
+        </div>
+      </div>
+
+      <div class="nhsuk-grid-row">
+        <form style="display: contents;" action="search?results=true" method="post">
+          <div class="nhsuk-grid-column-one-quarter" style="margin-bottom: 24px;">
+           <div class="nhsuk-form-group"  style="float: left; margin: 0 30px 0 0;">
+             <label class="nhsuk-label" for="user-id">
+               User ID
+             </label>
+             <input class="nhsuk-input nhsuk-input--width-10" id="user-id" name="user-id" type="text" value="{% if data['user-id'] %}{{ data['user-id'] }}{% endif %}">
+           </div>
+         </div>
+         <div class="nhsuk-grid-column-one-half" style="margin-bottom: 24px;">
+           <div class="nhsuk-form-group"  style="float: left; margin: 0 30px 0 0;">
+             <label class="nhsuk-label" for="LAP-name">
+               Name
+             </label>
+             <input class="nhsuk-input" style="width: 41ex;" id="LAP-name" name="LAP-name" type="text" vlaue="{% if data['LAP-name'] %}{{ data['LAP-name'] }}{% endif %}">
+           </div>
+         </div>
+
+         <div class="nhsuk-grid-column-full">
+           <button class="nhsuk-button" type="submit">
+             Search
+           </button>
+         </div>
+        </form>
+       </div>
+
+       {% if data['user-id'] %}
+       <div class="nhsuk-grid-row">
+         <div class="nhsuk-grid-column-full">
+           <table role="table" class="nhsuk-table-responsive">
+             <caption class="nhsuk-table__caption">1 LPA users found</caption>
+             <thead role="rowgroup" class="nhsuk-table__head">
+               <tr role="row">
+                 <th role="columnheader" class="" scope="col">
+                   User ID
+                 </th>
+                 <th role="columnheader" class="" scope="col">
+                   Name
+                 </th>
+                 <th role="columnheader" class="" scope="col">
+                   Work group
+                 </th>
+                 <th role="columnheader" class="" scope="col">
+                   Email
+                 </th>
+                 <th role="columnheader" class="" scope="col">
+                   Telephone
+                 </th>
+               </tr>
+             </thead>
+             <tbody class="nhsuk-table__body">
+               <tr role="row" class="nhsuk-table__row">
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">User ID </span><span class="nhsuk-u-visually-hidden">Manage </span><a class="nhsuk-link--no-visited-state" href="manage-user?status=Locked">{% if data['user-id'] %}{{ data['user-id'] }}{% else %}5HG00A{% endif %}</a>
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Name </span>{% if data['LAP-name'] %}{{ data['LAP-name'] }}{% else %}Ashton, Leigh & Wigan{% endif %}
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Work group </span>LPP
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Email </span>email@email.com
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Telephone </span>07971721980
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+       </div>
+       {% elif data['LAP-name'] %}
+       <div class="nhsuk-grid-row">
+         <div class="nhsuk-grid-column-full">
+           <table role="table" class="nhsuk-table-responsive">
+             <caption class="nhsuk-table__caption">34 LPA users found</caption>
+             <thead role="rowgroup" class="nhsuk-table__head">
+               <tr role="row">
+                 <th role="columnheader" class="" scope="col">
+                   User ID
+                 </th>
+                 <th role="columnheader" class="" scope="col">
+                   Name
+                 </th>
+                 <th role="columnheader" class="" scope="col">
+                   Work group
+                 </th>
+                 <th role="columnheader" class="" scope="col">
+                   Email
+                 </th>
+                 <th role="columnheader" class="" scope="col">
+                   Telephone
+                 </th>
+               </tr>
+             </thead>
+             <tbody class="nhsuk-table__body">
+               <tr role="row" class="nhsuk-table__row">
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">User ID </span><span class="nhsuk-u-visually-hidden">Manage </span><a class="nhsuk-link--no-visited-state" href="manage-user?status=Locked">{% if data['user-id'] %}{{ data['user-id'] }}{% else %}5HG00A{% endif %}</a>
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Name </span>{% if data['LAP-name'] %}{{ data['LAP-name'] }}cove & Wigan{% endif %}
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Work group </span>LPP
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Email </span>email@email.com
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Telephone </span>07971721980
+                 </td>
+               </tr>
+               <tr role="row" class="nhsuk-table__row">
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">User ID </span><span class="nhsuk-u-visually-hidden">Manage </span><a class="nhsuk-link--no-visited-state" href="manage-user">{% if data['user-id'] %}{{ data['user-id'] }}{% else %}5HG01A{% endif %}</a>
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Name </span>{% if data['LAP-name'] %}{{ data['LAP-name'] }}cove & Wigan{% endif %}
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Work group </span>LPP
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Email </span>email@email.com
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Telephone </span>07971721980
+                 </td>
+               </tr>
+               <tr role="row" class="nhsuk-table__row">
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">User ID </span><span class="nhsuk-u-visually-hidden">Manage </span><a class="nhsuk-link--no-visited-state" href="manage-user?status=Locked">{% if data['user-id'] %}{{ data['user-id'] }}{% else %}5HG02A{% endif %}</a>
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Name </span>{% if data['LAP-name'] %}{{ data['LAP-name'] }}cove & Wigan{% endif %}
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Work group </span>LPP
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Email </span>email@email.com
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Telephone </span>07971721980
+                 </td>
+               </tr>
+               <tr role="row" class="nhsuk-table__row">
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">User ID </span><span class="nhsuk-u-visually-hidden">Manage </span><a class="nhsuk-link--no-visited-state" href="manage-user">{% if data['user-id'] %}{{ data['user-id'] }}{% else %}5HG03A{% endif %}</a>
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Name </span>{% if data['LAP-name'] %}{{ data['LAP-name'] }}cove & Wigan{% endif %}
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Work group </span>LPP
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Email </span>email@email.com
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Telephone </span>07971721980
+                 </td>
+               </tr>
+               <tr role="row" class="nhsuk-table__row">
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">User ID </span><span class="nhsuk-u-visually-hidden">Manage </span><a class="nhsuk-link--no-visited-state" href="manage-user">{% if data['user-id'] %}{{ data['user-id'] }}{% else %}5HG04A{% endif %}</a>
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Name </span>{% if data['LAP-name'] %}{{ data['LAP-name'] }}cove & Wigan{% endif %}
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Work group </span>LPP
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Email </span>email@email.com
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Telephone </span>07971721980
+                 </td>
+               </tr>
+               <tr role="row" class="nhsuk-table__row">
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">User ID </span><span class="nhsuk-u-visually-hidden">Manage </span><a class="nhsuk-link--no-visited-state" href="manage-user">{% if data['user-id'] %}{{ data['user-id'] }}{% else %}5HG05A{% endif %}</a>
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Name </span>{% if data['LAP-name'] %}{{ data['LAP-name'] }}cove & Wigan{% endif %}
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Work group </span>LPP
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Email </span>email@email.com
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Telephone </span>07971721980
+                 </td>
+               </tr>
+               <tr role="row" class="nhsuk-table__row">
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">User ID </span><span class="nhsuk-u-visually-hidden">Manage </span><a class="nhsuk-link--no-visited-state" href="manage-user">{% if data['user-id'] %}{{ data['user-id'] }}{% else %}5HG06A{% endif %}</a>
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Name </span>{% if data['LAP-name'] %}{{ data['LAP-name'] }}cove & Wigan{% endif %}
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Work group </span>LPP
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Email </span>email@email.com
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Telephone </span>07971721980
+                 </td>
+               </tr>
+               <tr role="row" class="nhsuk-table__row">
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">User ID </span><span class="nhsuk-u-visually-hidden">Manage </span><a class="nhsuk-link--no-visited-state" href="manage-user">{% if data['user-id'] %}{{ data['user-id'] }}{% else %}5HG07A{% endif %}</a>
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Name </span>{% if data['LAP-name'] %}{{ data['LAP-name'] }}cove & Wigan{% endif %}
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Work group </span>LPP
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Email </span>email@email.com
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Telephone </span>07971721980
+                 </td>
+               </tr>
+               <tr role="row" class="nhsuk-table__row">
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">User ID </span><span class="nhsuk-u-visually-hidden">Manage </span><a class="nhsuk-link--no-visited-state" href="manage-user">{% if data['user-id'] %}{{ data['user-id'] }}{% else %}5HG08A{% endif %}</a>
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Name </span>{% if data['LAP-name'] %}{{ data['LAP-name'] }}cove & Wigan{% endif %}
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Work group </span>LPP
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Email </span>email@email.com
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Telephone </span>07971721980
+                 </td>
+               </tr>
+               <tr role="row" class="nhsuk-table__row">
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">User ID </span><span class="nhsuk-u-visually-hidden">Manage </span><a class="nhsuk-link--no-visited-state" href="manage-user">{% if data['user-id'] %}{{ data['user-id'] }}{% else %}5HG09A{% endif %}</a>
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Name </span>{% if data['LAP-name'] %}{{ data['LAP-name'] }}cove & Wigan{% endif %}
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Work group </span>LPP
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Email </span>email@email.com
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Telephone </span>07971721980
+                 </td>
+               </tr>
+               <tr role="row" class="nhsuk-table__row">
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">User ID </span><span class="nhsuk-u-visually-hidden">Manage </span><a class="nhsuk-link--no-visited-state" href="manage-user">{% if data['user-id'] %}{{ data['user-id'] }}{% else %}5HG10A{% endif %}</a>
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Name </span>{% if data['LAP-name'] %}{{ data['LAP-name'] }}cove & Wigan{% endif %}
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Work group </span>LPP
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Email </span>email@email.com
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Telephone </span>07971721980
+                 </td>
+               </tr>
+               <tr role="row" class="nhsuk-table__row">
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">User ID </span><span class="nhsuk-u-visually-hidden">Manage </span><a class="nhsuk-link--no-visited-state" href="manage-user">{% if data['user-id'] %}{{ data['user-id'] }}{% else %}5HG11A{% endif %}</a>
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Name </span>{% if data['LAP-name'] %}{{ data['LAP-name'] }}cove & Wigan{% endif %}
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Work group </span>LPP
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Email </span>email@email.com
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Telephone </span>07971721980
+                 </td>
+               </tr>
+               <tr role="row" class="nhsuk-table__row">
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">User ID </span><span class="nhsuk-u-visually-hidden">Manage </span><a class="nhsuk-link--no-visited-state" href="manage-user">{% if data['user-id'] %}{{ data['user-id'] }}{% else %}5HG12A{% endif %}</a>
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Name </span>{% if data['LAP-name'] %}{{ data['LAP-name'] }}cove & Wigan{% endif %}
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Work group </span>LPP
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Email </span>email@email.com
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Telephone </span>07971721980
+                 </td>
+               </tr>
+               <tr role="row" class="nhsuk-table__row">
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">User ID </span><span class="nhsuk-u-visually-hidden">Manage </span><a class="nhsuk-link--no-visited-state" href="manage-user">{% if data['user-id'] %}{{ data['user-id'] }}{% else %}5HG13A{% endif %}</a>
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Name </span>{% if data['LAP-name'] %}{{ data['LAP-name'] }}cove & Wigan{% endif %}
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Work group </span>LPP
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Email </span>email@email.com
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Telephone </span>07971721980
+                 </td>
+               </tr>
+               <tr role="row" class="nhsuk-table__row">
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">User ID </span><span class="nhsuk-u-visually-hidden">Manage </span><a class="nhsuk-link--no-visited-state" href="manage-user">{% if data['user-id'] %}{{ data['user-id'] }}{% else %}5HG14A{% endif %}</a>
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Name </span>{% if data['LAP-name'] %}{{ data['LAP-name'] }}cove & Wigan{% endif %}
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Work group </span>LPP
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Email </span>email@email.com
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell">
+                   <span class="nhsuk-table-responsive__heading">Telephone </span>07971721980
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+       </div>
+       <br>
+       <div class="nhsuk-grid-row">
+       <div class="nhsuk-grid-column-full">
+         <nav class="nav" role="navigation" aria-label="Pagination">
+
+               <ul class="pagination">
+                 <li class="pagination__item"><a class="pagination__link current" href="#0" aria-current="true" aria-label="Page 1, current page">1</a></li>
+                 <li class="pagination__item"><a class="pagination__link" href="#" aria-label="Page 2">2</a></li>
+                 <li class="pagination__item"><a class="pagination__link" href="#" aria-label="Page 3">3</a></li>
+               </ul>
+
+              <a class="pagination__link" href="#" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;&raquo;</span></a>
+
+               <div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 1 - 15 of 34 LPA users</div>
+           </nav>
+         </div>
+         </div>
+       {% endif %}
+
+    </main>
+</div>
+
+<style>
+    li {
+  display: inline-block;
+    color: #005EA5;
+    display: inline-block;
+    padding: 0px 5px 0px 5px;
+    margin-right: 15px;
+    text-decoration: none;
+    margin-bottom: 0px;
+}
+.padding {
+padding-left: 15px;
+}
+.pagination {
+padding: 0;
+display: flex;
+flex-direction: row;
+margin-bottom: 0px;
+}
+.pagination__item {
+display: inline-block;
+list-style: none;
+margin-bottom: 0px;
+}
+.pagination__link {
+display: block;
+padding: 5px 10px;
+text-decoration: none;
+font-size: 19px;
+}
+.current {
+  color:  #4c6272  !important;
+  font-weight: 700;
+  border: none;
+  pointer-events: none;
+  cursor: default;
+}
+.pagination__summary {
+margin-left: auto;
+-webkit-font-smoothing: antialiased;
+padding: 8px 0;
+font-size: 19px;
+}
+.nav
+{
+  display: flex;
+flex-direction: row;
+align-items:center;
+margin-top: 20px;
+}
+@media (max-width: 640px) {
+  .pagination__summary {
+  margin-left: 0;
+  }
+  .nav{
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  }
+
+</style>
+
+
+  {% endblock %}
+</body>
+
+</html>

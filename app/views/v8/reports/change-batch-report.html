@@ -1,0 +1,228 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+
+  {% block pageScripts %}
+  <script type="text/javascript" src="/js/search.js"></script>
+  <script type="text/javascript" src="/js/auto.js"></script>
+  <script type="text/javascript" src="/js/add-letter-code-list.js"></script>
+  <script type="text/javascript" src="/js/action-menu.js"></script>
+  <script type="text/javascript" src="/js/sort.js"></script>
+  <script type="text/javascript" src="/js/suggestionDropdown.js"></script>
+  <script>
+    const data = [
+      {
+        code: 'Ceased Contractors Advance Analysis',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Contractors Receiving Payments',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Paper Schedule Turned Off',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'LPP Levy - Values and Factors',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'LPP Levy History',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Levy Values',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Amended Payment',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'CPS Input by Expense Head',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Exceptions Post Web Closed',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'PPC Pre-Load Totals',
+        name: '',
+        recall: 'Invitation letter',
+      },
+    ];
+    createSuggestionDropdown(data, 'report-name-3');
+  </script>
+  {% endblock %}
+
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="reports?download=false">Reports</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="create-report">Create report</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="manage-batch-reports">Manage batch reports</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="manage-batch-reports">Back to manage batch reports</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1 class="nhsuk-heading-l">
+            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>
+              Change batch report
+          </h1>
+
+          <form action="change-batch-report" method="post">
+
+          <div class="nhsuk-form-group">
+            <h2 class="nhsuk-heading-s">
+              <label for="batch-name">
+                Batch name
+              </label>
+            </h2>
+            <input class="nhsuk-input nhsuk-input--width-20" id="batch-name" name="batch-name" type="text" value="{{ data['batch-name'] }}">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h2 class="nhsuk-heading-s">
+              Reports
+            </h2>
+
+            <dl class="nhsuk-summary-list">
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__value">
+                  {% if data['report-name-1'] %}{{ data['report-name-1'] }}{% else %}Pricing contractor averages{% endif %}
+                </dt>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="create-batch-report-added-2">
+                    Remove<span class="nhsuk-u-visually-hidden"> report</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__value">
+                  {% if data['report-name-2'] %}{{ data['report-name-2'] }}{% else %}Paper Schedule Turned Off{% endif %}
+                </dt>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="create-batch-report-added-2">
+                    Remove<span class="nhsuk-u-visually-hidden"> report</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__value">
+                  {% if data['report-name-3'] %}{{ data['report-name-3'] }}{% else %}CPS Input by Expense Head{% endif %}
+                </dt>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="create-batch-report-added-2">
+                    Remove<span class="nhsuk-u-visually-hidden"> report</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__value">
+                  {% if data['report-name-4'] %}{{ data['report-name-4'] }}{% else %}CPS Input by Expense Head{% endif %}
+                </dt>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="create-batch-report-added-2">
+                    Remove<span class="nhsuk-u-visually-hidden"> report</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__value">
+                  {% if data['report-name-5'] %}{{ data['report-name-5'] }}{% else %}CPS Input by Expense Head{% endif %}
+                </dt>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="create-batch-report-added-2">
+                    Remove<span class="nhsuk-u-visually-hidden"> report</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+
+            <div class="nhsuk-hint" id="contact-hint">
+              Search for a report to add to the batch report.
+            </div>
+            <fieldset class="nhsuk-fieldset" aria-describedby="dob-from" role="group">
+                <div class="nhsuk-form-group">
+                  <div id="report-name-3"></div>
+                  <ul id="letter-code-list" class="nhsuk-list">
+                  </ul>
+                </div>
+            </fieldset>
+
+              <button class="nhsuk-button nhsuk-button--secondary" type="submit">
+                Add report
+              </button>
+
+            </form>
+
+          </div>
+
+          <form action="manage-batch-reports" method="post">
+
+            <button class="nhsuk-button" type="submit">
+              Change batch report
+            </button>
+
+          </form>
+
+          <p><a class="nhsuk-link--no-visited-state" href="manage-batch-reports">Cancel changes</a></p>
+
+        </div>
+
+  </main>
+</div>
+
+
+  {% endblock %}
+</body>
+
+</html>

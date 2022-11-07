@@ -1,0 +1,1128 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../search">Find a contractor</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../contractorv2-1">MILTON CHEMIST LTD</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../schedule-3">August 2021 schedule</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="expensive-items">Back to August 2021 schedule</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+    <form method="post" action="authorised-others-2">
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1 style="margin-bottom:12px;" class="nhsuk-heading-l">
+            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Manage contractor<span class="nhsuk-u-visually-hidden">-</span></span></span>
+              Check August 2021 payments authorised by others
+          </h1>
+
+          <p class="nhsuk-body-s" style="margin-bottom: 36px; margin-right:24px;">
+            <b>OCS Code:</b> FF910<br>
+            <b>LPP:</b> QNC - STAFFORDSHIRE & STOKE ON TRENT STP<br>
+            <b>Payment date:</b> 1 November 2021
+          </p>
+
+          <div class="nhsuk-form-group" style="margin-bottom: 36px">
+            <dl class="nhsuk-summary-list">
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Urgent Medicine Reimbursement Payment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Urgent Medicine Reimbursement Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Urgent Medicine Remuneration Payment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Urgent Medicine Remuneration Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Urgent Medicine Charges amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Urgent Medicine Charges Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Pharmacy Access Scheme Payment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Pharmacy Access Scheme Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Quality Payments Scheme amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Quality Payments Scheme Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  3 Month Prepaid Certificate at current price amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  12 Month Prepaid Certificate at current price amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  3 Month Prepaid Certificate at previous price amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  12 Month Prepaid Certificate at previous price amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Pharmacy Rewards Scheme amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Advice to Care Homes amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Additional Pharmacist Access Services amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Copy Schedule Charge amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Adjustment - Drugs amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Adjustment - Fees amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Amendment allowance amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  CIP compensation payment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Flu Reimbursement payment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Flu Reimbursement payment adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Flu Remuneration payment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Flu Remuneration payment adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Summary Care Record Payment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  SSP Remuneration amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  SSP Reimbursement amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  SSP Remuneration Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  SSP Reimbursement Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Late Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Late Fee amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  CPCS Reimbursement Payment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  CPCS Reimbursement Payment Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  CPCS Remuneration Payment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  CPCS Remuneration Payment Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  CPCS Charges Deducted amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  CPCS Charges Deducted Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  CPCS Sign-up Fee amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Pharmacy Quality Scheme amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Pharmacy Quality Scheme Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Out of Pocket Expenses Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Pre Reg Trainee Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Transitional Payment Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Transitional Payment Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Hep C Provision of Testing Service amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Hep C Provision of Testing Service Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Hep C Test Kit Reimbursement amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Hep C Test Kit Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  PPE Claims amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  PPE Claims Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Flu Premises Claim amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Flu Premises Claim Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Discharge Med Review Fee amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Discharge Med Review Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  GP Referral Pathway Engagement Fee amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  GP Referral Pathway Engagement Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  COVID Vaccine Claim amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  COVID Vaccine Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  COVID Premises and Refrigeration amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  COVID Premises and Refrigeration Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  COVID Testing Kit amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  COVID Testing Kit Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Capacity Supplement amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Capacity Supplement Adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  COVID Test Kit Registration Fee amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  COVID Test Kit Setup Fee amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Reimbursement of COVID-19 Costs amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Recovery of early payment on account
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Reimbursement of COVID-19 costs adjustment amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Early payment on account amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  Recovery of 2020 and 2021 COVID-19 Cash Advance amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width:70%">
+                  PEPS Transition Recovery amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+
+
+                </dd>
+              </div>
+
+            </dl>
+
+          <p class="nhsuk-u-margin-top-4""><b>Total amount authorised by others:</b> £0</p>
+          </div>
+
+
+          <div class="nhsuk-form-group">
+            <button class="nhsuk-button" type="submit">
+            Save and continue
+            </button>
+            <p><a href="authorised-others-2">Cancel changes</a></p>
+          </div>
+
+        </div>
+      </div>
+
+
+      </form>
+  </main>
+</div>
+
+
+  {% endblock %}
+</body>
+
+</html>

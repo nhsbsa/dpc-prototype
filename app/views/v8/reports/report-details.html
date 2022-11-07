@@ -1,0 +1,170 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="reports?download=false">Reports</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="reports?download=false">Back to reports</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1 class="nhsuk-heading-l">
+            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>
+              {% if data['reportName'] %}{{ data['reportName'] }}{% else %}Check Schedules for Zeroes - M00300{% endif %} report
+          </h1>
+        </div>
+      </div>
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+          <h2 class="nhsuk-heading-m">Report details</h2>
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Report name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['reportName'] %}{{ data['reportName'] }}{% else %}Check Schedules for Zeroes - M00300{% endif %}
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Schedule ID
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                PH - Pharmacy
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Payment run ID
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                M00299 - 24/12/2020
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Report format
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                PDF
+              </dd>
+            </div>
+
+
+          </dl>
+
+          <h2 class="nhsuk-heading-m">Report creation</h2>
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Report status
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Completed
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Date created
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['dateCreated'] %}{{ data['dateCreated'] }}{% else %}13 August 2021{% endif %}
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Report generation time
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                4 minutes 20 seconds
+              </dd>
+            </div>
+
+          </dl>
+
+        </div>
+
+        <div  class="nhsuk-grid-column-one-third">
+          <div  class="action-block">
+
+            <h2 class="nhsuk-heading-m">Actions</h2>
+            <a class="nhsuk-button" href="#" role="button" draggable="false">
+                Download report
+            </a>
+
+
+            <a class="nhsuk-button nhsuk-button--secondary" href="report-parameters?report-name=Ceased%20Contractors%20Advance%20Analysis" role="button" draggable="false">
+                Recreate report
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+
+
+  </main>
+</div>
+<style>
+  .action-block {
+  background-color: #ffffff;
+  padding: 15px;
+  margin-bottom: 20px; }
+
+.action-block .nhsuk-button {
+  width: 100%;
+  margin: 0 0 10px; }
+</style>
+
+  {% endblock %}
+</body>
+
+</html>

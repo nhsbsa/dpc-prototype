@@ -1,0 +1,307 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+         <link rel="stylesheet" href="https://github.com/alphagov/accessible-autocomplete/blob/main/dist/accessible-autocomplete.min.css">
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="search">Find a contractor</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="contractorv2-1">MILTON CHEMIST LTD</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="manage-payment-2">August 2021 manual payments</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="manage-payment-2">August 2021 manual payments</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+    <form action="cya-payment" method="post">
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1 style="margin-bottom:12px;" class="nhsuk-heading-l">
+            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Manage contractor<span class="nhsuk-u-visually-hidden">-</span></span></span>
+                  Add payment
+          </h1>
+          <p class="nhsuk-body-s" style="margin-bottom: 36px; margin-right:24px;"><b>Contractor name:</b> Milton Chemist LTD<br><b>OCS Code:</b> FF910<br><b>LPP:</b> QNC - STAFFORDSHIRE & STOKE ON TRENT STP</p>
+
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="LPP">
+              Expense head
+            </label>
+            <select class="nhsuk-select" id="select-1" name="select-1">
+              <option value="1" selected>162 - FLU REMUN</option>
+              <option value="2">NHS.UK frontend option 2</option>
+              <option value="3">NHS.UK frontend option 3</option>
+            </select>
+          </div>
+
+<!-- Accessible autocomplete not woriking
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="LPP">
+              Expense head
+            </label>
+            <div class="autocomplete-wrapper">
+            <select name="last-location" id="last-location">
+              <option value="">Select a country</option>
+              <option value="territory:AE-AZ">Abu Dhabi</option>
+              <option value="country:AF">Afghanistan</option>
+              <option value="territory:AE-AJ">Ajman</option>
+            </select>
+            </div>
+          </div>
+-->
+
+          <p><b>Expense head current total</b> £0</p>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="LPP">
+              Payment amount
+            </label>
+            <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+            <input class="nhsuk-input nhsuk-input--width-5" id="paymentamount" name="paymentamount" type="text" value="" inputmode="numeric">
+          </div>
+
+
+
+        <br>
+        <button class="nhsuk-button" type="submit">
+          Continue
+        </button>
+
+        <p><a href="manage-payment">Cancel payment</a></p>
+
+      </div>
+    </form>
+  </main>
+</div>
+
+
+  {% endblock %}
+
+  <script type="text/javascript" src="../dist/accessible-autocomplete.min.js"></script>
+      <script type="text/javascript">
+        var selectEl = document.querySelector('#last-location')
+        accessibleAutocomplete.enhanceSelectElement({
+          autoselect: true,
+          confirmOnBlur: true,
+          defaultValue: "",
+          minLength: 2,
+          selectElement: selectEl
+        })
+
+        var queryStringParameters = window.location.search
+        var previouslySubmitted = queryStringParameters.length > 0
+        if (previouslySubmitted) {
+          var submittedEl = document.querySelector('.submitted')
+          submittedEl.classList.remove('submitted--hidden')
+          var params = new URLSearchParams(document.location.search.split('?')[1])
+          document.querySelector('.submitted__last-location').innerHTML = params.get('last-location')
+        }
+      </script>
+
+      <Style>
+        .autocomplete__wrapper {
+  position: relative;
+}
+
+.autocomplete__hint,
+.autocomplete__input {
+  -webkit-appearance: none;
+  border: 2px solid #0b0c0c;
+  border-radius: 0; /* Safari 10 on iOS adds implicit border rounding. */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin-bottom: 0; /* BUG: Safari 10 on macOS seems to add an implicit margin. */
+  width: 100%;
+}
+
+.autocomplete__input {
+  background-color: transparent;
+  position: relative;
+}
+
+.autocomplete__hint {
+  color: #b1b4b6;
+  position: absolute;
+}
+
+.autocomplete__input--default {
+  padding: 5px;
+}
+.autocomplete__input--focused {
+  outline: 3px solid #fd0;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 2px;
+}
+
+.autocomplete__input--show-all-values {
+  padding: 5px 34px 5px 5px; /* Space for arrow. Other padding should match .autocomplete__input--default. */
+  cursor: pointer;
+}
+
+.autocomplete__dropdown-arrow-down{
+  z-index: -1;
+  display: inline-block;
+  position: absolute;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  top: 10px;
+}
+
+.autocomplete__menu {
+  background-color: #fff;
+  border: 2px solid #0B0C0C;
+  border-top: 0;
+  color: #0B0C0C;
+  margin: 0;
+  max-height: 342px;
+  overflow-x: hidden;
+  padding: 0;
+  width: 100%;
+  width: calc(100% - 4px);
+}
+
+.autocomplete__menu--visible {
+  display: block;
+}
+
+.autocomplete__menu--hidden {
+  display: none;
+}
+
+.autocomplete__menu--overlay {
+  box-shadow: rgba(0, 0, 0, 0.256863) 0px 2px 6px;
+  left: 0;
+  position: absolute;
+  top: 100%;
+  z-index: 100;
+}
+
+.autocomplete__menu--inline {
+  position: relative;
+}
+
+.autocomplete__option {
+  border-bottom: solid #b1b4b6;
+  border-width: 1px 0;
+  cursor: pointer;
+  display: block;
+  position: relative;
+}
+
+.autocomplete__option > * {
+  pointer-events: none;
+}
+
+.autocomplete__option:first-of-type {
+  border-top-width: 0;
+}
+
+.autocomplete__option:last-of-type {
+  border-bottom-width: 0;
+}
+
+.autocomplete__option--odd {
+  background-color: #FAFAFA;
+}
+
+.autocomplete__option--focused,
+.autocomplete__option:hover {
+  background-color: #1d70b8;
+  border-color: #1d70b8;
+  color: white;
+  outline: none;
+}
+
+@media (-ms-high-contrast: active), (forced-colors: active) {
+  .autocomplete__menu {
+    border-color: FieldText;
+  }
+
+  .autocomplete__option {
+    background-color: Field;
+    color: FieldText;
+  }
+
+  .autocomplete__option--focused,
+  .autocomplete__option:hover {
+    forced-color-adjust: none; /* prevent backplate from obscuring text */
+    background-color: Highlight;
+    border-color: Highlight;
+    color: HighlightText;
+
+    /* Prefer SelectedItem / SelectedItemText in browsers that support it */
+    background-color: SelectedItem;
+    border-color: SelectedItem;
+    color: SelectedItemText;
+    outline-color: SelectedItemText;
+  }
+}
+
+.autocomplete__option--no-results {
+  background-color: #FAFAFA;
+  color: #646b6f;
+  cursor: not-allowed;
+}
+
+.autocomplete__hint,
+.autocomplete__input,
+.autocomplete__option {
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.autocomplete__hint,
+.autocomplete__option {
+  padding: 5px;
+}
+
+@media (min-width: 641px) {
+  .autocomplete__hint,
+  .autocomplete__input,
+  .autocomplete__option {
+    font-size: 19px;
+    line-height: 1.31579;
+  }
+}
+</style>
+
+</body>
+
+</html>

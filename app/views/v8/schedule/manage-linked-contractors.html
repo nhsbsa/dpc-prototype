@@ -1,0 +1,136 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+
+  {% block pageScripts %}
+  <script type="text/javascript" src="/js/search.js"></script>
+  <script type="text/javascript" src="/js/auto.js"></script>
+  <script type="text/javascript" src="/js/add-letter-code-list.js"></script>
+  <script type="text/javascript" src="/js/action-menu.js"></script>
+  <script type="text/javascript" src="/js/sort.js"></script>
+  <script type="text/javascript" src="/js/suggestionDropdown.js"></script>
+  <script>
+    const data = [
+    {
+      code: 'FF910 Milton Chemist LTD',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    ];
+    createSuggestionDropdown(data, 'report-name');
+  </script>
+  {% endblock %}
+
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+  <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+
+          <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="schedule">E-Schedule</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="manage-e-schedule-v2-linked">{% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}</a></li>
+          </ol>
+
+        </div>
+      </div>
+
+      <p class="nhsuk-breadcrumb__back"><a href="manage-e-schedule-v2-linked">Go back to {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %}</a></p>
+
+    </div>
+  </nav>
+
+  <div class="nhsuk-width-container {{ containerClasses }}">
+    <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
+      <div class="nhsuk-grid-row">
+        <h1 class="nhsuk-grid-column-three-quarters"><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>
+          {% if data['e-schedule-name'] %}{{ data['e-schedule-name'] }}{% else %}E-Schedule name{% endif %} linked contractors</h1>
+      </div>
+
+      <div class="nhsuk-grid-row">
+
+        <div class="nhsuk-grid-column-two-thirds">
+
+          <h2 class="nhsuk-heading-m">Link a new contractor</h2>
+
+          <div class="nhsuk-form-group">
+            <div id="report-name"></div>
+            <ul id="letter-code-list" class="nhsuk-list">
+            </ul>
+          </div>
+
+          <p><a class="nhsuk-button nhsuk-button--secondary" style="margin-bottom: 0px;" href="manage-linked-contractors-full">Link contractor</a></p>
+
+          <details class="nhsuk-details nhsuk-u-margin-top-5">
+           <summary class="nhsuk-details__summary" role="link">
+             <span class="nhsuk-details__summary-text">
+               Cannot find the contractor you're looking for?
+             </span>
+           </summary>
+           <div class="nhsuk-details__text">
+             <p>You can not link a contractor who is already linked to an E-Schedule or part of a YP code group.</p>
+           </div>
+          </details>
+
+          <h2 style="float: left;" class="nhsuk-heading-m">Linked contractors</h2>
+
+          <p style="float: right; padding-top: 24px;"><a href="unlink-all" class="nhsuk-link--no-visited-state">Unlink all contractors</a></p>
+
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                FF910 Milton Chemist LTD
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                FF567 Gary's Pharmacy
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+          <a class="nhsuk-button" href="manage-e-schedule-v2-linked">Return to E-Schedule overview</a>
+
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+  {% endblock %}
+</body>
+
+</html>

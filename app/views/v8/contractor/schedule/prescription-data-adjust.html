@@ -1,0 +1,328 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+  <link href="/css/secondary-tabs.css" rel="stylesheet">
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../search">Find a contractor</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../contractorv2-1">MILTON CHEMIST LTD</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../schedule-3">August 2021 schedule</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="prescription-data">Prescription data</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="contractorv2-1">Milton Chemist LTD</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+    <form method="post" action="prescription-data-cya">
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+          <h1 style="margin-bottom:12px;" class="nhsuk-heading-l">
+            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Manage contractor<span class="nhsuk-u-visually-hidden">-</span></span></span>
+              Adjust August 2021 prescription data
+          </h1>
+
+          <p class="nhsuk-body-s" style="margin-bottom: 36px; margin-right:24px;">
+            OCS Code: FF910<br>
+            LPP: QNC - STAFFORDSHIRE & STOKE ON TRENT STP<br>
+            Payment date: 1 November 2021
+          </p>
+
+        </div>
+      </div>
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+
+
+          <table role="table" class="nhsuk-table-responsive">
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Description
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Quantity
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Amount
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Description </span>Total forms received (including electronic prescriptions)
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <label class="visually-hidden" for="hosiery-current">otal forms received (including electronic prescriptions) quantity</label>
+                  <input class="nhsuk-input nhsuk-input--width-5" id="hosiery-current" name="hosiery-current" type="text" value="3190">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Amount </span>
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Description </span>Total electronic prescriptions forms received
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <label class="visually-hidden" for="hosiery-current">Total electronic prescriptions forms received quantity</label>
+                  <input class="nhsuk-input nhsuk-input--width-5" id="hosiery-current" name="hosiery-current" type="text" value="">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Amount </span>
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Description </span>Total electronic prescriptions items received
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <label class="visually-hidden" for="hosiery-current">Total electronic prescriptions items received quantity</label>
+                  <input class="nhsuk-input nhsuk-input--width-5" id="hosiery-current" name="hosiery-current" type="text" value="">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Amount </span>
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Description </span>Items at zero discount rate, for which a fee is paid
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <label class="visually-hidden" for="hosiery-current">Items at zero discount rate, for which a fee is paid quantity</label>
+                  <input class="nhsuk-input nhsuk-input--width-5" id="hosiery-current" name="hosiery-current" type="text" value="1231">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Amount </span>
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Description </span>Items at standard discount rate, for which a fee is paid (including oxygen)
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <label class="visually-hidden" for="hosiery-current">Items at standard discount rate, for which a fee is paid (including oxygen) quantity</label>
+                  <input class="nhsuk-input nhsuk-input--width-5" id="hosiery-current" name="hosiery-current" type="text" value="6623">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Amount </span>
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Description </span>Average item value
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Quantity </span>
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <label class="visually-hidden" for="hosiery-current">Average item value</label>
+                  <span class="nhsuk-currency-input__inner__unit" style="position: inherit;">£</span>
+                  <input class="nhsuk-input nhsuk-input--width-5" id="hosiery-current" name="hosiery-current" type="text" value="6.83">
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Description </span>Referred back items
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <label class="visually-hidden" for="hosiery-current">Referred back items quantity</label>
+                  <input class="nhsuk-input nhsuk-input--width-5" id="hosiery-current" name="hosiery-current" type="text" value="8">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Amount </span>
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Description </span>Referred back forms
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <label class="visually-hidden" for="hosiery-current">Referred back forms quantity</label>
+                  <input class="nhsuk-input nhsuk-input--width-5" id="hosiery-current" name="hosiery-current" type="text" value="1">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Amount </span>
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Description </span>Medicine use reviews (MUR) declared
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <label class="visually-hidden" for="hosiery-current">Medicine use reviews (MUR) declared quantity</label>
+                  <input class="nhsuk-input nhsuk-input--width-5" id="hosiery-current" name="hosiery-current" type="text" value="">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Amount </span>
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Description </span>Year to date MUR declerations
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <label class="visually-hidden" for="hosiery-current">Medicine use reviews (MUR) declared quantity</label>
+                  <input class="nhsuk-input nhsuk-input--width-5" id="hosiery-current" name="hosiery-current" type="text" value="">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Amount </span>
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Description </span>Year to date Total MURs declared (previous)
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <label class="visually-hidden" for="hosiery-current">Year to date Total MURs declared (previous) quantity</label>
+                  <input class="nhsuk-input nhsuk-input--width-5" id="hosiery-current" name="hosiery-current" type="text" value="">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Amount </span>
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Description </span>Year to date Medicine use reviews declared
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <label class="visually-hidden" for="hosiery-current">Year to date Medicine use reviews declared quantity</label>
+                  <input class="nhsuk-input nhsuk-input--width-5" id="hosiery-current" name="hosiery-current" type="text" value="">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Amount </span>
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Description </span>FP57 forms declared
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <label class="visually-hidden" for="hosiery-current">FP57 forms declared quantity</label>
+                  <input class="nhsuk-input nhsuk-input--width-5" id="hosiery-current" name="hosiery-current" type="text" value="">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Amount </span>
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Description </span>Appliance use reviews carried out at patients home declared
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <label class="visually-hidden" for="hosiery-current">Appliance use reviews carried out at patients home declared quantity</label>
+                  <input class="nhsuk-input nhsuk-input--width-5" id="hosiery-current" name="hosiery-current" type="text" value="">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Amount </span>
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Description </span>Appliance use reviews carried out at premises declared
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <label class="visually-hidden" for="hosiery-current">Appliance use reviews carried out at premises declared quantity</label>
+                  <input class="nhsuk-input nhsuk-input--width-5" id="hosiery-current" name="hosiery-current" type="text" value="">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Amount </span>
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Description </span>New medicine services undertaken
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <label class="visually-hidden" for="hosiery-current">New medicine services undertaken quantity</label>
+                  <input class="nhsuk-input nhsuk-input--width-5" id="hosiery-current" name="hosiery-current" type="text" value="49">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Amount </span>
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Description </span>New medicine service items
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <label class="visually-hidden" for="hosiery-current">New medicine service items quantity</label>
+                  <input class="nhsuk-input nhsuk-input--width-5" id="hosiery-current" name="hosiery-current" type="text" value="7201">
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Amount </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          </div>
+        </div>
+
+        <div class="nhsuk-grid-row nhsuk-u-margin-top-4">
+          <div class="nhsuk-grid-column-full">
+
+
+        <div class="nhsuk-form-group">
+          <button class="nhsuk-button" type="submit">
+          Continue
+          </button>
+          <p><a href="prescription-data">Cancel adjustment</a></p>
+        </div>
+
+          </div>
+        </div>
+   </form>
+  </main>
+</div>
+
+<style>
+  .totals{
+    background-color: #f0f4f5;
+    font-weight: bold;
+  }
+  .totals:hover{
+    background-color: #d8dde0
+  }
+</style>
+
+  {% endblock %}
+</body>
+
+</html>

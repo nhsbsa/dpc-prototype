@@ -1,0 +1,93 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="../dashboard/dashboard">Back to dashboard</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1 class="nhsuk-heading-l">
+            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>
+              Are you sure you want to delete all reports?
+          </h1>
+
+          <div class="nhsuk-hint" id="contact-hint">
+            This will change all active reports to deleted, they will still be searchable and can be recreated.
+          </div>
+
+          <div class="nhsuk-radios nhsuk-radios--inline">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+                Yes
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                No
+              </label>
+            </div>
+
+          </div>
+          <br>
+          <form action="reports-empty" method="post">
+            <button class="nhsuk-button" type="submit">
+              Save and continue
+            </button>
+          </form>
+
+        </div>
+      </div>
+
+
+
+  </main>
+</div>
+
+
+  {% endblock %}
+</body>
+
+</html>

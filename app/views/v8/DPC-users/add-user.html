@@ -1,0 +1,116 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="search">Search for a DPC user</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="manage-user">Manage DPC user</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="manage-user">Go back to Manage DPC user</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container ">
+    <main class="nhsuk-main-wrapper " id="maincontent" role="main">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">
+            Direct Payments to Contractors (DPC)
+            <span class="nhsuk-u-visually-hidden">-</span></span></span>
+            Add new DPC user</h1>
+        </div>
+      </div>
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <form method="post" action="check-user">
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="LAP-name">
+                LAN ID
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-5" id="user-id" name="user-id" type="text" value="">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="telephone">
+                Name
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="DPC-name" name="DPC-name" type="text" value="">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="email">
+                Email
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="email" name="email" type="text" value="">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="user-role">
+                User role
+              </label>
+              <select class="nhsuk-select" id="user-role" name="user-role">
+                <option value="Master Group">Master Group</option>
+                <option value="Team Manager Group">Team Manager Group</option>
+                <option value="Team User Group">Team User Group</option>
+                <option value="Help Desk Group">Help Desk Group</option>
+                <option value="Help Group">Help Group</option>
+                <option value="OPS Group">OPS Group</option>
+                <option value="Verification Rep Group">Verification Rep Group</option>
+                <option value="Senior Team User Group">Senior Team User Group</option>
+                <option value="Support Group">Support Group</option>  
+              </select>
+            </div>
+
+            <button class="nhsuk-button" type="submit">
+              Continue
+            </button>
+
+            <p><a class="nhsuk-link--no-visited-state" href="manage-user">Cancel new user</a></p>
+
+          </form>
+        </div>
+       </div>
+
+
+    </main>
+</div>
+
+  {% endblock %}
+</body>
+
+</html>

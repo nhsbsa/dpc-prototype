@@ -1,0 +1,450 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+
+  {% block pageScripts %}
+  <script type="text/javascript" src="/js/search.js"></script>
+  <script type="text/javascript" src="/js/auto.js"></script>
+  <script type="text/javascript" src="/js/add-letter-code-list.js"></script>
+  <script type="text/javascript" src="/js/action-menu.js"></script>
+  <script type="text/javascript" src="/js/sort.js"></script>
+  <script type="text/javascript" src="/js/suggestionDropdown.js"></script>
+
+  {% endblock %}
+
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../search">Find a contractor</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../contractorv2-1">MILTON CHEMIST LTD</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="../manage-payment">August 2021 manual payments</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="contractorv2-1">Milton Chemist LTD</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+    <form action="../manage-payment-link-individual" method="post">
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+          <h1 style="margin-bottom:12px;" class="nhsuk-heading-l">
+            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Manage contractor<span class="nhsuk-u-visually-hidden">-</span></span></span>
+              Manual payment details
+          </h1>
+          <p class="nhsuk-body-s" style="margin-bottom: 36px; margin-right:24px;"><b>OCS Code:</b> FF910<br><b>LPP:</b> QNC - STAFFORDSHIRE & STOKE ON TRENT STP</p>
+
+          <table style="table-layout: fixed;" role="table" class="nhsuk-table-responsive">
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th style="white-space: initial;" role="columnheader" class="" scope="col">
+                  Expense head
+                </th>
+                <th style="white-space: initial;" role="columnheader" class="" scope="col">
+                  Description
+                </th>
+                <th style="white-space: initial;" role="columnheader" class="" scope="col">
+                  Sequence number
+                </th>
+                <th style="white-space: initial;" role="columnheader" class="" scope="col">
+                  Reference
+                </th>
+                <th style="white-space: initial;" role="columnheader" class="" scope="col">
+                  Date submitted
+                </th>
+                <th style="white-space: initial;" role="columnheader" class="" scope="col">
+                  Submitter
+                </th>
+                <th style="white-space: initial;" role="columnheader" class="" scope="col">
+                  LPP
+                </th>
+                <th style="white-space: initial;" role="columnheader" class="" scope="col">
+                  Amount
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Expense head </span>{% if data['expense-head-number'] %}{{data['expense-head-number'] }}{% else %}180{% endif %}
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Description </span>{% if data['expense-head-number'] %}{{data['expense-head-description'] }}{% else %}CPCS Fees{% endif %}
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Sequence number </span>1
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Reference </span>1735388
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date submitted </span>7 October 2021
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Submitter </span>DPC01
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">LPP </span>50Z - ISLE OF MAN
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Amount </span>£42.00
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Expense head </span>{% if data['expense-head-number'] %}{{data['expense-head-number'] }}{% else %}180{% endif %}
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Description </span>{% if data['expense-head-number'] %}{{data['expense-head-description'] }}{% else %}CPCS Fees{% endif %}
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Sequence number </span>1
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Reference </span>1735392
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date submitted </span>8 October 2021
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Submitter </span>DPC01
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">LPP </span>50Z - ISLE OF MAN
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Amount </span>£13.00
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Expense head </span>{% if data['expense-head-number'] %}{{data['expense-head-number'] }}{% else %}180{% endif %}
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Description </span>{% if data['expense-head-number'] %}{{data['expense-head-description'] }}{% else %}CPCS Fees{% endif %}
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Sequence number </span>1
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Reference </span>1735392
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date submitted </span>8 October 2021
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Submitter </span>DPC01
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">LPP </span>50Z - ISLE OF MAN
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Amount </span>£13.00
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Expense head </span>{% if data['expense-head-number'] %}{{data['expense-head-number'] }}{% else %}180{% endif %}
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Description </span>{% if data['expense-head-number'] %}{{data['expense-head-description'] }}{% else %}CPCS Fees{% endif %}
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Sequence number </span>1
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Reference </span>1735392
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date submitted </span>8 October 2021
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Submitter </span>DPC01
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">LPP </span>50Z - ISLE OF MAN
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Amount </span>£13.00
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Expense head </span>{% if data['expense-head-number'] %}{{data['expense-head-number'] }}{% else %}180{% endif %}
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Description </span>{% if data['expense-head-number'] %}{{data['expense-head-description'] }}{% else %}CPCS Fees{% endif %}
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Sequence number </span>1
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Reference </span>1735392
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date submitted </span>8 October 2021
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Submitter </span>DPC01
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">LPP </span>50Z - ISLE OF MAN
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Amount </span>£13.00
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Expense head </span>{% if data['expense-head-number'] %}{{data['expense-head-number'] }}{% else %}180{% endif %}
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Description </span>{% if data['expense-head-number'] %}{{data['expense-head-description'] }}{% else %}CPCS Fees{% endif %}
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Sequence number </span>1
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Reference </span>1735392
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date submitted </span>8 October 2021
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Submitter </span>DPC01
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">LPP </span>50Z - ISLE OF MAN
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Amount </span>£13.00
+                  </td>
+                </tr><tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Expense head </span>{% if data['expense-head-number'] %}{{data['expense-head-number'] }}{% else %}180{% endif %}
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Description </span>{% if data['expense-head-number'] %}{{data['expense-head-description'] }}{% else %}CPCS Fees{% endif %}
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Sequence number </span>1
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Reference </span>1735392
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date submitted </span>8 October 2021
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Submitter </span>DPC01
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">LPP </span>50Z - ISLE OF MAN
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Amount </span>£13.00
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Expense head </span>{% if data['expense-head-number'] %}{{data['expense-head-number'] }}{% else %}180{% endif %}
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Description </span>{% if data['expense-head-number'] %}{{data['expense-head-description'] }}{% else %}CPCS Fees{% endif %}
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Sequence number </span>1
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Reference </span>1735392
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date submitted </span>8 October 2021
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Submitter </span>DPC01
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">LPP </span>50Z - ISLE OF MAN
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Amount </span>£13.00
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Expense head </span>{% if data['expense-head-number'] %}{{data['expense-head-number'] }}{% else %}180{% endif %}
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Description </span>{% if data['expense-head-number'] %}{{data['expense-head-description'] }}{% else %}CPCS Fees{% endif %}
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Sequence number </span>1
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Reference </span>1735392
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date submitted </span>8 October 2021
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Submitter </span>DPC01
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">LPP </span>50Z - ISLE OF MAN
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Amount </span>£13.00
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Expense head </span>{% if data['expense-head-number'] %}{{data['expense-head-number'] }}{% else %}180{% endif %}
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Description </span>{% if data['expense-head-number'] %}{{data['expense-head-description'] }}{% else %}CPCS Fees{% endif %}
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Sequence number </span>1
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Reference </span>1735392
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date submitted </span>8 October 2021
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Submitter </span>DPC01
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">LPP </span>50Z - ISLE OF MAN
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Amount </span>£13.00
+                  </td>
+                </tr>
+            </tbody>
+          </table>
+          </div>
+          <div class="nhsuk-grid-column-full">
+            <nav class="nav" role="navigation" aria-label="Pagination">
+
+                  <ul class="pagination">
+                    <li class="pagination__item"><a class="pagination__link current" href="#0" aria-current="true" aria-label="Page 1, current page">1</a></li>
+                    <li class="pagination__item"><a class="pagination__link" href="#" aria-label="Page 2">2</a></li>
+                  </ul>
+
+                 <a class="pagination__link" href="#" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;&raquo;</span></a>
+
+                  <div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 1 - 10 of 19 payments</div>
+              </nav>
+            </div>
+
+          <div class="nhsuk-grid-column-full nhsuk-u-margin-top-6">
+          <button class="nhsuk-button" type="submit" style="clear: both;">
+            Return to August 2021 manual payments
+          </button>
+
+      </div>
+    </form>
+  </main>
+</div>
+
+<style>
+    li {
+  display: inline-block;
+    color: #005EA5;
+    display: inline-block;
+    padding: 0px 5px 0px 5px;
+    margin-right: 15px;
+    text-decoration: none;
+    margin-bottom: 0px;
+}
+.padding {
+padding-left: 15px;
+}
+.pagination {
+padding: 0;
+display: flex;
+flex-direction: row;
+margin-bottom: 0px;
+}
+.pagination__item {
+display: inline-block;
+list-style: none;
+margin-bottom: 0px;
+}
+.pagination__link {
+display: block;
+padding: 5px 10px;
+text-decoration: none;
+font-size: 19px;
+}
+.current {
+  color:  #4c6272  !important;
+  font-weight: 700;
+  border: none;
+  pointer-events: none;
+  cursor: default;
+}
+.pagination__summary {
+margin-left: auto;
+-webkit-font-smoothing: antialiased;
+padding: 8px 0;
+font-size: 19px;
+}
+.nav
+{
+  display: flex;
+flex-direction: row;
+align-items:center;
+margin-top: 20px;
+}
+@media (max-width: 640px) {
+  .pagination__summary {
+  margin-left: 0;
+  }
+  .nav{
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  }
+
+</style>
+  {% endblock %}
+</body>
+
+</html>

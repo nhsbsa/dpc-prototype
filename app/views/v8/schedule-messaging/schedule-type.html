@@ -1,0 +1,179 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+
+  {% block pageScripts %}
+
+  {% endblock %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="../dashboard/dashboard">Dashboard</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container ">
+    <main class="nhsuk-main-wrapper " id="maincontent" role="main">
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+            	<span class="nhsuk-caption-l" id="status-monitor-home-sub-heading">Direct Payments to Contractors (DPC)</span>
+            	<span class="nhsuk-u-visually-hidden"> - </span>
+            	<h1 class="nhsuk-heading-l" id="status-monitor-home-heading">Which schedule type do you want to add a message to?</h1>
+            </div>
+        </div>
+
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-two-thirds">
+
+            <form action="add-type" method="post">
+
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="schedule-type" name="schedule-type" type="radio" value="PH - Pharmacy">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                    PH - Pharmacy
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="schedule-type" name="schedule-type" type="radio" value="PL - Late Pharmacy">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                    PL - Late Pharmacy
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="schedule-type" name="schedule-type" type="radio" value="AC - Appliance Contractor">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                    AC - Appliance Contractor
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="schedule-type" name="schedule-type" type="radio" value="EP - EEPS Payments">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                    EP - EEPS Payments
+                  </label>
+                </div>
+
+              </div>
+              <br>
+            <button class="nhsuk-button" type="submit">
+              Continue
+            </button>
+
+            </form>
+
+          </div>
+        </div>
+    </main>
+</div>
+
+<style>
+    li {
+  display: inline-block;
+    color: #005EA5;
+    display: inline-block;
+    padding: 0px 5px 0px 5px;
+    margin-right: 15px;
+    text-decoration: none;
+    margin-bottom: 0px;
+}
+.padding {
+padding-left: 15px;
+}
+.pagination {
+padding: 0;
+display: flex;
+flex-direction: row;
+margin-bottom: 0px;
+}
+.pagination__item {
+display: inline-block;
+list-style: none;
+margin-bottom: 0px;
+}
+.pagination__link {
+display: block;
+padding: 5px 10px;
+text-decoration: none;
+font-size: 19px;
+}
+.current {
+  color:  #4c6272  !important;
+  font-weight: 700;
+  border: none;
+  pointer-events: none;
+  cursor: default;
+}
+.pagination__summary {
+margin-left: auto;
+-webkit-font-smoothing: antialiased;
+padding: 8px 0;
+font-size: 19px;
+}
+.nav
+{
+  display: flex;
+flex-direction: row;
+align-items:center;
+margin-top: 20px;
+}
+@media (max-width: 640px) {
+  .pagination__summary {
+  margin-left: 0;
+  }
+  .nav{
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  }
+
+
+
+.govuk-file-upload{font-family:"GDS Transport",arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-weight:400;font-size:16px;font-size:1rem;line-height:1.25;color:#0b0c0c;max-width:100%;margin-left:-5px;padding:5px}@media print{.govuk-file-upload{font-family:sans-serif}}@media(min-width: 40.0625em){.govuk-file-upload{font-size:19px;font-size:1.1875rem;line-height:1.3157894737}}@media print{.govuk-file-upload{font-size:14pt;line-height:1.15}}@media print{.govuk-file-upload{color:#000}}.govuk-file-upload::-webkit-file-upload-button{-webkit-appearance:button;color:inherit;font:inherit}.govuk-file-upload:focus{outline:3px solid #fd0;-webkit-box-shadow:inset 0 0 0 4px #0b0c0c;box-shadow:inset 0 0 0 4px #0b0c0c}.govuk-file-upload:focus-within{outline:3px solid #fd0;-webkit-box-shadow:inset 0 0 0 4px #0b0c0c;box-shadow:inset 0 0 0 4px #0b0c0c}
+
+</style>
+
+
+  {% endblock %}
+
+
+</body>
+
+</html>

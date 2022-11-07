@@ -1,0 +1,370 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+
+  {% block pageScripts %}
+  <script type="text/javascript" src="/js/search.js"></script>
+  <script type="text/javascript" src="/js/auto.js"></script>
+  <script type="text/javascript" src="/js/add-letter-code-list.js"></script>
+  <script type="text/javascript" src="/js/action-menu.js"></script>
+  <script type="text/javascript" src="/js/sort.js"></script>
+  <script type="text/javascript" src="/js/suggestionDropdown.js"></script>
+  <script>
+    const data = [
+      {
+        code: 'Ceased Contractors Advance Analysis',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Local Payment without Pricing (Excluding CPS)',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Negative Monitoring',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Number of Advance Items between 1 and 5',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Payment Totals >250k',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Ceased Contractor Link',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Contractors Payment Methods',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Contractors Receiving Payments',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Expense Head Enquiry by LPP',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Monitoring of LPS Contractors',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Paper Schedule Turned Off',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Pricing Contractors Averages',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'LPP Levy - Values and Factors',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'LPP Levy Count',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'LPP Levy History',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Levy Analysis',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Levy Values',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Payees Removed from Plist',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Amended Payment',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'CPS Input Details',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'CPS Input by Expense Head',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'De-registered Accounts',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Exceptions Post Web Closed',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Exceptions Total by Expense Head',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Exceptions Total by LPP Code',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Exceptions v Authorised Payments',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'High Cost Advances/Recovery Reconciliation',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'LPS Reconciliation',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Load Late Advances Check',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'PPC Reports',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'PPC Expense Head Totals',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'PPC Pre-Load Integrity',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'PPC Pre-Load Totals',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'PPC Removed Contractors',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Post Pricing Divisional Summary',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Pre Pricing Divisional Summary',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Reconciliation Details',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Suppressed Schedules',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'View Authorisation Sheet',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Adjusted Schedule',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Average Item Value',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'ESchedules Audit',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Expense Head Enquiry',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Invoice Line Payment',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Item Variance',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'LPS Fees Breakdown',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Late Letters',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Negative Late Letter',
+        name: '',
+        recall: 'Invitation letter',
+      },
+      {
+        code: 'Payment Upload',
+        name: '',
+        recall: 'Invitation letter',
+      },
+    ];
+    createSuggestionDropdown(data, 'report-name-1');
+  </script>
+  {% endblock %}
+
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="reports?download=false">Reports</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="create-report">Create report</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="manage-batch-reports">Manage batch reports</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="manage-batch-reports">Back to manage batch reports</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1 class="nhsuk-heading-l">
+            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>
+              Create batch report
+          </h1>
+
+          <form action="create-batch-report-added-1" method="post">
+
+          <div class="nhsuk-form-group">
+            <h2 class="nhsuk-heading-s">
+              <label for="batch-name">
+                Batch name
+              </label>
+            </h2>
+            <input class="nhsuk-input nhsuk-input--width-20" id="batch-name" name="batch-name" type="text">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <h2 class="nhsuk-heading-s">
+              Reports
+            </h2>
+            <div class="nhsuk-hint" id="contact-hint">
+              Search for a report to add to the batch report.
+            </div>
+            <fieldset class="nhsuk-fieldset" aria-describedby="dob-from" role="group">
+                <div class="nhsuk-form-group">
+                  <div id="report-name-1"></div>
+                  <ul id="letter-code-list" class="nhsuk-list">
+                  </ul>
+                </div>
+            </fieldset>
+
+            <button class="nhsuk-button nhsuk-button--secondary" type="submit">
+              Add report
+            </button>
+          </div>
+
+          </form>
+
+          <form action="#" method="post">
+
+          <button class="nhsuk-button" type="submit">
+            Create batch report
+          </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+
+
+  </main>
+</div>
+
+
+  {% endblock %}
+</body>
+
+</html>
