@@ -9,17 +9,32 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1 class="nhsuk-heading-xl">Create DPC account</h1>
-      <p>
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label"
-             for="lan-ID">Username</label>
-             <div class="nhsuk-hint" id="contact-hint">
-               This will have been sent to you by email
-             </div>
-             <input class="nhsuk-input nhsuk-input--width-5"
-             id="lan-ID"
-             name="lan-ID">
-      </div>
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Username
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if data['user-id'] %}{{ data['user-id'] }}{% else %}JOBLO{% endif %}
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if data['LAP-name'] %}{{ data['LAP-name'] }}{% else %}Joe Bloggs{% endif %}
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Email
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if data['email'] %}{{ data['email'] }}{% else %}email@email.com{% endif %}
+          </dd>
+        </div>
+      </dl>
       <div class="nhsuk-form-group">
         <label class="nhsuk-label"
              for="password">New password</label>
@@ -42,6 +57,17 @@
            draggable="false"
            href="account-created"
            role="button">Create account</a>
+           <details class="nhsuk-details">
+             <summary class="nhsuk-details__summary">
+               <span class="nhsuk-details__summary-text">
+                 If the account details are not correct
+               </span>
+             </summary>
+             <div class="nhsuk-details__text">
+               <p>Contact the information services support team on 0191 2035050 or email nhsbsa.help@nhs.net.</p>
+
+             </div>
+           </details>
     </div>
 
     <div class="nhsuk-grid-column-one-third">
