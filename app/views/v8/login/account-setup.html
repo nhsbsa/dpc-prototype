@@ -8,34 +8,40 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1 class="nhsuk-heading-xl">Sign in</h1><!-- <p class="nhsuk-body">Sign in or <a href="#">create an account</a> to get started.</p> -->
+      <h1 class="nhsuk-heading-xl">Create DPC account</h1>
+      <p>
       <div class="nhsuk-form-group">
         <label class="nhsuk-label"
-             for="lan-ID">Username</label> <input class="nhsuk-input nhsuk-input--width-5"
+             for="lan-ID">Username</label>
+             <div class="nhsuk-hint" id="contact-hint">
+               This will have been sent to you by email
+             </div>
+             <input class="nhsuk-input nhsuk-input--width-5"
              id="lan-ID"
              name="lan-ID">
       </div>
       <div class="nhsuk-form-group">
         <label class="nhsuk-label"
-             for="password">Password</label> <input class="nhsuk-input nhsuk-input--width-20"
+             for="password">New password</label>
+             <div class="nhsuk-hint" id="contact-hint">
+               Password must be at least 8 characters long
+             </div>
+             <input class="nhsuk-input nhsuk-input--width-20"
              id="password"
              name="password"
              type="password">
-      </div><a class="nhsuk-button"
-           draggable="false"
-           href="../dashboard/dashboard"
-           role="button">Sign in</a>
-      <div class="nhsuk-form-group">
-        <p><a href="forgot-password" class="nhsuk-link--no-visited-state">Forgot your password</a></p>
-        <details class="nhsuk-details">
-          <summary class="nhsuk-details__summary">
-            <span class="nhsuk-details__summary-text">I do not have an account</span>
-          </summary>
-          <div class="nhsuk-details__text">
-            <p>To get an account for this service you must be an approved member of staff. To request access email the contractor payment team on <a href="mailto:nhsbsa.contractorpayments@nhs.net">nhsbsa.contractorpayments@nhs.net</a>.</p>
-          </div>
-        </details>
       </div>
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label"
+             for="password">Re-type password</label> <input class="nhsuk-input nhsuk-input--width-20"
+             id="password"
+             name="password"
+             type="password">
+      </div>
+      <a class="nhsuk-button"
+           draggable="false"
+           href="account-created"
+           role="button">Create account</a>
     </div>
 
     <div class="nhsuk-grid-column-one-third">
