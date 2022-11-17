@@ -1,0 +1,638 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+
+  {% block pageScripts %}
+  <script type="text/javascript" src="/js/search.js"></script>
+  <script type="text/javascript" src="/js/auto.js"></script>
+  <script type="text/javascript" src="/js/add-letter-code-list.js"></script>
+  <script type="text/javascript" src="/js/action-menu.js"></script>
+  <script type="text/javascript" src="/js/sort.js"></script>
+  <script type="text/javascript" src="/js/suggestionDropdown.js"></script>
+  {% if data['contractors'] == '0' or data['contractors'] === undefined %}
+  <script>
+    const data = [
+    {
+      code: 'FF910 Milton Chemist LTD',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF911 Grays Pharmacy',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF912 Middleton Chemist',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF913 Wensleydale Chemist',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF914 Druisdale Pharmacy',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    ];
+    createSuggestionDropdown(data, 'report-name-1');
+  </script>
+  {% endif %}
+  {% if data['contractors'] == '1' %}
+  <script>
+    const data = [
+    {
+      code: 'FF910 Milton Chemist LTD',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF911 Grays Pharmacy',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF912 Middleton Chemist',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF913 Wensleydale Chemist',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF914 Druisdale Pharmacy',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    ];
+    createSuggestionDropdown(data, 'report-name-2');
+  </script>
+  {% endif %}
+  {% if data['contractors'] == '2' %}
+  <script>
+    const data = [
+    {
+      code: 'FF910 Milton Chemist LTD',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF911 Grays Pharmacy',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF912 Middleton Chemist',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF913 Wensleydale Chemist',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF914 Druisdale Pharmacy',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    ];
+    createSuggestionDropdown(data, 'report-name-3');
+  </script>
+  {% endif %}
+  {% if data['contractors'] == '3' %}
+  <script>
+    const data = [
+    {
+      code: 'FF910 Milton Chemist LTD',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF911 Grays Pharmacy',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF912 Middleton Chemist',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF913 Wensleydale Chemist',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF914 Druisdale Pharmacy',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    ];
+    createSuggestionDropdown(data, 'report-name-4');
+  </script>
+  {% endif %}
+  {% if data['contractors'] == '4' %}
+  <script>
+    const data = [
+    {
+      code: 'FF910 Milton Chemist LTD',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF911 Grays Pharmacy',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF912 Middleton Chemist',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF913 Wensleydale Chemist',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF914 Druisdale Pharmacy',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    ];
+    createSuggestionDropdown(data, 'report-name-5');
+  </script>
+  {% endif %}
+  {% if data['contractors'] == '5' %}
+  <script>
+    const data = [
+    {
+      code: 'FF910 Milton Chemist LTD',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF911 Grays Pharmacy',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF912 Middleton Chemist',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF913 Wensleydale Chemist',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF914 Druisdale Pharmacy',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    ];
+    createSuggestionDropdown(data, 'report-name-6');
+  </script>
+  {% endif %}
+  {% if data['contractors'] == '6' %}
+  <script>
+    const data = [
+    {
+      code: 'FF910 Milton Chemist LTD',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF911 Grays Pharmacy',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF912 Middleton Chemist',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF913 Wensleydale Chemist',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    {
+      code: 'FF914 Druisdale Pharmacy',
+      name: '',
+      recall: 'Invitation letter',
+    },
+    ];
+    createSuggestionDropdown(data, 'report-name-7');
+  </script>
+  {% endif %}
+  {% endblock %}
+
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+  <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+
+          <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          </ol>
+
+        </div>
+      </div>
+
+      <p class="nhsuk-breadcrumb__back"><a href="../dashboard/dashboard">Go back to dashboard</a></p>
+
+    </div>
+  </nav>
+
+  <div class="nhsuk-width-container {{ containerClasses }}">
+    <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
+      <div class="nhsuk-grid-row">
+        <h1 class="nhsuk-grid-column-three-quarters"><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">{% if data['name'] %}{{ data['name'] }}{% else %}UK Pharmacies LTD{% endif %} group<span class="nhsuk-u-visually-hidden">-</span></span></span>
+          Linked contractors</h1>
+      </div>
+
+      <div class="nhsuk-grid-row">
+
+        <div class="nhsuk-grid-column-two-thirds">
+
+          <h2 class="nhsuk-heading-m">Link a new contractor</h2>
+
+          {% if data['contractors'] == '0' %}
+          <form action="manage-linked-contractors?contractors=1" method="post">
+            <div class="nhsuk-form-group">
+              <div id="report-name-1"></div>
+              <ul id="letter-code-list" class="nhsuk-list">
+              </ul>
+            </div>
+
+            <button class="nhsuk-button nhsuk-button--secondary" style="margin-bottom: 0px;" type="submit">
+              Link contractor
+            </button>
+          </form>
+          {% elif data['contractors'] == '1' %}
+          <form action="manage-linked-contractors?contractors=2" method="post">
+            <div class="nhsuk-form-group">
+              <div id="report-name-2"></div>
+              <ul id="letter-code-list" class="nhsuk-list">
+              </ul>
+            </div>
+
+            <button class="nhsuk-button nhsuk-button--secondary" style="margin-bottom: 0px;" type="submit">
+              Link contractor
+            </button>
+          </form>
+          {% elif data['contractors'] == '2' %}
+          <form action="manage-linked-contractors?contractors=3" method="post">
+            <div class="nhsuk-form-group">
+              <div id="report-name-3"></div>
+              <ul id="letter-code-list" class="nhsuk-list">
+              </ul>
+            </div>
+
+            <button class="nhsuk-button nhsuk-button--secondary" style="margin-bottom: 0px;" type="submit">
+              Link contractor
+            </button>
+          </form>
+          {% elif data['contractors'] == '3' %}
+          <form action="manage-linked-contractors?contractors=4" method="post">
+            <div class="nhsuk-form-group">
+              <div id="report-name-4"></div>
+              <ul id="letter-code-list" class="nhsuk-list">
+              </ul>
+            </div>
+
+            <button class="nhsuk-button nhsuk-button--secondary" style="margin-bottom: 0px;" type="submit">
+              Link contractor
+            </button>
+          </form>
+          {% elif data['contractors'] == '4' %}
+          <form action="manage-linked-contractors?contractors=5" method="post">
+            <div class="nhsuk-form-group">
+              <div id="report-name-5"></div>
+              <ul id="letter-code-list" class="nhsuk-list">
+              </ul>
+            </div>
+
+            <button class="nhsuk-button nhsuk-button--secondary" style="margin-bottom: 0px;" type="submit">
+              Link contractor
+            </button>
+          </form>
+          {% elif data['contractors'] == '5' %}
+          <form action="manage-linked-contractors?contractors=6" method="post">
+            <div class="nhsuk-form-group">
+              <div id="report-name-6"></div>
+              <ul id="letter-code-list" class="nhsuk-list">
+              </ul>
+            </div>
+
+            <button class="nhsuk-button nhsuk-button--secondary" style="margin-bottom: 0px;" type="submit">
+              Link contractor
+            </button>
+          </form>
+          {% elif data['contractors'] == '6' %}
+          <form action="manage-linked-contractors?contractors=5" method="post">
+            <div class="nhsuk-form-group">
+              <div id="report-name-7"></div>
+              <ul id="letter-code-list" class="nhsuk-list">
+              </ul>
+            </div>
+
+            <button class="nhsuk-button nhsuk-button--secondary" style="margin-bottom: 0px;" type="submit">
+              Link contractor
+            </button>
+          </form>
+          {% else %}
+          <form action="manage-linked-contractors?contractors=1" method="post">
+            <div class="nhsuk-form-group">
+              <div id="report-name-1"></div>
+              <ul id="letter-code-list" class="nhsuk-list">
+              </ul>
+            </div>
+
+            <button class="nhsuk-button nhsuk-button--secondary" style="margin-bottom: 0px;" type="submit">
+              Link contractor
+            </button>
+          </form>
+          {% endif %}
+
+          <details class="nhsuk-details nhsuk-u-margin-top-5">
+           <summary class="nhsuk-details__summary" role="link">
+             <span class="nhsuk-details__summary-text">
+               Cannot find the contractor you're looking for?
+             </span>
+           </summary>
+           <div class="nhsuk-details__text">
+             <p>You can not link a contractor who is already linked to an E-Schedule or part of a YP code group.</p>
+           </div>
+         </details>
+
+          <h2 style="" class="nhsuk-heading-m">Linked contractors</h2>
+
+          {% if data['contractors'] == '1' %}
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                {% if data['report-name-1'] %}{{ data['report-name-1'] }}{% else %}FF910 Milton Chemist LTD{% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+          {% elif data['contractors'] == '2' %}
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                {% if data['report-name-1'] %}{{ data['report-name-1'] }}{% else %}FF910 Milton Chemist LTD{% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                {% if data['report-name-2'] %}{{ data['report-name-2'] }}{% else %}FF911 Grays Pharmacy{% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+          {% elif data['contractors'] == '3' %}
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                {% if data['report-name-1'] %}{{ data['report-name-1'] }}{% else %}FF910 Milton Chemist LTD{% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                {% if data['report-name-2'] %}{{ data['report-name-2'] }}{% else %}FF911 Grays Pharmacy{% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                {% if data['report-name-3'] %}{{ data['report-name-3'] }}{% else %}FF912 Middleton Chemist{% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+          {% elif data['contractors'] == '4' %}
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                {% if data['report-name-1'] %}{{ data['report-name-1'] }}{% else %}FF910 Milton Chemist LTD{% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                {% if data['report-name-2'] %}{{ data['report-name-2'] }}{% else %}FF911 Grays Pharmacy{% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                {% if data['report-name-3'] %}{{ data['report-name-3'] }}{% else %}FF912 Middleton Chemist{% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                {% if data['report-name-4'] %}{{ data['report-name-4'] }}{% else %}FF913 Wensleydale Chemist{% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+          {% elif data['contractors'] == '5' %}
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                {% if data['report-name-1'] %}{{ data['report-name-1'] }}{% else %}FF910 Milton Chemist LTD{% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                {% if data['report-name-2'] %}{{ data['report-name-2'] }}{% else %}FF911 Grays Pharmacy{% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                {% if data['report-name-3'] %}{{ data['report-name-3'] }}{% else %}FF912 Middleton Chemist{% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                {% if data['report-name-4'] %}{{ data['report-name-4'] }}{% else %}FF913 Wensleydale Chemist{% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                {% if data['report-name-5'] %}{{ data['report-name-5'] }}{% else %}FF914 Druisdale Pharmacy{% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+          {% elif data['contractors'] == '6' %}
+          <dl class="nhsuk-summary-list" style="margin-bottom: 0px;">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                {% if data['report-name-1'] %}{{ data['report-name-1'] }}{% else %}FF910 Milton Chemist LTD{% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                {% if data['report-name-2'] %}{{ data['report-name-2'] }}{% else %}FF911 Grays Pharmacy{% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                {% if data['report-name-3'] %}{{ data['report-name-3'] }}{% else %}FF912 Middleton Chemist{% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                {% if data['report-name-4'] %}{{ data['report-name-4'] }}{% else %}FF913 Wensleydale Chemist{% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                {% if data['report-name-5'] %}{{ data['report-name-5'] }}{% else %}FF914 Druisdale Pharmacy{% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="unlink?contractor-name=FF910 Milton Chemist LTD" class="nhsuk-link--no-visited-state">
+                  Unlink<span class="nhsuk-u-visually-hidden"> FF910 Milton Chemist LTD</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+          <p style="text-align: center; display: block; padding-top: 24px; margin-bottom: 36px;"><a class="nhsuk-link--no-visited-state" href="#">View all linked contractors</a></p>
+          {% else %}
+          <p>You have not linked any contractors to this group.</p>
+          {% endif %}
+
+
+
+          <p><a class="nhsuk-link--no-visited-state" href="../contractor/contractorv2-group">Go to Manage group</a></p>
+
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+  {% endblock %}
+</body>
+
+</html>

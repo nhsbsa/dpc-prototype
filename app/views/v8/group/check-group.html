@@ -1,0 +1,339 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="../dashboard/dashboard">Go back to dashboard</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+    <form action="created" method="post">
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1 style="margin-bottom:12px;"class="nhsuk-heading-xl">
+            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Add group or LPC<span class="nhsuk-u-visually-hidden">-</span></span></span>
+              Check group/LPC
+          </h1>
+
+          <p class="nhsuk-body">Check the details of the group/LPC before continuing. Some of the details cannot be edited within DPC once saved.</p>
+
+        <h2 class="nhsuk-heading-l">Main details</h2>
+
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Milton Chemist LTD
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a class="nhsuk-link--no-visited-state" href="general#name">
+                Change<span class="nhsuk-u-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Trading name
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Milton Chemist LTD
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a class="nhsuk-link--no-visited-state" href="general#trading-name">
+                Change<span class="nhsuk-u-visually-hidden"> trading name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Supplier type
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              P - Pharmacy
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a class="nhsuk-link--no-visited-state" href="general#supplier-type">
+                Change<span class="nhsuk-u-visually-hidden"> supplier type</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+
+        <h2 class="nhsuk-heading-l">Contact details</h2>
+
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__contact nhsuk-summary-list__key">
+              Correspondence name
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Joe Bloggs
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a class="nhsuk-link--no-visited-state" href="contact-details#correspondence-name">
+                Change<span class="nhsuk-u-visually-hidden"> Correspondence name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Correspondence address
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Milton Chemist<br>
+              High Street,<br>
+              Town,</br>
+              County<br>
+              NE1 1AA
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a class="nhsuk-link--no-visited-state" href="contact-details#premises-address">
+                Change<span class="nhsuk-u-visually-hidden"> Correspondence address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Email
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              email@email.com
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a class="nhsuk-link--no-visited-state" href="contact-details#email">
+                Change<span class="nhsuk-u-visually-hidden"> email</span>
+              </a>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Branch email
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              branch@email.com
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a class="nhsuk-link--no-visited-state" href="contact-details#branch-email">
+                Change<span class="nhsuk-u-visually-hidden"> branch email</span>
+              </a>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Contact number
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              01782 848377
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a class="nhsuk-link--no-visited-state" href="contact-details#contact-number">
+                Change<span class="nhsuk-u-visually-hidden"> Contact number</span>
+              </a>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Alternative contact number
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              01782 848377
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a class="nhsuk-link--no-visited-state" href="contact-details#alternative-contact-number">
+                Change<span class="nhsuk-u-visually-hidden"> Alternative contact number</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+
+        <h2 class="nhsuk-heading-l">Payment details</h2>
+
+        <div style="border-left: 8px solid #007f3b;" class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Validation: </span>
+            <p>Account details succesfully validated</p>
+          </div>
+
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__contact nhsuk-summary-list__key">
+                Account name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                HA Receivables
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a class="nhsuk-link--no-visited-state" href="payment-details#account-name">
+                  Change<span class="nhsuk-u-visually-hidden"> Account name</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Payment method
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                BACS
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a class="nhsuk-link--no-visited-state" href="payment-details#payment-method">
+                  Change<span class="nhsuk-u-visually-hidden"> Payment method</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Sortcode
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                21 22 26
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a class="nhsuk-link--no-visited-state" href="payment-details#sortcode">
+                  Change<span class="nhsuk-u-visually-hidden"> Sortcode</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Account number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                97105438
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a class="nhsuk-link--no-visited-state" href="payment-details#account-number">
+                  Change<span class="nhsuk-u-visually-hidden"> Account number</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Account type
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Current
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a class="nhsuk-link--no-visited-state" href="payment-details#account-type">
+                  Change<span class="nhsuk-u-visually-hidden"> Account type</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__settings nhsuk-summary-list__key">
+                Building society account
+              </dt>
+              <dd class="nhsuk-summary-list__valuesettings nhsuk-summary-list__value">
+                Yes
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a class="nhsuk-link--no-visited-state" href="payment-details#building-society-account">
+                  Change<span class="nhsuk-u-visually-hidden"> building society account</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Building Society reference
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                AB998734
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a class="nhsuk-link--no-visited-state" href="payment-details#building-society-reference">
+                  Change<span class="nhsuk-u-visually-hidden"> building Society reference</span>
+                </a>
+              </dd>
+            </div>
+
+          </dl>
+
+        <h2 class="nhsuk-heading-l">Notes</h2>
+        {% if data['notes'] %}
+        <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Notes
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <P>{{ data['notes'] }}</P>
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a class="nhsuk-link--no-visited-state" href="notes">
+                  Change<span class="nhsuk-u-visually-hidden"> notes</span>
+                </a>
+              </dd>
+            </div>
+
+          </dl>
+          {% else %}
+          <p>
+            <a class="nhsuk-link--no-visited-state" href="notes">
+              Add note
+            </a>
+          </p>
+          {% endif %}
+
+
+        <br>
+        <button class="nhsuk-button" type="submit">
+          Save and create group
+        </button>
+
+        <p><a class="nhsuk-link--no-visited-state" href="../dashboard/dashboard">Cancel adding group or LPC</a></p>
+
+      </div>
+    </form>
+  </main>
+</div>
+
+
+  {% endblock %}
+</body>
+
+</html>
