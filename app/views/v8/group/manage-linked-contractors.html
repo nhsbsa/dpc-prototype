@@ -264,6 +264,10 @@
 
           <ol class="nhsuk-breadcrumb__list">
             <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+            {% if data['manage'] %}
+            <li class="nhsuk-breadcrumb__item"><a href="search">Find a contractor</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="contractorv2-group">{% if data['name'] %}{{ data['name'] }}{% else %}UK Pharmacies LTD{% endif %}</a></li>
+            {% endif %}
           </ol>
 
         </div>
@@ -279,7 +283,7 @@
 
       <div class="nhsuk-grid-row">
         <h1 class="nhsuk-grid-column-three-quarters"><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">{% if data['name'] %}{{ data['name'] }}{% else %}UK Pharmacies LTD{% endif %} group<span class="nhsuk-u-visually-hidden">-</span></span></span>
-          Linked contractors</h1>
+          Manage linked contractors</h1>
       </div>
 
       <div class="nhsuk-grid-row">
@@ -397,7 +401,11 @@
            </div>
          </details>
 
-          <h2 style="" class="nhsuk-heading-m">Linked contractors</h2>
+          <h2 style="float:left;" class="nhsuk-heading-m">Linked contractors</h2>
+
+          {% if data['contractors'] > '1' %}
+          <p style="float: right; padding-top: 24px;"><a href="unlink-all" class="nhsuk-link--no-visited-state">Unlink all contractors</a></p>
+          {% endif %}
 
           {% if data['contractors'] == '1' %}
           <dl class="nhsuk-summary-list">
@@ -619,7 +627,7 @@
           </dl>
           <p style="text-align: center; display: block; padding-top: 24px; margin-bottom: 36px;"><a class="nhsuk-link--no-visited-state" href="#">View all linked contractors</a></p>
           {% else %}
-          <p>You have not linked any contractors to this group.</p>
+          <p style="clear: both;">You have not linked any contractors to this group.</p>
           {% endif %}
 
 
