@@ -1,0 +1,74 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+  <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+
+          <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="search">Find a contractor</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="contractorv2-1">MILTON CHEMIST LTD</a></li>
+          </ol>
+
+          </div>
+          </div>
+
+          <p class="nhsuk-breadcrumb__back"><a href="contractorv2-1">MILTON CHEMIST LTD</a></p>
+    </div>
+  </nav>
+
+  <div class="nhsuk-width-container {{ containerClasses }}">
+    <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
+      <div class="nhsuk-grid-row">
+
+        <div class="nhsuk-grid-column-two-thirds">
+
+          <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+            <div class="nhsuk-card__content">
+              <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                Linked to group YP0040
+              </h1>
+            </div>
+          </div>
+
+          <p>Milton Chemist LTD is now linked to group UK Pharmacies LTD.</p>
+
+          <p>Payments to this contractor will now be sent to the group's payment details.</p>
+
+          <p><a class="nhsuk-button" href="../contractorv2-1?group=yes">Return to Milton Chemist LTD</a></p>
+
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+  {% endblock %}
+</body>
+
+</html>

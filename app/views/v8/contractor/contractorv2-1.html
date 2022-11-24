@@ -125,7 +125,7 @@
                     </div>
 
                     <div class="nhsuk-card__content">
-                      <!--style="margin-bottom: 24px;"--> 
+                      <!--style="margin-bottom: 24px;"-->
                       <dl class="nhsuk-summary-list">
 
                         <div class="nhsuk-summary-list__row">
@@ -181,7 +181,7 @@
                             Group
                           </dt>
                           <dd class="nhsuk-summary-list__value">
-                            <a class="nhsuk-link--no-visited-state" href="contractorv2-group">YP02685</a>
+                            <a class="nhsuk-link--no-visited-state" href="contractorv2-group">{% if data['group'] == "yes" %}YP02685{% endif %}</a>
                           </dd>
                         </div>
                         <div class="nhsuk-summary-list__row">
@@ -449,12 +449,120 @@
                     <h2 style="float:left; padding-top: 8px;"  class="nhsuk-card--care__heading">
                       <span role="text">Payment details</span>
                     </h2>
+
+                    {% if data['group'] != "yes" %}
                     <form action="change-payment-details" method="post">
                       <button style="float: right; margin: 0;" class="nhsuk-button--small nhsuk-button nhsuk-button--reverse" type="submit">
                         Change<div class="nhsuk-u-visually-hidden"> payment details</div>
                       </button>
                     </form>
+                    {% endif %}
                   </div>
+
+                  {% if data['group'] == "yes" %}
+
+                  <div class="nhsuk-card__content">
+
+                    <dl class="nhsuk-summary-list">
+
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__contact nhsuk-summary-list__key">
+                          Account name
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          Milton Group
+                        </dd>
+                      </div>
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          Payment method
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          BACS
+                        </dd>
+                      </div>
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          Sortcode
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          21 22 26
+                        </dd>
+                      </div>
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          Account number
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          97105438
+                        </dd>
+                      </div>
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          Schedule type
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          ELECTRONIC
+                        </dd>
+                      </div>
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          Account type
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          CURRENT
+                        </dd>
+                      </div>
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          Payee type
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          SUB-BRANCH
+                        </dd>
+                      </div>
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          Bank
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          BARCLAYS BANK PLC
+                        </dd>
+                      </div>
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          Branch
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          NE WALES GROUP 9
+                        </dd>
+                      </div>
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__settings nhsuk-summary-list__key">
+                          Building society account
+                        </dt>
+                        <dd class="nhsuk-summary-list__valuesettings nhsuk-summary-list__value">
+                          No
+                        </dd>
+                      </div>
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          Building Society reference
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+
+                        </dd>
+                      </div>
+
+                    </dl>
+                    <form action="link-to-group/unlink" method="post">
+                      <button class="nhsuk-button--small nhsuk-button nhsuk-button--secondary" type="submit">
+                        Unlink from group<div class="nhsuk-u-visually-hidden"> payment details</div>
+                      </button>
+                    </form>
+                    </div>
+
+                  {% else %}
 
                   <div class="nhsuk-card__content">
 
@@ -550,7 +658,13 @@
                       </div>
 
                     </dl>
+                    <form action="link-to-group/find-group" method="post">
+                      <button class="nhsuk-button--small nhsuk-button nhsuk-button--secondary" type="submit">
+                        Link to group<div class="nhsuk-u-visually-hidden"> payment details</div>
+                      </button>
+                    </form>
                     </div>
+                  {% endif %}
                   </div>
                 </div>
 
