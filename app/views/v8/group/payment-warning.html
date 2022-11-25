@@ -42,13 +42,13 @@
 
 <div class="nhsuk-width-container {{ containerClasses }}">
   <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
-    <form action="payment-warning" method="post">
+    <form action="" method="post">
 
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-two-thirds">
           <h1 style="margin-bottom:12px;"class="nhsuk-heading-xl">
             <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Add group or LPC<span class="nhsuk-u-visually-hidden">-</span></span></span>
-              Payment details
+              Payment details not validated
           </h1>
 
         </div>
@@ -57,102 +57,100 @@
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-two-thirds">
 
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="LPP">
-              Account Name
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="example" name="LPP" type="text" value="">
-          </div>
+          <div style="border-left: 8px solid #ffb81C;" class="nhsuk-inset-text">
+              <span class="nhsuk-u-visually-hidden">Warning: </span>
+              <p>Account details could not be validated, you can still continue with the payment details if they are correct</p>
+            </div>
 
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="supplier-type">
-              Payment method
-            </label>
+            <dl class="nhsuk-summary-list">
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__contact nhsuk-summary-list__key">
+                  Account name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  HA Receivables
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Payment method
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  BACS
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Sortcode
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  21 22 26
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Account number
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  97105438
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Account type
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Current
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__settings nhsuk-summary-list__key">
+                  Building society account
+                </dt>
+                <dd class="nhsuk-summary-list__valuesettings nhsuk-summary-list__value">
+                  Yes
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Building Society reference
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  AB998734
+                </dd>
+              </div>
+
+            </dl>
+
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                Do you want to continue with the payment details?
+              </h1>
+            </legend>
+
             <div class="nhsuk-radios nhsuk-radios--inline">
-               <div class="nhsuk-radios__item">
-                 <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="BACS">
-                 <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                   BACS
-                 </label>
-               </div>
-               <div class="nhsuk-radios__item">
-                 <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="CHQ">
-                 <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                   CHQ
-                 </label>
-               </div>
-             </div>
-          </div>
 
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="LPC">
-              Sort code
-            </label>
-            <input style="margin-right: 15px;" class="nhsuk-input nhsuk-input--width-2" id="example" name="LPC" type="text" value="">
-            <input style="margin-right: 15px;" class="nhsuk-input nhsuk-input--width-2" id="example" name="LPC" type="text" value="">
-            <input class="nhsuk-input nhsuk-input--width-2" id="example" name="LPC" type="text" value="">
-          </div>
-
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="LPP">
-              Account Number
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-10" id="example" name="LPP" type="text" value="">
-          </div>
-
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="LPP">
-              Account Type
-            </label>
-            <div class="nhsuk-radios nhsuk-radios--inline">
-               <div class="nhsuk-radios__item">
-                 <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
-                 <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                   Current
-                 </label>
-               </div>
-               <div class="nhsuk-radios__item">
-                 <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-                 <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                   Deposit
-                 </label>
-               </div>
-               <div class="nhsuk-radios__item">
-                 <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-                 <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                   N/A
-                 </label>
-               </div>
-             </div>
-          </div>
-
-          <div class="nhsuk-form-group">
-            <div class="nhsuk-checkboxes nhsuk-checkboxes--conditional">
-
-              <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="contact-1" name="contact" type="checkbox" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
-                <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-1">
-                  Building Society account
+              <div class="nhsuk-radios__item">
+                <input onclick="setLocation(this);" class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="notes">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                  Yes
                 </label>
               </div>
 
-              <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="conditional-contact-1">
-
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label" for="email">
-                    Building Society reference
-                  </label>
-                  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" value="">
-                </div>
-
+              <div class="nhsuk-radios__item">
+                <input onclick="setLocation(this);" class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="payment-details">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                  No
+                </label>
               </div>
+
             </div>
-          </div>
 
 
         <br>
         <button class="nhsuk-button" type="submit">
-          Validate bank details and continue
+          Continue
         </button>
 
         <p><a class="nhsuk-link--no-visited-state" href="../dashboard/dashboard">Cancel adding group or LPC</a></p>
@@ -226,7 +224,7 @@
               </div>
 
               <div class="app-step-nav__panel js-panel" id="step-panel-check-what-food-and-milk-you-can-buy-3">
-                <!--<p class="app-step-nav__paragraph"><a href="#">Change<span class="nhsuk-u-visually-hidden"> payment details</span></a></p>-->
+                <p class="app-step-nav__paragraph"><a class="nhsuk-link--no-visited-state" href="payment-details">Change<span class="nhsuk-u-visually-hidden"> payment details</span></a></p>
               </div>
 
             </li>
@@ -279,6 +277,12 @@
 
           </ol>
         </div>
+
+        <script>
+            function setLocation(element) {
+              document.forms[0].action = element.value
+            }
+          </script>
 
   </div>
   </main>

@@ -10,30 +10,6 @@
 
 <body>
 
-  {% block pageScripts %}
-  <script type="text/javascript" src="/js/search.js"></script>
-  <script type="text/javascript" src="/js/auto.js"></script>
-  <script type="text/javascript" src="/js/add-letter-code-list.js"></script>
-  <script type="text/javascript" src="/js/action-menu.js"></script>
-  <script type="text/javascript" src="/js/sort.js"></script>
-  <script type="text/javascript" src="/js/suggestionDropdown.js"></script>
-  <script>
-    const data = [
-    {
-      code: 'YP0040',
-      name: 'UK Pharmacies LTD',
-      recall: 'Invitation letter',
-    },
-    {
-      code: 'YP02685',
-      name: 'Milton group',
-      recall: 'Invitation letter',
-    },
-    ];
-    createSuggestionDropdown(data, 'group-name');
-  </script>
-  {% endblock %}
-
   {% extends 'layout-logged-in.html' %}
   <!--
          In /views/layout.html you can:
@@ -69,54 +45,76 @@
 
 <div class="nhsuk-width-container {{ containerClasses }}">
   <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
-    <form action="confirmation" method="post">
+    <form action="../contractorv2-1?group=yes" method="post">
 
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-two-thirds">
           <h1 style="margin-bottom:12px;" class="nhsuk-heading-l">
             <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Manage contractor<span class="nhsuk-u-visually-hidden">-</span></span></span>
-              Find group to Link MILTON CHEMIST LTD to?
+              Check group to Link MILTON CHEMIST LTD to
           </h1>
           <p class="nhsuk-body-s" style="margin-bottom: 36px; margin-right:24px;"><b>OCS Code:</b> FF910<br><b>LPP:</b> QNC - STAFFORDSHIRE & STOKE ON TRENT STP</p>
 
-          <p>You can search for group by name or bank details.</p>
+          <dl class="nhsuk-summary-list">
 
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="example">
-              Group name
-            </label>
-            <div class="nhsuk-hint" id="example-with-hint-text-hint">
-              You can search by YP code or group name then select from the list.
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Group name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Milton Group
+              </dd>
+
             </div>
-            <div id="group-name"></div>
-            <ul id="letter-code-list" class="nhsuk-list">
-            </ul>
-          </div>
 
-          <h2 class="nhsuk-heading-s">Bank details</h2>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Code
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                YP02685
+              </dd>
 
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="LPC">
-              Sort code
-            </label>
-            <input style="margin-right: 15px;" class="nhsuk-input nhsuk-input--width-2" id="example" name="LPC" type="text" value="">
-            <input style="margin-right: 15px;" class="nhsuk-input nhsuk-input--width-2" id="example" name="LPC" type="text" value="">
-            <input class="nhsuk-input nhsuk-input--width-2" id="example" name="LPC" type="text" value="">
-          </div>
+            </div>
 
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="LPP">
-              Account Number
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-10" id="example" name="LPP" type="text" value="">
-          </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Account name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                HA RECEIVABLES
+              </dd>
 
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Sortcode
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                21 22 26
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Account number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                97105438
+              </dd>
+
+            </div>
+
+          </dl>
+        <a class="nhsuk-button nhsuk-button--secondary" href="which-search-reveal">Change group</a>
         <br>
         <button class="nhsuk-button" type="submit">
-          Continue
+          Link to group
         </button>
 
-        <p><a href="contractorv2-1">Cancel linking to group</a></p>
+        <p><a href="../contractorv2-1">Cancel linking to group</a></p>
 
       </div>
     </form>
