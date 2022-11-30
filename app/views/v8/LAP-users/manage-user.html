@@ -97,7 +97,31 @@
                 </dd>
               </div>
               {% endif %}
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Account status
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['status'] == 'Inactive'%}
+                   Inactive
+                  {% else %}
+                  Active
+                  {% endif %}
+                </dd>
+              </div>
             </dl>
+
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Is this account locked?
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <p>We are unable to check if a user account is locked. If an account is locked, the user will be informed when trying to log in to the local payments application (LPA).</p>
+
+              </div>
+            </details>
 
             <h2 class="nhsuk-heading-m">Contact details</h2>
             <dl class="nhsuk-summary-list">

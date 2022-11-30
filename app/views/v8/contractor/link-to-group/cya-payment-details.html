@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
   {% extends 'layout-logged-in.html' %}
   <!--
          In /views/layout.html you can:
@@ -45,48 +44,48 @@
 
 <div class="nhsuk-width-container {{ containerClasses }}">
   <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
-    <form action="../contractorv2-1?group=yes" method="post">
+    <form action="../contractorv2-1?group=no" method="post">
 
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-two-thirds">
           <h1 style="margin-bottom:12px;" class="nhsuk-heading-l">
             <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Manage contractor<span class="nhsuk-u-visually-hidden">-</span></span></span>
-              Check group to Link MILTON CHEMIST LTD to
+                    Check MILTON CHEMIST LTD payment details
           </h1>
           <p class="nhsuk-body-s" style="margin-bottom: 36px; margin-right:24px;"><b>OCS Code:</b> FF910<br><b>LPP:</b> QNC - STAFFORDSHIRE & STOKE ON TRENT STP</p>
 
+          <div style="border-left: 8px solid #007f3b;" class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Validation: </span>
+            <p>Account details succesfully validated</p>
+          </div>
+
+
           <dl class="nhsuk-summary-list">
 
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Group name
+            <!--<div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__contact nhsuk-summary-list__key">
+                Payee type
               </dt>
               <dd class="nhsuk-summary-list__value">
-                Milton Group
+                Independent
               </dd>
-
-            </div>
-
+            </div>-->
             <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Code
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                YP02685
-              </dd>
-
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
+              <dt class="nhsuk-summary-list__contact nhsuk-summary-list__key">
                 Account name
               </dt>
               <dd class="nhsuk-summary-list__value">
-                HA RECEIVABLES
+                HA Receivables
               </dd>
-
             </div>
-
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Payment method
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                BACS
+              </dd>
+            </div>
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
                 Sortcode
@@ -94,9 +93,7 @@
               <dd class="nhsuk-summary-list__value">
                 21 22 26
               </dd>
-
             </div>
-
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
                 Account number
@@ -104,31 +101,45 @@
               <dd class="nhsuk-summary-list__value">
                 97105438
               </dd>
-
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Account type
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Current
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__settings nhsuk-summary-list__key">
+                Building society account
+              </dt>
+              <dd class="nhsuk-summary-list__valuesettings nhsuk-summary-list__value">
+                Yes
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Building Society reference
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                AB998734
+              </dd>
             </div>
 
           </dl>
 
-          {% if data['swap-group'] == 'yes' %}
 
-          <div class="nhsuk-inset-text">
-            <span class="nhsuk-u-visually-hidden">Information: </span>
-            <p>MILTON CHEMIST LTD will be linked with Milton Group and will no longer be linked to [name of previous linked group].</p>
-          </div>
-
-
-          {% endif %}
-
-
-
-
-        <a class="nhsuk-button nhsuk-button--secondary" href="which-search-reveal">Change group</a>
+        <br>
+        <a id="enter_experience_criteria" class="nhsuk-button nhsuk-button--secondary" href="change-payment-details" role="button" draggable="false">
+          Change payment details
+        </a>
         <br>
         <button class="nhsuk-button" type="submit">
-          Link to group
+          Unlink and save new payment details
         </button>
 
-        <p><a href="../contractorv2-1">Cancel linking to group</a></p>
+        <p><a href="contractorv2-1">Cancel changes</a></p>
 
       </div>
     </form>
