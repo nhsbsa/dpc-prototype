@@ -280,11 +280,6 @@
       color: #212b32;
       outline: 4px solid transparent;
       text-decoration: none; }
-  .app-step-nav__header:hover .app-step-nav__button:not(:focus),
-  .app-step-nav__header:hover .app-step-nav__circle {
-    color: #005eb8; }
-  .app-step-nav__header:hover .app-step-nav__toggle-link {
-    text-decoration: underline; }
   @media (min-width: 40.0625em) {
     .app-step-nav--large .app-step-nav__header {
       padding-top: 32px;

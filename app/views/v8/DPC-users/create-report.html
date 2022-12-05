@@ -1,0 +1,229 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="search">Search for a DPC user</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="search">Go back to Search for a DPC user</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container ">
+    <main class="nhsuk-main-wrapper " id="maincontent" role="main">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC)<span class="nhsuk-u-visually-hidden">-</span></span></span>
+            Create user report
+          </h1>
+        </div>
+      </div>
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+        <form style="display: contents;" action="report-created" method="post">
+
+          <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+              <label class="nhsuk-label" for="example">
+                Report start date
+              </label>
+              <div class="nhsuk-hint" id="example-hint">
+                For example, 27 11 2022
+              </div>
+
+              <div class="nhsuk-date-input" id="example">
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
+                      Day
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
+                      Month
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-month" name="example-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
+                      Year
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-year" name="example-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+          </div>
+
+          <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+              <label class="nhsuk-label" for="example">
+                Report end date
+              </label>
+              <div class="nhsuk-hint" id="example-hint">
+                For example, 27 12 2022
+              </div>
+
+              <div class="nhsuk-date-input" id="example">
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
+                      Day
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
+                      Month
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-month" name="example-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
+                      Year
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-year" name="example-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="select-1">
+              User actions to include in report
+            </label>
+
+            <select class="nhsuk-select" id="select-1" name="select-1">
+              <option value="1" selected>All user actions</option>
+              <option value="2">New user</option>
+              <option value="3">Account details changes</option>
+              <option value="3">Password reset</option>
+              <option value="3">Account activated</option>
+              <option value="3">Account deactivated</option>
+            </select>
+          </div>
+
+          <button class="nhsuk-button" type="submit">
+            Create report
+          </button>
+
+        </form>
+       </div>
+      </div>
+
+    </main>
+</div>
+
+<style>
+    li {
+  display: inline-block;
+    color: #005EA5;
+    display: inline-block;
+    padding: 0px 5px 0px 5px;
+    margin-right: 15px;
+    text-decoration: none;
+    margin-bottom: 0px;
+}
+.padding {
+padding-left: 15px;
+}
+.pagination {
+padding: 0;
+display: flex;
+flex-direction: row;
+margin-bottom: 0px;
+}
+.pagination__item {
+display: inline-block;
+list-style: none;
+margin-bottom: 0px;
+}
+.pagination__link {
+display: block;
+padding: 5px 10px;
+text-decoration: none;
+font-size: 19px;
+}
+.current {
+  color:  #4c6272  !important;
+  font-weight: 700;
+  border: none;
+  pointer-events: none;
+  cursor: default;
+}
+.pagination__summary {
+margin-left: auto;
+-webkit-font-smoothing: antialiased;
+padding: 8px 0;
+font-size: 19px;
+}
+.nav
+{
+  display: flex;
+flex-direction: row;
+align-items:center;
+margin-top: 20px;
+}
+@media (max-width: 640px) {
+  .pagination__summary {
+  margin-left: 0;
+  }
+  .nav{
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  }
+
+</style>
+
+
+  {% endblock %}
+</body>
+
+</html>
