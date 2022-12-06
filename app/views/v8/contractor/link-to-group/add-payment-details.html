@@ -111,9 +111,10 @@
             <label class="nhsuk-label" for="LPC">
               Sort code
             </label>
-            <input style="margin-right: 15px;" class="nhsuk-input nhsuk-input--width-2" id="example" name="LPC" type="text" value="">
-            <input style="margin-right: 15px;" class="nhsuk-input nhsuk-input--width-2" id="example" name="LPC" type="text" value="">
-            <input class="nhsuk-input nhsuk-input--width-2" id="example" name="LPC" type="text" value="">
+            <div id="sort-code-hint" class="nhsuk-hint">
+              Must be 6 digits long
+            </div>
+            <input class="nhsuk-input nhsuk-input--width-5" id="sort-code" name="sort-code" type="text" spellcheck="false" aria-describedby="sort-code-hint" inputmode="numeric">
           </div>
 
           <div class="nhsuk-form-group">
