@@ -64,7 +64,7 @@
 
       <div class="nhsuk-grid-row">
 
-        <div class="nhsuk-grid-column-one-third">
+        <div class="nhsuk-grid-column-two-thirds">
 
           <h2 class="nhsuk-heading-m">Levy status</h2>
 
@@ -75,33 +75,45 @@
                   Levy
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  {% if data['levy-status'] %}{{data['levy-status'] }}{% else %}No{% endif %}
+                  {% if data['status'] %}Yes{% else %}No{% endif %}
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
-                  <a href="manual-payment/levy?manage-payment=true">
+                  <a href="manual-payment/levy-status?manage-payment=true">
                     Change<span class="nhsuk-u-visually-hidden"> levy</span>
                   </a>
                 </dd>
               </div>
-              {% if data['voluntary-status'] %}
+              {% if data['status'] %}
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
-
+                  Levy type
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  {{data['voluntary-status'] }}
+                  {{data['status'] }}
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
                 </dd>
               </div>
               {% endif %}
-              {% if data['statutory-status'] %}
+              {% if data['levy-amount'] %}
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
-
+                  Levy amount
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  {{data['statutory-status'] }}
+                  £{{data['levy-amount'] }}
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                </dd>
+              </div>
+              {% endif %}
+              {% if data['levy-percentage'] %}
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Levy percentage
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {{data['levy-percentage'] }}%
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
                 </dd>
