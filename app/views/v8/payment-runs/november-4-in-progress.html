@@ -1,0 +1,204 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+  <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+
+          <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="payment-runs">Payment runs</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="PH-payment-runs">{% if data['payment-type']%}{{ data['payment-type']}}{% else %}Pharmacy (PH){% endif %}</a></li>
+          </ol>
+
+        </div>
+      </div>
+
+      <p class="nhsuk-breadcrumb__back"><a href="PH-payment-runs">{% if data['payment-type']%}{{ data['payment-type']}}{% else %}Pharmacy (PH){% endif %}</a></p>
+
+    </div>
+  </nav>
+
+  <div class="nhsuk-width-container {{ containerClasses }}">
+    <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">{% if data['payment-type']%}{{ data['payment-type']}}{% else %}Pharmacy (PH){% endif %} <span
+                  class="nhsuk-u-visually-hidden">-</span></span></span>Payment run steps</h1>
+        </div>
+      </div>
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+        <h2 style="float:left;" class="nhsuk-heading-s nhsuk-u-margin-bottom-2">September 2021</h2>
+        <form style="display: contents;" action="data-preview?paymentMonth=September 2021" method="post">
+          <button style="float:right;" class="nhsuk-button nhsuk-button--secondary" type="submit">
+            Summary data
+          </button>
+        </form>
+        <p style="float:left; clear: left;" class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed 3 of 9 steps.</p>
+        </div>
+      </div>
+
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <div class="nhsuk-inset-text nhsuk-u-margin-top-0">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+              <div class="nhsuk-summary-list__row">
+                <dt style="font-weight: 400" class="nhsuk-summary-list__key">
+                  Load PPC data step is currently in progress
+                </dt>
+
+                <dd style="width: 5%;" class="nhsuk-summary-list__actions">
+
+                  <a href="november-5">
+                    Refresh
+                  </a>
+
+                </dd>
+
+              </div>
+
+            </dl>
+          </div>
+        </div>
+      </div>
+
+
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+          <ol class="app-task-list">
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">1. </span> Prepare and load data
+              </h2>
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="step-1-completed">
+                      Transfer pricing data
+                    </a>
+                  </span>
+                  <strong class="nhsuk-tag app-task-list__tag">Completed</strong>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="step-2-completed">
+                      Populate invoice lines
+                    </a>
+                  </span>
+                  <strong class="nhsuk-tag app-task-list__tag">Completed</strong>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="step-3-completed">
+                      Load ETP data
+                    </a>
+                  </span>
+                  <strong class="nhsuk-tag app-task-list__tag">Completed</strong>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                      Load PPC data
+                  </span>
+                  <strong class="nhsuk-tag nhsuk-tag--blue app-task-list__tag">In progress</strong>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                      Load late advance data
+                  </span>
+                  <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Cannot start yet</strong>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">2. </span> Calculate payments and schedules
+              </h2>
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                      Calculate ESPS and Levies
+                  </span>
+                  <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Cannot start yet</strong>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                      Create contractor schedules
+                  </span>
+                  <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Cannot start yet</strong>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">3. </span> Create payment extracts and statistics
+              </h2>
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    Create payment extracts
+                  </span>
+                  <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Cannot start yet</strong>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    Create LPC and RA statistics
+                  </span>
+                  <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag">Cannot start yet</strong>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">4. </span> Complete payment run
+              </h2>
+
+              <div class="app-task-list__items">
+              <p>All steps must be completed to close the payment run.</p>
+              </div>
+
+
+
+            </li>
+          </ol>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+  {% endblock %}
+</body>
+
+</html>
