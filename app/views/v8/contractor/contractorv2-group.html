@@ -100,11 +100,13 @@
                       <h2 style="float:left; padding-top: 8px;" class="nhsuk-card--care__heading">
                         <span role="text">Contractor details</span>
                       </h2>
+                      {% if data['group-status'] %}{% else %}
                       <form action="change-details" method="post">
                         <button style="float: right; margin: 0;" class="nhsuk-button--small nhsuk-button nhsuk-button--reverse" type="submit">
                           Change<div class="nhsuk-u-visually-hidden"> contractor details</div>
                         </button>
                       </form>
+                      {% endif %}
                     </div>
 
                     <div class="nhsuk-card__content">
@@ -132,7 +134,7 @@
                             Status
                           </dt>
                           <dd class="nhsuk-summary-list__value">
-                            ACTIVE
+                            {% if data['group-status'] %}{{ data['group-status'] }}{% else %}ACTIVE{% endif %}
                           </dd>
                         </div>
                         <div class="nhsuk-summary-list__row">
@@ -267,11 +269,13 @@
                     <h2 style="float:left; padding-top: 8px;"  class="nhsuk-card--care__heading">
                       <span role="text">Contact details</span>
                     </h2>
+                    {% if data['group-status'] %}{% else %}
                     <form action="#" method="post">
                       <button style="float: right; margin: 0;" class="nhsuk-button--small nhsuk-button nhsuk-button--reverse" type="submit">
                         Change<div class="nhsuk-u-visually-hidden"> alternative contact details</div>
                       </button>
                     </form>
+                    {% endif %}
                   </div>
 
                   <div class="nhsuk-card__content">
@@ -338,11 +342,13 @@
                     <h2 style="float:left; padding-top: 8px;"  class="nhsuk-card--care__heading">
                       <span role="text">Payment details</span>
                     </h2>
+                    {% if data['group-status'] %}{% else %}
                     <form action="#" method="post">
                       <button style="float: right; margin: 0;" class="nhsuk-button--small nhsuk-button nhsuk-button--reverse" type="submit">
                         Change<div class="nhsuk-u-visually-hidden"> payment details</div>
                       </button>
                     </form>
+                    {% endif %}
                   </div>
 
                   <div class="nhsuk-card__content">
@@ -449,11 +455,15 @@
                     <h2 style="float:left; padding-top: 8px;" class="nhsuk-card--care__heading">
                       <span role="text">Additional</span>
                     </h2>
+                    {% if data['group-status'] %}{% else %}
+
+
                     <form action="#" method="post">
                       <button style="float: right; margin: 0;" class="nhsuk-button--small nhsuk-button nhsuk-button--reverse" type="submit">
                         Change<div class="nhsuk-u-visually-hidden"> settings</div>
                       </button>
                     </form>
+                    {% endif %}
                   </div>
 
                   <div class="nhsuk-card__content">
@@ -516,14 +526,39 @@
                           17 April 2008
                         </dd>
                       </div>
+                      {% if data['group-status'] %}
                       <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
-                          Removed
+                          Closed
                         </dt>
                         <dd class="nhsuk-summary-list__value">
 
+                          <script>
+                          const monthNames = ["January", "February", "March", "April", "May", "June",
+                            "July", "August", "September", "October", "November", "December"
+                          ];
+
+                          var today = new Date();
+
+                          var dd = String(today.getDate()).padStart(2, '0');
+                          var mm = monthNames[today.getMonth()];
+                          var yyyy = today.getFullYear();
+
+                          var hours = today.getHours();
+                          var ampm = hours >= 12 ? 'pm' : 'am';
+                          hours = hours % 12;
+                          hours = hours ? hours : 12; // the hour '0' should be '12'
+
+                          var time = hours + ":" + (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+                          today = dd + ' ' + mm + ' ' + yyyy;
+                          document.write(today);
+
+                          </script>
+
                         </dd>
                       </div>
+                      {% endif %}
                       <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
                           Dispensing month
@@ -545,7 +580,7 @@
                           Last changed
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                          4 December 2021 5:30pm
+                          04 December 2021 5:30pm
                         </dd>
                       </div>
                       <div class="nhsuk-summary-list__row">
@@ -563,6 +598,21 @@
                       <p>Download full history details (PDF)</p>
                     </a>
 
+                    {% if data['group-status'] %}
+                    {% elif data['active'] == '0' %}
+                    <form action="close/close-group" method="post">
+                      <button class="nhsuk-button--small nhsuk-button nhsuk-button--secondary" type="submit">
+                        Close group<div class="nhsuk-u-visually-hidden"> Milton Group</div>
+                      </button>
+                    </form>
+                    {% elif data['active'] != '0' %}
+                    <form action="close/pause" method="post">
+                      <button class="nhsuk-button--small nhsuk-button nhsuk-button--secondary" type="submit">
+                        Close group<div class="nhsuk-u-visually-hidden"> Milton Group</div>
+                      </button>
+                    </form>
+                    {% endif %}
+
                   </div>
                 </div>
               </div>
@@ -570,219 +620,7 @@
             </div>
           </div>
 
-          <div class="tabs-panel" id="tab-6">
-            <div class="tabs-panel-inner">
-              <div class="nhsuk-grid-column-two-thirds">
-              <div style="margin-top: 0px;" class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
-                <div style="overflow: hidden;" class="nhsuk-card--care__heading-container">
-                  <h2 style="float:left;"  class="nhsuk-card--care__heading">
-                    <span role="text">Schedule</span>
-                  </h2>
-                </div>
 
-                <div class="nhsuk-card__content">
-
-
-                    <table role="table" class="nhsuk-table-responsive">
-
-                      <thead role="rowgroup" class="nhsuk-table__head">
-                        <tr role="row">
-                          <th role="columnheader" class="" scope="col">
-                            Dispensing month
-                          </th>
-                          <th role="columnheader" class="" scope="col">
-                            Payment date
-                          </th>
-                          <th role="columnheader" class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">
-                            Payment total
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody class="nhsuk-table__body">
-                        <tr role="row" class="nhsuk-table__row">
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Prescription month </span><a class="nhsuk-link--no-visited-state" href="#">August 2021</a>
-                          </td>
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Payment date </span>1 November 2021
-                          </td>
-                          <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-                            <span class="nhsuk-table-responsive__heading">Payment total </span>£65,412.83
-                          </td>
-                        </tr>
-                        <tr role="row" class="nhsuk-table__row">
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Prescription month </span><a class="nhsuk-link--no-visited-state" href="#">July 2021</a>
-                          </td>
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Payment date </span>1 October 2021
-                          </td>
-                          <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-                            <span class="nhsuk-table-responsive__heading">Payment total </span>£62,425.89
-                          </td>
-                        </tr>
-                        <tr role="row" class="nhsuk-table__row">
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Prescription month </span><a class="nhsuk-link--no-visited-state" href="#">June 2021</a>
-                          </td>
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Payment date </span>1 September 2021
-                          </td>
-                          <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-                            <span class="nhsuk-table-responsive__heading">Payment total </span>£59,306.62
-                          </td>
-                        </tr>
-                        <tr role="row" class="nhsuk-table__row">
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Prescription month </span><a class="nhsuk-link--no-visited-state" href="#">May 2021</a>
-                          </td>
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Payment date </span>30 July 2021
-                          </td>
-                          <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-                            <span class="nhsuk-table-responsive__heading">Payment total </span>£71,899.70
-                          </td>
-                        </tr>
-                        <tr role="row" class="nhsuk-table__row">
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Prescription month </span><a class="nhsuk-link--no-visited-state" href="#">April 2021</a>
-                          </td>
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Payment date </span>1 July 2021
-                          </td>
-                          <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-                            <span class="nhsuk-table-responsive__heading">Payment total </span>£62,284.53
-                          </td>
-                        </tr>
-                        <tr role="row" class="nhsuk-table__row">
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Prescription month </span><a class="nhsuk-link--no-visited-state" href="#">March 2021</a>
-                          </td>
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Payment date </span>1 June 2021
-                          </td>
-                          <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-                            <span class="nhsuk-table-responsive__heading">Payment total </span>£63,051.55
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <p style="text-align: center; display: block; padding-top: 32px;"><a class="nhsuk-link--no-visited-state" href="schedule-list">View more schedule months</a></p>
-                  </div>
-
-              </div>
-
-              </div>
-
-            </div>
-          </div>
-
-          <div class="tabs-panel" id="tab-7">
-            <div class="tabs-panel-inner">
-              <div class="nhsuk-grid-column-two-thirds">
-              <div style="margin-top: 0px;" class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
-                <div style="overflow: hidden;" class="nhsuk-card--care__heading-container">
-                  <h2 style="float:left;"  class="nhsuk-card--care__heading">
-                    <span role="text">Manual payments</span>
-                  </h2>
-                </div>
-
-                <div class="nhsuk-card__content">
-
-
-                    <table role="table" class="nhsuk-table-responsive">
-
-                      <thead role="rowgroup" class="nhsuk-table__head">
-                        <tr role="row">
-                          <th role="columnheader" class="" scope="col">
-                            Dispensing month
-                          </th>
-                          <th role="columnheader" class="" scope="col">
-                            Payment date
-                          </th>
-                          <th role="columnheader" class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">
-                          Submitted payments
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody class="nhsuk-table__body">
-                        <tr role="row" class="nhsuk-table__row">
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Prescription month </span><a href="#" class="nhsuk-link--no-visited-state">August 2021</a>
-                          </td>
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Payment date </span>1 November 2021
-                          </td>
-                          <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-                            <span class="nhsuk-table-responsive__heading">Submitted payments </span>£0
-                          </td>
-                        </tr>
-                        <tr role="row" class="nhsuk-table__row">
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Prescription month </span><a href="#" class="nhsuk-link--no-visited-state">July 2021</a>
-                          </td>
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Payment date </span>1 October 2021
-                          </td>
-                          <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-                            <span class="nhsuk-table-responsive__heading">Submitted payments </span>-£24,105.77
-                          </td>
-                        </tr>
-                        <tr role="row" class="nhsuk-table__row">
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Prescription month </span><a href="#" class="nhsuk-link--no-visited-state">June 2021</a>
-                          </td>
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Payment date </span>1 September 2021
-                          </td>
-                          <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-                            <span class="nhsuk-table-responsive__heading">Submitted payments </span>-£345.10
-                          </td>
-                        </tr>
-                        <tr role="row" class="nhsuk-table__row">
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Prescription month </span><a href="#" class="nhsuk-link--no-visited-state">May 2021</a>
-                          </td>
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Payment date </span>30 July 2021
-                          </td>
-                          <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-                            <span class="nhsuk-table-responsive__heading">Submitted payments </span>£0
-                          </td>
-                        </tr>
-                        <tr role="row" class="nhsuk-table__row">
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Prescription month </span><a class="nhsuk-link--no-visited-state" href="#">April 2021</a>
-                          </td>
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Payment date </span>1 July 2021
-                          </td>
-                          <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-                            <span class="nhsuk-table-responsive__heading">Submitted payments </span>-£1,629.10
-                          </td>
-                        </tr>
-                        <tr role="row" class="nhsuk-table__row">
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Prescription month </span><a class="nhsuk-link--no-visited-state" href="#">March 2021</a>
-                          </td>
-                          <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Payment date </span>1 June 2021
-                          </td>
-                          <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-                            <span class="nhsuk-table-responsive__heading">Submitted payments </span>£895.34
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <p style="text-align: center; display: block; padding-top: 32px;"><a class="nhsuk-link--no-visited-state" href="#">View more payment months</a></p>
-                  </div>
-
-              </div>
-
-              </div>
-
-            </div>
-          </div>
 
         </div>
       </div>
