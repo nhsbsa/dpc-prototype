@@ -31,20 +31,20 @@
         <ol class="nhsuk-breadcrumb__list">
           <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
           <li class="nhsuk-breadcrumb__item"><a href="search">Find a contractor</a></li>
-          <li class="nhsuk-breadcrumb__item"><a href="contractorv2-1">MILTON CHEMIST LTD</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="contractorv2-LPC">NORTH STAFFORDSHIRE LPC</a></li>
         </ol>
 
       </div>
     </div>
 
-    <p class="nhsuk-breadcrumb__back"><a href="contractorv2-1">Milton Chemist LTD</a></p>
+    <p class="nhsuk-breadcrumb__back"><a href="contractorv2-LPC">NORTH STAFFORDSHIRE LPC</a></p>
 
   </div>
 </nav>
 
 <div class="nhsuk-width-container {{ containerClasses }}">
   <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
-    <form action="manual-payment/expense-head" method="post">
+    <form action="#" method="post">
 
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-two-thirds">
@@ -53,11 +53,7 @@
               August 2021 manual payments
           </h1>
 
-          <p class="nhsuk-body-s" style="margin-bottom: 36px; margin-right:24px;">
-            <b>OCS Code:</b> FF910<br>
-            <b>LPP:</b> QNC - STAFFORDSHIRE & STOKE ON TRENT STP<br>
-            <b>Payment date:</b> 1 November 2021
-          </p>
+          <p class="nhsuk-body-s" style="margin-bottom: 36px; margin-right:24px;"><b>OCS Code:</b> YL02343</p>
 
         </div>
       </div>
@@ -75,38 +71,51 @@
                   Levy
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  {% if data['levy-status'] %}Yes{% else %}No{% endif %}
+                  {% if data['status'] %}Yes{% else %}No{% endif %}
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
-                  <a href="manual-payment/levy?manage-payment=true">
+                  <a href="manual-payment/levy-status?manage-payment=true">
                     Change<span class="nhsuk-u-visually-hidden"> levy</span>
                   </a>
                 </dd>
               </div>
-              {% if data['voluntary-status'] %}
+              {% if data['status'] %}
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
                   Levy type
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  Voluntary
+                  {{data['status'] }}
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
                 </dd>
               </div>
               {% endif %}
-              {% if data['statutory-status'] %}
+              {% if data['levy-amount'] %}
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
-                  Levy type
+                  Levy amount
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  Statutory
+                  £{{data['levy-amount'] }}
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
                 </dd>
               </div>
               {% endif %}
+              {% if data['levy-percentage'] %}
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Levy percentage
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {{data['levy-percentage'] }}%
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                </dd>
+              </div>
+              {% endif %}
+
             </dl>
 
         </div>
@@ -138,7 +147,7 @@
                       </a>
                   </li>
                   <li class="nhsuk-grid-column-one-third">
-                      <a class="nhsuk-pagination__link nhsuk-pagination__link--split nhsuk-link--no-visited-state" href="manage-payments-list">
+                      <a class="nhsuk-pagination__link nhsuk-pagination__link--split nhsuk-link--no-visited-state" href="#">
                           <span class="nhsuk-pagination__title">View all months</span>
                           <span class="nhsuk-u-visually-hidden">:</span>
 
