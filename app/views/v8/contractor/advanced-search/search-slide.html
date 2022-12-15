@@ -1,0 +1,435 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a href="search">Find a contractor</a></li>
+        </ol>
+
+      </div>
+    </div>
+
+    <p class="nhsuk-breadcrumb__back"><a href="dashboard">Dashboard</a></p>
+
+  </div>
+</nav>
+
+<div class="nhsuk-width-container {{ containerClasses }}">
+  <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <h1><span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Direct Payments to Contractors (DPC) <span
+              class="nhsuk-u-visually-hidden">-</span></span></span> Find a contractor</h1>
+    </div>
+  </div>
+
+  <!--<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <p class="">Search using a OCS code, YP code or contractor's name.</p>
+    </div>
+  </div>-->
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-quarter" style="margin-bottom: 24px;">
+      <div class="nhsuk-form-group"  style="float: left; margin: 0 30px 0 0;">
+        <label class="nhsuk-label" for="example">
+          OCS or Group code
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-10" id="example" name="example" type="text">
+      </div>
+    </div>
+    <div class="nhsuk-grid-column-one-half" style="margin-bottom: 24px;">
+      <div class="nhsuk-form-group"  style="float: left; margin: 0 30px 0 0;">
+        <label class="nhsuk-label" for="example">
+          Contractor name
+        </label>
+        <input class="nhsuk-input" style="width: 41ex;" id="example" name="example" type="text">
+      </div>
+    </div>
+    <div class="nhsuk-grid-column-one-quarter" style="margin-bottom: 24px;">
+      <div class="nhsuk-form-group"  style="float: left; margin: 0 15px 0 0;">
+        <label class="nhsuk-label" for="example">
+          Status
+        </label>
+        <select class="nhsuk-select" id="select-1" name="select-1">
+            <option selected value="1">Active</option>
+            <option value="2">Retired</option>
+            <option value="3">All</option>
+          </select>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-column-full">
+      <form style="float: left; display: contents;" action="search-results-slide-standard" method="post">
+      <button style="float: left;" class="nhsuk-button" type="submit">
+        Search
+      </button>
+      </form>
+      <button style="float: left; margin-left: 15px;" class="nhsuk-button nhsuk-button--secondary" onclick="openNav()">&#9776; Advanced search filters</button>
+      <p style="float: left; padding-top: 15px; padding-left: 15px;"><a href="search-slide">Reset search</a></p>
+    </div>
+
+  </div>
+
+    <div id="mySidepanel" class="sidepanel" style="display: none">
+      <div class="nhsuk-grid-row">
+
+        <div class="nhsuk-grid-column-full">
+          <p  class="closebtn"><a href="javascript:void(0)" onclick="closeNav()">Close <span class="nhsuk-u-visually-hidden">Advanced search</span></a></p>
+
+          <h2 class="nhsuk-heading-m">Advanced search filters</h3>
+          <!-- General -->
+          <details class="nhsuk-details nhsuk-expander">
+
+          <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+           General
+          </span>
+          </summary>
+          <div class="nhsuk-details__text">
+
+            <div class="nhsuk-form-group">
+               <label class="nhsuk-label" for="select-1">
+                 Supplier type
+               </label>
+               <select class="nhsuk-select" id="select-1" name="select-1">
+                 <option value="1" selected>All</option>
+                 <option value="2">NHS.UK frontend option 2</option>
+                 <option value="3">NHS.UK frontend option 3</option>
+               </select>
+             </div>
+
+             <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="select-1">
+                  LPP Code
+                </label>
+                <select class="nhsuk-select" id="select-1" name="select-1">
+                  <option value="1" selected>All</option>
+                  <option value="2">NHS.UK frontend option 2</option>
+                  <option value="3">NHS.UK frontend option 3</option>
+                </select>
+              </div>
+
+              <div class="nhsuk-checkboxes">
+                <label class="nhsuk-label" for="select-1">
+                  Setup
+                </label>
+                   <div class="nhsuk-checkboxes__item">
+                     <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                     <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                       LPS
+                     </label>
+                   </div>
+                   <div class="nhsuk-checkboxes__item">
+                     <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                     <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                       Out of hours
+                     </label>
+                   </div>
+                   <div class="nhsuk-checkboxes__item">
+                     <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                     <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                       PEPS
+                     </label>
+                   </div>
+                   <div class="nhsuk-checkboxes__item">
+                     <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                     <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                       EPPS
+                     </label>
+                   </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Contractor details   -->
+          <details class="nhsuk-details nhsuk-expander" >
+
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+             Contractor details
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="example">
+                Trading name
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="example">
+                Premises address
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="example">
+                Premises post code
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text">
+            </div>
+
+          </div>
+
+          </details>
+
+          <!-- Contact details -->
+          <details class="nhsuk-details nhsuk-expander">
+
+          <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+          Contact details
+          </span>
+          </summary>
+          <div class="nhsuk-details__text">
+
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="example">
+                Correspondence name
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="example">
+                Correspondence address
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="example">
+                Correspondence post code
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="example">
+                Email address
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="example">
+                Branch email address
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="example">
+                Contact number
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-10" id="example" name="example" type="text">
+            </div>
+
+          </details>
+
+
+          <!-- Payment details -->
+          <details class="nhsuk-details nhsuk-expander">
+
+          <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+          Payment details
+          </span>
+          </summary>
+          <div class="nhsuk-details__text">
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="example">
+                Account name
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="example">
+                Account number
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-10" id="example" name="example" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="example">
+                Sort code
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text">
+            </div>
+
+          </details>
+
+          <!-- Payment type -->
+          <details class="nhsuk-details nhsuk-expander">
+
+          <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+          Payment type
+          </span>
+          </summary>
+          <div class="nhsuk-details__text">
+
+
+            <div class="nhsuk-checkboxes">
+                 <div class="nhsuk-checkboxes__item">
+                   <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                   <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                     ETP Withheld
+                   </label>
+                 </div>
+                 <div class="nhsuk-checkboxes__item">
+                   <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                   <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                     ETP R2
+                   </label>
+                 </div>
+                 <div class="nhsuk-checkboxes__item">
+                   <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                   <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                     NMS Ind
+                   </label>
+                 </div>
+                 <div class="nhsuk-checkboxes__item">
+                   <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                   <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                     NMS Paid
+                   </label>
+                 </div>
+            </div>
+          </details>
+
+          <!-- Notes -->
+          <details class="nhsuk-details nhsuk-expander">
+
+          <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+          Notes
+          </span>
+          </summary>
+          <div class="nhsuk-details__text">
+
+            <div class="nhsuk-form-group" style="margin-top: 5px;">
+              <input class="nhsuk-input" id="example" name="example" type="text">
+            </div>
+
+          </div>
+          </details>
+
+          <a href="search-results-slide" class="nhsuk-button nhsuk-button--secondary">Apply filters</a>
+          <p><a href="#">Clear filters</a></p>
+        </div>
+      </div>
+    </div>
+
+</main>
+</div>
+
+<style>
+  /* The sidepanel menu */
+  .sidepanel {
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    padding: 60px 32px 0px;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+  }
+
+  /* The sidepanel links */
+  .sidepanel-cross {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  /* When you mouse over the navigation links, change their color */
+  .sidepanel-cross:hover {
+    color: #f1f1f1;
+  }
+
+  /* Position and style the close button (top right corner) */
+  .sidepanel .closebtn {
+    margin-top: 8px;
+    position: inherit;
+    float: right;
+  }
+
+  /* Style the button that is used to open the sidepanel */
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+
+  .openbtn:hover {
+    background-color: #444;
+  }
+</style>
+
+<script>
+  /* Set the width of the sidebar to 250px (show it) */
+function openNav() {
+  document.getElementById("mySidepanel").style.width = "50%";
+  document.getElementById("mySidepanel").style.display = "block";
+}
+
+/* Set the width of the sidebar to 0 (hide it) */
+function closeNav() {
+  document.getElementById("mySidepanel").style.width = "0";
+  document.getElementById("mySidepanel").style.display = "none";
+}
+</script>
+
+
+  {% endblock %}
+</body>
+
+</html>
