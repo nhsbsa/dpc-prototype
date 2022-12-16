@@ -90,7 +90,8 @@
     </div>
 
     <div class="nhsuk-grid-column-full">
-       <h3 class="nhsuk-heading-s">Advanced search</h3>
+       <h3 style="float: left;" class="nhsuk-heading-s">Advanced search</h3>
+       <p style="float: right;"><a href="#">Open all</a></p>
      </div>
      <div class="nhsuk-grid-column-full">
              <!-- General -->
@@ -173,7 +174,7 @@
                <span class="nhsuk-details__summary-text">
                 Contractor details
                </span>
-
+               <span class="dot"><div class=" nhsuk-u-visually-hidden">Search term entered</div></span>
              </summary>
              <div class="nhsuk-details__text">
 
@@ -195,7 +196,7 @@
                  <label class="nhsuk-label" for="example">
                    Premises post code
                  </label>
-                 <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text">
+                 <input value="DL2 1AU" class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text">
                </div>
 
              </div>
@@ -362,6 +363,18 @@
 
 </main>
 </div>
+
+<style>
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: #007f3b;
+  border-radius: 50%;
+  display: inline-block;
+  float: right;
+  margin: 4px;
+}
+</style>
 
 
   {% endblock %}
