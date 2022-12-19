@@ -62,26 +62,26 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-one-quarter" style="margin-bottom: 24px;">
       <div class="nhsuk-form-group"  style="float: left; margin: 0 30px 0 0;">
-        <label class="nhsuk-label" for="example">
+        <label class="nhsuk-label" for="ocs-group-code">
           OCS or Group code
         </label>
-        <input class="nhsuk-input nhsuk-input--width-10" id="example" name="example" type="text">
+        <input class="nhsuk-input nhsuk-input--width-10" id="ocs-group-code" name="ocs-group-code" type="text">
       </div>
     </div>
     <div class="nhsuk-grid-column-one-half" style="margin-bottom: 24px;">
       <div class="nhsuk-form-group"  style="float: left; margin: 0 30px 0 0;">
-        <label class="nhsuk-label" for="example">
+        <label class="nhsuk-label" for="contractor-name">
           Contractor name
         </label>
-        <input class="nhsuk-input" style="width: 41ex;" id="example" name="example" type="text">
+        <input class="nhsuk-input" style="width: 41ex;" id="contractor-name" name="contractor-name" type="text">
       </div>
     </div>
     <div class="nhsuk-grid-column-one-quarter" style="margin-bottom: 24px;">
       <div class="nhsuk-form-group"  style="float: left; margin: 0 15px 0 0;">
-        <label class="nhsuk-label" for="example">
+        <label class="nhsuk-label" for="status">
           Status
         </label>
-        <select class="nhsuk-select" id="select-1" name="select-1">
+        <select class="nhsuk-select" id="status" name="status">
             <option selected value="1">Active</option>
             <option value="2">Retired</option>
             <option value="3">All</option>
@@ -90,7 +90,7 @@
     </div>
 
     <div class="nhsuk-grid-column-full">
-       <h3 class="nhsuk-heading-s">Advanced search</h3>
+       <h2 class="nhsuk-heading-s">Advanced search</h2>
      </div>
      <div class="nhsuk-grid-column-full">
              <!-- General -->
@@ -104,10 +104,10 @@
              <div class="nhsuk-details__text">
 
                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label" for="select-1">
+                  <label class="nhsuk-label" for="supplier-type">
                     Supplier type
                   </label>
-                  <select class="nhsuk-select" id="select-1" name="select-1">
+                  <select class="nhsuk-select" id="supplier-type" name="supplier-type">
                     <option value="1" selected>All</option>
                     <option value="2">NHS.UK frontend option 2</option>
                     <option value="3">NHS.UK frontend option 3</option>
@@ -115,10 +115,10 @@
                 </div>
 
                 <div class="nhsuk-form-group">
-                   <label class="nhsuk-label" for="select-1">
+                   <label class="nhsuk-label" for="LPP-code">
                      LPP Code
                    </label>
-                   <select class="nhsuk-select" id="select-1" name="select-1">
+                   <select class="nhsuk-select" id="LPP-code" name="LPP-code">
                      <option value="1" selected>All</option>
                      <option value="2">NHS.UK frontend option 2</option>
                      <option value="3">NHS.UK frontend option 3</option>
@@ -126,30 +126,30 @@
                  </div>
 
                  <div class="nhsuk-checkboxes">
-                   <label class="nhsuk-label" for="select-1">
+                   <span class="nhsuk-label">
                      Setup
-                   </label>
+                   </span>
                       <div class="nhsuk-checkboxes__item">
-                        <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-                        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                        <input class="nhsuk-checkboxes__input" id="LPS-checkbox" name="LPS-checkbox" type="checkbox" value="text message">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="LPS-checkbox">
                           LPS
                         </label>
                       </div>
                       <div class="nhsuk-checkboxes__item">
-                        <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-                        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                        <input class="nhsuk-checkboxes__input" id="out-of-hours-checkbox" name="out-of-hours-checkbox" type="checkbox" value="text message">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="out-of-hours-checkbox">
                           Out of hours
                         </label>
                       </div>
                       <div class="nhsuk-checkboxes__item">
-                        <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-                        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                        <input class="nhsuk-checkboxes__input" id="NMS-checkbox" name="NMS-checkbox" type="checkbox" value="text message">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="NMS-checkbox">
                           NMS
                         </label>
                       </div>
                       <div class="nhsuk-checkboxes__item">
-                        <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-                        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                        <input class="nhsuk-checkboxes__input" id="NMS-paid-checkbox" name="NMS-paid-checkbox" type="checkbox" value="text message">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="NMS-paid-checkbox">
                           NMS Paid
                         </label>
                       </div>
@@ -178,24 +178,24 @@
              <div class="nhsuk-details__text">
 
                <div class="nhsuk-form-group">
-                 <label class="nhsuk-label" for="example">
+                 <label class="nhsuk-label" for="trading-name">
                    Trading name
                  </label>
-                 <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+                 <input class="nhsuk-input nhsuk-input--width-20" id="trading-name" name="trading-name" type="text">
                </div>
 
                <div class="nhsuk-form-group">
-                 <label class="nhsuk-label" for="example">
+                 <label class="nhsuk-label" for="premises-address">
                    Premises address
                  </label>
-                 <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+                 <input class="nhsuk-input nhsuk-input--width-20" id="premises-address" name="premises-address" type="text">
                </div>
 
                <div class="nhsuk-form-group">
-                 <label class="nhsuk-label" for="example">
+                 <label class="nhsuk-label" for="premises-post-code">
                    Premises post code
                  </label>
-                 <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text">
+                 <input class="nhsuk-input nhsuk-input--width-5" id="premises-post-code" name="premises-post-code" type="text">
                </div>
 
              </div>
@@ -214,45 +214,45 @@
 
 
                <div class="nhsuk-form-group">
-                 <label class="nhsuk-label" for="example">
+                 <label class="nhsuk-label" for="correspondence-name">
                    Correspondence name
                  </label>
-                 <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+                 <input class="nhsuk-input nhsuk-input--width-20" id="correspondence-name" name="correspondence-name" type="text">
                </div>
 
                <div class="nhsuk-form-group">
-                 <label class="nhsuk-label" for="example">
+                 <label class="nhsuk-label" for="correspondence-address">
                    Correspondence address
                  </label>
-                 <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+                 <input class="nhsuk-input nhsuk-input--width-20" id="correspondence-address" name="correspondence-address" type="text">
                </div>
 
                <div class="nhsuk-form-group">
-                 <label class="nhsuk-label" for="example">
+                 <label class="nhsuk-label" for="correspondence-post-code">
                    Correspondence post code
                  </label>
-                 <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text">
+                 <input class="nhsuk-input nhsuk-input--width-5" id="correspondence-post-code" name="correspondence-post-code" type="text">
                </div>
 
                <div class="nhsuk-form-group">
-                 <label class="nhsuk-label" for="example">
+                 <label class="nhsuk-label" for="email">
                    Email address
                  </label>
-                 <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+                 <input class="nhsuk-input nhsuk-input--width-20" id="email" name="email" type="text">
                </div>
 
                <div class="nhsuk-form-group">
-                 <label class="nhsuk-label" for="example">
+                 <label class="nhsuk-label" for="branch-email">
                    Branch email address
                  </label>
-                 <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+                 <input class="nhsuk-input nhsuk-input--width-20" id="branch-email" name="branch-email" type="text">
                </div>
 
                <div class="nhsuk-form-group">
-                 <label class="nhsuk-label" for="example">
+                 <label class="nhsuk-label" for="contact-number">
                    Contact number
                  </label>
-                 <input class="nhsuk-input nhsuk-input--width-10" id="example" name="example" type="text">
+                 <input class="nhsuk-input nhsuk-input--width-10" id="contact-number" name="contact-number" type="text">
                </div>
 
              </details>
@@ -269,24 +269,24 @@
           <div class="nhsuk-details__text">
 
             <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="example">
+              <label class="nhsuk-label" for="account-name">
                 Account name
               </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+              <input class="nhsuk-input nhsuk-input--width-20" id="account-name" name="account-name" type="text">
             </div>
 
             <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="example">
+              <label class="nhsuk-label" for="account-number">
                 Account number
               </label>
-              <input class="nhsuk-input nhsuk-input--width-10" id="example" name="example" type="text">
+              <input class="nhsuk-input nhsuk-input--width-10" id="account-number" name="account-number" type="text">
             </div>
 
             <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="example">
+              <label class="nhsuk-label" for="sort-code">
                 Sort code
               </label>
-              <input class="nhsuk-input nhsuk-input--width-5" id="example" name="example" type="text">
+              <input class="nhsuk-input nhsuk-input--width-5" id="sort-code" name="sort-code" type="text">
             </div>
 
           </details>
@@ -304,26 +304,26 @@
 
             <div class="nhsuk-checkboxes">
                  <div class="nhsuk-checkboxes__item">
-                   <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-                   <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                   <input class="nhsuk-checkboxes__input" id="ETP-withheld" name="ETP-withheld" type="checkbox" value="text message">
+                   <label class="nhsuk-label nhsuk-checkboxes__label" for="ETP-withheld">
                      ETP Withheld
                    </label>
                  </div>
                  <div class="nhsuk-checkboxes__item">
-                   <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-                   <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                   <input class="nhsuk-checkboxes__input" id="ETP-R2" name="ETP-R2" type="checkbox" value="text message">
+                   <label class="nhsuk-label nhsuk-checkboxes__label" for="ETP-R2">
                      ETP R2
                    </label>
                  </div>
                  <div class="nhsuk-checkboxes__item">
-                   <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-                   <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                   <input class="nhsuk-checkboxes__input" id="NMS-ind" name="NMS-ind" type="checkbox" value="text message">
+                   <label class="nhsuk-label nhsuk-checkboxes__label" for="NMS-ind">
                      NMS Ind
                    </label>
                  </div>
                  <div class="nhsuk-checkboxes__item">
-                   <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-                   <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                   <input class="nhsuk-checkboxes__input" id="NMS-paid" name="NMS-paid" type="checkbox" value="text message">
+                   <label class="nhsuk-label nhsuk-checkboxes__label" for="NMS-paid">
                      NMS Paid
                    </label>
                  </div>
