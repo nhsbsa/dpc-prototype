@@ -32,7 +32,7 @@
       <div class="nhsuk-grid-column-full">
 
         <ol class="nhsuk-breadcrumb__list">
-          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-link--no-visited-state" href="../dashboard/dashboard">Dashboard</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-link--no-visited-state" href="../../dashboard/dashboard-help-desk">Dashboard</a></li>
           <li class="nhsuk-breadcrumb__item"><a class="nhsuk-link--no-visited-state" href="search">Find a contractor</a></li>
         </ol>
 
@@ -96,11 +96,6 @@
             <li>
               <a class="nhsuk-link--no-visited-state" href="#tab-6">
                Schedule
-              </a>
-            </li>
-            <li>
-              <a class="nhsuk-link--no-visited-state" href="#tab-7">
-               Manual payments
               </a>
             </li>
 
@@ -169,7 +164,7 @@
                             LPC
                           </dt>
                           <dd class="nhsuk-summary-list__value">
-                            <a class="nhsuk-link--no-visited-state" href="contractorv2-LPC">YL02343 - NORTH STAFFORDSHIRE LPC</a>
+                            <a class="nhsuk-link--no-visited-state" href="#contractorv2-LPC">YL02343 - NORTH STAFFORDSHIRE LPC</a>
                           </dd>
                         </div>
                         <div class="nhsuk-summary-list__row">
@@ -177,7 +172,7 @@
                             Group
                           </dt>
                           <dd class="nhsuk-summary-list__value">
-                            <a class="nhsuk-link--no-visited-state" href="contractorv2-group">{% if data['group'] == "yes" %}YP02685{% endif %}</a>
+                            <a class="nhsuk-link--no-visited-state" href="#contractorv2-group">{% if data['group'] == "yes" %}YP02685{% endif %}</a>
                           </dd>
                         </div>
                         <div class="nhsuk-summary-list__row">
@@ -255,11 +250,6 @@
                       <h2 style="float:left; padding-top: 8px;" class="nhsuk-card--care__heading">
                         <span role="text">Notes</span>
                       </h2>
-                      <form action="change-notes" method="post">
-                        <button style="float: right; margin: 0;" class="nhsuk-button--small nhsuk-button nhsuk-button--reverse" type="submit">
-                          Change<div class="nhsuk-u-visually-hidden"> notes</div>
-                        </button>
-                      </form>
                     </div>
 
                     <div class="nhsuk-card__content">
@@ -275,11 +265,6 @@
                       <h2 style="float:left; padding-top: 8px;" class="nhsuk-card--care__heading">
                         <span role="text">Setup</span>
                       </h2>
-                      <form action="change-settings" method="post">
-                        <button style="float: right; margin: 0;" class="nhsuk-button--small nhsuk-button nhsuk-button--reverse" type="submit">
-                          Change<div class="nhsuk-u-visually-hidden"> setup </div>
-                        </button>
-                      </form>
                     </div>
 
                     <div class="nhsuk-card__content">
@@ -374,11 +359,6 @@
                     <h2 style="float:left; padding-top: 8px;"  class="nhsuk-card--care__heading">
                       <span role="text">Contact details</span>
                     </h2>
-                    <form action="change-contact-details" method="post">
-                      <button style="float: right; margin: 0;" class="nhsuk-button--small nhsuk-button nhsuk-button--reverse" type="submit">
-                        Change<div class="nhsuk-u-visually-hidden"> alternative contact details</div>
-                      </button>
-                    </form>
                   </div>
 
                   <div class="nhsuk-card__content">
@@ -445,14 +425,6 @@
                     <h2 style="float:left; padding-top: 8px;"  class="nhsuk-card--care__heading">
                       <span role="text">Payment details</span>
                     </h2>
-
-                    {% if data['group'] != "yes" %}
-                    <form action="change-payment-details" method="post">
-                      <button style="float: right; margin: 0;" class="nhsuk-button--small nhsuk-button nhsuk-button--reverse" type="submit">
-                        Change<div class="nhsuk-u-visually-hidden"> payment details</div>
-                      </button>
-                    </form>
-                    {% endif %}
                   </div>
 
                   {% if data['group'] == "yes" %}
@@ -551,16 +523,6 @@
                       </div>
 
                     </dl>
-                    <form action="link-to-group/unlink" method="post">
-                      <button class="nhsuk-button--small nhsuk-button nhsuk-button--secondary" type="submit">
-                        Unlink from group<div class="nhsuk-u-visually-hidden"> payment details</div>
-                      </button>
-                    </form>
-                    <form action="link-to-group/which-search-reveal?swap-group=yes" method="post">
-                      <button class="nhsuk-button--small nhsuk-button nhsuk-button--secondary" type="submit">
-                        Link to a different group<div class="nhsuk-u-visually-hidden"> payment details</div>
-                      </button>
-                    </form>
                     </div>
 
                   {% else %}
@@ -606,7 +568,7 @@
                           Account number
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                          97105438
+                          ****5438
                         </dd>
                       </div>
                       <div class="nhsuk-summary-list__row">
@@ -659,11 +621,6 @@
                       </div>
 
                     </dl>
-                    <form action="link-to-group/which-search-reveal" method="post">
-                      <button class="nhsuk-button--small nhsuk-button nhsuk-button--secondary" type="submit">
-                        Link to group<div class="nhsuk-u-visually-hidden"> payment details</div>
-                      </button>
-                    </form>
                     </div>
                   {% endif %}
                   </div>
@@ -675,11 +632,6 @@
                     <h2 style="float:left; padding-top: 8px;" class="nhsuk-card--care__heading">
                       <span role="text">Additional</span>
                     </h2>
-                    <form action="change-addition-payment-details" method="post">
-                      <button style="float: right; margin: 0;" class="nhsuk-button--small nhsuk-button nhsuk-button--reverse" type="submit">
-                        Change<div class="nhsuk-u-visually-hidden"> settings</div>
-                      </button>
-                    </form>
                   </div>
 
                   <div class="nhsuk-card__content">
@@ -827,7 +779,7 @@
                       <tbody class="nhsuk-table__body">
                         <tr role="row" class="nhsuk-table__row">
                           <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Prescription month </span><a class="nhsuk-link--no-visited-state" href="schedule-3">August 2021</a>
+                            <span class="nhsuk-table-responsive__heading">Prescription month </span><a class="nhsuk-link--no-visited-state" href="schedule">August 2021</a>
                           </td>
                           <td role="cell" class="nhsuk-table__cell">
                             <span class="nhsuk-table-responsive__heading">Payment date </span>1 November 2021
@@ -838,7 +790,7 @@
                         </tr>
                         <tr role="row" class="nhsuk-table__row">
                           <td role="cell" class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Prescription month </span><a class="nhsuk-link--no-visited-state" href="#">July 2021</a>
+                            <span class="nhsuk-table-responsive__heading">Prescription month </span><a class="nhsuk-link--no-visited-state" href="schedule-suppressed">July 2021</a>
                           </td>
                           <td role="cell" class="nhsuk-table__cell">
                             <span class="nhsuk-table-responsive__heading">Payment date </span>1 October 2021
