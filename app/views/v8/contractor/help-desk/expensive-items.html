@@ -127,6 +127,12 @@
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-full">
 
+            <form action="expensive-items-search" method="post">
+              <button class="nhsuk-button nhsuk-button--secondary" type="submit">
+                Search expensive items
+              </button>
+            </form>
+
             <h2 class="nhsuk-heading-m" id="expensive-list">Expensive items list</h2>
 
 
@@ -155,14 +161,6 @@
                 Change expensive items
               </button>
             </form>-->
-
-            {% if data['adjust-toggle'] == "Yes" %}
-            <form action="add-expensive-item" method="post">
-              <button style="float: right; margin-right: 14px;" class="nhsuk-button" type="submit">
-                Add expensive item
-              </button>
-            </form>
-            {% endif %}
 
             <nav style="clear: left;" class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
               <ol class="nhsuk-contents-list__list">
