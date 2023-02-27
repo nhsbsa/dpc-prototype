@@ -16,7 +16,7 @@
            - add custom CSS and JavaScript
          -->
   <!-- Set the page title inside the pageTitle block -->
-  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  {% block pageTitle %}Reports {% endblock %}
   <!-- Breadcrumb goes inside the beforeContent block -->
   {% block beforeContent %} {% endblock %}
   <!-- Your page content goes inside the content block -->
@@ -120,7 +120,7 @@
       </div>
 
       <div class="nhsuk-grid-column-full">
-        <details class="nhsuk-details" style="max-width: 66%; float: left;">
+        <details class="nhsuk-details" style="width: 80%; float: left;">
           <summary class="nhsuk-details__summary">
             <span class="nhsuk-details__summary-text">
               Filter reports
@@ -151,9 +151,81 @@
               </optgroup>
             </select>
           </div>
+            <div class="nhsuk-form-group" style="float: left; margin-right: 26px;">
+
+              <fieldset class="nhsuk-fieldset" role="group">
+                <legend class="nhsuk-fieldset__legend ">
+                  <label class="nhsuk-fieldset__heading">
+                    <span>Reports from date</span>
+
+                  </label>
+                </legend>
+                <div class="nhsuk-form-group">
+                  <div class="nhsuk-hint">For example, 27 11 2022</div>
+                  <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="startDate.days">
+                        <span class="nhsuk-u-visually-hidden">Start date</span>Day</label>
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 row_day_null" inputmode="numeric" maxlength="2" id="startDate.days" type="number" autofocus="autofocus" name="startDate.days" value="">
+                    </div>
+                  </div>
+                  <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="startDate.month">
+                        <span class="nhsuk-u-visually-hidden">Start date</span>Month</label>
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 js-paste-date row_month_null" inputmode="numeric" maxlength="2" id="startDate.month" type="number" name="startDate.month" value="">
+                    </div>
+                  </div>
+                  <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="startDate.year">
+                        <span class="nhsuk-u-visually-hidden">Start date</span>Year</label>
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 js-paste-date row_year_null" inputmode="numeric" maxlength="4" id="startDate.year" type="number" name="startDate.year" value="">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+            </div>
+            <div class="nhsuk-form-group">
+
+<fieldset class="nhsuk-fieldset" role="group">
+  <legend class="nhsuk-fieldset__legend ">
+    <label class="nhsuk-fieldset__heading">
+      <span>Reports to date</span>
+
+    </label>
+  </legend>
+  <div class="nhsuk-form-group">
+    <div class="nhsuk-hint">For example, 27 12 2022</div>
+    <div class="nhsuk-date-input__item">
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label nhsuk-date-input__label" for="endDate.days">
+          <span class="nhsuk-u-visually-hidden">End date</span>Day</label>
+        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 row_day_null" inputmode="numeric" maxlength="2" id="endDate.days" type="number" autofocus="autofocus" name="endDate.days" value="">
+      </div>
+    </div>
+    <div class="nhsuk-date-input__item">
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label nhsuk-date-input__label" for="endDate.month">
+          <span class="nhsuk-u-visually-hidden">End date</span>Month</label>
+        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 js-paste-date row_month_null" inputmode="numeric" maxlength="2" id="endDate.month" type="number" name="endDate.month" value="">
+      </div>
+    </div>
+    <div class="nhsuk-date-input__item">
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label nhsuk-date-input__label" for="endDate.year">
+          <span class="nhsuk-u-visually-hidden">End date</span>Year</label>
+        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 js-paste-date row_year_null" inputmode="numeric" maxlength="4" id="endDate.year" type="number" name="endDate.year" value="">
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+            </div>
           <a href="reports-all">
-            <button class="nhsuk-button nhsuk-button--secondary" type="submit">
-              Filter status
+            <button class="nhsuk-button" type="submit">
+              Apply filters
             </button>
           </a>
           </div>
