@@ -1,0 +1,145 @@
+<!-- Use this page as the index for your project -->
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  {% extends 'layout-logged-in.html' %}
+  <!--
+         In /views/layout.html you can:
+           - change the header and footer
+           - add custom CSS and JavaScript
+         -->
+  <!-- Set the page title inside the pageTitle block -->
+  {% block pageTitle %} Direct Payments to Contractors {% endblock %}
+  <!-- Breadcrumb goes inside the beforeContent block -->
+  {% block beforeContent %} {% endblock %}
+  <!-- Your page content goes inside the content block -->
+  <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+  {% block content %}
+
+  <nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+
+          <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a href="../dashboard/dashboard">Dashboard</a></li>
+            <li class="nhsuk-breadcrumb__item"><a href="reports?download=false">Reports</a></li>
+          </ol>
+
+        </div>
+      </div>
+
+      <p class="nhsuk-breadcrumb__back"><a href="reports?download=false">Go back to reports</a></p>
+
+    </div>
+  </nav>
+
+  <div class="nhsuk-width-container {{ containerClasses }}">
+    <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+
+      <div class="nhsuk-grid-row">
+
+        <div class="nhsuk-grid-column-two-thirds">
+
+          <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+            <div class="nhsuk-card__content">
+              <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                Payment details saved
+              </h1>
+              <h3 class="nhsuk-card__heading nhsuk-u-font-weight-normal" style="text-align: center; color: white;">
+                Milton Chemist LTD
+              </h3>
+            </div>
+          </div>
+
+          <h2 class="nhsuk-heading-m">Download payment details change letter</h2>
+
+          <p>You will not be able to access the letter later.</p>
+
+
+          <div class="component-guide-preview component-guide-preview--simple" data-content="EXAMPLE" style="display:flex;">
+
+          <section class="gem-c-attachment govuk-!-display-none-print">
+            <div class="gem-c-attachment__thumbnail" style="margin-bottom: 36px;">
+              <a class="govuk-link" target="_self" tabindex="-1" aria-hidden="true" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/747661/department-for-transport-information-asset-register.csv">
+                <svg class="gem-c-attachment__thumbnail-image" version="1.1" viewBox="0 0 99 140" width="99" height="140" aria-hidden="true">
+                  <path d="M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z" stroke-width="0"/>
+                </svg>
+              </a>
+            </div>
+            <div class="gem-c-attachment__details">
+              <h3 class="gem-c-attachment__title">
+                <a class="govuk-link gem-c-attachment__link" target="_self" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/747661/department-for-transport-information-asset-register.csv">Payment details change letter - Milton Chemist</a>
+              </h3>
+              <p class="gem-c-attachment__metadata"><span class="gem-c-attachment__attribute"><abbr title="Comma-separated Values" class="gem-c-attachment__abbr">PDF</abbr></span>, <span class="gem-c-attachment__attribute">210.34 KB</span></p>
+            </div>
+          </section>
+          </div>
+
+          <p><a class="nhsuk-button" href="../contractorv2-1?group=no">Return to contractor</a></p>
+
+        </div>
+
+      </div>
+
+      <style>
+        .component-guide-preview--simple {
+            border: 0;
+            padding: 10px;
+        }
+
+        .component-guide-preview {
+            position: relative;
+        }
+        @media (min-width: 40.0625em)
+        .gem-c-attachment {
+            font-size: 19px;
+            font-size: 1.1875rem;
+            line-height: 1.3157894737;
+        }
+
+        .gem-c-attachment {
+            font-family: "GDS Transport",arial,sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-weight: 400;
+            font-size: 16px;
+            font-size: 1rem;
+            line-height: 1.25;
+            position: relative;
+        }
+        .gem-c-attachment__thumbnail {
+            position: relative;
+            width: auto;
+            margin-right: 25px;
+            margin-bottom: 15px;
+            padding: 5px;
+            float: left;
+        }
+        .gem-c-attachment__thumbnail-image {
+          display: block;
+          width: auto;
+          max-width: 99px;
+          height: 140px;
+          border: rgba(11,12,12,0.1);
+          outline: 5px solid rgba(11,12,12,0.1);
+          background: #fff;
+          box-shadow: 0 2px 2px rgb(11 12 12 / 40%);
+          fill: #b1b4b6;
+          stroke: #b1b4b6;
+      }
+      </style>
+
+    </main>
+  </div>
+  {% endblock %}
+</body>
+
+</html>
