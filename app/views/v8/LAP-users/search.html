@@ -69,9 +69,12 @@
          </div>
 
          <div class="nhsuk-grid-column-full">
-           <button class="nhsuk-button" type="submit">
+           <button style="float: left;" class="nhsuk-button" type="submit">
              Search
            </button>
+           {% if data['user-id'] or data['LAP-name'] %}
+            <p style="float: left; padding-top: 15px; padding-left: 15px;"><a href="search?user-id=&LAP-name=">Reset search</a></p>
+          {% endif %}
          </div>
         </form>
        </div>

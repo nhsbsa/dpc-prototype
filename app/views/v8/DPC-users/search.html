@@ -77,9 +77,12 @@
          </div>
 
          <div class="nhsuk-grid-column-full">
-           <button class="nhsuk-button" type="submit">
+           <button style="float: left" class="nhsuk-button" type="submit">
              Search
            </button>
+           {% if data['user-id'] or data['DPC-name'] %}
+            <p style="float: left; padding-top: 15px; padding-left: 15px;"><a href="search?user-id=&DPC-name=">Reset search</a></p>
+          {% endif %}
          </div>
         </form>
        </div>
@@ -88,7 +91,7 @@
        <div class="nhsuk-grid-row">
          <div class="nhsuk-grid-column-full">
            <table role="table" class="nhsuk-table-responsive">
-             <caption class="nhsuk-table__caption">1 LPA users found</caption>
+             <caption class="nhsuk-table__caption">1 DPC users found</caption>
              <thead role="rowgroup" class="nhsuk-table__head">
                <tr role="row">
                  <th role="columnheader" class="" scope="col">
