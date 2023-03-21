@@ -120,14 +120,36 @@
 
           <form action="change-batch-report" method="post">
 
-          <div class="nhsuk-form-group">
+          <!--<div class="nhsuk-form-group">
             <h2 class="nhsuk-heading-s">
               <label for="batch-name">
                 Batch name
               </label>
             </h2>
             <input class="nhsuk-input nhsuk-input--width-20" id="batch-name" name="batch-name" type="text" value="{{ data['batch-name'] }}">
-          </div>
+          </div>-->
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Batch name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{ data['batch-name'] }}
+              </dd>
+
+              <dd class="nhsuk-summary-list__actions">
+
+                <a href="change-batch-name">
+                  Change<span class="nhsuk-u-visually-hidden"> batch name</span>
+                </a>
+
+              </dd>
+
+            </div>
+
+          </dl>
 
           <div class="nhsuk-form-group">
             <h2 class="nhsuk-heading-s">
